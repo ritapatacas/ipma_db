@@ -5,5 +5,5 @@ WORKDIR /app
 COPY . /app
 
 RUN pip install requests pymongo
-
+RUN pip install requests pymongo pandas
 CMD ["python", "fetch.py"]
