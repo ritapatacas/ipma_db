@@ -160,7 +160,7 @@ def analyze_data():
 
 if __name__ == "__main__":
     fetch_and_store_data()
-    analyze_data()
+    #analyze_data()
 
     #clean_duplicates(collection)
     #create_unique_index(collection)
