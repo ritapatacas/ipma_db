@@ -2,7 +2,7 @@ name: fetch.py daily
 
 on:
   schedule:
-    - cron: '0 11,23 * * *'
+    - cron: '0 11,23 * * *'  # Run at 11:00 AM and 11:00 PM UTC
 
 jobs:
   run-fetch:
@@ -17,7 +17,19 @@ jobs:
           python-version: '3.9'
 
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: |
+          if [ -f requirements.txt ]; then
+            pip install -r requirements.txt
+          else
+            echo "requirements.txt not found"
+            exit 1
+          fi
 
       - name: Run script
-        run: python app/fetch.py
+        run: |
+          if [ -f app/fetch.py ]; then
+            python app/fetch.py
+          else
+            echo "fetch.py script not found"
+            exit 1
+          fi
