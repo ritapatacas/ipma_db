@@ -1,5 +1,4 @@
 .env
-.vscode
 ritspma_env/
 _fetch.py
 app/ff.py
