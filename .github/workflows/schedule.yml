@@ -2,7 +2,7 @@ name: fetch.py daily
 
 on:
   schedule:
-    - cron: '0 11,23 * * *'  # Run at 11:00 AM and 11:00 PM UTC
+    - cron: '0 11,23 * * *'
 
 jobs:
   run-fetch:
@@ -11,13 +11,25 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      - name: Debug workspace files
+        run: ls -R
+
+      - name: Debug requirements.txt
+        run: |
+          if [ -f requirements.txt ]; then
+            echo "requirements.txt exists"
+          else
+            echo "requirements.txt not found"
+            exit 1
+          fi
+
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.9'
 
       - name: Install dependencies
-        run: pip install -r app/requirements.txt  # Updated path to requirements.txt
+        run: pip install -r requirements.txt
 
       - name: Run script
-        run: python app/fetch.py  # Path to your fetch.py script
+        run: python app/fetch.py
