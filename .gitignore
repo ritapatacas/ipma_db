@@ -1,6 +1,9 @@
 .env
 ritspma_env/
-_fetch.py
-app/ff.py
+
+auto_script_logs/
 app/obs.json
+export*
+
+_fetch.py
 app/select_ansiao.py
