@@ -1,14 +1,11 @@
 import os
 import json
-import argparse
 import logging
 from datetime import datetime
 from dotenv import load_dotenv
 from pymongo import MongoClient
 import requests
 import pandas as pd
-
-# https://share.bito.ai/static/share?aid=c4463bfe-3372-4d77-aff9-c0143e2c8ccb
 
 logging.basicConfig(
     level=logging.INFO, format="\n> %(levelname)s:%(name)s: %(message)s"
@@ -47,12 +44,18 @@ def fetch_station_data():
 
 
 def fetch_and_store_data():
+    """Fetches data from IPMA API, processes, and stores it into MongoDB."""
     data = fetch_station_data()
     if data is None:
         return
 
     station_data = [
-        {"data_hora": parse_datetime(hour), **obs[STATION]}
+        {
+            "data_hora": parse_datetime(hour),  # Original datetime
+            "data": parse_datetime(hour).strftime("%Y-%m-%d"),  # Extract date
+            "hora": parse_datetime(hour).strftime("%H:%M"),  # Extract time
+            **obs[STATION]
+        }
         for hour, obs in data.items()
         if STATION in obs and obs[STATION] is not None
     ]
@@ -62,15 +65,16 @@ def fetch_and_store_data():
             collection.update_one(
                 {"data_hora": entry["data_hora"]}, {"$set": entry}, upsert=True
             )
-        logger.info("fetched and stored with great success")
-
+        logger.info("Fetched, processed, and stored data successfully")
 
 def analyze_data():
     all_data = list(collection.find())
     df = pd.DataFrame(all_data)
 
+    # Add the new columns 'data' and 'hora' to the selected columns
     selected_columns = {
-        "data_hora": "date",
+        "data_hora": "datetime",
+        "hora": "time",
         "temperatura": "temp",
         "precAcumulada": "prec",
         "radiacao": "rad",
@@ -80,18 +84,15 @@ def analyze_data():
     }
 
     if not df.empty:
+        # Select and rename the desired columns
         df = (
             df[selected_columns.keys()]
             .rename(columns=selected_columns)
-            .pipe(convert_date_column, "date")
-            .assign(
-                date_sort=lambda x: pd.to_datetime(x["date"], format="%Y-%m-%d %HH")
-            )
-            .sort_values(by="date_sort", ascending=True)
-            .drop(columns=["date_sort"])
+            .pipe(convert_date_column, "datetime")  # Convert datetime if needed
+            .sort_values(by="datetime", ascending=True)  # Sort by the full datetime column
         )
 
-        df = clean_no_data(df)
+        df = clean_no_data(df)  # Clean the data
         direction_mapping = {
             0: "-",
             1: "N",
@@ -104,12 +105,53 @@ def analyze_data():
             7: "W",
             8: "NW",
         }
+        # Map wind direction to readable format
         df["wind dir"] = df["wind dir"].map(direction_mapping).fillna("Unknown")
+
+        # Display DataFrame with all columns
         pd.set_option("display.max_columns", None)
         pd.set_option("display.max_rows", None)
         print(df)
     else:
-        logger.error("no data in the collection")
+        logger.error("No data in the collection")
+
+def check_missing_data():
+    all_data = list(collection.find())
+    df = pd.DataFrame(all_data)
+
+    if df.empty:
+        logger.error("No data in the collection")
+        return
+
+    df["date"] = pd.to_datetime(df["data_hora"], format="%Y-%m-%d %HH")
+    df["day"] = df["date"].dt.date
+    df["hour"] = df["date"].dt.hour
+
+    # Group by day and count the number of entries per day
+    day_counts = df.groupby("day").size().reset_index(name="total_entries")
+
+    # Generate a complete range of dates and hours
+    min_date = df["day"].min()
+    max_date = df["day"].max()
+    complete_range = pd.date_range(start=min_date, end=max_date, freq='H')
+
+    # Create a DataFrame with the complete range of dates and hours
+    complete_df = pd.DataFrame({"date": complete_range})
+    complete_df["day"] = complete_df["date"].dt.date
+    complete_df["hour"] = complete_df["date"].dt.hour
+
+    # Merge the complete range with the actual data to find missing entries
+    merged_df = complete_df.merge(df, on=["day", "hour"], how="left", indicator=True)
+    missing_data = merged_df[merged_df["_merge"] == "left_only"]
+
+    # Group by day and count the number of missing entries per day
+    missing_counts = missing_data.groupby("day").size().reset_index(name="missing_entries")
+
+    # Merge the day counts with the missing counts
+    result_df = day_counts.merge(missing_counts, on="day", how="left").fillna(0)
+    result_df["missing_entries"] = result_df["missing_entries"].astype(int)
+
+    print(result_df)
 
 
 def export_json(collection):
@@ -156,15 +198,25 @@ def clean_no_data(df):
     df = df.loc[:, (df != "-").any(axis=0)]
     return df
 
+def add_date_hour_fields():
+    """Add or update 'data' and 'hora' fields in the MongoDB collection."""
+    collection.update_many(
+        {},
+        [
+            {
+                "$set": {
+                    "data": {"$dateToString": {"format": "%Y-%m-%d", "date": "$data_hora"}},
+                    "hora": {"$dateToString": {"format": "%H:%M", "date": "$data_hora"}}
+                }
+            }
+        ]
+    )
+    logger.info("Fields 'data' and 'hora' updated to include hour and minute successfully.")
+
 
 if __name__ == "__main__":
+    #add_date_hour_fields()
     fetch_and_store_data()
     analyze_data()
-
-    # clean_duplicates(collection)
-    # create_unique_index(collection)
-
-    temperature_data = collection.find({}, {"data_hora": 1, "temperatura": 1, "_id": 0})
-    # pprint(list(temperature_data))
-
-    export_json(collection)
+    #check_missing_data()
+    #export_json(collection)
