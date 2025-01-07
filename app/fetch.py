@@ -279,8 +279,8 @@ def hours_bellow_7():
     
 if __name__ == "__main__":
     #add_date_hour_fields()
-    #fetch_and_store_data()
-    #analyze_data()
-    hours_bellow_7()
+    fetch_and_store_data()
+    analyze_data()
+    #hours_bellow_7()
     #check_missing_data()
-    #export_json(collection)
+    export_json(collection)
