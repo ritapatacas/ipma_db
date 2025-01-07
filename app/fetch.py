@@ -4,6 +4,8 @@ import logging
 from datetime import datetime
 from dotenv import load_dotenv
 from pymongo import MongoClient
+from prettytable import PrettyTable
+import matplotlib.pyplot as plt
 import requests
 import pandas as pd
 
@@ -62,16 +64,20 @@ def fetch_and_store_data():
 
     if station_data:
         for entry in station_data:
-            collection.update_one(
-                {"data_hora": entry["data_hora"]}, {"$set": entry}, upsert=True
-            )
+            # Check if the entry already exists in the database
+            existing_entry = collection.find_one({"data_hora": entry["data_hora"]})
+
+            # Save only if the entry is new or has changes
+            if not existing_entry or existing_entry != entry:
+                collection.update_one(
+                    {"data_hora": entry["data_hora"]}, {"$set": entry}, upsert=True
+                )
         logger.info("Fetched, processed, and stored data successfully")
 
 def analyze_data():
     all_data = list(collection.find())
     df = pd.DataFrame(all_data)
 
-    # Add the new columns 'data' and 'hora' to the selected columns
     selected_columns = {
         "data_hora": "datetime",
         "hora": "time",
@@ -84,15 +90,14 @@ def analyze_data():
     }
 
     if not df.empty:
-        # Select and rename the desired columns
         df = (
             df[selected_columns.keys()]
             .rename(columns=selected_columns)
-            .pipe(convert_date_column, "datetime")  # Convert datetime if needed
-            .sort_values(by="datetime", ascending=True)  # Sort by the full datetime column
+            .pipe(convert_date_column, "datetime")
+            .sort_values(by="datetime", ascending=True)
         )
 
-        df = clean_no_data(df)  # Clean the data
+        df = clean_no_data(df)
         direction_mapping = {
             0: "-",
             1: "N",
@@ -105,13 +110,13 @@ def analyze_data():
             7: "W",
             8: "NW",
         }
-        # Map wind direction to readable format
         df["wind dir"] = df["wind dir"].map(direction_mapping).fillna("Unknown")
 
-        # Display DataFrame with all columns
+        last_entries = df.tail(170)
+
         pd.set_option("display.max_columns", None)
         pd.set_option("display.max_rows", None)
-        print(df)
+        print(last_entries)
     else:
         logger.error("No data in the collection")
 
@@ -127,32 +132,27 @@ def check_missing_data():
     df["day"] = df["date"].dt.date
     df["hour"] = df["date"].dt.hour
 
-    # Group by day and count the number of entries per day
     day_counts = df.groupby("day").size().reset_index(name="total_entries")
 
-    # Generate a complete range of dates and hours
     min_date = df["day"].min()
     max_date = df["day"].max()
     complete_range = pd.date_range(start=min_date, end=max_date, freq='H')
 
-    # Create a DataFrame with the complete range of dates and hours
     complete_df = pd.DataFrame({"date": complete_range})
     complete_df["day"] = complete_df["date"].dt.date
     complete_df["hour"] = complete_df["date"].dt.hour
 
-    # Merge the complete range with the actual data to find missing entries
     merged_df = complete_df.merge(df, on=["day", "hour"], how="left", indicator=True)
     missing_data = merged_df[merged_df["_merge"] == "left_only"]
 
-    # Group by day and count the number of missing entries per day
     missing_counts = missing_data.groupby("day").size().reset_index(name="missing_entries")
 
-    # Merge the day counts with the missing counts
     result_df = day_counts.merge(missing_counts, on="day", how="left").fillna(0)
     result_df["missing_entries"] = result_df["missing_entries"].astype(int)
 
-    print(result_df)
+    days_with_missing_entries = result_df[result_df["missing_entries"] > 0]
 
+    print(days_with_missing_entries)
 
 def export_json(collection):
     try:
@@ -192,7 +192,6 @@ def convert_date_column(df, column_name):
     df[column_name] = df[column_name].dt.strftime("%Y-%m-%d %HH")
     return df
 
-
 def clean_no_data(df):
     df = df.replace(-99.0, "-")
     df = df.loc[:, (df != "-").any(axis=0)]
@@ -213,10 +212,75 @@ def add_date_hour_fields():
     )
     logger.info("Fields 'data' and 'hora' updated to include hour and minute successfully.")
 
+def plot_temperature_histogram():
+    all_data = list(collection.find())
+    df = pd.DataFrame(all_data)
 
+    if df.empty:
+        logger.error("No data in the collection")
+        return
+
+    # Ensure 'temperatura' field is in numeric format
+    df['temperatura'] = pd.to_numeric(df['temperatura'], errors='coerce')
+
+    # Filter for temperatures below 7.2°C
+    ideal_temps = df[df['temperatura'] < 7.2]['temperatura']
+
+    if ideal_temps.empty:
+        logger.warning("No temperatures below 7.2°C found in the dataset.")
+        return
+
+    # Create the histogram
+    plt.figure(figsize=(10, 6))
+    plt.hist(ideal_temps, bins=20, edgecolor='black', alpha=0.7)
+    plt.title('Frequency of Temperatures Below 7.2°C', fontsize=16)
+    plt.xlabel('Temperature (°C)', fontsize=14)
+    plt.ylabel('Frequency', fontsize=14)
+    plt.grid(axis='y', linestyle='--', alpha=0.7)
+
+    # Show the plot
+    plt.tight_layout()
+    plt.show()
+    
+def hours_bellow_7():
+    all_data = list(collection.find())
+    df = pd.DataFrame(all_data)
+
+    if df.empty:
+        logger.error("No data in the collection")
+        return
+
+    df['temperatura'] = pd.to_numeric(df['temperatura'], errors='coerce')
+
+    df['data_hora'] = pd.to_datetime(df['data_hora'])
+    df['date'] = df['data_hora'].dt.date
+    df['hour'] = df['data_hora'].dt.hour
+    ideal_temps = df[df['temperatura'] < 7.5]
+
+    if ideal_temps.empty:
+        logger.warning("No temperatures below 7.5°C found in the dataset.")
+        return
+
+    ideal_hours = ideal_temps.groupby(['date', 'hour']).size().reset_index(name='count')
+
+    daily_summary = ideal_hours.groupby('date').size().reset_index(name='ideal_hours')
+
+    total_ideal_hours = daily_summary['ideal_hours'].sum()
+
+    table = PrettyTable()
+    table.field_names = ["date", "hours < 7.5°C"]
+
+    for _, row in daily_summary.iterrows():
+        table.add_row([row['date'], row['ideal_hours']])
+
+    table.add_row(["Total", total_ideal_hours])
+    print(table)
+
+    
 if __name__ == "__main__":
     #add_date_hour_fields()
-    fetch_and_store_data()
-    analyze_data()
+    #fetch_and_store_data()
+    #analyze_data()
+    hours_bellow_7()
     #check_missing_data()
     #export_json(collection)
