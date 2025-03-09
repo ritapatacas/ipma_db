@@ -7,3 +7,4 @@ app/obs.json
 app/select_ansiao.py
 
 _fetch.py
+app/__pycache__/*
