@@ -33,4 +33,4 @@ jobs:
       - name: Run script
         env:
           MONGO_URI: ${{ secrets.MONGO_URI }}  # Load secret from GitHub
-        run: python fetch.py
+        run: python app\fetch.py
