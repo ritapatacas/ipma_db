@@ -2,16 +2,16 @@ name: Fetch IPMA Data
 
 on:
   schedule:
-    - cron: "55 5 * * *"
-    - cron: "54 5 * * *"
-    - cron: "55 5 * * *"
-    - cron: "56 5 * * *"
-    - cron: "57 5 * * *"
-    - cron: "58 5 * * *"
-    - cron: "59 5 * * *"
+    - cron: "0 0 * * *"
+    - cron: "0 4 * * *"
     - cron: "0 6 * * *"
-    - cron: "2 6 * * *"
-    - cron: "4 6 * * *"
+    - cron: "0 8 * * *"
+    - cron: "0 10 * * *"
+    - cron: "0 12 * * *"
+    - cron: "0 16 * * *"
+    - cron: "0 20 * * *"
+    - cron: "0 22 * * *"
+
   workflow_dispatch:  # Allows manual trigger
 
 jobs:
@@ -33,4 +33,4 @@ jobs:
       - name: Run script
         env:
           MONGO_URI: ${{ secrets.MONGO_URI }}  # Load secret from GitHub
-        run: python your_script.py
+        run: python fetch.py
