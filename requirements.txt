@@ -5,3 +5,4 @@ pandas
 dotenv
 matplotlib
 prettytable
+certifi

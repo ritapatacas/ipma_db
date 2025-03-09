@@ -8,6 +8,7 @@ from prettytable import PrettyTable
 import matplotlib.pyplot as plt
 import requests
 import pandas as pd
+import certifi 
 
 logging.basicConfig(
     level=logging.INFO, format="\n> %(levelname)s:%(name)s: %(message)s"
@@ -27,7 +28,9 @@ IPMA_API_URL = (
 
 
 def get_collection():
-    client = MongoClient(os.getenv("MONGO_URI"))
+    MONGO_URI = os.getenv("MONGO_URI")
+
+    client = MongoClient(MONGO_URI,  tls=True, tlsAllowInvalidCertificates=False, tlsCAFile=certifi.where())
     db = client[MONGO_DB_NAME]
     return db[MONGO_COLLECTION_NAME]
 
