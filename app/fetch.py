@@ -8,7 +8,7 @@ from prettytable import PrettyTable
 import matplotlib.pyplot as plt
 import requests
 import pandas as pd
-import certifi 
+import certifi
 
 logging.basicConfig(
     level=logging.INFO, format="\n> %(levelname)s:%(name)s: %(message)s"
@@ -30,7 +30,12 @@ IPMA_API_URL = (
 def get_collection():
     MONGO_URI = os.getenv("MONGO_URI")
 
-    client = MongoClient(MONGO_URI,  tls=True, tlsAllowInvalidCertificates=False, tlsCAFile=certifi.where())
+    client = MongoClient(
+        MONGO_URI,
+        tls=True,
+        tlsAllowInvalidCertificates=False,
+        tlsCAFile=certifi.where(),
+    )
     db = client[MONGO_DB_NAME]
     return db[MONGO_COLLECTION_NAME]
 
@@ -124,6 +129,7 @@ def analyze_data():
     else:
         logger.error("No data in the collection")
 
+
 def check_missing_data():
     all_data = list(collection.find())
     df = pd.DataFrame(all_data)
@@ -152,7 +158,9 @@ def check_missing_data():
     merged_df["total_entries"] = merged_df["total_entries"].astype(int)
 
     # Calculate missing entries per day
-    merged_df["missing_entries"] = merged_df["expected_entries"] - merged_df["total_entries"]
+    merged_df["missing_entries"] = (
+        merged_df["expected_entries"] - merged_df["total_entries"]
+    )
 
     # Filter only days with missing entries
     days_with_missing_entries = merged_df[merged_df["missing_entries"] > 0]
@@ -168,6 +176,7 @@ def check_missing_data():
     table.add_row(["Total", total_missing])
     print(table)
     print("\nTotal days with missing entries:", len(days_with_missing_entries))
+
 
 def export_json(collection):
     try:
