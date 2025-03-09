@@ -31,6 +31,7 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Run script
+        working-directory: app
         env:
           MONGO_URI: ${{ secrets.MONGO_URI }}  # Load secret from GitHub
-        run: python app\fetch.py
+        run: python fetch.py
