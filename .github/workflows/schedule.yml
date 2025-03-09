@@ -1,35 +1,36 @@
-name: fetch.py daily
+name: Fetch IPMA Data
 
 on:
   schedule:
-    - cron: '0 11,23 * * *'
+    - cron: "55 5 * * *"
+    - cron: "54 5 * * *"
+    - cron: "55 5 * * *"
+    - cron: "56 5 * * *"
+    - cron: "57 5 * * *"
+    - cron: "58 5 * * *"
+    - cron: "59 5 * * *"
+    - cron: "0 6 * * *"
+    - cron: "2 6 * * *"
+    - cron: "4 6 * * *"
+  workflow_dispatch:  # Allows manual trigger
 
 jobs:
-  run-fetch:
+  fetch-data:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Debug workspace files
-        run: ls -R
-
-      - name: Debug requirements.txt
-        run: |
-          if [ -f requirements.txt ]; then
-            echo "requirements.txt exists"
-          else
-            echo "requirements.txt not found"
-            exit 1
-          fi
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.9'
+          python-version: "3.10"
 
       - name: Install dependencies
         run: pip install -r requirements.txt
 
       - name: Run script
-        run: python app/fetch.py
+        env:
+          MONGO_URI: ${{ secrets.MONGO_URI }}  # Load secret from GitHub
+        run: python your_script.py

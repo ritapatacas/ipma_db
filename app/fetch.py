@@ -129,47 +129,42 @@ def check_missing_data():
         logger.error("No data in the collection")
         return
 
-    df["date"] = pd.to_datetime(df["data_hora"], format="%Y-%m-%d %HH")
+    df["date"] = pd.to_datetime(df["data_hora"])
     df["day"] = df["date"].dt.date
     df["hour"] = df["date"].dt.hour
 
+    # Count existing entries per day
     day_counts = df.groupby("day").size().reset_index(name="total_entries")
 
     min_date = df["day"].min()
     max_date = df["day"].max()
-    complete_range = pd.date_range(start=min_date, end=max_date, freq="h")
+    complete_days = pd.date_range(start=min_date, end=max_date, freq="D").date
 
-    complete_df = pd.DataFrame({"date": complete_range})
-    complete_df["day"] = complete_df["date"].dt.date
-    complete_df["hour"] = complete_df["date"].dt.hour
+    # Create a DataFrame for all days in the range
+    complete_df = pd.DataFrame({"day": complete_days})
+    complete_df["expected_entries"] = 24  # Assuming 24 readings per day
 
-    merged_df = complete_df.merge(df, on=["day", "hour"], how="left", indicator=True)
-    missing_data = merged_df[merged_df["_merge"] == "left_only"]
+    # Merge to check missing data
+    merged_df = complete_df.merge(day_counts, on="day", how="left").fillna(0)
+    merged_df["total_entries"] = merged_df["total_entries"].astype(int)
 
-    missing_counts = (
-        missing_data.groupby("day").size().reset_index(name="missing_entries")
-    )
+    # Calculate missing entries per day
+    merged_df["missing_entries"] = merged_df["expected_entries"] - merged_df["total_entries"]
 
-    result_df = day_counts.merge(missing_counts, on="day", how="left").fillna(0)
-    result_df["missing_entries"] = result_df["missing_entries"].astype(int)
-
-    days_with_missing_entries = result_df[result_df["missing_entries"] > 0]
+    # Filter only days with missing entries
+    days_with_missing_entries = merged_df[merged_df["missing_entries"] > 0]
 
     # Create and display PrettyTable
     table = PrettyTable()
-    table.field_names = ["date", "missing entries"]
-    total_missing = 0
+    table.field_names = ["Date", "Missing Entries"]
+    total_missing = days_with_missing_entries["missing_entries"].sum()
 
     for _, row in days_with_missing_entries.iterrows():
-        date_str = row["day"].strftime("%Y-%m-%d")
-        missing = row["missing_entries"]
-        table.add_row([date_str, missing])
-        total_missing += missing
+        table.add_row([row["day"].strftime("%Y-%m-%d"), row["missing_entries"]])
 
     table.add_row(["Total", total_missing])
     print(table)
     print("\nTotal days with missing entries:", len(days_with_missing_entries))
-
 
 def export_json(collection):
     try:
