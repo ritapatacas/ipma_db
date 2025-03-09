@@ -11,12 +11,12 @@ on:
     - cron: "0 16 * * *"
     - cron: "0 20 * * *"
     - cron: "0 22 * * *"
-
   workflow_dispatch:  # Allows manual trigger
 
 jobs:
   fetch-data:
     runs-on: ubuntu-latest
+    environment: ipma
 
     steps:
       - name: Checkout repository
