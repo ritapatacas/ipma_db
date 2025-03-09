@@ -30,7 +30,7 @@ IPMA_API_URL = (
 def get_collection():
     MONGO_URI = os.getenv("MONGO_URI")
 
-    client = MongoClient(MONGO_URI,  tls=True, tlsAllowInvalidCertificates=False, tlsCAFile=certifi.where())
+    client = MongoClient(MONGO_URI, tls=True, tlsAllowInvalidCertificates=False, tlsCAFile=certifi.where())
     db = client[MONGO_DB_NAME]
     return db[MONGO_COLLECTION_NAME]
 
