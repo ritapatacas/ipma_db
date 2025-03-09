@@ -25,6 +25,8 @@ jobs:
       - name: Install CA Certificates (for TLS)
         run: sudo apt-get update && sudo apt-get install -y ca-certificates
 
+      - name: Force TLS 1.2 (Optional)
+        run: export OPENSSL_CONF=/etc/ssl/
 
       - name: Set up Python
         uses: actions/setup-python@v4
