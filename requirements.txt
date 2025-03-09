@@ -3,3 +3,5 @@ pymongo
 python-dotenv
 pandas
 dotenv
+matplotlib
+prettytable
