@@ -2,6 +2,7 @@ mongo:
   db_name: "ipma"
   collection_name: "ansiao"
 
+location_coordinates: "39.940528, -8.168023"
 
 ipma: 
   district: "leiria"
@@ -11,8 +12,8 @@ ipma:
     location: "ansiao"
     idStation: "1210716"
   closest_region:
-    - idAreaAviso: "CBR"
-      globalIdLocal: 1060300
+    idAreaAviso: "CBR"
+    globalIdLocal: 1060300
   closest_regions:
     - idRegiao: 1
       idAreaAviso: "CBR"
@@ -38,3 +39,47 @@ ipma:
       idDistrito: 5
       local: "Castelo Branco"
       longitude: "-7.4957"
+
+meteoblue:
+  closest_places:
+    - name: "Troviscais Fundeiros"
+      distance_km: 0.78
+      iso2: "PT"
+      country: "Portugal"
+      admin1: "Leiria District"
+      lat: 39.9337
+      lon: -8.16585
+      asl: 391
+      featureClass: "P"
+      featureCode: "PPL"
+      url: "troviscais-fundeiros_portugal_2262489"
+      id: 2262489
+      
+
+    - name: "Mosteiro"
+      distance_km: 1.51
+      iso2: "PT"
+      country: "Portugal"
+      admin1: "Leiria District"
+      lat: 39.9377
+      lon: -8.18527
+      asl: 306
+      featureClass: "P"
+      featureCode: "PPL"
+      url: "mosteiro_portugal_2265709"
+      id: 2265709
+
+    - name: "Pedrógão Grande"
+      distance_km: 3.10
+      iso2: "PT"
+      country: "Portugal"
+      admin1: "Leiria District"
+      lat: 39.9184
+      lon: -8.1459
+      asl: 400
+      featureClass: "P"
+      featureCode: "PPLA2"
+      url: "pedrógão-grande_portugal_2265000"
+      id: 2265000
+
+

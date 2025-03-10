@@ -116,6 +116,24 @@ def aggregate_warnings_by_region(organized_warnings):
 
     return aggregated_warnings
 
+
+# fetch daily forecast for closest region from IPMA API
+def fetch_daily_forecast():
+    print(IPMA["closest_region"])
+    globalIdLocal = IPMA["closest_region"]["globalIdLocal"]
+    try:
+        res = requests.get(IPMA_API_URIS["daily_forecast"].format(globalIdLocal=globalIdLocal))
+        res.raise_for_status()
+        pretty_result = json.dumps(res.json()["data"], indent=4, ensure_ascii=False)
+        print(pretty_result)
+        
+        return res.json()
+    except requests.RequestException as e:
+        logger.error(f"{e} error fetching daily forecast")
+        return None
+
+
 if __name__ == "__main__":
     fetch_and_store_station_data()
-    aggregate_warnings_by_region(fetch_warnings())
+    # aggregate_warnings_by_region(fetch_warnings())
+    # fetch_daily_forecast()

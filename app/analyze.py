@@ -4,7 +4,7 @@ from prettytable import PrettyTable
 from connections import get_mongo_collection
 from fetch import fetch_and_store_station_data
 from utils import clean_no_data, export_json, logger, WIND_DIR, DATE_FORMAT
-
+from meteoblue import show_forecast
 
 collection = get_mongo_collection()
 
@@ -62,6 +62,7 @@ def analyze_data():
         table.add_row(row_list)
 
     print(table)
+    return table
 
 
 
@@ -85,8 +86,7 @@ def hours_below_7():
     return df_cold
 
 def show_cold_hours(df_cold, group_by):
-
-
+    table = PrettyTable()
     if group_by == "week":
         df_cold["week_start"] = df_cold["data_hora"] - pd.to_timedelta(df_cold["data_hora"].dt.weekday, unit='D')
         df_cold["week_start"] = df_cold["week_start"].dt.normalize()
@@ -94,14 +94,12 @@ def show_cold_hours(df_cold, group_by):
         summary = df_cold.groupby("week_start").size().reset_index(name="ideal_hours")
         summary = summary.sort_values(by="week_start", ascending=True)
 
-        table = PrettyTable()
         table.field_names = ["week", "hours < 7.5°C"]
 
         for _, row in summary.iterrows():
             table.add_row([row["week_start"].strftime(DATE_FORMAT["week"]), row["ideal_hours"]])
 
         table.add_row(["Total", summary["ideal_hours"].sum()])
-        print(table)
 
     elif group_by == "month":
         df_cold["month"] = df_cold["data_hora"].dt.to_period("M").astype(str)
@@ -117,7 +115,6 @@ def show_cold_hours(df_cold, group_by):
             table.add_row([row["month"].strftime(DATE_FORMAT["month"]), row["ideal_hours"]])
 
         table.add_row(["Total", summary["ideal_hours"].sum()])
-        print(table)
 
     else:
         df_cold[group_by] = df_cold["data_hora"].dt.strftime("%Y-%m-%d")
@@ -133,7 +130,9 @@ def show_cold_hours(df_cold, group_by):
             table.add_row([formatted_value, row["ideal_hours"]])
 
         table.add_row(["Total", summary["ideal_hours"].sum()])
-        print(table)
+    
+    print(table)
+    return table
 
 
 def missing_data():
@@ -166,24 +165,23 @@ def missing_data():
 
     return merged_df
 
-def show_missing_entries(df_missing, group_by):
-
+def show_missing_entries(df, group_by):
     if group_by == "week":
-        df_missing["week_start"] = df_missing["day"] - pd.to_timedelta(
-            pd.to_datetime(df_missing["day"]).dt.weekday, unit='D'
+        df["week_start"] = df["day"] - pd.to_timedelta(
+            pd.to_datetime(df["day"]).dt.weekday, unit='D'
         )
-        df_missing["week_start"] = pd.to_datetime(df_missing["week_start"])
-        summary = df_missing.groupby("week_start")["missing_entries"].sum().reset_index()
+        df["week_start"] = pd.to_datetime(df["week_start"])
+        summary = df.groupby("week_start")["missing_entries"].sum().reset_index()
         label = "week"
 
     elif group_by == "month":
-        df_missing["month"] = pd.to_datetime(df_missing["day"]).dt.to_period("M").astype(str)
-        summary = df_missing.groupby("month")["missing_entries"].sum().reset_index()
+        df["month"] = pd.to_datetime(df["day"]).dt.to_period("M").astype(str)
+        summary = df.groupby("month")["missing_entries"].sum().reset_index()
         summary["month"] = pd.to_datetime(summary["month"], format="%Y-%m")
         label = "month"
 
     else:
-        summary = df_missing.sort_values(by="day", ascending=True).copy()
+        summary = df.sort_values(by="day", ascending=True).copy()
         summary = summary[["day", "missing_entries"]].tail(7)
         label = "date"
 
@@ -203,6 +201,7 @@ def show_missing_entries(df_missing, group_by):
 
     table.add_row(["Total", total_missing])
     print(table)
+    return table
 
 
 if __name__ == "__main__":
@@ -210,4 +209,5 @@ if __name__ == "__main__":
     analyze_data()
     show_cold_hours(hours_below_7(), "month")
     show_missing_entries(missing_data(), "date")
+    show_forecast()
     export_json(collection)

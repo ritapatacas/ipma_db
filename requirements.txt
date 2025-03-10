@@ -7,3 +7,5 @@ pandas
 matplotlib
 prettytable
 certifi
+
+bs4
