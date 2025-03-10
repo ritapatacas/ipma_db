@@ -77,7 +77,15 @@ By adopting this data-driven approach, I aim to **optimize irrigation systems**,
 MONGO_URI="your-mongodb-cluster-uri"
 ```
 
-### 2. Running
+### 2. Install dependencies
+
+- Make sure you have Python 3.9+ installed.
+- Install all necessary packages using `requirements.txt`:
+```
+pip install -r requirements.txt
+```
+
+### 3. Running
 
 - Run `fetch.py` to get and store data:
 ```
