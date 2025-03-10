@@ -1,5 +1,4 @@
-name: Fetch IPMA Data
-
+name: Fetch IPMA & Update View
 on:
   schedule:
     - cron: "0 0 * * *"
@@ -14,7 +13,8 @@ on:
   workflow_dispatch:  # Allows manual trigger
 
 jobs:
-  fetch-data:
+  # ------------------------- JOB 1: IPMA FETCH -------------------------
+  fetch-ipma:
     runs-on: ubuntu-latest
     environment: ipma
 
@@ -36,8 +36,35 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Run script
+      - name: Run IPMA script
         working-directory: app
         env:
-          MONGO_URI: ${{ secrets.MONGO_URI }}  # Load secret from GitHub
+          MONGO_URI: ${{ secrets.MONGO_URI }}
         run: python fetch.py
+
+  # ---------------------- JOB 2: METEOBLUE FETCH + PAGES ----------------------
+  fetch-meteoblue:
+    runs-on: ubuntu-latest
+    needs: fetch-ipma
+    environment: meteoblue
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+
+      - name: Run Meteoblue script (generate index.html)
+        run: python app/view.py
+
+      - name: Commit and push index.html to GitHub Pages
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+          git add index.html
+          git commit -m "update view" || echo "No changes to commit"
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+          git push
