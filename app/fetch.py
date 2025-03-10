@@ -1,7 +1,7 @@
 import requests
 import json
 from collections import defaultdict
-from connections import get_mongo_collection, IPMA_STATION_OBSERVATIONS, IPMA_WARNINGS, IPMA_CLOSEST_REGIONS
+from connections import get_mongo_collection, IPMA, IPMA_API_URIS
 from utils import parse_datetime, logger
 
 collection = get_mongo_collection()
@@ -9,14 +9,14 @@ collection = get_mongo_collection()
 # fetch observations data for ansriao station from IPMA API
 def fetch_stations_data():
     try:
-        res = requests.get(IPMA_STATION_OBSERVATIONS["api_url"])
+        res = requests.get(IPMA_API_URIS["station_observations"])
         res.raise_for_status()
         return res.json()
     except requests.RequestException as e:
         logger.error(f"{e} error fetching")
         return None
 
-def fetch_and_store_ansiao_station():
+def fetch_and_store_station_data():
     data = fetch_stations_data()
     if data is None:
         logger.error("Failed to fetch data from IPMA API.")
@@ -28,10 +28,10 @@ def fetch_and_store_ansiao_station():
                 "data_hora": parse_datetime(hour),
                 "data": parse_datetime(hour).strftime("%Y-%m-%d"),
                 "hora": parse_datetime(hour).strftime("%H:%M"),
-                **obs.get(IPMA_STATION_OBSERVATIONS["ansiao_station"], {})
+                **obs.get(IPMA["closest_station"]["idStation"], {})
             }
             for hour, obs in data.items()
-            if IPMA_STATION_OBSERVATIONS["ansiao_station"] in obs and obs[IPMA_STATION_OBSERVATIONS["ansiao_station"]] is not None
+            if IPMA["closest_station"]["idStation"] in obs and obs[IPMA["closest_station"]["idStation"]] is not None
         ]
     except Exception as e:
         logger.error(f"Error processing station data: {e}")
@@ -56,10 +56,9 @@ def fetch_and_store_ansiao_station():
 #fetch weather warnings for closest regions from IPMA API
 # maybe we should store this information in the database (?) not sure yet...
 def fetch_warnings():
-    id_area_avisos = {region["idAreaAviso"] for region in IPMA_CLOSEST_REGIONS}
-
+    id_area_avisos = {region["idAreaAviso"] for region in IPMA["closest_regions"]}
     try:
-        res = requests.get(IPMA_WARNINGS["api_url"])
+        res = requests.get(IPMA_API_URIS["warnings"])
         res.raise_for_status()
         warnings = res.json()
         
@@ -118,6 +117,5 @@ def aggregate_warnings_by_region(organized_warnings):
     return aggregated_warnings
 
 if __name__ == "__main__":
-    fetch_and_store_ansiao_station()
-    # fetch_warnings()
+    fetch_and_store_station_data()
     aggregate_warnings_by_region(fetch_warnings())

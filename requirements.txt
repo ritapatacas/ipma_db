@@ -1,8 +1,9 @@
+python-dotenv
+dotenv
+pyyaml
 requests
 pymongo
-python-dotenv
 pandas
-dotenv
 matplotlib
 prettytable
 certifi

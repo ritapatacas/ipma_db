@@ -1,0 +1,40 @@
+mongo:
+  db_name: "ipma"
+  collection_name: "ansiao"
+
+
+ipma: 
+  district: "leiria"
+  municipality: "pedrogao-grande"
+  dico: 1013
+  closest_station:
+    location: "ansiao"
+    idStation: "1210716"
+  closest_region:
+    - idAreaAviso: "CBR"
+      globalIdLocal: 1060300
+  closest_regions:
+    - idRegiao: 1
+      idAreaAviso: "CBR"
+      idConcelho: 3
+      globalIdLocal: 1060300
+      latitude: "40.2081"
+      idDistrito: 6
+      local: "Coimbra"
+      longitude: "-8.4194"
+    - idRegiao: 1
+      idAreaAviso: "LRA"
+      idConcelho: 9
+      globalIdLocal: 1100900
+      latitude: "39.7473"
+      idDistrito: 10
+      local: "Leiria"
+      longitude: "-8.8069"
+    - idRegiao: 1
+      idAreaAviso: "CBO"
+      idConcelho: 2
+      globalIdLocal: 1050200
+      latitude: "39.8217"
+      idDistrito: 5
+      local: "Castelo Branco"
+      longitude: "-7.4957"

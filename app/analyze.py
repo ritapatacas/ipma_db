@@ -2,7 +2,7 @@ import pandas as pd
 from datetime import datetime
 from prettytable import PrettyTable
 from connections import get_mongo_collection
-from fetch import fetch_and_store_ansiao_station
+from fetch import fetch_and_store_station_data
 from utils import clean_no_data, export_json, logger, WIND_DIR, DATE_FORMAT
 
 
@@ -206,7 +206,7 @@ def show_missing_entries(df_missing, group_by):
 
 
 if __name__ == "__main__":
-    fetch_and_store_ansiao_station()
+    fetch_and_store_station_data()
     analyze_data()
     show_cold_hours(hours_below_7(), "month")
     show_missing_entries(missing_data(), "date")
