@@ -35,3 +35,4 @@ html_page = f"""
 
 with open("../index.html", "w", encoding="utf-8") as f:
     f.write(html_page)
+    print("index.html created successfully!")
