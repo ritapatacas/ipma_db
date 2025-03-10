@@ -13,39 +13,11 @@ on:
   workflow_dispatch:
 
 jobs:
-  # ------------------------- JOB 1: IPMA FETCH -------------------------
-  fetch-ipma:
-    runs-on: ubuntu-latest
-    environment: ipma
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Install CA Certificates (for TLS)
-        run: sudo apt-get update && sudo apt-get install -y ca-certificates
-
-      - name: Force TLS 1.2 (Optional)
-        run: export OPENSSL_CONF=/etc/ssl/
-
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: "3.10"
-
-      - name: Install dependencies
-        run: pip install -r requirements.txt
-
-      - name: Run IPMA script
-        working-directory: app
-        env:
-          MONGO_URI: ${{ secrets.MONGO_URI }}
-        run: python fetch.py
 
   # ---------------------- JOB 2: METEOBLUE FETCH + PAGES ----------------------
   fetch-meteoblue:
     runs-on: ubuntu-latest
-    needs: fetch-ipma
+    #needs: fetch-ipma
     environment: meteoblue
 
     steps:
@@ -77,3 +49,33 @@ jobs:
           git commit -m "update view" || echo "No changes to commit"
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
           git push
+
+
+  # ------------------------- JOB 1: IPMA FETCH -------------------------
+  fetch-ipma:
+    runs-on: ubuntu-latest
+    environment: ipma
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install CA Certificates (for TLS)
+        run: sudo apt-get update && sudo apt-get install -y ca-certificates
+
+      - name: Force TLS 1.2 (Optional)
+        run: export OPENSSL_CONF=/etc/ssl/
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run IPMA script
+        working-directory: app
+        env:
+          MONGO_URI: ${{ secrets.MONGO_URI }}
+        run: python fetch.py

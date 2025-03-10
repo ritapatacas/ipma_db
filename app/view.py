@@ -35,7 +35,7 @@ html_page = f"""
 """
 
 
-output_path = os.path.abspath(#index.html")
+output_path = os.path.abspath("index.html")
 
 with open(output_path, "w", encoding="utf-8") as f:
     f.write(html_page)
