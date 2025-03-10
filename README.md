@@ -1,37 +1,68 @@
+
 # IPMA Weather Data Fetcher
 
-! WIP !
+## 🌤️ Overview
+
+This app automatically retrieves weather data from [IPMA](https://api.ipma.pt/) stations and stores **Ansião** station data in a MongoDB cluster.
+
+The main goal is to **support agricultural decisions** in my red fruit exploration by analyzing key weather parameters like temperature, precipitation, humidity, and more.
+
+By adopting this data-driven approach, I aim to **optimize irrigation systems**, improving resource efficiency and sustainability (hopefully, in the near bright future! 😉).
+
+---
+
+## 🚀 Features
+
+- **Fetches** selected weather data (temperature, precipitation, humidity, wind, radiation) for the last 24 hours from:
+  > [https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json](https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json)
+
+- **Stores** data in MongoDB for easy querying and analysis.
+
+- **Automated fetching**:
+  - GitHub Actions Workflow: runs several times a day to ensure data continuity.
+  - Local batch script: as a backup to fetch data manually when needed.
+
+---
+
+## 🛠️ Scripts
+
+| Script      | Purpose                                                         |
+|-------------|-----------------------------------------------------------------|
+| `fetch.py`  | Fetches and stores data (used by the automated workflow)        |
+| `analyze.py`| Generates tables with summarized data: last 48h weather, cold hours count, missing data control |
+| `utils.py`  | Utility functions: data parsing, cleaning, exporting, checking for missing data, etc.             |
+
+---
+
+## ✅ Roadmap & Tasks
+
+### **Main Objectives**
+
+- [x] **Cold hours**: Analyze how many hours were below 7°C.
+- [ ] **Forecasts**: Fetch weather forecasts and warnings.
+- [ ] **Resources optimization**: Analyze weather data to adjust irrigation schedules.
+
+---
+
+### **Development Tasks**
+
+- [x] Fix invalid values (e.g., negative `precAcumulada`, `pressao`).
+- [x] Count hours below 7.2°C per day and per month.
+- [ ] **Add columns** for enhanced analysis: date, time, year, month, day.
+- [ ] **Calculate** monthly min, avg, and max temperatures.
+- [ ] Analyze the **distribution of relative humidity** over the year.
+- [ ] Examine **precipitation trends** to guide irrigation.
+- [ ] Create **line charts** for temperature and humidity evolution.
+- [ ] Plot **histograms** for ideal temperatures (<7.2°C and 16–27°C).
+- [ ] Generate **heatmaps** for critical humidity or cold periods.
+
+---
+
+## 💡 Notes
+
+- Data is primarily gathered from **Ansião station** (`1210716`).
+- `utils.py` contains handy tools to parse, clean, and check dataset consistency.
+- The **GitHub Actions workflow** ensures **daily automation**, crucial for building reliable time series.
 
 
-## Overview
 
-This app is designed to automatically retrieve meteorological data from [IPMA](https://api.ipma.pt/) stations and store it in MongoDB.
-
-The primary goal is to support agricultural decisions by analyzing key weather parameters like temperature, precipitation, and humidity.
-
-This data-driven approach aims to optimize (in the hopefully near bright future) the irrigation systems for red fruit cultivation, enhancing resource efficiency and sustainability :)
-
-## Features
-
-- Fetches weather selected data from the desired weather station - includes temperature, precipitation, humidity, wind and radiation - from the last 24h hours by api request to:
-https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json 
-
-- Seamlessly stores the fetched data in MongoDB for persistence and easy retrieval.
-
-
-## Todos
-Objectives:
-- [ ] Cold hours: we need to analyze how many hours there were bellow 7 degrees.
-- [ ] Forecasts: fetch weather forecasts and warnings
-- [ ] Resources optimization: analyze the weather data to adjust irrigation schedules.
-
-Tasks:
-- [ ] Fix invalid values (e.g., negative precAcumulada and pressao).
-- [ ] Create additional columns: date, time, year, month, and day for detailed analysis.
-- [ ] Calculate minimum, average, and maximum temperature per month.
-- [ ] Count hours below 7.2°C per day and per month.
-- [ ] Analyze the distribution of relative humidity over the year.
-- [ ] Examine precipitation trends to adjust irrigation needs.
-- [ ] Create line charts for temperature and humidity over time.
-- [ ] Plot histograms to check the frequency of ideal temperatures (<7.2°C and 16–27°C).
-- [ ] Generate heatmaps to identify critical periods of humidity or cold.
