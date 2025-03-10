@@ -9,15 +9,9 @@ load_dotenv()
 MONGO_DB_NAME = "ipma"
 MONGO_COLLECTION_NAME = "ansiao"
 
-# ipma api request (ansião station)
-IPMA_STATION_OBSERVATIONS = {
-    "ansiao_station": "1210716",
-    "api_url": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json"
-}
-
-IPMA_WARNINGS = {
-    "api_url": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json"
-}
+MUNICIPALITY = "pedrogao-grande"
+DISTRICT = "leiria"
+DICO = 1013
 
 IPMA_CLOSEST_REGIONS = [
         {
@@ -51,6 +45,39 @@ IPMA_CLOSEST_REGIONS = [
             "longitude": "-7.4957"
         }
     ]
+
+# ipma api request (ansião station)
+IPMA_STATION_OBSERVATIONS = {
+    "ansiao_station": "1210716",
+    "api_url": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json"
+}
+
+# ipma api warnings request (closest regions)
+IPMA_WARNINGS = {
+    "api_url": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json"
+}
+
+# ipma api daily forecast (municipality)
+IPMA_DAILY_FORECAST = {
+    #"globalIds": [region["globalIdLocal"] for region in IPMA_CLOSEST_REGIONS],
+    "globalIdLocal": 1060300,
+    "api_url": "https://api.ipma.pt/open-data/forecast/meteorology/cities/daily/{globalIdLocal}.json"
+}
+
+# ipma api daily precipitation (municipality)
+IPMA_DAILY_PRECIPITATION = {
+    "api_url": "https://api.ipma.pt/open-data/observation/climate/precipitation-total/{DISTRICT}/mrrto-{DICO}-{MUNICIPALITY}.csv"
+}
+
+IPMA_EVAPOTRANSPIRATION = {
+    "api_url": "https://api.ipma.pt/open-data/observation/climate/evapotranspiration/{DISTRICT}/etp-{DICO}-{MUNICIPALITY}.csv"
+}
+
+
+IPMA_PDSI = {
+    "api_url": "https://api.ipma.pt/open-data/observation/climate/mpdsi/{DISTRICT}/mpdsi-{DICO}-{MUNICIPALITY}.csv"
+}
+
 
 def get_mongo_collection():
     MONGO_URI = os.getenv("MONGO_URI")
