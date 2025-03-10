@@ -24,7 +24,7 @@ echo "Script execution started" >> "%LOG_DIR%\log_%timestamp%.txt"
 
 :: Run the Python script and capture output
 echo "Running Python script..." >> "%LOG_DIR%\log_%timestamp%.txt"
-python fetch.py >> "%LOG_DIR%\log_%timestamp%.txt" 2>&1
+python analyze.py >> "%LOG_DIR%\log_%timestamp%.txt" 2>&1
 
 :: Log custom message after the script runs
 echo "TADAHHHH, see ya next time" >> "%LOG_DIR%\log_%timestamp%.txt"
