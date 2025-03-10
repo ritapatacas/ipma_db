@@ -1,3 +1,4 @@
+import os
 import pandas as pd
 from meteoblue import parse_soup_forecast
 
@@ -33,6 +34,15 @@ html_page = f"""
 </html>
 """
 
-with open("../index.html", "w", encoding="utf-8") as f:
+
+output_path = os.path.abspath("../index.html")
+
+with open(output_path, "w", encoding="utf-8") as f:
     f.write(html_page)
-    print("index.html created successfully!")
+
+print(f"index.html created successfully at: {output_path}")
+
+if os.path.isfile(output_path):
+    print("index.html exists")
+else:
+    print("index.html not found")
