@@ -10,7 +10,7 @@ on:
     - cron: "0 16 * * *"
     - cron: "0 20 * * *"
     - cron: "0 22 * * *"
-  workflow_dispatch:  # Allows manual trigger
+  workflow_dispatch:
 
 jobs:
   # ------------------------- JOB 1: IPMA FETCH -------------------------
@@ -57,7 +57,10 @@ jobs:
         with:
           python-version: "3.10"
 
-      - name: Run Meteoblue script (generate index.html)
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run view script
         run: python app/view.py
 
       - name: Commit and push index.html to GitHub Pages
