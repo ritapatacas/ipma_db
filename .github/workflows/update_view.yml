@@ -8,25 +8,35 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    #needs: fetch-ipma
+    environment: meteoblue
+
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.10'
+          python-version: "3.10"
 
       - name: Install dependencies
-        run: pip install requests beautifulsoup4 pandas
+        run: pip install -r requirements.txt
 
-      - name: Run weather fetch script
-        run: python view.py
+      - name: Run view script
+        run: python app/view.py
 
-      - name: Commit and push changes
+      - name: Commit and push index.html to GitHub Pages
         run: |
+          echo "🔍 Current path before git commands:"
+          pwd
+          echo "📂 Listing files:"
+          ls -la
+          echo "🔍 Git status before committing:"
+          git status
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git config --global user.name "github-actions[bot]"
-          git add index.html
-          git commit -m "Update weather forecast"
+          git add .
+          git commit -m "update view" || echo "No changes to commit"
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
           git push
