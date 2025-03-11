@@ -9,3 +9,5 @@ prettytable
 certifi
 
 bs4
+
+jinja2

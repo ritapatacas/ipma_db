@@ -1,8 +1,13 @@
+
+/* Layout e Reset */
 html, body {
     height: 100%;
     margin: 0;
     padding: 0;
+    background-color: var(--pico-background-color);
+    color: var(--pico-color);
 }
+
 
 body {
     display: flex;
@@ -11,50 +16,87 @@ body {
     text-align: center;
 }
 
+
 h1 {
-    font-family: "Roboto Slab", serif;
+    font-family: "Roboto mono", serif;
     font-weight: 100;
     font-size: 1.2em;
     text-align: left;
+    color: var(--pico-color);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
 }
 
 nav button {
+
     padding: 0.4rem 0.8rem;
     font-size: 0.8rem;
     margin-left: 0.5rem;
-    border-radius: 0.2rem;
-    border: 0px;
-    background-color: #7e7e7e70;
-    transition: font-weight 0.1s ease;
+    border-radius: 0.3rem;
+    border: none;
+    background-color: var(--pico-muted-color);
+    color: var(--pico-color);
+    transition: font-weight 0.1s ease, background-color 0.3s ease;
 }
 
 nav button:hover {
     font-weight: 600;
+    background-color: var(--pico-muted-border-color);
 }
 
 #theme-toggle {
-    padding: 0rem 0rem;
-    font-size: 0.8rem;
-    margin-left: 0rem;
-    border-radius: 0rem;
-    border: 0px;
-    background-color: transparent;
-    transition: font-weight 0.1s ease;
+    padding: 0;
+    margin-left: 0;
+    font-size: 1rem;
+    border: none;
+    background: transparent;
+    color: var(--pico-color);
+    cursor: pointer;
+    transition: opacity 0.3s ease;
 }
+
+#theme-toggle:hover {
+    opacity: 0.7;
+}
+
 
 main.container {
     padding: 2rem;
 }
 
+.showcase {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
 table.custom-table {
     font-size: 0.7rem;
     table-layout: auto;
+    width: auto;
     max-width: 100%;
-    overflow-x: auto;
-    white-space: nowrap;
+    background-color: var(--pico-card-background-color);
+    color: var(--pico-color);
+    border-radius: var(--pico-border-radius);
+    border-collapse: collapse;
 }
 
 th, td {
     padding: 0.4rem 0.8rem;
     text-align: left;
+    border-bottom: 1px solid var(--pico-muted-border-color);
+    white-space: normal; /* permite quebra de linha dentro da célula */
+    max-width: 300px; /* (opcional) Limite máximo por célula */
+    word-wrap: break-word; /* quebra palavras longas */
 }
+
+th {
+    font-weight: 600;
+}
+

@@ -201,9 +201,45 @@ def show_missing_entries(df, group_by):
 
     table.add_row(["Total", total_missing])
     print(table)
-    return table
+    return total_missing
+
+def summarize_missing_entries(group_by="date"):
+    df = missing_data()
+    if group_by == "week":
+        df["week_start"] = df["day"] - pd.to_timedelta(pd.to_datetime(df["day"]).dt.weekday, unit='D')
+        df["week_start"] = pd.to_datetime(df["week_start"])
+        summary = df.groupby("week_start", as_index=False)["missing_entries"].sum()
+        summary.rename(columns={"week_start": "period"}, inplace=True)
+
+    elif group_by == "month":
+        df["month"] = pd.to_datetime(df["day"]).dt.to_period("M").astype(str)
+        summary = df.groupby("month", as_index=False)["missing_entries"].sum()
+        summary["month"] = pd.to_datetime(summary["month"], format=DATE_FORMAT["date"])
+        summary.rename(columns={"month": "period"}, inplace=True)
+
+    else:
+        summary = df.sort_values(by="day", ascending=True).copy()
+        summary = summary[["day", "missing_entries"]].tail(7)
+        summary.rename(columns={"day": "period"}, inplace=True)
+
+    return summary
 
 
+def print_missing_entries_table(summary_df, group_by="date"):
+    label = group_by if group_by in ["week", "month"] else "date"
+    table = PrettyTable()
+    table.field_names = [label, "missing hours"]
+
+    total_missing = summary_df["missing_entries"].sum()
+
+    for _, row in summary_df.iterrows():
+        formatted_date = row["period"].strftime(DATE_FORMAT[label])
+        table.add_row([formatted_date, row["missing_entries"]])
+
+    table.add_row(["Total", total_missing])
+
+    print(table)
+    
 if __name__ == "__main__":
     fetch_and_store_station_data()
     analyze_data()

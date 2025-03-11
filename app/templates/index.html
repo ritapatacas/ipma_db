@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+
+  <script>
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', currentTheme);
+  </script>
+
+  <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+  <link rel="stylesheet" href="static/css/style.css">
+
+  <title>{{ title }}</title>
+</head>
+
+<body>
+  <main class="container">
+    <nav>
+      <ul>
+        <li><h1><strong>{{ title }}</strong></h1></li>
+      </ul>
+      <ul>
+        <li><button id="btn-forecast" class="secondary">forecast</button></li>
+        <li><button id="btn-observations" class="secondary">observations</button></li>
+        <li><button id="btn-dashboard" class="secondary">dashboard</button></li>
+        <li><div id="theme-toggle" class="contrast">🌗</div></li>
+      </ul>
+    </nav>
+
+    <!-- Forecast default -->
+    <div id="showcase" class="showcase">
+      {{ forecast_table | safe }}
+    </div>
+  </main>
+
+  <!-- Tables as variables -->
+  <script>
+    window.forecastTable = `{% autoescape false %}{{ table_html_forecast }}{% endautoescape %}`;
+    window.observationsTable = `{% autoescape false %}{{ table_html_observations }}{% endautoescape %}`;
+    window.missingTable = `{% autoescape false %}{{ table_html_missing }}{% endautoescape %}`; <!-- ✅ -->
+  </script>
+
+  <script src="static/script.js" defer></script>
+
+</body>
+
+</html>
