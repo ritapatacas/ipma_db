@@ -62,7 +62,7 @@ def analyze_data():
         table.add_row(row_list)
 
     print(table)
-    return table
+    return last_entries
 
 
 

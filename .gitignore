@@ -8,3 +8,5 @@ app/select_ansiao.py
 
 _fetch.py
 app/__pycache__/*
+
+app/static/css/pico
