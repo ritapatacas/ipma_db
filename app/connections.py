@@ -4,9 +4,15 @@ from pymongo import MongoClient
 import certifi
 import yaml
 
-def load_config(path="config.yml"):
-    with open(path, "r", encoding="utf-8") as file:
+def load_config():
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    config_path = os.path.abspath(os.path.join(base_dir, '../config.yml'))
+
+    print(f"✅ Loading config from: {config_path}")
+
+    with open(config_path, "r", encoding="utf-8") as file:
         return yaml.safe_load(file)
+
 
 config = load_config()
 

@@ -64,10 +64,23 @@ jobs:
       - name: Run view script
         env:
           MONGO_URI: ${{ secrets.MONGO_URI }}
-        run: python app/view.py
+        run: |
+          echo "🔍 Current path before git commands:"
+          pwd
+          echo "📂 Listing files:"
+          ls -la
+          echo "📂 Listing app/ directory:"
+          ls -la app/
+          python app/view.py
 
       - name: Copy index.html to root
         run: |
+          echo "🔍 Current path before git commands:"
+          pwd
+          echo "📂 Listing files:"
+          ls -la
+          echo "📂 Listing app/ directory:"
+          ls -la app/
           echo "📂 Copying app/index.html to root"
           cp app/index.html ./index.html
           echo "✅ Copied successfully!"
