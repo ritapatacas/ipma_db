@@ -23,6 +23,15 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
+      - name: Debug PWD and files
+        run: |
+          echo "📂 Current working directory:"
+          pwd
+          echo "📂 Listing all files:"
+          ls -la
+          echo "📂 Listing app/ directory:"
+          ls -la app
+
       - name: Run view script
         run: python app/view.py
 
