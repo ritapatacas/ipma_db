@@ -1,3 +1,4 @@
+import os
 from jinja2 import Environment, FileSystemLoader
 import pandas as pd
 from meteoblue import parse_soup_forecast
