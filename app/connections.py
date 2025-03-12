@@ -4,10 +4,7 @@ from pymongo import MongoClient
 import certifi
 import yaml
 
-def load_config(path=None):
-    if path is None:
-        base_dir = os.path.dirname(os.path.abspath(__file__))  # path to app/
-        path = os.path.join(base_dir, "../config.yml")  # path relative to app/
+def load_config(path="config.yml"):
     with open(path, "r", encoding="utf-8") as file:
         return yaml.safe_load(file)
 
