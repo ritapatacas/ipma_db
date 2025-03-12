@@ -7,7 +7,9 @@ on:
     - cron: "0 8 * * *"
     - cron: "0 10 * * *"
     - cron: "0 12 * * *"
+    - cron: "0 14 * * *"
     - cron: "0 16 * * *"
+    - cron: "0 18 * * *"
     - cron: "0 20 * * *"
     - cron: "0 22 * * *"
   workflow_dispatch:
@@ -42,7 +44,7 @@ jobs:
         run: python app/fetch.py
 
   # ---------------------- JOB 2: METEOBLUE FETCH + PAGES ----------------------
-  fetch-meteoblue:
+  update-view:
     runs-on: ubuntu-latest
     #needs: fetch-ipma
     environment: meteoblue
@@ -64,19 +66,25 @@ jobs:
           MONGO_URI: ${{ secrets.MONGO_URI }}
         run: python app/view.py
 
+      - name: Copy index.html to root
+        run: |
+          echo "📂 Copying app/index.html to root"
+          cp app/index.html ./index.html
+          echo "✅ Copied successfully!"
+
       - name: Commit and push index.html to GitHub Pages
         run: |
           echo "🔍 Current path before git commands:"
           pwd
           echo "📂 Listing files:"
           ls -la
+          echo "📂 Listing app/ directory:"
+          ls -la app/
           echo "🔍 Git status before committing:"
           git status
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git config --global user.name "github-actions[bot]"
-          git add .
+          git add index.html
           git commit -m "update view" || echo "No changes to commit"
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
           git push
-
-
