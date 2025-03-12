@@ -14,7 +14,10 @@ table_html_forecast = df_forecast.to_html(index=False, border=0, classes="custom
 table_html_observations = df_observations.to_html(index=False, border=0, classes="custom-table").replace('`', '\\`')
 table_html_missing = df_show_missing_entries.to_html(index=False, border=0, classes="custom-table").replace('`', '\\`')  # ✅
 
-env = Environment(loader=FileSystemLoader("templates"))
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # Diretório do view.py
+TEMPLATES_DIR = os.path.join(BASE_DIR, "templates")
+
+env = Environment(loader=FileSystemLoader(TEMPLATES_DIR))
 template = env.get_template("index.html")
 
 html = template.render(

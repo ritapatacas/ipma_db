@@ -37,10 +37,9 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Run IPMA script
-        working-directory: app
         env:
           MONGO_URI: ${{ secrets.MONGO_URI }}
-        run: python fetch.py
+        run: python app/fetch.py
 
   # ---------------------- JOB 2: METEOBLUE FETCH + PAGES ----------------------
   fetch-meteoblue:
