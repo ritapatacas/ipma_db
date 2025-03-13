@@ -51,6 +51,20 @@ def apply_row_span_for_date_column(html_table):
     return str(soup)
 
 
+def format_forecast_df(df: pd.DataFrame) -> pd.DataFrame:
+    df = df.copy()
+
+    # Format min, max, and prec mm to 2 decimal places, handle NaN
+    for col in ['min', 'max', 'prec mm']:
+        if col in df.columns:
+            df[col] = df[col].apply(lambda x: f"{float(x):.2f}" if pd.notna(x) else "-")
+    
+    # Leave prob % as is (assuming it's already correct)
+    return df
+
+
+df_forecast = format_forecast_df(df_forecast)
+
 table_html_forecast = df_forecast.to_html(index=False, border=0, classes="custom-table").replace('`', '\\`')
 table_html_observations_raw = df_observations.to_html(index=False, border=0, classes="custom-table").replace('`', '\\`')
 table_html_observations = apply_row_span_for_date_column(table_html_observations_raw)
