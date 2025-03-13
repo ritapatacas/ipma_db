@@ -17,6 +17,18 @@ WIND_DIR = {
     8: "NW",
 }
 
+OBSERVATIONS_COLUMN_MAPPING = {
+    "data": "date",
+    "hora": "time", 
+    "temperatura": "temp",
+    "precAcumulada": "prec",
+    "radiacao": "rad",
+    "idDireccVento": "wind dir",
+    "intensidadeVentoKM": "wind km",
+    "intensidadeVento": "wind",
+}
+
+
 DATE_FORMAT = {
     "date_time": "%Y-%m-%d %H:%M",
     "date": "%d %b",

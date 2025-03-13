@@ -6,13 +6,14 @@ from meteoblue import parse_soup_forecast
 from analyze import observations, summarize_cold_hours, summarize_missing_entries
 
 df_forecast = pd.DataFrame(parse_soup_forecast())
-print(df_forecast.head(10))
-
-
-
 df_observations = pd.DataFrame(observations())
 df_show_missing_entries = pd.DataFrame(summarize_missing_entries("month"))
 df_cold_hours = pd.DataFrame(summarize_cold_hours("month"))
+
+print('\n == forecast\n', df_forecast.head(10))
+print('\n\n == observations\n', df_observations.head(10))
+print('\n\n == missing entries\n', df_show_missing_entries.head(10))
+print('\n\n == cold hours\n', df_cold_hours.head(10))
 
 def apply_row_span_for_date_column(html_table):
     soup = BeautifulSoup(html_table, 'html.parser')
