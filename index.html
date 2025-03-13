@@ -24,16 +24,17 @@
         <li><h1><strong>The Owls Are Not What They Berrie</strong></h1></li>
       </ul>
       <ul>
-        <li><button id="btn-forecast" class="secondary">forecast</button></li>
-        <li><button id="btn-observations" class="secondary">observations</button></li>
-        <li><button id="btn-dashboard" class="secondary">dashboard</button></li>
-        <li><div id="theme-toggle" class="contrast">🌗</div></li>
+        <li><a href="?p=forecast" id="btn-forecast" class="button secondary" data-page="forecast">forecast</a></li>
+        <li><a href="?p=observations" id="btn-observations" class="button secondary" data-page="observations">observations</a></li>
+        <li><a href="?p=dashboard" id="btn-dashboard" class="button secondary" data-page="dashboard">dashboard</a></li>
+        <li><div id="theme-toggle" class="contrast">◑</div></li>
       </ul>
     </nav>
 
-    <!-- Forecast default -->
+    <!-- Forecast default wrapped in responsive wrapper -->
     <div id="showcase" class="showcase">
-      <table class="dataframe custom-table">
+      <div class="table-wrapper">
+        <table class="dataframe custom-table">
   <thead>
     <tr style="text-align: right;">
       <th>date</th>
@@ -189,12 +190,13 @@
     </tr>
   </tbody>
 </table>
+      </div>
     </div>
   </main>
 
   <!-- Tables as variables -->
   <script>
-    window.forecastTable = `<table class="dataframe custom-table">
+    window.forecastTable = `<div class="table-wrapper"><table class="dataframe custom-table">
   <thead>
     <tr style="text-align: right;">
       <th>date</th>
@@ -349,8 +351,8 @@
       <td>Clear and few clouds</td>
     </tr>
   </tbody>
-</table>`;
-    window.observationsTable = `<table class="dataframe custom-table">
+</table></div>`;
+    window.observationsTable = `<div class="table-wrapper"><table class="dataframe custom-table">
   <thead>
     <tr style="text-align: right;">
       <th>date</th>
@@ -364,26 +366,6 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>11 Mar</td>
-      <td>14:00</td>
-      <td>11.5</td>
-      <td>0.0</td>
-      <td>753.8</td>
-      <td>W</td>
-      <td>18.7</td>
-      <td>5.2</td>
-    </tr>
-    <tr>
-      <td>11 Mar</td>
-      <td>15:00</td>
-      <td>12.9</td>
-      <td>0.0</td>
-      <td>1726.2</td>
-      <td>NW</td>
-      <td>16.6</td>
-      <td>4.6</td>
-    </tr>
     <tr>
       <td>11 Mar</td>
       <td>16:00</td>
@@ -844,9 +826,246 @@
       <td>3.6</td>
       <td>1.0</td>
     </tr>
+    <tr>
+      <td>13 Mar</td>
+      <td>14:00</td>
+      <td>12.8</td>
+      <td>0.3</td>
+      <td>1066.9</td>
+      <td>NW</td>
+      <td>1.4</td>
+      <td>0.4</td>
+    </tr>
+    <tr>
+      <td>13 Mar</td>
+      <td>15:00</td>
+      <td>12.0</td>
+      <td>0.1</td>
+      <td>1060.5</td>
+      <td>W</td>
+      <td>8.6</td>
+      <td>2.4</td>
+    </tr>
   </tbody>
-</table>`;
-    window.missingTable = `<table class="dataframe custom-table">
+</table></div>`;
+    window.dashboardTable = `<div class="table-wrapper dashboard"><table class="dataframe custom-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>period</th>
+      <th>ideal_hours</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2024-12-09</td>
+      <td>18</td>
+    </tr>
+    <tr>
+      <td>2024-12-20</td>
+      <td>17</td>
+    </tr>
+    <tr>
+      <td>2024-12-10</td>
+      <td>16</td>
+    </tr>
+    <tr>
+      <td>2024-12-11</td>
+      <td>16</td>
+    </tr>
+    <tr>
+      <td>2024-12-29</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <td>2024-12-21</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <td>2024-12-08</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <td>2025-01-30</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <td>2025-01-31</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <td>2025-01-14</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <td>2025-01-01</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <td>2024-12-12</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <td>2025-03-09</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <td>2025-01-15</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <td>2025-01-18</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <td>2025-01-19</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <td>2025-01-16</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <td>2025-01-13</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <td>2024-12-30</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <td>2024-12-13</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <td>2025-02-03</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <td>2024-12-22</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>2025-01-02</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>2025-02-26</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>2024-12-31</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <td>2025-02-23</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td>2025-03-02</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td>2025-03-03</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td>2025-01-28</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <td>2025-01-17</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td>2024-12-24</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td>2025-01-07</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>2025-03-08</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>2025-02-01</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>2025-03-10</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>2025-02-08</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>2025-01-03</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>2025-02-17</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>2025-01-29</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>2025-01-06</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>2024-12-25</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>2024-11-14</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>2025-02-02</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>2024-12-28</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>2025-02-27</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>2025-03-12</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>2025-03-01</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>2024-11-13</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>2024-12-19</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>2024-12-15</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>2025-02-05</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>2025-02-06</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table><table class="dataframe custom-table">
   <thead>
     <tr style="text-align: right;">
       <th>period</th>
@@ -880,10 +1099,228 @@
     </tr>
     <tr>
       <td>2025-03-13</td>
-      <td>2</td>
+      <td>1</td>
     </tr>
   </tbody>
-</table>`; <!-- ✅ -->
+</table></div>`;
+    window.dashboardTable = `<div class="table-wrapper"><table class="dataframe custom-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>period</th>
+      <th>ideal_hours</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2024-12-09</td>
+      <td>18</td>
+    </tr>
+    <tr>
+      <td>2024-12-20</td>
+      <td>17</td>
+    </tr>
+    <tr>
+      <td>2024-12-10</td>
+      <td>16</td>
+    </tr>
+    <tr>
+      <td>2024-12-11</td>
+      <td>16</td>
+    </tr>
+    <tr>
+      <td>2024-12-29</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <td>2024-12-21</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <td>2024-12-08</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <td>2025-01-30</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <td>2025-01-31</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <td>2025-01-14</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <td>2025-01-01</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <td>2024-12-12</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <td>2025-03-09</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <td>2025-01-15</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <td>2025-01-18</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <td>2025-01-19</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <td>2025-01-16</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <td>2025-01-13</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <td>2024-12-30</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <td>2024-12-13</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <td>2025-02-03</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <td>2024-12-22</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>2025-01-02</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>2025-02-26</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>2024-12-31</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <td>2025-02-23</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td>2025-03-02</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td>2025-03-03</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td>2025-01-28</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <td>2025-01-17</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td>2024-12-24</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td>2025-01-07</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>2025-03-08</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>2025-02-01</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>2025-03-10</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>2025-02-08</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>2025-01-03</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>2025-02-17</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>2025-01-29</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>2025-01-06</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>2024-12-25</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>2024-11-14</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>2025-02-02</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>2024-12-28</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>2025-02-27</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>2025-03-12</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>2025-03-01</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>2024-11-13</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>2024-12-19</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>2024-12-15</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>2025-02-05</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>2025-02-06</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table></div>`;
   </script>
 
   <script src="app/static/script.js" defer></script>
