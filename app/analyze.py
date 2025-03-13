@@ -9,7 +9,7 @@ from meteoblue import show_forecast
 collection = get_mongo_collection()
 
 
-def analyze_data():
+def analyze_data(last_n=48):
     all_data = list(collection.find())
     df = pd.DataFrame(all_data)
 
@@ -29,20 +29,14 @@ def analyze_data():
         return
 
     df = df[selected_columns.keys()].rename(columns=selected_columns)
-
     df["full_datetime"] = pd.to_datetime(df["date"] + " " + df["time"], errors="coerce")
-
-    df = df.sort_values(by=["full_datetime"], ascending=True)
-
     df = clean_no_data(df)
-
     df["wind dir"] = df["wind dir"].map(WIND_DIR).fillna("Unknown")
-
-    last_entries = df.tail(48).copy()
-
+    df = df.sort_values(by=["full_datetime"], ascending=True)
+    last_entries = df.tail(last_n).copy()
+    last_entries = last_entries.sort_values(by=["full_datetime"], ascending=False).reset_index(drop=True)
     last_entries["date"] = last_entries["full_datetime"].dt.strftime(DATE_FORMAT["date"])
-    last_entries["time"] = last_entries["full_datetime"].dt.strftime("%H:%M")
-
+    last_entries["time"] = last_entries["full_datetime"].dt.strftime("%H")
     last_entries = last_entries.drop(columns=["full_datetime"])
 
     table = PrettyTable()
@@ -52,17 +46,16 @@ def analyze_data():
 
     for _, row in last_entries.iterrows():
         row_list = row.tolist()
-        current_date = row_list[0] 
-
+        current_date = row_list[0]
         if current_date == previous_date:
             row_list[0] = ""
         else:
             previous_date = current_date
-            
         table.add_row(row_list)
 
     print(table)
     return last_entries
+
 
 
 def hours_below_7():
@@ -112,7 +105,7 @@ def summarize_cold_hours(group_by="date"):
         df_cold["date"] = df_cold["data_hora"].dt.date
         summary = df_cold.groupby("date", as_index=False).size().rename(columns={"size": "ideal_hours"})
         summary.rename(columns={"date": "period"}, inplace=True)
-    summary = summary.sort_values(by="ideal_hours", ascending=False).reset_index(drop=True)
+    
     return summary
 
 
