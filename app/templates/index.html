@@ -24,24 +24,27 @@
         <li><h1><strong>{{ title }}</strong></h1></li>
       </ul>
       <ul>
-        <li><button id="btn-forecast" class="secondary">forecast</button></li>
-        <li><button id="btn-observations" class="secondary">observations</button></li>
-        <li><button id="btn-dashboard" class="secondary">dashboard</button></li>
-        <li><div id="theme-toggle" class="contrast">🌗</div></li>
+        <li><a href="?p=forecast" id="btn-forecast" class="button secondary" data-page="forecast">forecast</a></li>
+        <li><a href="?p=observations" id="btn-observations" class="button secondary" data-page="observations">observations</a></li>
+        <li><a href="?p=dashboard" id="btn-dashboard" class="button secondary" data-page="dashboard">dashboard</a></li>
+        <li><div id="theme-toggle" class="contrast">◑</div></li>
       </ul>
     </nav>
 
-    <!-- Forecast default -->
+    <!-- Forecast default wrapped in responsive wrapper -->
     <div id="showcase" class="showcase">
-      {{ forecast_table | safe }}
+      <div class="table-wrapper">
+        {{ forecast_table | safe }}
+      </div>
     </div>
   </main>
 
   <!-- Tables as variables -->
   <script>
-    window.forecastTable = `{% autoescape false %}{{ table_html_forecast }}{% endautoescape %}`;
-    window.observationsTable = `{% autoescape false %}{{ table_html_observations }}{% endautoescape %}`;
-    window.missingTable = `{% autoescape false %}{{ table_html_missing }}{% endautoescape %}`; <!-- ✅ -->
+    window.forecastTable = `<div class="table-wrapper">{% autoescape false %}{{ table_html_forecast }}{% endautoescape %}</div>`;
+    window.observationsTable = `<div class="table-wrapper">{% autoescape false %}{{ table_html_observations }}{% endautoescape %}</div>`;
+    window.dashboardTable = `<div class="table-wrapper dashboard">{% autoescape false %}{{ table_html_cold_hours }}{{ table_html_missing }}{% endautoescape %}</div>`;
+    window.dashboardTable = `<div class="table-wrapper">{% autoescape false %}{{ table_html_cold_hours }}{% endautoescape %}</div>`;
   </script>
 
   <script src="app/static/script.js" defer></script>

@@ -65,8 +65,8 @@ def analyze_data():
     return last_entries
 
 
-
 def hours_below_7():
+    """Returns DataFrame of temperatures below 7.5°C."""
     all_data = list(collection.find())
     df = pd.DataFrame(all_data)
     
@@ -75,9 +75,10 @@ def hours_below_7():
         return None
     
     df["temperatura"] = pd.to_numeric(df["temperatura"], errors="coerce")
-    df["data_hora"] = pd.to_datetime(df["data_hora"])
+    df["data_hora"] = pd.to_datetime(df["data_hora"], errors="coerce")
+    df = df.dropna(subset=["data_hora", "temperatura"])  # ensure valid datetime and temperature
     
-    df_cold = df[df["temperatura"] < 7.5]
+    df_cold = df[df["temperatura"] < 7.5].copy()
     
     if df_cold.empty:
         logger.warning("No temperatures below 7.5°C found in the dataset.")
@@ -85,55 +86,60 @@ def hours_below_7():
 
     return df_cold
 
-def show_cold_hours(df_cold, group_by):
-    table = PrettyTable()
+
+def summarize_cold_hours(group_by="date"):
+    """
+    Summarizes hours below 7.5°C grouped by date, week, or month.
+    Returns a DataFrame.
+    """
+    df_cold = hours_below_7()
+    if df_cold is None:
+        return None
+    
     if group_by == "week":
         df_cold["week_start"] = df_cold["data_hora"] - pd.to_timedelta(df_cold["data_hora"].dt.weekday, unit='D')
         df_cold["week_start"] = df_cold["week_start"].dt.normalize()
-
-        summary = df_cold.groupby("week_start").size().reset_index(name="ideal_hours")
-        summary = summary.sort_values(by="week_start", ascending=True)
-
-        table.field_names = ["week", "hours < 7.5°C"]
-
-        for _, row in summary.iterrows():
-            table.add_row([row["week_start"].strftime(DATE_FORMAT["week"]), row["ideal_hours"]])
-
-        table.add_row(["Total", summary["ideal_hours"].sum()])
-
+        summary = df_cold.groupby("week_start", as_index=False).size().rename(columns={"size": "ideal_hours"})
+        summary.rename(columns={"week_start": "period"}, inplace=True)
+        
     elif group_by == "month":
         df_cold["month"] = df_cold["data_hora"].dt.to_period("M").astype(str)
-        summary = df_cold.groupby("month").size().reset_index(name="ideal_hours")
-
+        summary = df_cold.groupby("month", as_index=False).size().rename(columns={"size": "ideal_hours"})
         summary["month"] = pd.to_datetime(summary["month"], format="%Y-%m")
-        summary = summary.sort_values(by="month", ascending=True)
-
-        table = PrettyTable()
-        table.field_names = ["month", "hours < 7.5°C"]
-
-        for _, row in summary.iterrows():
-            table.add_row([row["month"].strftime(DATE_FORMAT["month"]), row["ideal_hours"]])
-
-        table.add_row(["Total", summary["ideal_hours"].sum()])
-
-    else:
-        df_cold[group_by] = df_cold["data_hora"].dt.strftime("%Y-%m-%d")
-        summary = df_cold.groupby(group_by).size().reset_index(name="ideal_hours")
-
-        summary[group_by] = pd.to_datetime(summary[group_by], format="%Y-%m-%d")
-        summary = summary.sort_values(by=group_by, ascending=True)
-        table = PrettyTable()
-        table.field_names = [group_by, "hours < 7.5°C"]
-
-        for _, row in summary.iterrows():
-            formatted_value = row[group_by].strftime(DATE_FORMAT["date"])
-            table.add_row([formatted_value, row["ideal_hours"]])
-
-        table.add_row(["Total", summary["ideal_hours"].sum()])
+        summary.rename(columns={"month": "period"}, inplace=True)
     
-    print(table)
-    return table
+    else:  # group_by = "date"
+        df_cold["date"] = df_cold["data_hora"].dt.date
+        summary = df_cold.groupby("date", as_index=False).size().rename(columns={"size": "ideal_hours"})
+        summary.rename(columns={"date": "period"}, inplace=True)
+    summary = summary.sort_values(by="ideal_hours", ascending=False).reset_index(drop=True)
+    return summary
 
+
+def print_cold_hours_table(summary_df, group_by="date"):
+    """PrettyTable visualization of summarized cold hours."""
+    if summary_df is None or summary_df.empty:
+        print("No data to display.")
+        return
+
+    label = group_by if group_by in ["week", "month"] else "date"
+    table = PrettyTable()
+    table.field_names = [label, "hours < 7.5°C"]
+
+    total_hours = summary_df["ideal_hours"].sum()
+
+    for _, row in summary_df.iterrows():
+        if label == "month":
+            formatted_date = row["period"].strftime(DATE_FORMAT["month"])
+        elif label == "week":
+            formatted_date = row["period"].strftime(DATE_FORMAT["week"])
+        else:
+            formatted_date = row["period"].strftime(DATE_FORMAT["date"])
+
+        table.add_row([formatted_date, row["ideal_hours"]])
+
+    table.add_row(["Total", total_hours])
+    print(table)
 
 def missing_data():
     all_data = list(collection.find())
@@ -239,11 +245,13 @@ def print_missing_entries_table(summary_df, group_by="date"):
     table.add_row(["Total", total_missing])
 
     print(table)
-    
+
+
+
 if __name__ == "__main__":
     fetch_and_store_station_data()
     analyze_data()
-    show_cold_hours(hours_below_7(), "month")
+    summarize_cold_hours("month")
     show_missing_entries(missing_data(), "date")
     show_forecast()
     export_json(collection)

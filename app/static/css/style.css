@@ -1,3 +1,19 @@
+/* Hide scrollbar for Chrome, Edge, Safari */
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for Firefox and IE */
+body {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+/* Force overlay scrollbar */
+html {
+    overflow-y: overlay;
+}
+
 
 /* Layout e Reset */
 html, body {
@@ -6,6 +22,8 @@ html, body {
     padding: 0;
     background-color: var(--pico-background-color);
     color: var(--pico-color);
+    overflow-y: auto;
+    scroll-behavior: smooth;
 }
 
 
@@ -31,22 +49,34 @@ nav {
     align-items: baseline;
 }
 
-nav button {
 
-    padding: 0.4rem 0.8rem;
+nav a {
+    padding: 0.4rem 0.4rem;
     font-size: 0.8rem;
     margin-left: 0.5rem;
-    border-radius: 0.3rem;
     border: none;
-    background-color: var(--pico-muted-color);
-    color: var(--pico-color);
-    transition: font-weight 0.1s ease, background-color 0.3s ease;
+    background: transparent; 
+    border-radius: 0; 
+    cursor: pointer; 
+    transition: font-weight 0.1s ease, text-decoration 0.1s ease, opacity 0.3s ease;
+    outline: none;
+    color: inherit;
 }
 
-nav button:hover {
-    font-weight: 600;
-    background-color: var(--pico-muted-border-color);
+nav a:hover {
+    border: none; 
+    text-decoration: underline; 
+    opacity: 0.8;
+    outline: none;
+    color: inherit;
 }
+
+nav a[aria-current="p"] {
+    font-size: 0.8rem;
+    text-decoration: underline !important;
+
+}
+
 
 #theme-toggle {
     padding: 0;
