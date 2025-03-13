@@ -130,3 +130,17 @@ th {
     font-weight: 600;
 }
 
+.table-container {
+    display: flex;
+    gap: 2rem; /* Space between tables */
+    justify-content: space-between; /* Optional: Spread tables */
+    align-items: flex-start; /* Align tables to top */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.table-wrapper {
+    display: flex;
+    justify-content: space-around;
+    min-width: auto; /* Minimum width to avoid too small tables */
+    overflow-x: auto; /* Scroll if content overflows */
+}

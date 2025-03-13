@@ -43,8 +43,13 @@
   <script>
     window.forecastTable = `<div class="table-wrapper">{% autoescape false %}{{ table_html_forecast }}{% endautoescape %}</div>`;
     window.observationsTable = `<div class="table-wrapper">{% autoescape false %}{{ table_html_observations }}{% endautoescape %}</div>`;
-    window.dashboardTable = `<div class="table-wrapper dashboard">{% autoescape false %}{{ table_html_cold_hours }}{{ table_html_missing }}{% endautoescape %}</div>`;
-    window.dashboardTable = `<div class="table-wrapper">{% autoescape false %}{{ table_html_cold_hours }}{% endautoescape %}</div>`;
+    window.dashboardTable = `<div class="table-container">
+  <div class="table-wrapper">
+    {{ table_html_cold_hours | safe }}
+  </div>
+  <div class="table-wrapper">
+    {{ table_html_missing | safe }}
+  </div>`;
   </script>
 
   <script src="app/static/script.js" defer></script>
