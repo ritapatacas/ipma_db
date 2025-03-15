@@ -1,12 +1,12 @@
 import pandas as pd
 from datetime import datetime
 from prettytable import PrettyTable
-from connections import get_mongo_collection
-from fetch import fetch_and_store_station_data
+from connections import get_mongo_collection, observations_db
+from fetch import fetch_and_store_station_data, warnings_by_region, fetch_daily_precipitation, fetch_evapotranspiration
 from utils import clean_no_data, export_json, logger, WIND_DIR, DATE_FORMAT, OBSERVATIONS_COLUMN_MAPPING
 from meteoblue import show_forecast
 
-collection = get_mongo_collection()
+collection = observations_db
 
 def _load_weather_data() -> pd.DataFrame:
     """Central function to load and preprocess raw data"""
@@ -80,7 +80,7 @@ def observations(last_n: int = 48) -> pd.DataFrame:
     latest = df.tail(last_n).sort_values('datetime', ascending=False)
     display_df = latest.assign(
         date=latest['datetime'].dt.strftime(DATE_FORMAT["date"]),
-        time=latest['datetime'].dt.strftime("%H:%M")
+        time=latest['datetime'].dt.strftime("%Hh")
     ).drop(columns=['datetime'])[['date', 'time', 'temp', 'wind dir', 'wind km', 'prec', 'rad']]
 
     return display_df
@@ -166,20 +166,21 @@ def print_summary_table(summary_df: pd.DataFrame, title: str, value_col: str, gr
 
 if __name__ == "__main__":
     fetch_and_store_station_data()
+    warnings_by_region()
+
+    precipitation_csv = fetch_daily_precipitation()
+    evapotranspiration_csv = fetch_evapotranspiration()
     
-    # Display observations
+    if precipitation_csv:
+        print("\n== Daily Precipitation ==\n", precipitation_csv[:5000])
+    if evapotranspiration_csv:
+        print("\n== Evapotranspiration ==\n", evapotranspiration_csv[:500])
+    
     
     print_data_table(observations(), "observations")
-
-    # Cold hours analysis
     cold_summary = summarize_cold_hours("month")
     print_summary_table(cold_summary, "cold hours", "cold", "month")
-    
-    # Missing entries analysis
     missing_summary = summarize_missing_entries("week")
     print_summary_table(missing_summary, "missing", "missing", "week")
-    
-    # Forecast display (assuming show_forecast uses print_data_table internally)
     show_forecast()
-    
     export_json(collection)

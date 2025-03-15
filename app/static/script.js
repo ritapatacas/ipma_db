@@ -1,79 +1,85 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const btnThemeToggle = document.getElementById('theme-toggle');
-  const showcaseDiv = document.getElementById('showcase');
-  
-  const btnForecast = document.getElementById('btn-forecast');
-  const btnObservations = document.getElementById('btn-observations');
-  const btnDashboard = document.getElementById('btn-dashboard');
+  const showcaseDiv = document.getElementById("showcase");
+
+  const btnForecast = document.getElementById("btn-forecast");
+  const btnObservations = document.getElementById("btn-observations");
+  const btnDashboard = document.getElementById("btn-dashboard");
   const allButtons = [btnForecast, btnObservations, btnDashboard];
 
   // TOGGLE THEME
-  btnThemeToggle.addEventListener('click', () => {
-    const currentTheme = document.documentElement.getAttribute('data-theme');
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
+  document.getElementById("theme-toggle").addEventListener("click", () => {
+    const currentTheme = document.documentElement.getAttribute("data-theme");
+    const newTheme = currentTheme === "dark" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", newTheme);
+    localStorage.setItem("theme", newTheme);
   });
 
-  // Função para atualizar o showcase e o URL
-  function updateShowcase(content, page) {
-    showcaseDiv.innerHTML = content;
-    history.pushState({ page: page }, '', `?p=${page}`);
-    updateButtonStyles(page);
+  function getForecastTable() {
+    return window.innerWidth <= 1025 ? window.forecastTableMobile : window.forecastTable;
   }
 
-  // Função para definir o botão "ativo" com underline via aria-current
-  function updateButtonStyles(page) {
-    document.querySelectorAll('nav a[data-page]').forEach(btn => {
-      if (btn.dataset.page === page) {
-        btn.setAttribute('aria-current', 'p');
-      } else {
-        btn.removeAttribute('aria-current');
-      }
-    });
-  }
-  
-  
-
-  // Função para ler o parâmetro da URL e mostrar o conteúdo correspondente
-  function loadPageFromUrl() {
-    const params = new URLSearchParams(window.location.search);
-    const page = params.get('p') || 'forecast'; // default forecast
-
+  function updateShowcase(page) {
+    let content;
     switch (page) {
-      case 'forecast':
-        showcaseDiv.innerHTML = window.forecastTable;
+      case "forecast":
+        content = getForecastTable();
         break;
-      case 'observations':
-        showcaseDiv.innerHTML = window.observationsTable;
+      case "observations":
+        content = window.observationsTable;
         break;
-      case 'dashboard':
-        showcaseDiv.innerHTML = window.dashboardTable;
+      case "dashboard":
+        content = window.dashboardTable;
         break;
       default:
-        showcaseDiv.innerHTML = '<p>Page not found</p>';
+        content = "<p>Page not found</p>";
     }
+
+    showcaseDiv.innerHTML = content;
+    window.location.hash = page;
     updateButtonStyles(page);
   }
 
-  // Eventos dos botões com showcase + URL
-  btnForecast.addEventListener('click', () => {
-    updateShowcase(window.forecastTable, 'forecast');
+  function updateButtonStyles(page) {
+    document.querySelectorAll("nav a[data-page]").forEach((btn) => {
+      btn.dataset.page === page
+        ? btn.classList.add("active")
+        : btn.classList.remove("active");
+    });
+  }
+
+  function updateNavbarText() {
+    const width = window.innerWidth;
+    if (btnForecast && btnObservations && btnDashboard) {
+      if (width <= 1025) {
+        btnForecast.innerHTML = '<i class="fa-solid fa-cloud-sun-rain"></i>';
+        btnObservations.innerHTML = '<i class="fa-solid fa-eye"></i>';
+        btnDashboard.innerHTML = '<i class="fa-solid fa-chart-line"></i>';
+      } else {
+        btnForecast.textContent = "forecast";
+        btnObservations.textContent = "observations";
+        btnDashboard.textContent = "dashboard";
+      }
+    }
+  }
+
+  function loadPageFromHash() {
+    const page = window.location.hash.replace("#", "") || "forecast";
+    updateShowcase(page);
+  }
+
+  // Attach event listeners
+  btnForecast.addEventListener("click", () => updateShowcase("forecast"));
+  btnObservations.addEventListener("click", () => updateShowcase("observations"));
+  btnDashboard.addEventListener("click", () => updateShowcase("dashboard"));
+
+  window.addEventListener("hashchange", loadPageFromHash);
+  window.addEventListener("resize", () => {
+    if (window.location.hash.includes("forecast")) {
+      updateShowcase("forecast"); // Refresh the forecast table on resize
+    }
+    updateNavbarText();
   });
 
-  btnObservations.addEventListener('click', () => {
-    updateShowcase(window.observationsTable, 'observations');
-  });
-
-  btnDashboard.addEventListener('click', () => {
-    updateShowcase(window.dashboardTable, 'dashboard');
-  });
-
-  // Detetar navegação via back/forward do browser
-  window.addEventListener('popstate', () => {
-    loadPageFromUrl();
-  });
-
-  // Carregar a página correta ao abrir o site
-  loadPageFromUrl();
+  updateNavbarText();
+  loadPageFromHash();
 });

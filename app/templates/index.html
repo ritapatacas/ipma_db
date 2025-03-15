@@ -1,59 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="light dark">
-
-  <script>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <script src="https://kit.fontawesome.com/e96450527c.js"
+      crossorigin="anonymous"></script>
+    <script>
     const currentTheme = localStorage.getItem('theme') || 'light';
     document.documentElement.setAttribute('data-theme', currentTheme);
   </script>
 
-  <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
-  <link rel="stylesheet" href="app/static/css/style.css">
+    <link rel="stylesheet"
+      href="app\static\css\pico\pico.blue.min.css">
+    <link rel="stylesheet" href="app/static/css/style.css">
 
-  <title>{{ title }}</title>
-</head>
+    <title>{{ title }}</title>
+  </head>
 
-<body>
-  <main class="container">
-    <nav>
-      <ul>
-        <li><h1 class="title"><strong>{{ title }}</strong></h1></li>
-      </ul>
-      <ul class="nav-links">
-        <li><a href="?p=forecast" id="btn-forecast" class="button secondary" data-page="forecast">forecast</a></li>
-        <li><a href="?p=observations" id="btn-observations" class="button secondary" data-page="observations">observations</a></li>
-        <li><a href="?p=dashboard" id="btn-dashboard" class="button secondary" data-page="dashboard">dashboard</a></li>
-        <li><div id="theme-toggle" class="contrast">◑</div></li>
-      </ul>
-    </nav>
+  <body>
 
-    <!-- Forecast default wrapped in responsive wrapper -->
-    <div id="showcase" class="showcase">
-      <div class="table-wrapper">
-        {{ forecast_table | safe }}
+    <main class="container">
+      <nav>
+        <ul>
+          <li><h1 class="title"><strong>The Owls Are Not What They
+                Berrie</strong></h1></li>
+        </ul>
+        <ul class="nav-links">
+          <li><a href="#forecast" id="btn-forecast" class="button secondary"
+              data-page="forecast">forecast</a></li>
+          <li><a href="#observations" id="btn-observations"
+              class="button secondary"
+              data-page="observations">observations</a></li>
+          <li><a href="#dashboard" id="btn-dashboard" class="button secondary"
+              data-page="dashboard">dashboard</a></li>
+          <li><div id="theme-toggle" class="contrast"><i
+                class="fa-duotone fa-solid fa-circle-half-stroke"></i></div></li>
+        </ul>
+      </nav>
+
+      <div class="warning-timeline">
+        {{ warnings_timeline_html_mobile | safe }}
       </div>
-    </div>
-  </main>
 
-  <!-- Tables as variables -->
-  <script>
-    window.forecastTable = `<div class="table-wrapper">{% autoescape false %}{{ table_html_forecast }}{% endautoescape %}</div>`;
+      <!-- Forecast Table (Both Versions) -->
+      <div id="showcase" class="showcase">
+        <div class="table-wrapper desktop-view">
+          {{ table_html_forecast | safe }}
+        </div>
+        <div class="table-wrapper mobile-view">
+          {{ table_html_forecast_mobile | safe }}
+        </div>
+      </div>
+    </main>
+
+    <!-- Tables as variables -->
+    <script>
+    window.forecastTable = `<div class="table-wrapper desktop-view">{% autoescape false %}{{ table_html_forecast }}{% endautoescape %}</div>`;
+    window.forecastTableMobile = `<div class="table-wrapper mobile-view">{% autoescape false %}{{ table_html_forecast_mobile }}{% endautoescape %}</div>`;
     window.observationsTable = `<div class="table-wrapper">{% autoescape false %}{{ table_html_observations }}{% endautoescape %}</div>`;
     window.dashboardTable = `<div class="table-container">
-  <div class="table-wrapper">
-    {{ table_html_cold_hours | safe }}
-  </div>
-  <div class="table-wrapper">
-    {{ table_html_missing | safe }}
-  </div>`;
+      <div class="table-wrapper">
+        {{ table_html_cold_hours | safe }}
+      </div>
+      <div class="table-wrapper">
+        {{ table_html_missing | safe }}
+      </div>
+      <div class="warning-timeline">
+        {{ warnings_timeline | safe }}
+      </div>
+    </div>`;
   </script>
 
-  <script src="app/static/script.js" defer></script>
+    <script src="app/static/script.js" defer></script>
 
-</body>
+  </body>
 
 </html>

@@ -1,9 +1,10 @@
 import os
 from jinja2 import Environment, FileSystemLoader
 import pandas as pd
+from collections import defaultdict
 from bs4 import BeautifulSoup
 from meteoblue import parse_soup_forecast
-from analyze import observations, summarize_cold_hours, summarize_missing_entries
+from analyze import observations, summarize_cold_hours, summarize_missing_entries, warnings_by_region
 
 df_forecast = pd.DataFrame(parse_soup_forecast())
 df_observations = pd.DataFrame(observations())
@@ -54,22 +55,115 @@ def apply_row_span_for_date_column(html_table):
 def format_forecast_df(df: pd.DataFrame) -> pd.DataFrame:
     df = df.copy()
 
-    # Format min, max, and prec mm to 2 decimal places, handle NaN
     for col in ['min', 'max', 'prec mm']:
         if col in df.columns:
             df[col] = df[col].apply(lambda x: f"{float(x):.2f}" if pd.notna(x) else "-")
     
-    # Leave prob % as is (assuming it's already correct)
+    return df
+
+def format_forecast_df_mobile(df: pd.DataFrame) -> pd.DataFrame:
+    df = df.copy()
+    
+    if {'date', 'weekday', 'min', 'max', 'prec mm', 'prob %'}.issubset(df.columns):
+        df['date'] = df['date'].str.extract(r'-(\d+)$')
+        df['day'] = df['weekday'].astype(str) + ' (' + df['date'].astype(str) + ')'    
+        df = df[['day', 'min', 'max', 'prec mm', 'prob %']]
+    
+    df = df.head(7)
+    
     return df
 
 
-df_forecast = format_forecast_df(df_forecast)
 
-table_html_forecast = df_forecast.to_html(index=False, border=0, classes="custom-table").replace('`', '\\`')
+df_forecast = format_forecast_df(df_forecast)
+df_forecast_mobile = format_forecast_df_mobile(df_forecast)
+
+table_html_forecast = df_forecast.to_html(index=False, border=0, classes="custom-table desktop-view").replace('`', '\\`')
+table_html_forecast_mobile = df_forecast_mobile.to_html(index=False, border=0, classes="custom-table mobile-view").replace('`', '\\`')
+
 table_html_observations_raw = df_observations.to_html(index=False, border=0, classes="custom-table").replace('`', '\\`')
 table_html_observations = apply_row_span_for_date_column(table_html_observations_raw)
 table_html_missing = df_show_missing_entries.to_html(index=False, border=0, classes="custom-table").replace('`', '\\`')
 table_html_cold_hours = df_cold_hours.to_html(index=False, border=0, classes="custom-table").replace('`', '\\`')
+
+
+ICONS = {
+    "Nevoeiro": "fa-smog",
+    "Tempo Quente": "fa-temperature-high",
+    "Tempo Frio": "fa-temperature-low",
+    "Precipitação": "fa-cloud-rain",
+    "Neve": "fa-snowflake",
+    "Trovoada": "fa-bolt",
+    "Vento": "fa-wind"
+}
+
+def generate_warning_timeline(warnings: list) -> str:
+    timeline_html = ''
+    for warning in warnings:
+        icon = ICONS.get(warning['awarenessTypeName'], 'fa-triangle-exclamation')
+        color = warning['awarenessLevelID']
+        start = pd.to_datetime(warning['startTime']).strftime("%d-%m")
+        end = pd.to_datetime(warning['endTime']).strftime("%d-%m")
+        areas = ', '.join(warning['idsAreaAviso'])
+        timeline_html += f'''
+        <div class="event {color}" title="Áreas: {areas}">
+          <i class="fa-solid {icon}"></i> {warning['awarenessTypeName']} ({start} → {end})
+        </div>
+        '''
+    return timeline_html
+
+def generate_warning_timeline_mobile(warnings: list) -> str:
+    grouped_warnings = defaultdict(list)
+
+    for warning in warnings:
+        key = (warning['startTime'], warning['endTime'], warning['awarenessLevelID'])
+        icon = ICONS.get(warning['awarenessTypeName'], 'fa-triangle-exclamation')
+        areas = ', '.join(warning['idsAreaAviso'])
+        grouped_warnings[key].append({'icon': icon, 'type': warning['awarenessTypeName'], 'areas': areas})
+
+    timeline_html = '<div id="warnings">'
+    for (startTime, endTime, color), warnings_list in grouped_warnings.items():
+        start = pd.to_datetime(startTime).strftime("%d-%m")
+        end = pd.to_datetime(endTime).strftime("%d-%m")
+        icons_html = ''
+        title_parts = []
+        
+        for w in warnings_list:
+            icons_html += f'<i class="fa-solid {w["icon"]}"></i> '
+            title_parts.append(f'{w["type"]} [{w["areas"]}]')
+
+        title = " | ".join(title_parts)
+
+        timeline_html += f'''
+        <div class="event {color}" title="{title}">
+            {icons_html} ({start} → {end})
+        </div>
+        '''
+    timeline_html += '</div>'
+    return timeline_html
+
+
+warnings_data = warnings_by_region()
+
+warnings_timeline_html = generate_warning_timeline(warnings_data["warnings"])
+warnings_timeline_html_mobile = generate_warning_timeline_mobile(warnings_data["warnings"])
+
+def generate_warning_timeline_mobile(warnings: list) -> str:
+    timeline_html = ''
+    for warning in warnings:
+        icon = ICONS.get(warning['awarenessTypeName'], 'fa-triangle-exclamation')
+        color = warning['awarenessLevelID']
+        start = pd.to_datetime(warning['startTime']).strftime("%d-%m")
+        end = pd.to_datetime(warning['endTime']).strftime("%d-%m")
+        areas = ', '.join(warning['idsAreaAviso'])
+        timeline_html += f'''
+        <div class="event {color}" title="Warnign: {warning['awarenessTypeName']} For: {areas}">
+          <i class="fa-solid {icon}"></i> ({start} → {end})
+        </div>
+        '''
+    return timeline_html
+
+
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 TEMPLATES_DIR = os.path.join(BASE_DIR, "templates")
@@ -81,9 +175,12 @@ html = template.render(
     title="The Owls Are Not What They Berrie",
     forecast_table=df_forecast.to_html(index=False, border=0, classes="custom-table"),
     table_html_forecast=table_html_forecast,
+    table_html_forecast_mobile=table_html_forecast_mobile,
     table_html_observations=table_html_observations,
     table_html_missing=table_html_missing,
-    table_html_cold_hours=table_html_cold_hours
+    table_html_cold_hours=table_html_cold_hours,
+    warnings_timeline=warnings_timeline_html,
+    warnings_timeline_html_mobile=warnings_timeline_html_mobile
 )
 
 

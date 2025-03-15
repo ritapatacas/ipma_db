@@ -1,6 +1,9 @@
 mongo:
   db_name: "ipma"
-  collection_name: "ansiao"
+  collections:
+    observations: "ansiao"
+    precipitation: "precipitation"
+    evapotranspiration: "evapotranspiration"
 
 location_coordinates: "39.940528, -8.168023"
 

@@ -4,7 +4,7 @@ from collections import defaultdict
 from connections import get_mongo_collection, IPMA, IPMA_API_URIS
 from utils import parse_datetime, logger
 
-collection = get_mongo_collection()
+
 
 # fetch observations data for ansriao station from IPMA API
 def fetch_stations_data():
@@ -43,9 +43,9 @@ def fetch_and_store_station_data():
 
     try:
         for entry in station_data:
-            existing_entry = collection.find_one({"data_hora": entry["data_hora"]})
+            existing_entry = observations.find_one({"data_hora": entry["data_hora"]})
             if not existing_entry or existing_entry != entry:
-                collection.update_one(
+                observations.update_one(
                     {"data_hora": entry["data_hora"]}, {"$set": entry}, upsert=True
                 )
         logger.info(f"Fetched, processed, and stored {len(station_data)} records successfully")
@@ -85,7 +85,8 @@ def fetch_warnings():
         logger.error(f"{e} error fetching warnings")
         return None
 
-def aggregate_warnings_by_region(organized_warnings):
+def warnings_by_region():
+    organized_warnings = fetch_warnings()
     summary_dict = defaultdict(lambda: {"idsAreaAviso": []})
 
     for area, warnings in organized_warnings.items():
@@ -132,8 +133,41 @@ def fetch_daily_forecast():
         logger.error(f"{e} error fetching daily forecast")
         return None
 
+def fetch_daily_precipitation():
+    try:
+        res = requests.get(IPMA_API_URIS["daily_precipitation"])
+        print("Request for " , IPMA_API_URIS["daily_precipitation"])
+        res.raise_for_status()
+        logger.info(f"✅ Successfully fetched daily precipitation.")
+        return res.text  # Return CSV content as string
+    except requests.RequestException as e:
+        logger.error(f"❌ Error fetching daily precipitation: {e}")
+        return None
+
+def fetch_evapotranspiration():
+    try:
+        res = requests.get(IPMA_API_URIS["evapotranspiration"])
+        print("Request for " , IPMA_API_URIS["evapotranspiration"])
+        res.raise_for_status()
+        logger.info(f"✅ Successfully fetched evapotranspiration.")
+        return res.text  # Return CSV content as string
+    except requests.RequestException as e:
+        logger.error(f"❌ Error fetching evapotranspiration: {e}")
+        return None
+
+def fetch_pdsi():
+    try:
+        res = requests.get(IPMA_API_URIS["pdsi"])
+        print("Request for " , IPMA_API_URIS["pdsi"])
+        res.raise_for_status()
+        logger.info(f"✅ Successfully fetched PDSI.")
+        return res.text 
+    except requests.RequestException as e:
+        logger.error(f"❌ Error fetching PDSI: {e}")
+        return None
 
 if __name__ == "__main__":
     fetch_and_store_station_data()
+    fetch_pdsi()
     # aggregate_warnings_by_region(fetch_warnings())
     # fetch_daily_forecast()

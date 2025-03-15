@@ -19,25 +19,26 @@ config = load_config()
 
 # db connection
 load_dotenv()
-MONGO_DB_NAME = config["mongo"]["db_name"]
-MONGO_COLLECTION_NAME = config["mongo"]["collection_name"]
+MONGO_DB = config["mongo"]["db_name"]
+MONGO_OBSERVATIONS = config["mongo"]["collections"]["observations"]
+MONGO_PRECIPITATION = "precipitation"
+MONGO_EVAPOTRANSPIRATION = "evapotranspiration"
+MONGO_PDSI = "pdsi"
 
-print(MONGO_DB_NAME)
-print(MONGO_COLLECTION_NAME)
 
 # ipma requests data
 IPMA = config["ipma"]
 IPMA_API_URIS = {
     "station_observations": "https://api.ipma.pt/open-data/observation/meteorology/stations/observations.json",
     "warnings": "https://api.ipma.pt/open-data/forecast/warnings/warnings_www.json",
-    "daily_forecast": "https://api.ipma.pt/open-data/forecast/meteorology/cities/daily/{globalIdLocal}.json",
-    "daily_precipitation": "https://api.ipma.pt/open-data/observation/climate/precipitation-total/{DISTRICT}/mrrto-{DICO}-{MUNICIPALITY}.csv",
-    "evapotranspiration": "https://api.ipma.pt/open-data/observation/climate/evapotranspiration/{DISTRICT}/etp-{DICO}-{MUNICIPALITY}.csv",
-    "pdsi": "https://api.ipma.pt/open-data/observation/climate/mpdsi/{DISTRICT}/mpdsi-{DICO}-{MUNICIPALITY}.csv"
+    "daily_forecast": f"https://api.ipma.pt/open-data/forecast/meteorology/cities/daily/{IPMA['closest_region']['globalIdLocal']}.json",
+    "daily_precipitation": f"https://api.ipma.pt/open-data/observation/climate/precipitation-total/{IPMA['district']}/mrrto-{IPMA['dico']}-{IPMA['municipality']}.csv",
+    "evapotranspiration": f"https://api.ipma.pt/open-data/observation/climate/evapotranspiration/{IPMA['district']}/et0-{IPMA['dico']}-{IPMA['municipality']}.csv",
+    "pdsi": f"https://api.ipma.pt/open-data/observation/climate/mpdsi/{IPMA['district']}/mpdsi-{IPMA['dico']}-{IPMA['municipality']}.csv"
 }
 
 
-def get_mongo_collection():
+def get_mongo_db():
     MONGO_URI = os.getenv("MONGO_URI")
 
     client = MongoClient(
@@ -46,5 +47,12 @@ def get_mongo_collection():
         tlsAllowInvalidCertificates=False,
         tlsCAFile=certifi.where(),
     )
-    db = client[MONGO_DB_NAME]
-    return db[MONGO_COLLECTION_NAME]
+    return client[MONGO_DB]
+
+def get_mongo_collection(collection):
+    db = get_mongo_db()
+    return db[collection]
+
+observations_db = get_mongo_collection(MONGO_OBSERVATIONS)
+precipitation_db = get_mongo_collection(MONGO_PRECIPITATION)
+pdsi_db = get_mongo_collection(MONGO_PDSI)
