@@ -1,40 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="light dark">
-
-  <script>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <script src="https://kit.fontawesome.com/e96450527c.js"
+      crossorigin="anonymous"></script>
+    <script>
     const currentTheme = localStorage.getItem('theme') || 'light';
     document.documentElement.setAttribute('data-theme', currentTheme);
   </script>
 
-  <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
-  <link rel="stylesheet" href="app/static/css/style.css">
+    <link rel="stylesheet"
+      href="app\static\css\pico\pico.blue.min.css">
+    <link rel="stylesheet" href="app/static/css/style.css">
 
-  <title>The Owls Are Not What They Berrie</title>
-</head>
+    <title>The Owls Are Not What They Berrie</title>
+  </head>
 
-<body>
-  <main class="container">
-    <nav>
-      <ul>
-        <li><h1 class="title"><strong>The Owls Are Not What They Berrie</strong></h1></li>
-      </ul>
-      <ul class="nav-links">
-        <li><a href="?p=forecast" id="btn-forecast" class="button secondary" data-page="forecast">forecast</a></li>
-        <li><a href="?p=observations" id="btn-observations" class="button secondary" data-page="observations">observations</a></li>
-        <li><a href="?p=dashboard" id="btn-dashboard" class="button secondary" data-page="dashboard">dashboard</a></li>
-        <li><div id="theme-toggle" class="contrast">◑</div></li>
-      </ul>
-    </nav>
+  <body>
 
-    <!-- Forecast default wrapped in responsive wrapper -->
-    <div id="showcase" class="showcase">
-      <div class="table-wrapper">
-        <table class="dataframe custom-table">
+    <main class="container">
+      <nav>
+        <ul>
+          <li><h1 class="title"><strong>The Owls Are Not What They
+                Berrie</strong></h1></li>
+        </ul>
+        <ul class="nav-links">
+          <li><a href="#forecast" id="btn-forecast" class="button secondary"
+              data-page="forecast">forecast</a></li>
+          <li><a href="#observations" id="btn-observations"
+              class="button secondary"
+              data-page="observations">observations</a></li>
+          <li><a href="#dashboard" id="btn-dashboard" class="button secondary"
+              data-page="dashboard">dashboard</a></li>
+          <li><div id="theme-toggle" class="contrast"><i
+                class="fa-duotone fa-solid fa-circle-half-stroke"></i></div></li>
+        </ul>
+      </nav>
+
+      <div class="warning-timeline">
+        <div id="warnings">
+        <div class="event yellow" title="Precipitação [LRA]">
+            <i class="fa-solid fa-cloud-rain"></i>  (16-03 → 17-03)
+        </div>
+        
+        <div class="event yellow" title="Precipitação [LRA, CBO, CBR]">
+            <i class="fa-solid fa-cloud-rain"></i>  (17-03 → 18-03)
+        </div>
+        
+        <div class="event green" title="Nevoeiro [LRA, CBO, CBR] | Tempo Quente [LRA, CBO, CBR] | Tempo Frio [LRA, CBO, CBR] | Precipitação [LRA, CBO, CBR] | Neve [LRA, CBO, CBR] | Trovoada [LRA, CBO, CBR] | Vento [LRA, CBO, CBR]">
+            <i class="fa-solid fa-smog"></i> <i class="fa-solid fa-temperature-high"></i> <i class="fa-solid fa-temperature-low"></i> <i class="fa-solid fa-cloud-rain"></i> <i class="fa-solid fa-snowflake"></i> <i class="fa-solid fa-bolt"></i> <i class="fa-solid fa-wind"></i>  (15-03 → 18-03)
+        </div>
+        
+        <div class="event yellow" title="Neve [CBO]">
+            <i class="fa-solid fa-snowflake"></i>  (15-03 → 16-03)
+        </div>
+        </div>
+      </div>
+
+      <!-- Forecast Table (Both Versions) -->
+      <div id="showcase" class="showcase">
+        <div class="table-wrapper desktop-view">
+          <table class="dataframe custom-table desktop-view">
   <thead>
     <tr style="text-align: right;">
       <th>date</th>
@@ -54,9 +83,9 @@
       <td>37.74</td>
       <td>53.10</td>
       <td>55%</td>
-      <td>0.21</td>
+      <td>0.11</td>
       <td>85%</td>
-      <td>Mostly cloudy with rain</td>
+      <td>Mostly cloudy with occasional rain</td>
     </tr>
     <tr>
       <td>3-16</td>
@@ -64,7 +93,7 @@
       <td>43.75</td>
       <td>54.77</td>
       <td>55%</td>
-      <td>0.32</td>
+      <td>0.29</td>
       <td>85%</td>
       <td>Mostly cloudy with rain</td>
     </tr>
@@ -113,7 +142,7 @@
       <td>Fri</td>
       <td>47.17</td>
       <td>52.50</td>
-      <td>30%</td>
+      <td>25%</td>
       <td>0.54</td>
       <td>95%</td>
       <td>Mostly cloudy with rain</td>
@@ -190,13 +219,77 @@
     </tr>
   </tbody>
 </table>
+        </div>
+        <div class="table-wrapper mobile-view">
+          <table class="dataframe custom-table mobile-view">
+  <thead>
+    <tr style="text-align: right;">
+      <th>day</th>
+      <th>min</th>
+      <th>max</th>
+      <th>prec mm</th>
+      <th>prob %</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Sat (15)</td>
+      <td>37.74</td>
+      <td>53.10</td>
+      <td>0.11</td>
+      <td>85%</td>
+    </tr>
+    <tr>
+      <td>Sun (16)</td>
+      <td>43.75</td>
+      <td>54.77</td>
+      <td>0.29</td>
+      <td>85%</td>
+    </tr>
+    <tr>
+      <td>Mon (17)</td>
+      <td>48.06</td>
+      <td>55.69</td>
+      <td>0.80</td>
+      <td>95%</td>
+    </tr>
+    <tr>
+      <td>Tue (18)</td>
+      <td>46.36</td>
+      <td>56.08</td>
+      <td>0.16</td>
+      <td>70%</td>
+    </tr>
+    <tr>
+      <td>Wed (19)</td>
+      <td>48.04</td>
+      <td>55.81</td>
+      <td>1.39</td>
+      <td>70%</td>
+    </tr>
+    <tr>
+      <td>Thu (20)</td>
+      <td>46.60</td>
+      <td>51.60</td>
+      <td>1.11</td>
+      <td>90%</td>
+    </tr>
+    <tr>
+      <td>Fri (21)</td>
+      <td>47.17</td>
+      <td>52.50</td>
+      <td>0.54</td>
+      <td>95%</td>
+    </tr>
+  </tbody>
+</table>
+        </div>
       </div>
-    </div>
-  </main>
+    </main>
 
-  <!-- Tables as variables -->
-  <script>
-    window.forecastTable = `<div class="table-wrapper"><table class="dataframe custom-table">
+    <!-- Tables as variables -->
+    <script>
+    window.forecastTable = `<div class="table-wrapper desktop-view"><table class="dataframe custom-table desktop-view">
   <thead>
     <tr style="text-align: right;">
       <th>date</th>
@@ -216,9 +309,9 @@
       <td>37.74</td>
       <td>53.10</td>
       <td>55%</td>
-      <td>0.21</td>
+      <td>0.11</td>
       <td>85%</td>
-      <td>Mostly cloudy with rain</td>
+      <td>Mostly cloudy with occasional rain</td>
     </tr>
     <tr>
       <td>3-16</td>
@@ -226,7 +319,7 @@
       <td>43.75</td>
       <td>54.77</td>
       <td>55%</td>
-      <td>0.32</td>
+      <td>0.29</td>
       <td>85%</td>
       <td>Mostly cloudy with rain</td>
     </tr>
@@ -275,7 +368,7 @@
       <td>Fri</td>
       <td>47.17</td>
       <td>52.50</td>
-      <td>30%</td>
+      <td>25%</td>
       <td>0.54</td>
       <td>95%</td>
       <td>Mostly cloudy with rain</td>
@@ -352,6 +445,68 @@
     </tr>
   </tbody>
 </table></div>`;
+    window.forecastTableMobile = `<div class="table-wrapper mobile-view"><table class="dataframe custom-table mobile-view">
+  <thead>
+    <tr style="text-align: right;">
+      <th>day</th>
+      <th>min</th>
+      <th>max</th>
+      <th>prec mm</th>
+      <th>prob %</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Sat (15)</td>
+      <td>37.74</td>
+      <td>53.10</td>
+      <td>0.11</td>
+      <td>85%</td>
+    </tr>
+    <tr>
+      <td>Sun (16)</td>
+      <td>43.75</td>
+      <td>54.77</td>
+      <td>0.29</td>
+      <td>85%</td>
+    </tr>
+    <tr>
+      <td>Mon (17)</td>
+      <td>48.06</td>
+      <td>55.69</td>
+      <td>0.80</td>
+      <td>95%</td>
+    </tr>
+    <tr>
+      <td>Tue (18)</td>
+      <td>46.36</td>
+      <td>56.08</td>
+      <td>0.16</td>
+      <td>70%</td>
+    </tr>
+    <tr>
+      <td>Wed (19)</td>
+      <td>48.04</td>
+      <td>55.81</td>
+      <td>1.39</td>
+      <td>70%</td>
+    </tr>
+    <tr>
+      <td>Thu (20)</td>
+      <td>46.60</td>
+      <td>51.60</td>
+      <td>1.11</td>
+      <td>90%</td>
+    </tr>
+    <tr>
+      <td>Fri (21)</td>
+      <td>47.17</td>
+      <td>52.50</td>
+      <td>0.54</td>
+      <td>95%</td>
+    </tr>
+  </tbody>
+</table></div>`;
     window.observationsTable = `<div class="table-wrapper"><table class="dataframe custom-table">
 <thead>
 <tr style="text-align: right;">
@@ -366,8 +521,26 @@
 </thead>
 <tbody>
 <tr>
-<td rowspan="12">15 Mar</td>
-<td>11:00</td>
+<td rowspan="14">15 Mar</td>
+<td>13h</td>
+<td>11.9</td>
+<td>SW</td>
+<td>5.4</td>
+<td>0.0</td>
+<td>1681.1</td>
+</tr>
+<tr>
+
+<td>12h</td>
+<td>12.4</td>
+<td>SW</td>
+<td>9.4</td>
+<td>0.0</td>
+<td>2303.9</td>
+</tr>
+<tr>
+
+<td>11h</td>
 <td>10.8</td>
 <td>SW</td>
 <td>8.3</td>
@@ -376,7 +549,7 @@
 </tr>
 <tr>
 
-<td>10:00</td>
+<td>10h</td>
 <td>9.3</td>
 <td>SW</td>
 <td>4.0</td>
@@ -385,7 +558,7 @@
 </tr>
 <tr>
 
-<td>09:00</td>
+<td>09h</td>
 <td>7.3</td>
 <td>SW</td>
 <td>3.6</td>
@@ -394,7 +567,7 @@
 </tr>
 <tr>
 
-<td>08:00</td>
+<td>08h</td>
 <td>4.5</td>
 <td>SW</td>
 <td>2.2</td>
@@ -403,7 +576,7 @@
 </tr>
 <tr>
 
-<td>07:00</td>
+<td>07h</td>
 <td>4.4</td>
 <td>N</td>
 <td>1.4</td>
@@ -412,7 +585,7 @@
 </tr>
 <tr>
 
-<td>06:00</td>
+<td>06h</td>
 <td>4.0</td>
 <td>NW</td>
 <td>1.1</td>
@@ -421,7 +594,7 @@
 </tr>
 <tr>
 
-<td>05:00</td>
+<td>05h</td>
 <td>4.2</td>
 <td>W</td>
 <td>0.4</td>
@@ -430,7 +603,7 @@
 </tr>
 <tr>
 
-<td>04:00</td>
+<td>04h</td>
 <td>4.3</td>
 <td>NW</td>
 <td>1.1</td>
@@ -439,7 +612,7 @@
 </tr>
 <tr>
 
-<td>03:00</td>
+<td>03h</td>
 <td>4.6</td>
 <td>NW</td>
 <td>4.0</td>
@@ -448,7 +621,7 @@
 </tr>
 <tr>
 
-<td>02:00</td>
+<td>02h</td>
 <td>6.2</td>
 <td>NW</td>
 <td>5.4</td>
@@ -457,7 +630,7 @@
 </tr>
 <tr>
 
-<td>01:00</td>
+<td>01h</td>
 <td>5.4</td>
 <td>NW</td>
 <td>6.1</td>
@@ -466,7 +639,7 @@
 </tr>
 <tr>
 
-<td>00:00</td>
+<td>00h</td>
 <td>5.3</td>
 <td>NW</td>
 <td>3.6</td>
@@ -475,7 +648,7 @@
 </tr>
 <tr>
 <td rowspan="24">14 Mar</td>
-<td>23:00</td>
+<td>23h</td>
 <td>6.2</td>
 <td>NW</td>
 <td>5.0</td>
@@ -484,7 +657,7 @@
 </tr>
 <tr>
 
-<td>22:00</td>
+<td>22h</td>
 <td>6.3</td>
 <td>NW</td>
 <td>4.3</td>
@@ -493,7 +666,7 @@
 </tr>
 <tr>
 
-<td>21:00</td>
+<td>21h</td>
 <td>6.7</td>
 <td>NW</td>
 <td>5.8</td>
@@ -502,7 +675,7 @@
 </tr>
 <tr>
 
-<td>20:00</td>
+<td>20h</td>
 <td>7.2</td>
 <td>NW</td>
 <td>6.5</td>
@@ -511,7 +684,7 @@
 </tr>
 <tr>
 
-<td>19:00</td>
+<td>19h</td>
 <td>8.7</td>
 <td>NW</td>
 <td>6.5</td>
@@ -520,7 +693,7 @@
 </tr>
 <tr>
 
-<td>18:00</td>
+<td>18h</td>
 <td>10.4</td>
 <td>N</td>
 <td>9.4</td>
@@ -529,7 +702,7 @@
 </tr>
 <tr>
 
-<td>17:00</td>
+<td>17h</td>
 <td>11.6</td>
 <td>NW</td>
 <td>8.6</td>
@@ -538,7 +711,7 @@
 </tr>
 <tr>
 
-<td>16:00</td>
+<td>16h</td>
 <td>12.1</td>
 <td>N</td>
 <td>7.6</td>
@@ -547,7 +720,7 @@
 </tr>
 <tr>
 
-<td>15:00</td>
+<td>15h</td>
 <td>12.7</td>
 <td>N</td>
 <td>12.2</td>
@@ -556,7 +729,7 @@
 </tr>
 <tr>
 
-<td>14:00</td>
+<td>14h</td>
 <td>12.9</td>
 <td>-</td>
 <td>11.5</td>
@@ -565,7 +738,7 @@
 </tr>
 <tr>
 
-<td>13:00</td>
+<td>13h</td>
 <td>12.6</td>
 <td>N</td>
 <td>12.6</td>
@@ -574,7 +747,7 @@
 </tr>
 <tr>
 
-<td>12:00</td>
+<td>12h</td>
 <td>11.1</td>
 <td>N</td>
 <td>14.8</td>
@@ -583,7 +756,7 @@
 </tr>
 <tr>
 
-<td>11:00</td>
+<td>11h</td>
 <td>9.6</td>
 <td>N</td>
 <td>4.3</td>
@@ -592,7 +765,7 @@
 </tr>
 <tr>
 
-<td>10:00</td>
+<td>10h</td>
 <td>7.9</td>
 <td>N</td>
 <td>4.0</td>
@@ -601,7 +774,7 @@
 </tr>
 <tr>
 
-<td>09:00</td>
+<td>09h</td>
 <td>5.6</td>
 <td>N</td>
 <td>9.7</td>
@@ -610,7 +783,7 @@
 </tr>
 <tr>
 
-<td>08:00</td>
+<td>08h</td>
 <td>4.6</td>
 <td>NE</td>
 <td>7.2</td>
@@ -619,7 +792,7 @@
 </tr>
 <tr>
 
-<td>07:00</td>
+<td>07h</td>
 <td>4.5</td>
 <td>NE</td>
 <td>9.4</td>
@@ -628,7 +801,7 @@
 </tr>
 <tr>
 
-<td>06:00</td>
+<td>06h</td>
 <td>5.0</td>
 <td>NE</td>
 <td>9.4</td>
@@ -637,7 +810,7 @@
 </tr>
 <tr>
 
-<td>05:00</td>
+<td>05h</td>
 <td>5.2</td>
 <td>NE</td>
 <td>9.7</td>
@@ -646,7 +819,7 @@
 </tr>
 <tr>
 
-<td>04:00</td>
+<td>04h</td>
 <td>5.9</td>
 <td>NE</td>
 <td>8.6</td>
@@ -655,7 +828,7 @@
 </tr>
 <tr>
 
-<td>03:00</td>
+<td>03h</td>
 <td>6.3</td>
 <td>NE</td>
 <td>5.8</td>
@@ -664,7 +837,7 @@
 </tr>
 <tr>
 
-<td>02:00</td>
+<td>02h</td>
 <td>7.3</td>
 <td>NE</td>
 <td>4.0</td>
@@ -673,7 +846,7 @@
 </tr>
 <tr>
 
-<td>01:00</td>
+<td>01h</td>
 <td>7.9</td>
 <td>N</td>
 <td>4.7</td>
@@ -682,7 +855,7 @@
 </tr>
 <tr>
 
-<td>00:00</td>
+<td>00h</td>
 <td>8.9</td>
 <td>NE</td>
 <td>5.0</td>
@@ -690,8 +863,8 @@
 <td>0.0</td>
 </tr>
 <tr>
-<td rowspan="12">13 Mar</td>
-<td>23:00</td>
+<td rowspan="10">13 Mar</td>
+<td>23h</td>
 <td>8.9</td>
 <td>NE</td>
 <td>4.7</td>
@@ -700,7 +873,7 @@
 </tr>
 <tr>
 
-<td>22:00</td>
+<td>22h</td>
 <td>8.8</td>
 <td>N</td>
 <td>4.3</td>
@@ -709,7 +882,7 @@
 </tr>
 <tr>
 
-<td>21:00</td>
+<td>21h</td>
 <td>8.8</td>
 <td>N</td>
 <td>2.5</td>
@@ -718,7 +891,7 @@
 </tr>
 <tr>
 
-<td>20:00</td>
+<td>20h</td>
 <td>8.3</td>
 <td>N</td>
 <td>1.8</td>
@@ -727,7 +900,7 @@
 </tr>
 <tr>
 
-<td>19:00</td>
+<td>19h</td>
 <td>10.1</td>
 <td>NW</td>
 <td>0.4</td>
@@ -736,7 +909,7 @@
 </tr>
 <tr>
 
-<td>18:00</td>
+<td>18h</td>
 <td>11.4</td>
 <td>NE</td>
 <td>5.8</td>
@@ -745,7 +918,7 @@
 </tr>
 <tr>
 
-<td>17:00</td>
+<td>17h</td>
 <td>10.2</td>
 <td>NE</td>
 <td>4.7</td>
@@ -754,7 +927,7 @@
 </tr>
 <tr>
 
-<td>16:00</td>
+<td>16h</td>
 <td>11.0</td>
 <td>NW</td>
 <td>7.2</td>
@@ -763,7 +936,7 @@
 </tr>
 <tr>
 
-<td>15:00</td>
+<td>15h</td>
 <td>12.0</td>
 <td>W</td>
 <td>8.6</td>
@@ -772,36 +945,18 @@
 </tr>
 <tr>
 
-<td>14:00</td>
+<td>14h</td>
 <td>12.8</td>
 <td>NW</td>
 <td>1.4</td>
 <td>0.3</td>
 <td>1066.9</td>
 </tr>
-<tr>
-
-<td>13:00</td>
-<td>13.9</td>
-<td>SE</td>
-<td>3.6</td>
-<td>0.0</td>
-<td>1234.5</td>
-</tr>
-<tr>
-
-<td>12:00</td>
-<td>13.0</td>
-<td>E</td>
-<td>4.7</td>
-<td>0.0</td>
-<td>1588.0</td>
-</tr>
 </tbody>
 </table></div>`;
     window.dashboardTable = `<div class="table-container">
-  <div class="table-wrapper">
-    <table class="dataframe custom-table">
+      <div class="table-wrapper">
+        <table class="dataframe custom-table">
   <thead>
     <tr style="text-align: right;">
       <th>period</th>
@@ -835,9 +990,9 @@
     </tr>
   </tbody>
 </table>
-  </div>
-  <div class="table-wrapper">
-    <table class="dataframe custom-table">
+      </div>
+      <div class="table-wrapper">
+        <table class="dataframe custom-table">
   <thead>
     <tr style="text-align: right;">
       <th>period</th>
@@ -875,11 +1030,55 @@
     </tr>
   </tbody>
 </table>
-  </div>`;
+      </div>
+      <div class="warning-timeline">
+        
+        <div class="event yellow" title="Áreas: LRA">
+          <i class="fa-solid fa-cloud-rain"></i> Precipitação (16-03 → 17-03)
+        </div>
+        
+        <div class="event yellow" title="Áreas: LRA, CBO, CBR">
+          <i class="fa-solid fa-cloud-rain"></i> Precipitação (17-03 → 18-03)
+        </div>
+        
+        <div class="event green" title="Áreas: LRA, CBO, CBR">
+          <i class="fa-solid fa-smog"></i> Nevoeiro (15-03 → 18-03)
+        </div>
+        
+        <div class="event green" title="Áreas: LRA, CBO, CBR">
+          <i class="fa-solid fa-temperature-high"></i> Tempo Quente (15-03 → 18-03)
+        </div>
+        
+        <div class="event green" title="Áreas: LRA, CBO, CBR">
+          <i class="fa-solid fa-temperature-low"></i> Tempo Frio (15-03 → 18-03)
+        </div>
+        
+        <div class="event green" title="Áreas: LRA, CBO, CBR">
+          <i class="fa-solid fa-cloud-rain"></i> Precipitação (15-03 → 18-03)
+        </div>
+        
+        <div class="event green" title="Áreas: LRA, CBO, CBR">
+          <i class="fa-solid fa-snowflake"></i> Neve (15-03 → 18-03)
+        </div>
+        
+        <div class="event green" title="Áreas: LRA, CBO, CBR">
+          <i class="fa-solid fa-bolt"></i> Trovoada (15-03 → 18-03)
+        </div>
+        
+        <div class="event green" title="Áreas: LRA, CBO, CBR">
+          <i class="fa-solid fa-wind"></i> Vento (15-03 → 18-03)
+        </div>
+        
+        <div class="event yellow" title="Áreas: CBO">
+          <i class="fa-solid fa-snowflake"></i> Neve (15-03 → 16-03)
+        </div>
+        
+      </div>
+    </div>`;
   </script>
 
-  <script src="app/static/script.js" defer></script>
+    <script src="app/static/script.js" defer></script>
 
-</body>
+  </body>
 
 </html>
