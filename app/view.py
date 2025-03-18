@@ -256,28 +256,28 @@ tables_js = template_tables.render(
     warnings_timeline=warnings_timeline_html,
 )
 
-# Save the rendered JavaScript file in app/static/, NOT templates/
-tables_js_path = os.path.abspath("static/tables.js")
-
-# Ensure the directory exists before writing
-os.makedirs(os.path.dirname(tables_js_path), exist_ok=True)
-
-with open(tables_js_path, "w", encoding="utf-8") as f:
-    f.write(tables_js)
-
-print(f"✅ tables.js saved at: {tables_js_path}")
-
-
-def save_html(html):
-    filenames = [
-        os.path.abspath("index.html"),  # Current directory
+def save_files(html, tables_js):
+    # Paths for saving files
+    paths = [
+        #os.path.abspath("index.html"),  # Current directory
         os.path.abspath(os.path.join("..", "index.html")),  # Parent directory
     ]
 
-    for path in filenames:
+    # Save index.html in multiple locations
+    for path in paths:
         with open(path, "w", encoding="utf-8") as f:
             f.write(html)
         print(f"✅ index.html saved at: {path}")
 
+    # Save tables.js in static directory
+    tables_js_path = os.path.abspath("app/static/tables.js")
 
-save_html(html)
+    # Ensure the static directory exists
+    os.makedirs(os.path.dirname(tables_js_path), exist_ok=True)
+
+    with open(tables_js_path, "w", encoding="utf-8") as f:
+        f.write(tables_js)
+
+    print(f"✅ tables.js saved at: {tables_js_path}")
+
+save_files(html, tables_js)
