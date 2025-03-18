@@ -47,7 +47,7 @@ jobs:
   update-view:
     runs-on: ubuntu-latest
     #needs: fetch-ipma
-    environment: meteoblue
+    environment: ipma
 
     steps:
       - name: Checkout repository
