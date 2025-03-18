@@ -97,13 +97,9 @@ jobs:
           git pull --rebase origin main
           git stash pop || echo "No stash to pop"
 
-          # Make sure app/static exists before adding files
-          mkdir -p app/static
-
-          # Explicitly track tables.js if untracked
+          # Force Git to track tables.js
           git add -f app/static/tables.js
           git add index.html
 
           git commit -m "update view" || echo "No changes to commit"
           git push
-
