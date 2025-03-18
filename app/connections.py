@@ -6,7 +6,7 @@ import yaml
 
 def load_config():
     base_dir = os.path.dirname(os.path.abspath(__file__))
-    config_path = os.path.abspath(os.path.join(base_dir, '../config.yml'))
+    config_path = os.path.abspath(os.path.join(base_dir, "../config.yml"))
 
     print(f"✅ Loading config from: {config_path}")
 
@@ -34,7 +34,7 @@ IPMA_API_URIS = {
     "daily_forecast": f"https://api.ipma.pt/open-data/forecast/meteorology/cities/daily/{IPMA['closest_region']['globalIdLocal']}.json",
     "daily_precipitation": f"https://api.ipma.pt/open-data/observation/climate/precipitation-total/{IPMA['district']}/mrrto-{IPMA['dico']}-{IPMA['municipality']}.csv",
     "evapotranspiration": f"https://api.ipma.pt/open-data/observation/climate/evapotranspiration/{IPMA['district']}/et0-{IPMA['dico']}-{IPMA['municipality']}.csv",
-    "pdsi": f"https://api.ipma.pt/open-data/observation/climate/mpdsi/{IPMA['district']}/mpdsi-{IPMA['dico']}-{IPMA['municipality']}.csv"
+    "pdsi": f"https://api.ipma.pt/open-data/observation/climate/mpdsi/{IPMA['district']}/mpdsi-{IPMA['dico']}-{IPMA['municipality']}.csv",
 }
 
 
@@ -49,9 +49,11 @@ def get_mongo_db():
     )
     return client[MONGO_DB]
 
+
 def get_mongo_collection(collection):
     db = get_mongo_db()
     return db[collection]
+
 
 observations_db = get_mongo_collection(MONGO_OBSERVATIONS)
 precipitation_db = get_mongo_collection(MONGO_PRECIPITATION)

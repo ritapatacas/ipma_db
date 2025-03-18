@@ -6,6 +6,7 @@ from utils import logger
 
 collection = get_mongo_collection("evapotranspiration")
 
+
 def process_and_store_evapotranspiration():
     data = fetch_evapotranspiration()
     df = pd.read_csv(StringIO(data))
@@ -18,19 +19,15 @@ def process_and_store_evapotranspiration():
             "maximum": float(row["maximum"]),
             "range": float(row["range"]),
             "mean": float(row["mean"]),
-            "std": float(row["std"])
+            "std": float(row["std"]),
         }
         records.append(record)
 
     for record in records:
-        collection.update_one(
-            {"date": record["date"]},
-            {"$set": record},
-            upsert=True
-        )
+        collection.update_one({"date": record["date"]}, {"$set": record}, upsert=True)
 
     logger.info(f"✅ {len(records)} records processed and stored in MongoDB.")
 
+
 if __name__ == "__main__":
     process_and_store_evapotranspiration()
-

@@ -1,7 +1,7 @@
 import requests
 import json
 from collections import defaultdict
-from connections import get_mongo_collection, IPMA, IPMA_API_URIS
+from connections import IPMA, IPMA_API_URIS, observations_db
 from utils import parse_datetime, logger
 
 
@@ -11,6 +11,7 @@ def fetch_stations_data():
     try:
         res = requests.get(IPMA_API_URIS["station_observations"])
         res.raise_for_status()
+        #print(res.json())
         return res.json()
     except requests.RequestException as e:
         logger.error(f"{e} error fetching")
@@ -43,9 +44,9 @@ def fetch_and_store_station_data():
 
     try:
         for entry in station_data:
-            existing_entry = observations.find_one({"data_hora": entry["data_hora"]})
+            existing_entry = observations_db.find_one({"data_hora": entry["data_hora"]})
             if not existing_entry or existing_entry != entry:
-                observations.update_one(
+                observations_db.update_one(
                     {"data_hora": entry["data_hora"]}, {"$set": entry}, upsert=True
                 )
         logger.info(f"Fetched, processed, and stored {len(station_data)} records successfully")
