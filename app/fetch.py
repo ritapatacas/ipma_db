@@ -86,6 +86,8 @@ def fetch_warnings():
         logger.error(f"{e} error fetching warnings")
         return None
 
+
+
 def warnings_by_region():
     organized_warnings = fetch_warnings()
     summary_dict = defaultdict(lambda: {"idsAreaAviso": []})
@@ -111,13 +113,18 @@ def warnings_by_region():
                 "text": warning["text"]
             })
 
-    aggregated_warnings = {"warnings": list(summary_dict.values())}
+    # Convert to list and sort by startTime
+    aggregated_warnings = {
+        "warnings": sorted(
+            list(summary_dict.values()), 
+            key=lambda w: w["startTime"]
+        )
+    }
 
     pretty_result = json.dumps(aggregated_warnings, indent=4, ensure_ascii=False)
     print(pretty_result)
 
     return aggregated_warnings
-
 
 # fetch daily forecast for closest region from IPMA API
 def fetch_daily_forecast():
