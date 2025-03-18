@@ -257,27 +257,25 @@ tables_js = template_tables.render(
 )
 
 def save_files(html, tables_js):
-    # Paths for saving files
-    paths = [
-        #os.path.abspath("index.html"),  # Current directory
-        os.path.abspath(os.path.join("..", "index.html")),  # Parent directory
-    ]
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # Inside app/
+    PROJECT_ROOT = os.path.abspath(os.path.join(BASE_DIR, ".."))  # Moves up to ipma_db/
 
-    # Save index.html in multiple locations
-    for path in paths:
-        with open(path, "w", encoding="utf-8") as f:
-            f.write(html)
-        print(f"✅ index.html saved at: {path}")
+    # Save index.html in the correct project directory
+    index_html_path = os.path.join(PROJECT_ROOT, "index.html")
 
-    # Save tables.js in static directory
-    tables_js_path = os.path.abspath("app/static/tables.js")
+    with open(index_html_path, "w", encoding="utf-8") as f:
+        f.write(html)
+    print(f"✅ index.html saved at: {index_html_path}")
 
-    # Ensure the static directory exists
+    # Save tables.js in static/ inside the correct project directory
+    tables_js_path = os.path.join(PROJECT_ROOT, "app/static/tables.js")
+
     os.makedirs(os.path.dirname(tables_js_path), exist_ok=True)
 
     with open(tables_js_path, "w", encoding="utf-8") as f:
         f.write(tables_js)
-
+    
     print(f"✅ tables.js saved at: {tables_js_path}")
+
 
 save_files(html, tables_js)
