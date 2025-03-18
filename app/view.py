@@ -130,6 +130,42 @@ def generate_warning_timeline(warnings: list) -> str:
     return timeline_html
 
 
+def generate_warning_table(warnings: list) -> str:
+    table_html = """
+    <table class="custom-table">
+        <thead>
+            <tr>
+                <th></th>
+                <th>start</th>
+                <th>end</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+    """
+
+
+    for warning in warnings:
+        icon = ICONS.get(warning["awarenessTypeName"], "fa-triangle-exclamation")
+        color = warning["awarenessLevelID"]  # Color class
+        start = pd.to_datetime(warning["startTime"]).strftime("%d-%m")
+        end = pd.to_datetime(warning["endTime"]).strftime("%d-%m")
+        areas = ", ".join(warning["idsAreaAviso"])
+
+        table_html += f"""
+        <tr class="{color}">
+            <td><i class="fa-solid {icon}"></i></td>
+            <td>{start}</td>
+            <td>{end}</td>
+            <td><span data-tooltip="{warning['awarenessTypeName']}{" [" + warning['text'] + "]" if warning['text'] else ""}">{areas}</span></td>
+        </tr>
+        """
+
+
+    table_html += "</tbody></table>"
+    return table_html
+
+
 def generate_warning_timeline_mobile(warnings: list) -> str:
     grouped_warnings = defaultdict(list)
 
@@ -141,7 +177,7 @@ def generate_warning_timeline_mobile(warnings: list) -> str:
             {"icon": icon, "type": warning["awarenessTypeName"], "areas": areas}
         )
 
-    timeline_html = '<div id="warnings">'
+    timeline_html = '<div id="warnings">' 
     for (startTime, endTime, color), warnings_list in grouped_warnings.items():
         start = pd.to_datetime(startTime).strftime("%d-%m")
         end = pd.to_datetime(endTime).strftime("%d-%m")
@@ -165,7 +201,7 @@ def generate_warning_timeline_mobile(warnings: list) -> str:
 
 warnings_data = warnings_by_region()
 
-warnings_timeline_html = generate_warning_timeline(warnings_data["warnings"])
+warnings_timeline_html = generate_warning_table(warnings_data["warnings"])
 warnings_timeline_html_mobile = generate_warning_timeline_mobile(
     warnings_data["warnings"]
 )
@@ -180,8 +216,10 @@ def generate_warning_timeline_mobile(warnings: list) -> str:
         end = pd.to_datetime(warning["endTime"]).strftime("%d-%m")
         areas = ", ".join(warning["idsAreaAviso"])
         timeline_html += f"""
-        <div class="event {color}" title="Warnign: {warning['awarenessTypeName']} For: {areas}">
-          <i class="fa-solid {icon}"></i> ({start} → {end})
+        <div class="event {color}" title="Warnign: {warning['awarenessTypeName']}">
+            
+          <i class="fa-solid {icon}" ></i> (<span data-tooltip="Warnign: {warning['awarenessTypeName']} For: {areas}">{start} → {end}></span>)
+        
         </div>
         """
     return timeline_html
@@ -204,6 +242,30 @@ html = template.render(
     warnings_timeline=warnings_timeline_html,
     warnings_timeline_html_mobile=warnings_timeline_html_mobile,
 )
+
+# Ensure we are loading from the correct templates directory
+template_tables = env.get_template("tables.js.jinja")
+
+# Render the JavaScript file
+tables_js = template_tables.render(
+    table_html_forecast=table_html_forecast,
+    table_html_forecast_mobile=table_html_forecast_mobile,
+    table_html_observations=table_html_observations,
+    table_html_missing=table_html_missing,
+    table_html_cold_hours=table_html_cold_hours,
+    warnings_timeline=warnings_timeline_html,
+)
+
+# Save the rendered JavaScript file in app/static/, NOT templates/
+tables_js_path = os.path.abspath("static/tables.js")
+
+# Ensure the directory exists before writing
+os.makedirs(os.path.dirname(tables_js_path), exist_ok=True)
+
+with open(tables_js_path, "w", encoding="utf-8") as f:
+    f.write(tables_js)
+
+print(f"✅ tables.js saved at: {tables_js_path}")
 
 
 def save_html(html):

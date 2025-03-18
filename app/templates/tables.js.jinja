@@ -1,0 +1,25 @@
+window.forecastTable = `<div class="table-wrapper desktop-view">
+{% autoescape false %}{{ table_html_forecast }}{% endautoescape %}</div>`;
+
+window.forecastTableMobile = `<div class="table-wrapper mobile-view">{% autoescape false %}{{ table_html_forecast_mobile
+  }}{% endautoescape %}</div>`;
+
+
+window.observationsTable = `<div class="table-wrapper">{% autoescape false %}{{ table_html_observations }}{%
+  endautoescape %}</div>`;
+
+
+window.dashboardTable = 
+`<div class="table-container">
+    <div class="table-wrapper">
+      {{ table_html_cold_hours | safe }}
+    </div>
+    <div class="table-wrapper">
+      {{ table_html_missing | safe }}
+    </div>
+
+  <div class="warning-timeline">
+    {{ warnings_timeline | safe }}
+  </div>
+</div>
+</div>`;

@@ -42,40 +42,17 @@
         </ul>
       </nav>
 
-      <div class="warning-timeline">
+{#       <div class="warning-timeline">
         {{ warnings_timeline_html_mobile | safe }}
-      </div>
+      </div> #}
 
       <!-- Forecast Table (Both Versions) -->
       <div id="showcase" class="showcase">
-        <div class="table-wrapper desktop-view">
-          {{ table_html_forecast | safe }}
-        </div>
-        <div class="table-wrapper mobile-view">
-          {{ table_html_forecast_mobile | safe }}
-        </div>
       </div>
     </main>
-
-    <!-- Tables as variables -->
-    <script>
-    window.forecastTable = `<div class="table-wrapper desktop-view">{% autoescape false %}{{ table_html_forecast }}{% endautoescape %}</div>`;
-    window.forecastTableMobile = `<div class="table-wrapper mobile-view">{% autoescape false %}{{ table_html_forecast_mobile }}{% endautoescape %}</div>`;
-    window.observationsTable = `<div class="table-wrapper">{% autoescape false %}{{ table_html_observations }}{% endautoescape %}</div>`;
-    window.dashboardTable = `<div class="table-container">
-      <div class="table-wrapper">
-        {{ table_html_cold_hours | safe }}
-      </div>
-      <div class="table-wrapper">
-        {{ table_html_missing | safe }}
-      </div>
-      <div class="warning-timeline">
-        {{ warnings_timeline | safe }}
-      </div>
-    </div>`;
-  </script>
-
+    <script src="app/static/tables.js" defer></script>
     <script src="app/static/script.js" defer></script>
+    
 
   </body>
 

@@ -171,7 +171,7 @@ td {
     border-bottom: 1px solid var(--pico-muted-border-color);
     white-space: normal;
     /* permite quebra de linha dentro da célula */
-    max-width: 300px;
+    max-width: 600px;
     /* (opcional) Limite máximo por célula */
     word-wrap: break-word;
     /* quebra palavras longas */
@@ -209,3 +209,24 @@ th {
 
 }
 
+
+
+
+
+.card {
+    position: relative;
+    padding: 1rem;
+    border: 1px solid var(--muted-border);
+    border-radius: var(--border-radius);
+    background: var(--card-background-color);
+    box-shadow: var(--shadow-sm);
+}
+.close-button {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background: transparent;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
