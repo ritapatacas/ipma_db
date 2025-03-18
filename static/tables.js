@@ -234,7 +234,25 @@ window.observationsTable = `<div class="table-wrapper"><table class="dataframe c
 </thead>
 <tbody>
 <tr>
-<td rowspan="14">18 Mar</td>
+<td rowspan="16">18 Mar</td>
+<td>15h</td>
+<td>12.9</td>
+<td>S</td>
+<td>8.6</td>
+<td>0.8</td>
+<td>593.4</td>
+</tr>
+<tr>
+
+<td>14h</td>
+<td>15.1</td>
+<td>S</td>
+<td>10.4</td>
+<td>0.0</td>
+<td>881.3</td>
+</tr>
+<tr>
+
 <td>13h</td>
 <td>16.0</td>
 <td>S</td>
@@ -576,7 +594,7 @@ window.observationsTable = `<div class="table-wrapper"><table class="dataframe c
 <td>0.0</td>
 </tr>
 <tr>
-<td rowspan="10">15 Mar</td>
+<td rowspan="8">15 Mar</td>
 <td>13h</td>
 <td>11.9</td>
 <td>SW</td>
@@ -642,24 +660,6 @@ window.observationsTable = `<div class="table-wrapper"><table class="dataframe c
 
 <td>06h</td>
 <td>4.0</td>
-<td>NW</td>
-<td>1.1</td>
-<td>0.0</td>
-<td>0.0</td>
-</tr>
-<tr>
-
-<td>05h</td>
-<td>4.2</td>
-<td>W</td>
-<td>0.4</td>
-<td>0.0</td>
-<td>0.0</td>
-</tr>
-<tr>
-
-<td>04h</td>
-<td>4.3</td>
 <td>NW</td>
 <td>1.1</td>
 <td>0.0</td>
