@@ -75,7 +75,8 @@ jobs:
 
       - name: Commit and push index.html to GitHub Pages
         run: |
-          echo "🔍 Fetching latest changes..."          
+          echo "🔍 Fetching latest changes..."
+          
           echo "🔍 Current path before git commands:"
           pwd
           echo "📂 Listing files:"
@@ -88,7 +89,12 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git config --global user.name "github-actions[bot]"
 
+          git stash
+          git pull --rebase origin main
+          git stash pop
+
           git add .
+          git add static/tables.js
           git commit -m "update view" || echo "No changes to commit"
           git push
 
