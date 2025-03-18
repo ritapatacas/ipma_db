@@ -76,7 +76,16 @@ jobs:
       - name: Commit and push index.html to GitHub Pages
         run: |
           echo "🔍 Fetching latest changes..."
+          git pull --rebase origin main  # Pull the latest changes before pushing
           
+          echo "🔍 Current path before git commands:"
+          pwd
+          echo "📂 Listing files:"
+          ls -la
+          echo "📂 Listing app/ directory:"
+          ls -la app/
+          echo "🔍 Git status before committing:"
+          git status
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git config --global user.name "github-actions[bot]"
 
