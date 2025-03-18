@@ -54,7 +54,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Set working directory
-        working-directory: ipma_db
+        working-directory: /home/runner/work/ipma_db/ipma_db
         run: echo "Setting working directory to ipma_db"
 
       - name: Set up Python
