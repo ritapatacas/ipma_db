@@ -19,8 +19,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>47.14</td>
       <td>58.68</td>
       <td>55%</td>
-      <td>0.11</td>
-      <td>60%</td>
+      <td>0.06</td>
+      <td>55%</td>
       <td>Mostly cloudy with occasional rain</td>
     </tr>
     <tr>
@@ -29,9 +29,9 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>48.43</td>
       <td>58.55</td>
       <td>55%</td>
-      <td>0.44</td>
+      <td>0.40</td>
       <td>85%</td>
-      <td>Overcast with rain</td>
+      <td>Mostly cloudy with rain</td>
     </tr>
     <tr>
       <td>3-20</td>
@@ -171,14 +171,14 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view"><table clas
       <td>Tue (18)</td>
       <td>47.14</td>
       <td>58.68</td>
-      <td>0.11</td>
-      <td>60%</td>
+      <td>0.06</td>
+      <td>55%</td>
     </tr>
     <tr>
       <td>Wed (19)</td>
       <td>48.43</td>
       <td>58.55</td>
-      <td>0.44</td>
+      <td>0.40</td>
       <td>85%</td>
     </tr>
     <tr>
@@ -234,7 +234,25 @@ window.observationsTable = `<div class="table-wrapper"><table class="dataframe c
 </thead>
 <tbody>
 <tr>
-<td rowspan="12">18 Mar</td>
+<td rowspan="14">18 Mar</td>
+<td>13h</td>
+<td>16.0</td>
+<td>S</td>
+<td>8.6</td>
+<td>0.0</td>
+<td>1977.8</td>
+</tr>
+<tr>
+
+<td>12h</td>
+<td>14.8</td>
+<td>SW</td>
+<td>9.7</td>
+<td>0.0</td>
+<td>2205.3</td>
+</tr>
+<tr>
+
 <td>11h</td>
 <td>12.5</td>
 <td>SW</td>
@@ -558,7 +576,7 @@ window.observationsTable = `<div class="table-wrapper"><table class="dataframe c
 <td>0.0</td>
 </tr>
 <tr>
-<td rowspan="12">15 Mar</td>
+<td rowspan="10">15 Mar</td>
 <td>13h</td>
 <td>11.9</td>
 <td>SW</td>
@@ -644,24 +662,6 @@ window.observationsTable = `<div class="table-wrapper"><table class="dataframe c
 <td>4.3</td>
 <td>NW</td>
 <td>1.1</td>
-<td>0.0</td>
-<td>0.0</td>
-</tr>
-<tr>
-
-<td>03h</td>
-<td>4.6</td>
-<td>NW</td>
-<td>4.0</td>
-<td>0.0</td>
-<td>0.0</td>
-</tr>
-<tr>
-
-<td>02h</td>
-<td>6.2</td>
-<td>NW</td>
-<td>5.4</td>
 <td>0.0</td>
 <td>0.0</td>
 </tr>
