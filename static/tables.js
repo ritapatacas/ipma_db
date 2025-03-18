@@ -234,7 +234,16 @@ window.observationsTable = `<div class="table-wrapper"><table class="dataframe c
 </thead>
 <tbody>
 <tr>
-<td rowspan="4">18 Mar</td>
+<td rowspan="5">18 Mar</td>
+<td>04h</td>
+<td>9.9</td>
+<td>-</td>
+<td>0.0</td>
+<td>0.4</td>
+<td>0.0</td>
+</tr>
+<tr>
+
 <td>03h</td>
 <td>10.4</td>
 <td>SE</td>
@@ -612,7 +621,7 @@ window.observationsTable = `<div class="table-wrapper"><table class="dataframe c
 <td>0.0</td>
 </tr>
 <tr>
-<td rowspan="6">14 Mar</td>
+<td rowspan="5">14 Mar</td>
 <td>23h</td>
 <td>6.2</td>
 <td>NW</td>
@@ -655,15 +664,6 @@ window.observationsTable = `<div class="table-wrapper"><table class="dataframe c
 <td>6.5</td>
 <td>0.0</td>
 <td>52.2</td>
-</tr>
-<tr>
-
-<td>18h</td>
-<td>10.4</td>
-<td>N</td>
-<td>9.4</td>
-<td>0.0</td>
-<td>234.0</td>
 </tr>
 </tbody>
 </table></div>`;
@@ -738,11 +738,11 @@ window.dashboardTable =
     </tr>
     <tr>
       <td>Mar 25</td>
-      <td>85</td>
+      <td>84</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>425</td>
+      <td>424</td>
     </tr>
   </tbody>
 </table>
