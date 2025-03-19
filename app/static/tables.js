@@ -60,7 +60,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>50.05</td>
       <td>30%</td>
       <td>0.04</td>
-      <td>60%</td>
+      <td>55%</td>
       <td>Mostly cloudy with occasional rain</td>
     </tr>
     <tr>
@@ -200,7 +200,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view"><table clas
       <td>40.98</td>
       <td>50.05</td>
       <td>0.04</td>
-      <td>60%</td>
+      <td>55%</td>
     </tr>
     <tr>
       <td>Mon (24)</td>
@@ -234,7 +234,43 @@ window.observationsTable = `<div class="table-wrapper"><table class="dataframe c
 </thead>
 <tbody>
 <tr>
-<td rowspan="22">18 Mar</td>
+<td rowspan="2">19 Mar</td>
+<td>01h</td>
+<td>10.2</td>
+<td>SE</td>
+<td>8.3</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr>
+
+<td>00h</td>
+<td>10.3</td>
+<td>SE</td>
+<td>9.0</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td rowspan="24">18 Mar</td>
+<td>23h</td>
+<td>10.6</td>
+<td>S</td>
+<td>9.7</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr>
+
+<td>22h</td>
+<td>10.9</td>
+<td>S</td>
+<td>11.2</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr>
+
 <td>21h</td>
 <td>11.2</td>
 <td>S</td>
@@ -432,7 +468,7 @@ window.observationsTable = `<div class="table-wrapper"><table class="dataframe c
 <td>0.0</td>
 </tr>
 <tr>
-<td rowspan="24">17 Mar</td>
+<td rowspan="22">17 Mar</td>
 <td>23h</td>
 <td>10.3</td>
 <td>E</td>
@@ -629,42 +665,6 @@ window.observationsTable = `<div class="table-wrapper"><table class="dataframe c
 <td>0.0</td>
 <td>0.0</td>
 </tr>
-<tr>
-
-<td>01h</td>
-<td>9.0</td>
-<td>SE</td>
-<td>16.2</td>
-<td>0.0</td>
-<td>0.0</td>
-</tr>
-<tr>
-
-<td>00h</td>
-<td>9.0</td>
-<td>SE</td>
-<td>15.8</td>
-<td>0.1</td>
-<td>0.0</td>
-</tr>
-<tr>
-<td rowspan="2">15 Mar</td>
-<td>13h</td>
-<td>11.9</td>
-<td>SW</td>
-<td>5.4</td>
-<td>0.0</td>
-<td>1681.1</td>
-</tr>
-<tr>
-
-<td>12h</td>
-<td>12.4</td>
-<td>SW</td>
-<td>9.4</td>
-<td>0.0</td>
-<td>2303.9</td>
-</tr>
 </tbody>
 </table></div>`;
 
@@ -674,6 +674,8 @@ window.dashboardTable =
     <div class="table-wrapper">
       <table class="dataframe custom-table">
   <thead>
+    <tr><th colspan='2'><h3 class='table-title'>Cold Hours</h3></th></tr>
+
     <tr style="text-align: right;">
       <th>period</th>
       <th>cold</th>
@@ -710,6 +712,8 @@ window.dashboardTable =
     <div class="table-wrapper">
       <table class="dataframe custom-table">
   <thead>
+    <tr><th colspan='2'><h3 class='table-title'>Missing Entries</h3></th></tr>
+
     <tr style="text-align: right;">
       <th>period</th>
       <th>missing</th>
@@ -738,11 +742,11 @@ window.dashboardTable =
     </tr>
     <tr>
       <td>Mar 25</td>
-      <td>87</td>
+      <td>84</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>427</td>
+      <td>424</td>
     </tr>
   </tbody>
 </table>
@@ -753,140 +757,336 @@ window.dashboardTable =
     <table class="custom-table">
         <thead>
             <tr>
-                <th></th>
-                <th>start</th>
-                <th>end</th>
-                <th></th>
+                <th colspan='4'><h3 class="table-title">Warnings</h3></th>
             </tr>
         </thead>
         <tbody>
     
         <tr class="green">
             <td><i class="fa-solid fa-smog"></i></td>
-            <td>18-03</td>
-            <td>21-03</td>
-            <td><span data-tooltip="Nevoeiro">LRA, CBO, CBR</span></td>
+            <td class="level"><i class="fa-solid fa-circle" style="color: #26ba81;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
+            <td><a href="#" onclick="openModal('modal-Nevoeiro-19-22-03', event)">19-22/03</a></td>
+            <td><span data-tooltip="Coimbra (36km NW)">C</span>, <span data-tooltip="Castelo Branco (59km ESE)">CB</span>, <span data-tooltip="Leiria (58km WSW)">L</span></td>
         </tr>
         
         <tr class="green">
             <td><i class="fa-solid fa-temperature-high"></i></td>
-            <td>18-03</td>
-            <td>21-03</td>
-            <td><span data-tooltip="Tempo Quente">LRA, CBO, CBR</span></td>
+            <td class="level"><i class="fa-solid fa-circle" style="color: #26ba81;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
+            <td><a href="#" onclick="openModal('modal-Tempo-Quente-19-22-03', event)">19-22/03</a></td>
+            <td><span data-tooltip="Coimbra (36km NW)">C</span>, <span data-tooltip="Castelo Branco (59km ESE)">CB</span>, <span data-tooltip="Leiria (58km WSW)">L</span></td>
         </tr>
         
         <tr class="green">
             <td><i class="fa-solid fa-temperature-low"></i></td>
-            <td>18-03</td>
-            <td>21-03</td>
-            <td><span data-tooltip="Tempo Frio">LRA, CBO, CBR</span></td>
+            <td class="level"><i class="fa-solid fa-circle" style="color: #26ba81;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
+            <td><a href="#" onclick="openModal('modal-Tempo-Frio-19-22-03', event)">19-22/03</a></td>
+            <td><span data-tooltip="Coimbra (36km NW)">C</span>, <span data-tooltip="Castelo Branco (59km ESE)">CB</span>, <span data-tooltip="Leiria (58km WSW)">L</span></td>
         </tr>
         
         <tr class="green">
             <td><i class="fa-solid fa-cloud-rain"></i></td>
-            <td>18-03</td>
-            <td>21-03</td>
-            <td><span data-tooltip="Precipitação">LRA, CBO, CBR</span></td>
+            <td class="level"><i class="fa-solid fa-circle" style="color: #26ba81;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
+            <td><a href="#" onclick="openModal('modal-Precipitação-19-22-03', event)">19-22/03</a></td>
+            <td><span data-tooltip="Coimbra (36km NW)">C</span>, <span data-tooltip="Castelo Branco (59km ESE)">CB</span>, <span data-tooltip="Leiria (58km WSW)">L</span></td>
         </tr>
         
         <tr class="green">
             <td><i class="fa-solid fa-snowflake"></i></td>
-            <td>18-03</td>
-            <td>21-03</td>
-            <td><span data-tooltip="Neve">LRA, CBO, CBR</span></td>
+            <td class="level"><i class="fa-solid fa-circle" style="color: #26ba81;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
+            <td><a href="#" onclick="openModal('modal-Neve-19-22-03', event)">19-22/03</a></td>
+            <td><span data-tooltip="Coimbra (36km NW)">C</span>, <span data-tooltip="Castelo Branco (59km ESE)">CB</span>, <span data-tooltip="Leiria (58km WSW)">L</span></td>
         </tr>
         
         <tr class="green">
             <td><i class="fa-solid fa-bolt"></i></td>
-            <td>18-03</td>
-            <td>21-03</td>
-            <td><span data-tooltip="Trovoada">LRA, CBO, CBR</span></td>
+            <td class="level"><i class="fa-solid fa-circle" style="color: #26ba81;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
+            <td><a href="#" onclick="openModal('modal-Trovoada-19-22-03', event)">19-22/03</a></td>
+            <td><span data-tooltip="Coimbra (36km NW)">C</span>, <span data-tooltip="Castelo Branco (59km ESE)">CB</span>, <span data-tooltip="Leiria (58km WSW)">L</span></td>
         </tr>
         
         <tr class="green">
             <td><i class="fa-solid fa-wind"></i></td>
-            <td>18-03</td>
-            <td>21-03</td>
-            <td><span data-tooltip="Vento">LRA, CBO, CBR</span></td>
+            <td class="level"><i class="fa-solid fa-circle" style="color: #26ba81;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
+            <td><a href="#" onclick="openModal('modal-Vento-19-22-03', event)">19-22/03</a></td>
+            <td><span data-tooltip="Coimbra (36km NW)">C</span>, <span data-tooltip="Castelo Branco (59km ESE)">CB</span>, <span data-tooltip="Leiria (58km WSW)">L</span></td>
         </tr>
         
         <tr class="yellow">
             <td><i class="fa-solid fa-cloud-rain"></i></td>
-            <td>19-03</td>
-            <td>19-03</td>
-            <td><span data-tooltip="Precipitação [Períodos de chuva, por vezes forte, que pode ocasionalmente ser acopmpanhada de trovoada.]">LRA</span></td>
+            <td class="level"><i class="fa-solid fa-circle" style="color: #FFD43B;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
+            <td><a href="#" onclick="openModal('modal-Precipitação-19-19-03', event)">19-19/03</a></td>
+            <td><span data-tooltip="Leiria (58km WSW)">L</span></td>
         </tr>
         
         <tr class="yellow">
             <td><i class="fa-solid fa-wind"></i></td>
-            <td>19-03</td>
-            <td>19-03</td>
-            <td><span data-tooltip="Vento [Vento forte de sul/sueste, com rajadas até 90 km/h, sendo até 110 km/h nas serras.]">LRA</span></td>
+            <td class="level"><i class="fa-solid fa-circle" style="color: #FFD43B;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
+            <td><a href="#" onclick="openModal('modal-Vento-19-19-03', event)">19-19/03</a></td>
+            <td><span data-tooltip="Leiria (58km WSW)">L</span></td>
         </tr>
         
         <tr class="yellow">
             <td><i class="fa-solid fa-wind"></i></td>
-            <td>19-03</td>
-            <td>20-03</td>
-            <td><span data-tooltip="Vento [Vento forte de sul/sueste, com rajadas até 80 km/h, sendo até 110 km/h nas serras.]">CBO</span></td>
-        </tr>
-        
-        <tr class="yellow">
-            <td><i class="fa-solid fa-wind"></i></td>
-            <td>19-03</td>
-            <td>20-03</td>
-            <td><span data-tooltip="Vento [Vento forte de sul/sueste, com rajadas até 90 km/h, sendo até 110 km/h nas serras.]">CBR</span></td>
+            <td class="level"><i class="fa-solid fa-circle" style="color: #FFD43B;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
+            <td><a href="#" onclick="openModal('modal-Vento-19-20-03', event)">19-20/03</a></td>
+            <td><span data-tooltip="Coimbra (36km NW)">C</span>, <span data-tooltip="Castelo Branco (59km ESE)">CB</span>, <span data-tooltip="Leiria (58km WSW)">L</span></td>
         </tr>
         
         <tr class="orange">
             <td><i class="fa-solid fa-cloud-rain"></i></td>
-            <td>19-03</td>
-            <td>20-03</td>
-            <td><span data-tooltip="Precipitação [Períodos de chuva, por vezes forte, que pode ser ocasionalmente acompanhada de trovoada.]">LRA</span></td>
+            <td class="level"><i class="fa-solid fa-circle" style="color: #f58d38;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
+            <td><a href="#" onclick="openModal('modal-Precipitação-19-20-03', event)">19-20/03</a></td>
+            <td><span data-tooltip="Coimbra (36km NW)">C</span>, <span data-tooltip="Leiria (58km WSW)">L</span></td>
         </tr>
         
         <tr class="orange">
             <td><i class="fa-solid fa-wind"></i></td>
-            <td>19-03</td>
-            <td>20-03</td>
-            <td><span data-tooltip="Vento [Vento forte de sul/sueste, com rajadas da ordem de 90 km/h, e de 110 km/h nas serras.]">LRA</span></td>
+            <td class="level"><i class="fa-solid fa-circle" style="color: #f58d38;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
+            <td><a href="#" onclick="openModal('modal-Vento-20-20-03', event)">20-20/03</a></td>
+            <td><span data-tooltip="Coimbra (36km NW)">C</span>, <span data-tooltip="Castelo Branco (59km ESE)">CB</span>, <span data-tooltip="Leiria (58km WSW)">L</span></td>
         </tr>
         
         <tr class="yellow">
             <td><i class="fa-solid fa-cloud-rain"></i></td>
-            <td>19-03</td>
-            <td>20-03</td>
-            <td><span data-tooltip="Precipitação [Períodos de chuva, por vezes forte, que pode ser ocasionalmente acompanhada de trovoada.]">CBR</span></td>
-        </tr>
-        
-        <tr class="orange">
-            <td><i class="fa-solid fa-wind"></i></td>
-            <td>20-03</td>
-            <td>20-03</td>
-            <td><span data-tooltip="Vento [Vento forte de sul/sueste, com rajadas até 90 km/h, sendo até 120 km/h nas serras.]">CBO, CBR</span></td>
-        </tr>
-        
-        <tr class="yellow">
-            <td><i class="fa-solid fa-cloud-rain"></i></td>
-            <td>20-03</td>
-            <td>20-03</td>
-            <td><span data-tooltip="Precipitação [Períodos de chuva, por vezes forte, que pode ser ocasionalmente acompanhada de trovoada.]">CBO</span></td>
-        </tr>
-        
-        <tr class="yellow">
-            <td><i class="fa-solid fa-wind"></i></td>
-            <td>20-03</td>
-            <td>20-03</td>
-            <td><span data-tooltip="Vento [Vento forte de sul/sueste, com rajadas até 90 km/h, e de 110 km/h nas serras.]">LRA</span></td>
-        </tr>
-        
-        <tr class="yellow">
-            <td><i class="fa-solid fa-wind"></i></td>
-            <td>20-03</td>
-            <td>20-03</td>
-            <td><span data-tooltip="Vento [Vento forte de sul/sueste, com rajadas até 90 km/h, sendo até 110 km/h nas serras.]">CBO, CBR</span></td>
+            <td class="level"><i class="fa-solid fa-circle" style="color: #FFD43B;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
+            <td><a href="#" onclick="openModal('modal-Precipitação-20-20-03', event)">20-20/03</a></td>
+            <td><span data-tooltip="Castelo Branco (59km ESE)">CB</span></td>
         </tr>
         </tbody></table>
+    <dialog id="modal-Nevoeiro-19-22-03" class="modal">
+        <article>
+            <header>
+                <a href="#" class="close" aria-label="Close" onclick="closeModal('modal-Nevoeiro-19-22-03', event)"></a>
+                <h3>Nevoeiro</h3>
+            </header>
+            
+        <strong>alert level:</strong> green
+        <br><strong>start:</strong> 19/03 00:39
+        <br><strong>end:</strong> 22/03 00:00
+        <hr>
+    <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
+            <footer>
+                <button onclick="closeModal('modal-Nevoeiro-19-22-03', event)">Close</button>
+            </footer>
+        </article>
+    </dialog>
+    
+    <dialog id="modal-Tempo-Quente-19-22-03" class="modal">
+        <article>
+            <header>
+                <a href="#" class="close" aria-label="Close" onclick="closeModal('modal-Tempo-Quente-19-22-03', event)"></a>
+                <h3>Tempo Quente</h3>
+            </header>
+            
+        <strong>alert level:</strong> green
+        <br><strong>start:</strong> 19/03 00:39
+        <br><strong>end:</strong> 22/03 00:00
+        <hr>
+    <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
+            <footer>
+                <button onclick="closeModal('modal-Tempo-Quente-19-22-03', event)">Close</button>
+            </footer>
+        </article>
+    </dialog>
+    
+    <dialog id="modal-Tempo-Frio-19-22-03" class="modal">
+        <article>
+            <header>
+                <a href="#" class="close" aria-label="Close" onclick="closeModal('modal-Tempo-Frio-19-22-03', event)"></a>
+                <h3>Tempo Frio</h3>
+            </header>
+            
+        <strong>alert level:</strong> green
+        <br><strong>start:</strong> 19/03 00:39
+        <br><strong>end:</strong> 22/03 00:00
+        <hr>
+    <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
+            <footer>
+                <button onclick="closeModal('modal-Tempo-Frio-19-22-03', event)">Close</button>
+            </footer>
+        </article>
+    </dialog>
+    
+    <dialog id="modal-Precipitação-19-22-03" class="modal">
+        <article>
+            <header>
+                <a href="#" class="close" aria-label="Close" onclick="closeModal('modal-Precipitação-19-22-03', event)"></a>
+                <h3>Precipitação</h3>
+            </header>
+            
+        <strong>alert level:</strong> green
+        <br><strong>start:</strong> 19/03 00:39
+        <br><strong>end:</strong> 22/03 00:00
+        <hr>
+    <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
+            <footer>
+                <button onclick="closeModal('modal-Precipitação-19-22-03', event)">Close</button>
+            </footer>
+        </article>
+    </dialog>
+    
+    <dialog id="modal-Neve-19-22-03" class="modal">
+        <article>
+            <header>
+                <a href="#" class="close" aria-label="Close" onclick="closeModal('modal-Neve-19-22-03', event)"></a>
+                <h3>Neve</h3>
+            </header>
+            
+        <strong>alert level:</strong> green
+        <br><strong>start:</strong> 19/03 00:39
+        <br><strong>end:</strong> 22/03 00:00
+        <hr>
+    <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
+            <footer>
+                <button onclick="closeModal('modal-Neve-19-22-03', event)">Close</button>
+            </footer>
+        </article>
+    </dialog>
+    
+    <dialog id="modal-Trovoada-19-22-03" class="modal">
+        <article>
+            <header>
+                <a href="#" class="close" aria-label="Close" onclick="closeModal('modal-Trovoada-19-22-03', event)"></a>
+                <h3>Trovoada</h3>
+            </header>
+            
+        <strong>alert level:</strong> green
+        <br><strong>start:</strong> 19/03 00:39
+        <br><strong>end:</strong> 22/03 00:00
+        <hr>
+    <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
+            <footer>
+                <button onclick="closeModal('modal-Trovoada-19-22-03', event)">Close</button>
+            </footer>
+        </article>
+    </dialog>
+    
+    <dialog id="modal-Vento-19-22-03" class="modal">
+        <article>
+            <header>
+                <a href="#" class="close" aria-label="Close" onclick="closeModal('modal-Vento-19-22-03', event)"></a>
+                <h3>Vento</h3>
+            </header>
+            
+        <strong>alert level:</strong> green
+        <br><strong>start:</strong> 19/03 00:39
+        <br><strong>end:</strong> 22/03 00:00
+        <hr>
+    <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
+            <footer>
+                <button onclick="closeModal('modal-Vento-19-22-03', event)">Close</button>
+            </footer>
+        </article>
+    </dialog>
+    
+    <dialog id="modal-Precipitação-19-19-03" class="modal">
+        <article>
+            <header>
+                <a href="#" class="close" aria-label="Close" onclick="closeModal('modal-Precipitação-19-19-03', event)"></a>
+                <h3>Precipitação</h3>
+            </header>
+            
+        <strong>alert level:</strong> yellow
+        <br><strong>start:</strong> 19/03 06:00
+        <br><strong>end:</strong> 19/03 21:00
+        <hr>
+    <p><strong>Leiria (58km WSW)</strong><br>Períodos de chuva, por vezes forte, que pode ocasionalmente ser acopmpanhada de trovoada.</p>
+            <footer>
+                <button onclick="closeModal('modal-Precipitação-19-19-03', event)">Close</button>
+            </footer>
+        </article>
+    </dialog>
+    
+    <dialog id="modal-Vento-19-19-03" class="modal">
+        <article>
+            <header>
+                <a href="#" class="close" aria-label="Close" onclick="closeModal('modal-Vento-19-19-03', event)"></a>
+                <h3>Vento</h3>
+            </header>
+            
+        <strong>alert level:</strong> yellow
+        <br><strong>start:</strong> 19/03 09:00
+        <br><strong>end:</strong> 19/03 21:00
+        <hr>
+    <p><strong>Leiria (58km WSW)</strong><br>Vento forte de sul/sueste, com rajadas até 90 km/h, sendo até 110 km/h nas serras.</p>
+            <footer>
+                <button onclick="closeModal('modal-Vento-19-19-03', event)">Close</button>
+            </footer>
+        </article>
+    </dialog>
+    
+    <dialog id="modal-Vento-19-20-03" class="modal">
+        <article>
+            <header>
+                <a href="#" class="close" aria-label="Close" onclick="closeModal('modal-Vento-19-20-03', event)"></a>
+                <h3>Vento</h3>
+            </header>
+            
+        <strong>alert level:</strong> yellow
+        <br><strong>start:</strong> 19/03 12:00
+        <br><strong>end:</strong> 20/03 00:00
+        <hr>
+    <p><strong>Castelo Branco (59km ESE)</strong><br>Vento forte de sul/sueste, com rajadas até 80 km/h, sendo até 110 km/h nas serras.</p><p><strong>Coimbra (36km NW)</strong><br>Vento forte de sul/sueste, com rajadas até 90 km/h, sendo até 110 km/h nas serras.</p><p><strong>Leiria (58km WSW)</strong><br>Vento forte de sul/sueste, com rajadas da ordem de 90 km/h, e de 110 km/h nas serras.</p>
+            <footer>
+                <button onclick="closeModal('modal-Vento-19-20-03', event)">Close</button>
+            </footer>
+        </article>
+    </dialog>
+    
+    <dialog id="modal-Precipitação-19-20-03" class="modal">
+        <article>
+            <header>
+                <a href="#" class="close" aria-label="Close" onclick="closeModal('modal-Precipitação-19-20-03', event)"></a>
+                <h3>Precipitação</h3>
+            </header>
+            
+        <strong>alert level:</strong> orange
+        <br><strong>start:</strong> 19/03 21:00
+        <br><strong>end:</strong> 20/03 06:00
+        <hr>
+    <p><strong>Leiria (58km WSW)</strong><br>Períodos de chuva, por vezes forte, que pode ser ocasionalmente acompanhada de trovoada.</p><p><strong>Coimbra (36km NW)</strong><br>Períodos de chuva, por vezes forte, que pode ser ocasionalmente acompanhada de trovoada.</p>
+            <footer>
+                <button onclick="closeModal('modal-Precipitação-19-20-03', event)">Close</button>
+            </footer>
+        </article>
+    </dialog>
+    
+    <dialog id="modal-Vento-20-20-03" class="modal">
+        <article>
+            <header>
+                <a href="#" class="close" aria-label="Close" onclick="closeModal('modal-Vento-20-20-03', event)"></a>
+                <h3>Vento</h3>
+            </header>
+            
+        <strong>alert level:</strong> orange
+        <br><strong>start:</strong> 20/03 00:00
+        <br><strong>end:</strong> 20/03 06:00
+        <hr>
+    <p><strong>Castelo Branco (59km ESE)</strong><br>Vento forte de sul/sueste, com rajadas até 90 km/h, sendo até 120 km/h nas serras.<br>Vento forte de sul/sueste, com rajadas até 90 km/h, sendo até 110 km/h nas serras.</p><p><strong>Coimbra (36km NW)</strong><br>Vento forte de sul/sueste, com rajadas até 90 km/h, sendo até 120 km/h nas serras.<br>Vento forte de sul/sueste, com rajadas até 90 km/h, sendo até 110 km/h nas serras.</p><p><strong>Leiria (58km WSW)</strong><br>Vento forte de sul/sueste, com rajadas até 90 km/h, e de 110 km/h nas serras.</p>
+            <footer>
+                <button onclick="closeModal('modal-Vento-20-20-03', event)">Close</button>
+            </footer>
+        </article>
+    </dialog>
+    
+    <dialog id="modal-Precipitação-20-20-03" class="modal">
+        <article>
+            <header>
+                <a href="#" class="close" aria-label="Close" onclick="closeModal('modal-Precipitação-20-20-03', event)"></a>
+                <h3>Precipitação</h3>
+            </header>
+            
+        <strong>alert level:</strong> yellow
+        <br><strong>start:</strong> 20/03 00:00
+        <br><strong>end:</strong> 20/03 06:00
+        <hr>
+    <p><strong>Castelo Branco (59km ESE)</strong><br>Períodos de chuva, por vezes forte, que pode ser ocasionalmente acompanhada de trovoada.</p>
+            <footer>
+                <button onclick="closeModal('modal-Precipitação-20-20-03', event)">Close</button>
+            </footer>
+        </article>
+    </dialog>
+    
   </div>
 </div>
 </div>`;
