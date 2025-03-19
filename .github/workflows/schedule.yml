@@ -111,3 +111,4 @@ jobs:
           # Commit only if changes exist
           git commit -m "update view" || echo "No changes to commit"
           git push
+
