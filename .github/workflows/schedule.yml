@@ -73,6 +73,13 @@ jobs:
           pip install -r requirements.txt
           pip list  # Debug installed versions
 
+      - name: Fetch latest changes before running script
+        run: |
+          echo "🔍 Pulling latest changes..."
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+          git pull --rebase origin main || echo "Skipping pull due to conflict"
+
       - name: Run view script
         env:
           MONGO_URI: ${{ secrets.MONGO_URI }}
@@ -87,27 +94,20 @@ jobs:
 
       - name: Commit and push index.html to GitHub Pages
         run: |
-          echo "🔍 Fetching latest changes..."
+          echo "🔍 Checking for file changes..."
           
-          echo "🔍 Current path before git commands:"
-          pwd
-          echo "📂 Listing files:"
-          ls -la
-          echo "📂 Listing app/ directory:"
-          ls -la app/
-          echo "🔍 Git status before committing:"
-          git status
-          
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git config --global user.name "github-actions[bot]"
+          # Ensure Git recognizes changes
+          git update-index --refresh
+          git diff --exit-code app/static/tables.js || touch app/static/tables.js
 
-          git stash
-          git pull --rebase origin main
-          git stash pop || echo "No stash to pop"
+          # Normalize line endings & permissions
+          git config core.fileMode false
+          git config core.autocrlf input
 
-          # Force Git to track tables.js
+          # Stage modified files
           git add -f app/static/tables.js
           git add index.html
 
+          # Commit only if changes exist
           git commit -m "update view" || echo "No changes to commit"
           git push
