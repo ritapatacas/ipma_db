@@ -16,8 +16,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>3-19</td>
       <td>Wed</td>
-      <td>48.85</td>
-      <td>60.55</td>
+      <td>48.83</td>
+      <td>60.39</td>
       <td>60%</td>
       <td>0.04</td>
       <td>50%</td>
@@ -26,18 +26,18 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>3-20</td>
       <td>Thu</td>
-      <td>47.68</td>
-      <td>56.62</td>
+      <td>47.71</td>
+      <td>56.55</td>
       <td>45%</td>
-      <td>1.02</td>
+      <td>1.35</td>
       <td>95%</td>
       <td>Showers, thunderstorms likely</td>
     </tr>
     <tr>
       <td>3-21</td>
       <td>Fri</td>
-      <td>46.09</td>
-      <td>53.80</td>
+      <td>45.99</td>
+      <td>53.78</td>
       <td>40%</td>
       <td>1.30</td>
       <td>100%</td>
@@ -46,8 +46,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>3-22</td>
       <td>Sat</td>
-      <td>42.58</td>
-      <td>53.20</td>
+      <td>42.71</td>
+      <td>53.15</td>
       <td>35%</td>
       <td>0.76</td>
       <td>90%</td>
@@ -56,8 +56,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>3-23</td>
       <td>Sun</td>
-      <td>40.53</td>
-      <td>50.74</td>
+      <td>40.51</td>
+      <td>50.65</td>
       <td>30%</td>
       <td>0.11</td>
       <td>65%</td>
@@ -66,8 +66,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>3-24</td>
       <td>Mon</td>
-      <td>40.82</td>
-      <td>54.27</td>
+      <td>40.39</td>
+      <td>54.03</td>
       <td>30%</td>
       <td>0.29</td>
       <td>35%</td>
@@ -76,8 +76,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>3-25</td>
       <td>Tue</td>
-      <td>46.65</td>
-      <td>55.04</td>
+      <td>46.51</td>
+      <td>55.00</td>
       <td>35%</td>
       <td>0.27</td>
       <td>25%</td>
@@ -86,8 +86,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>3-26</td>
       <td>Wed</td>
-      <td>46.16</td>
-      <td>63.14</td>
+      <td>46.06</td>
+      <td>63.08</td>
       <td>55%</td>
       <td>0.00</td>
       <td>20%</td>
@@ -96,8 +96,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>3-27</td>
       <td>Thu</td>
-      <td>46.77</td>
-      <td>57.51</td>
+      <td>46.66</td>
+      <td>57.46</td>
       <td>15%</td>
       <td>0.25</td>
       <td>65%</td>
@@ -106,8 +106,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>3-28</td>
       <td>Fri</td>
-      <td>44.74</td>
-      <td>57.80</td>
+      <td>44.66</td>
+      <td>57.72</td>
       <td>10%</td>
       <td>0.14</td>
       <td>60%</td>
@@ -116,8 +116,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>3-29</td>
       <td>Sat</td>
-      <td>45.22</td>
-      <td>59.99</td>
+      <td>45.14</td>
+      <td>59.92</td>
       <td>15%</td>
       <td>0.06</td>
       <td>35%</td>
@@ -126,8 +126,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>3-30</td>
       <td>Sun</td>
-      <td>44.05</td>
-      <td>62.26</td>
+      <td>43.97</td>
+      <td>62.18</td>
       <td>40%</td>
       <td>0.00</td>
       <td>5%</td>
@@ -136,8 +136,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>3-31</td>
       <td>Mon</td>
-      <td>45.26</td>
-      <td>63.34</td>
+      <td>45.18</td>
+      <td>63.26</td>
       <td>25%</td>
       <td>0.00</td>
       <td>25%</td>
@@ -146,8 +146,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>4-1</td>
       <td>Tue</td>
-      <td>44.96</td>
-      <td>63.75</td>
+      <td>44.86</td>
+      <td>63.67</td>
       <td>35%</td>
       <td>0.00</td>
       <td>20%</td>
@@ -169,50 +169,50 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view"><table clas
   <tbody>
     <tr>
       <td>Wed (19)</td>
-      <td>48.85</td>
-      <td>60.55</td>
+      <td>48.83</td>
+      <td>60.39</td>
       <td>0.04</td>
       <td>50%</td>
     </tr>
     <tr>
       <td>Thu (20)</td>
-      <td>47.68</td>
-      <td>56.62</td>
-      <td>1.02</td>
+      <td>47.71</td>
+      <td>56.55</td>
+      <td>1.35</td>
       <td>95%</td>
     </tr>
     <tr>
       <td>Fri (21)</td>
-      <td>46.09</td>
-      <td>53.80</td>
+      <td>45.99</td>
+      <td>53.78</td>
       <td>1.30</td>
       <td>100%</td>
     </tr>
     <tr>
       <td>Sat (22)</td>
-      <td>42.58</td>
-      <td>53.20</td>
+      <td>42.71</td>
+      <td>53.15</td>
       <td>0.76</td>
       <td>90%</td>
     </tr>
     <tr>
       <td>Sun (23)</td>
-      <td>40.53</td>
-      <td>50.74</td>
+      <td>40.51</td>
+      <td>50.65</td>
       <td>0.11</td>
       <td>65%</td>
     </tr>
     <tr>
       <td>Mon (24)</td>
-      <td>40.82</td>
-      <td>54.27</td>
+      <td>40.39</td>
+      <td>54.03</td>
       <td>0.29</td>
       <td>35%</td>
     </tr>
     <tr>
       <td>Tue (25)</td>
-      <td>46.65</td>
-      <td>55.04</td>
+      <td>46.51</td>
+      <td>55.00</td>
       <td>0.27</td>
       <td>25%</td>
     </tr>
@@ -234,7 +234,25 @@ window.observationsTable = `<div class="table-wrapper"><table class="dataframe c
 </thead>
 <tbody>
 <tr>
-<td rowspan="10">19 Mar</td>
+<td rowspan="12">19 Mar</td>
+<td>11h</td>
+<td>13.2</td>
+<td>SE</td>
+<td>16.2</td>
+<td>0.0</td>
+<td>808.1</td>
+</tr>
+<tr>
+
+<td>10h</td>
+<td>12.5</td>
+<td>SE</td>
+<td>18.0</td>
+<td>0.0</td>
+<td>693.5</td>
+</tr>
+<tr>
+
 <td>09h</td>
 <td>11.7</td>
 <td>SE</td>
@@ -540,7 +558,7 @@ window.observationsTable = `<div class="table-wrapper"><table class="dataframe c
 <td>0.0</td>
 </tr>
 <tr>
-<td rowspan="14">17 Mar</td>
+<td rowspan="12">17 Mar</td>
 <td>23h</td>
 <td>10.3</td>
 <td>E</td>
@@ -646,24 +664,6 @@ window.observationsTable = `<div class="table-wrapper"><table class="dataframe c
 <td>7.6</td>
 <td>0.0</td>
 <td>600.0</td>
-</tr>
-<tr>
-
-<td>11h</td>
-<td>9.8</td>
-<td>SE</td>
-<td>9.7</td>
-<td>0.0</td>
-<td>886.3</td>
-</tr>
-<tr>
-
-<td>10h</td>
-<td>9.5</td>
-<td>E</td>
-<td>7.2</td>
-<td>0.2</td>
-<td>752.9</td>
 </tr>
 </tbody>
 </table></div>`;
