@@ -17,68 +17,68 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>3-19</td>
       <td>Wed</td>
       <td>48.83</td>
-      <td>60.89</td>
+      <td>61.12</td>
       <td>65%</td>
       <td>0.02</td>
-      <td>45%</td>
+      <td>40%</td>
       <td>Mostly cloudy with occasional rain</td>
     </tr>
     <tr>
       <td>3-20</td>
       <td>Thu</td>
-      <td>48.31</td>
-      <td>55.11</td>
+      <td>48.45</td>
+      <td>55.67</td>
       <td>50%</td>
-      <td>1.46</td>
+      <td>1.45</td>
       <td>100%</td>
       <td>Showers, thunderstorms likely</td>
     </tr>
     <tr>
       <td>3-21</td>
       <td>Fri</td>
-      <td>46.18</td>
-      <td>54.52</td>
-      <td>40%</td>
-      <td>1.39</td>
+      <td>46.22</td>
+      <td>54.41</td>
+      <td>45%</td>
+      <td>1.35</td>
       <td>100%</td>
       <td>Showers, thunderstorms likely</td>
     </tr>
     <tr>
       <td>3-22</td>
       <td>Sat</td>
-      <td>43.32</td>
-      <td>54.14</td>
+      <td>43.36</td>
+      <td>53.37</td>
       <td>35%</td>
-      <td>0.47</td>
+      <td>0.55</td>
       <td>95%</td>
       <td>Showers, thunderstorms likely</td>
     </tr>
     <tr>
       <td>3-23</td>
       <td>Sun</td>
-      <td>41.29</td>
-      <td>51.33</td>
-      <td>30%</td>
-      <td>0.01</td>
+      <td>40.75</td>
+      <td>51.08</td>
+      <td>40%</td>
+      <td>0.00</td>
       <td>65%</td>
       <td>Mostly cloudy with occasional rain</td>
     </tr>
     <tr>
       <td>3-24</td>
       <td>Mon</td>
-      <td>39.58</td>
-      <td>53.20</td>
-      <td>40%</td>
-      <td>0.00</td>
-      <td>40%</td>
-      <td>Partly cloudy</td>
+      <td>38.80</td>
+      <td>53.73</td>
+      <td>35%</td>
+      <td>0.05</td>
+      <td>45%</td>
+      <td>Mixed with showers</td>
     </tr>
     <tr>
       <td>3-25</td>
       <td>Tue</td>
-      <td>47.28</td>
-      <td>55.29</td>
-      <td>40%</td>
+      <td>46.06</td>
+      <td>55.02</td>
+      <td>45%</td>
       <td>0.05</td>
       <td>20%</td>
       <td>Mostly cloudy with occasional rain</td>
@@ -86,68 +86,68 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>3-26</td>
       <td>Wed</td>
-      <td>46.37</td>
-      <td>62.99</td>
-      <td>50%</td>
+      <td>46.84</td>
+      <td>64.12</td>
+      <td>55%</td>
       <td>0.00</td>
-      <td>15%</td>
-      <td>Partly cloudy</td>
+      <td>10%</td>
+      <td>Clear, cloudless sky</td>
     </tr>
     <tr>
       <td>3-27</td>
       <td>Thu</td>
-      <td>46.97</td>
-      <td>57.72</td>
-      <td>10%</td>
+      <td>46.51</td>
+      <td>58.00</td>
+      <td>15%</td>
       <td>0.01</td>
-      <td>50%</td>
-      <td>Mostly cloudy with occasional rain</td>
+      <td>40%</td>
+      <td>Mixed with showers</td>
     </tr>
     <tr>
       <td>3-28</td>
       <td>Fri</td>
-      <td>44.97</td>
-      <td>57.88</td>
+      <td>45.04</td>
+      <td>56.96</td>
       <td>10%</td>
       <td>0.27</td>
-      <td>55%</td>
+      <td>50%</td>
       <td>Mixed with showers</td>
     </tr>
     <tr>
       <td>3-29</td>
       <td>Sat</td>
-      <td>45.45</td>
-      <td>60.01</td>
-      <td>15%</td>
-      <td>0.28</td>
+      <td>44.45</td>
+      <td>58.94</td>
+      <td>10%</td>
+      <td>0.27</td>
       <td>60%</td>
       <td>Mixed with showers</td>
     </tr>
     <tr>
       <td>3-30</td>
       <td>Sun</td>
-      <td>44.28</td>
-      <td>62.28</td>
-      <td>10%</td>
-      <td>0.14</td>
-      <td>40%</td>
+      <td>44.50</td>
+      <td>60.67</td>
+      <td>5%</td>
+      <td>0.16</td>
+      <td>45%</td>
       <td>Mixed with showers</td>
     </tr>
     <tr>
       <td>3-31</td>
       <td>Mon</td>
-      <td>45.48</td>
-      <td>63.36</td>
-      <td>15%</td>
+      <td>43.72</td>
+      <td>62.48</td>
+      <td>20%</td>
       <td>0.00</td>
-      <td>30%</td>
+      <td>25%</td>
       <td>Clear, cloudless sky</td>
     </tr>
     <tr>
       <td>4-1</td>
       <td>Tue</td>
-      <td>45.17</td>
-      <td>63.77</td>
+      <td>45.82</td>
+      <td>63.00</td>
       <td>25%</td>
       <td>0.00</td>
       <td>30%</td>
@@ -170,49 +170,49 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view"><table clas
     <tr>
       <td>Wed (19)</td>
       <td>48.83</td>
-      <td>60.89</td>
+      <td>61.12</td>
       <td>0.02</td>
-      <td>45%</td>
+      <td>40%</td>
     </tr>
     <tr>
       <td>Thu (20)</td>
-      <td>48.31</td>
-      <td>55.11</td>
-      <td>1.46</td>
+      <td>48.45</td>
+      <td>55.67</td>
+      <td>1.45</td>
       <td>100%</td>
     </tr>
     <tr>
       <td>Fri (21)</td>
-      <td>46.18</td>
-      <td>54.52</td>
-      <td>1.39</td>
+      <td>46.22</td>
+      <td>54.41</td>
+      <td>1.35</td>
       <td>100%</td>
     </tr>
     <tr>
       <td>Sat (22)</td>
-      <td>43.32</td>
-      <td>54.14</td>
-      <td>0.47</td>
+      <td>43.36</td>
+      <td>53.37</td>
+      <td>0.55</td>
       <td>95%</td>
     </tr>
     <tr>
       <td>Sun (23)</td>
-      <td>41.29</td>
-      <td>51.33</td>
-      <td>0.01</td>
+      <td>40.75</td>
+      <td>51.08</td>
+      <td>0.00</td>
       <td>65%</td>
     </tr>
     <tr>
       <td>Mon (24)</td>
-      <td>39.58</td>
-      <td>53.20</td>
-      <td>0.00</td>
-      <td>40%</td>
+      <td>38.80</td>
+      <td>53.73</td>
+      <td>0.05</td>
+      <td>45%</td>
     </tr>
     <tr>
       <td>Tue (25)</td>
-      <td>47.28</td>
-      <td>55.29</td>
+      <td>46.06</td>
+      <td>55.02</td>
       <td>0.05</td>
       <td>20%</td>
     </tr>
@@ -234,7 +234,25 @@ window.observationsTable = `<div class="table-wrapper"><table class="dataframe c
 </thead>
 <tbody>
 <tr>
-<td rowspan="18">19 Mar</td>
+<td rowspan="20">19 Mar</td>
+<td>19h</td>
+<td>15.1</td>
+<td>SE</td>
+<td>16.9</td>
+<td>0.0</td>
+<td>26.1</td>
+</tr>
+<tr>
+
+<td>18h</td>
+<td>15.3</td>
+<td>SE</td>
+<td>19.4</td>
+<td>0.0</td>
+<td>152.3</td>
+</tr>
+<tr>
+
 <td>17h</td>
 <td>15.3</td>
 <td>SE</td>
@@ -612,7 +630,7 @@ window.observationsTable = `<div class="table-wrapper"><table class="dataframe c
 <td>0.0</td>
 </tr>
 <tr>
-<td rowspan="6">17 Mar</td>
+<td rowspan="4">17 Mar</td>
 <td>23h</td>
 <td>10.3</td>
 <td>E</td>
@@ -646,24 +664,6 @@ window.observationsTable = `<div class="table-wrapper"><table class="dataframe c
 <td>5.0</td>
 <td>0.0</td>
 <td>0.0</td>
-</tr>
-<tr>
-
-<td>19h</td>
-<td>11.0</td>
-<td>E</td>
-<td>4.3</td>
-<td>0.0</td>
-<td>29.8</td>
-</tr>
-<tr>
-
-<td>18h</td>
-<td>11.8</td>
-<td>SE</td>
-<td>7.9</td>
-<td>0.0</td>
-<td>261.8</td>
 </tr>
 </tbody>
 </table></div>`;
@@ -762,20 +762,6 @@ window.dashboardTable =
         </thead>
         <tbody>
     
-        <tr class="yellow">
-            <td><i class="fa-solid fa-cloud-rain"></i></td>
-            <td class="level"><i class="fa-solid fa-circle" style="color: #FFD43B;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
-            <td><a href="#" onclick="openModal('modal-Precipitação-19-19-03', event)">19-19/03</a></td>
-            <td><span data-tooltip="Leiria (58km WSW)">L</span></td>
-        </tr>
-        
-        <tr class="yellow">
-            <td><i class="fa-solid fa-wind"></i></td>
-            <td class="level"><i class="fa-solid fa-circle" style="color: #FFD43B;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
-            <td><a href="#" onclick="openModal('modal-Vento-19-19-03', event)">19-19/03</a></td>
-            <td><span data-tooltip="Leiria (58km WSW)">L</span></td>
-        </tr>
-        
         <tr class="green">
             <td><i class="fa-solid fa-smog"></i></td>
             <td class="level"><i class="fa-solid fa-circle" style="color: #26ba81;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
@@ -867,42 +853,6 @@ window.dashboardTable =
             <td><span data-tooltip="Castelo Branco (59km ESE)">CB</span></td>
         </tr>
         </tbody></table>
-    <dialog id="modal-Precipitação-19-19-03" class="modal">
-        <article>
-            <header>
-                <a href="#" class="close" aria-label="Close" onclick="closeModal('modal-Precipitação-19-19-03', event)"></a>
-                <h3>Precipitação</h3>
-            </header>
-            
-        <strong>alert level:</strong> yellow
-        <br><strong>start:</strong> 19/03 18:26
-        <br><strong>end:</strong> 19/03 21:00
-        <hr>
-    <p><strong>Leiria (58km WSW)</strong><br>Períodos de chuva, por vezes forte, que pode ocasionalmente ser acopmpanhada de trovoada.</p>
-            <footer>
-                <button onclick="closeModal('modal-Precipitação-19-19-03', event)">Close</button>
-            </footer>
-        </article>
-    </dialog>
-    
-    <dialog id="modal-Vento-19-19-03" class="modal">
-        <article>
-            <header>
-                <a href="#" class="close" aria-label="Close" onclick="closeModal('modal-Vento-19-19-03', event)"></a>
-                <h3>Vento</h3>
-            </header>
-            
-        <strong>alert level:</strong> yellow
-        <br><strong>start:</strong> 19/03 18:26
-        <br><strong>end:</strong> 19/03 21:00
-        <hr>
-    <p><strong>Leiria (58km WSW)</strong><br>Vento forte de sul/sueste, com rajadas até 90 km/h, sendo até 110 km/h nas serras.</p>
-            <footer>
-                <button onclick="closeModal('modal-Vento-19-19-03', event)">Close</button>
-            </footer>
-        </article>
-    </dialog>
-    
     <dialog id="modal-Nevoeiro-19-22-03" class="modal">
         <article>
             <header>
