@@ -16,78 +16,78 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>3-19</td>
       <td>Wed</td>
-      <td>48.83</td>
-      <td>61.16</td>
+      <td>9.35</td>
+      <td>16.20</td>
       <td>65%</td>
-      <td>0.02</td>
+      <td>0.60</td>
       <td>40%</td>
       <td>Mostly cloudy with occasional rain</td>
     </tr>
     <tr>
       <td>3-20</td>
       <td>Thu</td>
-      <td>48.43</td>
-      <td>55.67</td>
+      <td>9.13</td>
+      <td>13.15</td>
       <td>50%</td>
-      <td>1.45</td>
+      <td>36.90</td>
       <td>100%</td>
       <td>Showers, thunderstorms likely</td>
     </tr>
     <tr>
       <td>3-21</td>
       <td>Fri</td>
-      <td>46.20</td>
-      <td>54.39</td>
+      <td>7.89</td>
+      <td>12.44</td>
       <td>45%</td>
-      <td>1.35</td>
+      <td>34.40</td>
       <td>100%</td>
       <td>Showers, thunderstorms likely</td>
     </tr>
     <tr>
       <td>3-22</td>
       <td>Sat</td>
-      <td>43.47</td>
-      <td>53.31</td>
+      <td>6.37</td>
+      <td>11.84</td>
       <td>35%</td>
-      <td>0.55</td>
+      <td>13.90</td>
       <td>95%</td>
       <td>Showers, thunderstorms likely</td>
     </tr>
     <tr>
       <td>3-23</td>
       <td>Sun</td>
-      <td>40.87</td>
-      <td>51.06</td>
+      <td>4.93</td>
+      <td>10.59</td>
       <td>40%</td>
-      <td>0.00</td>
+      <td>0.10</td>
       <td>60%</td>
       <td>Mostly cloudy with occasional rain</td>
     </tr>
     <tr>
       <td>3-24</td>
       <td>Mon</td>
-      <td>39.04</td>
-      <td>53.80</td>
+      <td>3.91</td>
+      <td>12.11</td>
       <td>35%</td>
-      <td>0.05</td>
+      <td>1.20</td>
       <td>45%</td>
       <td>Mixed with showers</td>
     </tr>
     <tr>
       <td>3-25</td>
       <td>Tue</td>
-      <td>45.90</td>
-      <td>55.17</td>
+      <td>7.72</td>
+      <td>12.87</td>
       <td>45%</td>
-      <td>0.05</td>
+      <td>1.30</td>
       <td>20%</td>
       <td>Mostly cloudy with occasional rain</td>
     </tr>
     <tr>
       <td>3-26</td>
       <td>Wed</td>
-      <td>46.82</td>
-      <td>64.13</td>
+      <td>8.23</td>
+      <td>17.85</td>
       <td>55%</td>
       <td>0.00</td>
       <td>10%</td>
@@ -96,48 +96,48 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>3-27</td>
       <td>Thu</td>
-      <td>46.48</td>
-      <td>58.02</td>
+      <td>8.05</td>
+      <td>14.46</td>
       <td>15%</td>
-      <td>0.01</td>
+      <td>0.33</td>
       <td>40%</td>
       <td>Mixed with showers</td>
     </tr>
     <tr>
       <td>3-28</td>
       <td>Fri</td>
-      <td>45.04</td>
-      <td>56.97</td>
+      <td>7.25</td>
+      <td>13.87</td>
       <td>10%</td>
-      <td>0.27</td>
+      <td>6.75</td>
       <td>50%</td>
       <td>Mixed with showers</td>
     </tr>
     <tr>
       <td>3-29</td>
       <td>Sat</td>
-      <td>44.46</td>
-      <td>58.95</td>
+      <td>6.92</td>
+      <td>14.97</td>
       <td>10%</td>
-      <td>0.27</td>
+      <td>6.95</td>
       <td>60%</td>
       <td>Mixed with showers</td>
     </tr>
     <tr>
       <td>3-30</td>
       <td>Sun</td>
-      <td>44.50</td>
-      <td>60.68</td>
+      <td>6.94</td>
+      <td>15.93</td>
       <td>5%</td>
-      <td>0.16</td>
+      <td>4.04</td>
       <td>45%</td>
       <td>Mixed with showers</td>
     </tr>
     <tr>
       <td>3-31</td>
       <td>Mon</td>
-      <td>43.70</td>
-      <td>62.49</td>
+      <td>6.50</td>
+      <td>16.94</td>
       <td>20%</td>
       <td>0.00</td>
       <td>25%</td>
@@ -146,8 +146,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>4-1</td>
       <td>Tue</td>
-      <td>45.83</td>
-      <td>63.01</td>
+      <td>7.68</td>
+      <td>17.23</td>
       <td>25%</td>
       <td>0.00</td>
       <td>30%</td>
@@ -169,51 +169,51 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view"><table clas
   <tbody>
     <tr>
       <td>Wed (19)</td>
-      <td>48.83</td>
-      <td>61.16</td>
-      <td>0.02</td>
+      <td>9.35</td>
+      <td>16.20</td>
+      <td>0.60</td>
       <td>40%</td>
     </tr>
     <tr>
       <td>Thu (20)</td>
-      <td>48.43</td>
-      <td>55.67</td>
-      <td>1.45</td>
+      <td>9.13</td>
+      <td>13.15</td>
+      <td>36.90</td>
       <td>100%</td>
     </tr>
     <tr>
       <td>Fri (21)</td>
-      <td>46.20</td>
-      <td>54.39</td>
-      <td>1.35</td>
+      <td>7.89</td>
+      <td>12.44</td>
+      <td>34.40</td>
       <td>100%</td>
     </tr>
     <tr>
       <td>Sat (22)</td>
-      <td>43.47</td>
-      <td>53.31</td>
-      <td>0.55</td>
+      <td>6.37</td>
+      <td>11.84</td>
+      <td>13.90</td>
       <td>95%</td>
     </tr>
     <tr>
       <td>Sun (23)</td>
-      <td>40.87</td>
-      <td>51.06</td>
-      <td>0.00</td>
+      <td>4.93</td>
+      <td>10.59</td>
+      <td>0.10</td>
       <td>60%</td>
     </tr>
     <tr>
       <td>Mon (24)</td>
-      <td>39.04</td>
-      <td>53.80</td>
-      <td>0.05</td>
+      <td>3.91</td>
+      <td>12.11</td>
+      <td>1.20</td>
       <td>45%</td>
     </tr>
     <tr>
       <td>Tue (25)</td>
-      <td>45.90</td>
-      <td>55.17</td>
-      <td>0.05</td>
+      <td>7.72</td>
+      <td>12.87</td>
+      <td>1.30</td>
       <td>20%</td>
     </tr>
   </tbody>
@@ -742,11 +742,11 @@ window.dashboardTable =
     </tr>
     <tr>
       <td>Mar 25</td>
-      <td>85</td>
+      <td>86</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>425</td>
+      <td>426</td>
     </tr>
   </tbody>
 </table>
@@ -756,97 +756,97 @@ window.dashboardTable =
     
     <table class="custom-table">
         <thead>
-            <tr>
+            <tr class="{data['color']} hover:bg-gray-200 dark:hover:bg-gray-700 transition">
                 <th colspan='4'><h3 class="table-title">Warnings</h3></th>
             </tr>
         </thead>
         <tbody>
     
-        <tr class="green">
+        <tr class="green hover:bg-gray-200 dark:hover:bg-gray-700 transition">
             <td><i class="fa-solid fa-smog"></i></td>
             <td class="level"><i class="fa-solid fa-circle" style="color: #26ba81;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
             <td><a href="#" onclick="openModal('modal-Nevoeiro-19-22-03', event)">19-22/03</a></td>
             <td><span data-tooltip="Coimbra (36km NW)">C</span>, <span data-tooltip="Castelo Branco (59km ESE)">CB</span>, <span data-tooltip="Leiria (58km WSW)">L</span></td>
         </tr>
         
-        <tr class="green">
+        <tr class="green hover:bg-gray-200 dark:hover:bg-gray-700 transition">
             <td><i class="fa-solid fa-temperature-high"></i></td>
             <td class="level"><i class="fa-solid fa-circle" style="color: #26ba81;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
             <td><a href="#" onclick="openModal('modal-Tempo-Quente-19-22-03', event)">19-22/03</a></td>
             <td><span data-tooltip="Coimbra (36km NW)">C</span>, <span data-tooltip="Castelo Branco (59km ESE)">CB</span>, <span data-tooltip="Leiria (58km WSW)">L</span></td>
         </tr>
         
-        <tr class="green">
+        <tr class="green hover:bg-gray-200 dark:hover:bg-gray-700 transition">
             <td><i class="fa-solid fa-temperature-low"></i></td>
             <td class="level"><i class="fa-solid fa-circle" style="color: #26ba81;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
             <td><a href="#" onclick="openModal('modal-Tempo-Frio-19-22-03', event)">19-22/03</a></td>
             <td><span data-tooltip="Coimbra (36km NW)">C</span>, <span data-tooltip="Castelo Branco (59km ESE)">CB</span>, <span data-tooltip="Leiria (58km WSW)">L</span></td>
         </tr>
         
-        <tr class="green">
+        <tr class="green hover:bg-gray-200 dark:hover:bg-gray-700 transition">
             <td><i class="fa-solid fa-cloud-rain"></i></td>
             <td class="level"><i class="fa-solid fa-circle" style="color: #26ba81;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
             <td><a href="#" onclick="openModal('modal-Precipitação-19-22-03', event)">19-22/03</a></td>
             <td><span data-tooltip="Coimbra (36km NW)">C</span>, <span data-tooltip="Castelo Branco (59km ESE)">CB</span>, <span data-tooltip="Leiria (58km WSW)">L</span></td>
         </tr>
         
-        <tr class="green">
+        <tr class="green hover:bg-gray-200 dark:hover:bg-gray-700 transition">
             <td><i class="fa-solid fa-snowflake"></i></td>
             <td class="level"><i class="fa-solid fa-circle" style="color: #26ba81;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
             <td><a href="#" onclick="openModal('modal-Neve-19-22-03', event)">19-22/03</a></td>
             <td><span data-tooltip="Coimbra (36km NW)">C</span>, <span data-tooltip="Castelo Branco (59km ESE)">CB</span>, <span data-tooltip="Leiria (58km WSW)">L</span></td>
         </tr>
         
-        <tr class="green">
+        <tr class="green hover:bg-gray-200 dark:hover:bg-gray-700 transition">
             <td><i class="fa-solid fa-bolt"></i></td>
             <td class="level"><i class="fa-solid fa-circle" style="color: #26ba81;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
             <td><a href="#" onclick="openModal('modal-Trovoada-19-22-03', event)">19-22/03</a></td>
             <td><span data-tooltip="Coimbra (36km NW)">C</span>, <span data-tooltip="Castelo Branco (59km ESE)">CB</span>, <span data-tooltip="Leiria (58km WSW)">L</span></td>
         </tr>
         
-        <tr class="green">
+        <tr class="green hover:bg-gray-200 dark:hover:bg-gray-700 transition">
             <td><i class="fa-solid fa-wind"></i></td>
             <td class="level"><i class="fa-solid fa-circle" style="color: #26ba81;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
             <td><a href="#" onclick="openModal('modal-Vento-19-22-03', event)">19-22/03</a></td>
             <td><span data-tooltip="Coimbra (36km NW)">C</span>, <span data-tooltip="Castelo Branco (59km ESE)">CB</span>, <span data-tooltip="Leiria (58km WSW)">L</span></td>
         </tr>
         
-        <tr class="yellow">
+        <tr class="yellow hover:bg-gray-200 dark:hover:bg-gray-700 transition">
             <td><i class="fa-solid fa-wind"></i></td>
             <td class="level"><i class="fa-solid fa-circle" style="color: #FFD43B;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
             <td><a href="#" onclick="openModal('modal-Vento-19-20-03', event)">19-20/03</a></td>
             <td><span data-tooltip="Coimbra (36km NW)">C</span>, <span data-tooltip="Castelo Branco (59km ESE)">CB</span>, <span data-tooltip="Leiria (58km WSW)">L</span></td>
         </tr>
         
-        <tr class="orange">
+        <tr class="orange hover:bg-gray-200 dark:hover:bg-gray-700 transition">
             <td><i class="fa-solid fa-cloud-rain"></i></td>
             <td class="level"><i class="fa-solid fa-circle" style="color: #f58d38;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
             <td><a href="#" onclick="openModal('modal-Precipitação-19-20-03', event)">19-20/03</a></td>
             <td><span data-tooltip="Coimbra (36km NW)">C</span>, <span data-tooltip="Leiria (58km WSW)">L</span></td>
         </tr>
         
-        <tr class="orange">
+        <tr class="orange hover:bg-gray-200 dark:hover:bg-gray-700 transition">
             <td><i class="fa-solid fa-wind"></i></td>
             <td class="level"><i class="fa-solid fa-circle" style="color: #f58d38;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
             <td><a href="#" onclick="openModal('modal-Vento-20-20-03', event)">20-20/03</a></td>
             <td><span data-tooltip="Coimbra (36km NW)">C</span>, <span data-tooltip="Castelo Branco (59km ESE)">CB</span>, <span data-tooltip="Leiria (58km WSW)">L</span></td>
         </tr>
         
-        <tr class="yellow">
+        <tr class="yellow hover:bg-gray-200 dark:hover:bg-gray-700 transition">
             <td><i class="fa-solid fa-cloud-rain"></i></td>
             <td class="level"><i class="fa-solid fa-circle" style="color: #FFD43B;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
             <td><a href="#" onclick="openModal('modal-Precipitação-20-20-03', event)">20-20/03</a></td>
             <td><span data-tooltip="Castelo Branco (59km ESE)">CB</span>, <span data-tooltip="Leiria (58km WSW)">L</span></td>
         </tr>
         
-        <tr class="yellow">
+        <tr class="yellow hover:bg-gray-200 dark:hover:bg-gray-700 transition">
             <td><i class="fa-solid fa-cloud-rain"></i></td>
             <td class="level"><i class="fa-solid fa-circle" style="color: #FFD43B;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
             <td><a href="#" onclick="openModal('modal-Precipitação-20-21-03', event)">20-21/03</a></td>
             <td><span data-tooltip="Castelo Branco (59km ESE)">CB</span></td>
         </tr>
         
-        <tr class="yellow">
+        <tr class="yellow hover:bg-gray-200 dark:hover:bg-gray-700 transition">
             <td><i class="fa-solid fa-snowflake"></i></td>
             <td class="level"><i class="fa-solid fa-circle" style="color: #FFD43B;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
             <td><a href="#" onclick="openModal('modal-Neve-20-21-03', event)">20-21/03</a></td>
