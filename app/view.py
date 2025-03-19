@@ -1,4 +1,5 @@
 import os
+import locale
 from collections import defaultdict
 
 import pandas as pd
@@ -13,6 +14,8 @@ from analyze import (
     warnings_by_region,
 )
 from utils import get_closest_regions, WARNING_ICONS, get_warning_level_icon
+
+locale.setlocale(locale.LC_ALL, "en_US.UTF-8")
 
 
 # DATA PROCESSING: Load Raw Data
@@ -47,6 +50,17 @@ df_forecast = format_forecast(df_forecast)
 df_forecast_mobile = format_forecast(df_forecast, mobile=True)
 
 
+print("\n🛠 DEBUG: Data Types in GitHub Actions 🛠")
+print(df_forecast.dtypes)
+
+print("\n🛠 DEBUG: First 5 Rows of df_forecast 🛠")
+print(df_forecast.head())
+
+print("\n🛠 DEBUG: JSON Output (to check Jinja rendering) 🛠")
+import json
+print(json.dumps(df_forecast.to_dict(orient="records"), indent=4))
+
+print(df_forecast.head(10))
 
 
 def format_table_html(df: pd.DataFrame, title: str) -> str:
@@ -108,7 +122,7 @@ table_html_observations = apply_row_span_for_date_column(table_html_observations
 table_html_missing = format_table_html(df_show_missing_entries, "Missing Entries")
 table_html_cold_hours = format_table_html(df_cold_hours, "Cold Hours")
 
-
+print(table_html_forecast)
 
 
 def generate_warning_timeline(warnings: list) -> str:
@@ -242,7 +256,7 @@ def generate_warning_table_html(grouped_warnings: dict, area_order: dict) -> str
     table_html = """
     <table class="custom-table">
         <thead>
-            <tr>
+            <tr class="{data['color']} hover:bg-gray-200 dark:hover:bg-gray-700 transition">
                 <th colspan='4'><h3 class="table-title">Warnings</h3></th>
             </tr>
         </thead>
@@ -269,7 +283,7 @@ def generate_warning_table_html(grouped_warnings: dict, area_order: dict) -> str
         warning_icon = get_warning_level_icon(data["level"])  # 🔥 New: Use the icon instead of text
 
         table_html += f"""
-        <tr class="{data["color"]}">
+        <tr class="{data['color']} hover:bg-gray-200 dark:hover:bg-gray-700 transition">
             <td><i class="fa-solid {data["icon"]}"></i></td>
             <td class="level">{warning_icon}</td>  <!-- 🔥 New: Replaces text with icon -->
             <td><a href="#" onclick="openModal('{modal_id}', event)">{date_range}</a></td>
