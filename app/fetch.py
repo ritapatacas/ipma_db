@@ -4,18 +4,36 @@ from collections import defaultdict
 from connections import IPMA, IPMA_API_URIS, observations_db
 from utils import parse_datetime, logger
 
-
-
-# fetch observations data for ansriao station from IPMA API
+# Fetch observations data for Ansiao station from IPMA API
 def fetch_stations_data():
     try:
         res = requests.get(IPMA_API_URIS["station_observations"])
         res.raise_for_status()
-        #print(res.json())
         return res.json()
     except requests.RequestException as e:
         logger.error(f"{e} error fetching")
         return None
+
+def clean_entry(entry):
+    """Cleans and formats a single station entry."""
+    INVALID_VALUES = {-99}
+    FIELDS_TO_CLEAN = ["precAcumulada", "pressao"]
+    NUMERIC_FIELDS = ["temperatura", "humidade", "radiacao", "intensidadeVento", "intensidadeVentoKM"]
+    
+    # Fix invalid values
+    for field in FIELDS_TO_CLEAN:
+        if field in entry and entry[field] in INVALID_VALUES:
+            entry[field] = None  # Replace -99 with None
+    
+    # Ensure numeric fields are correctly formatted
+    for field in NUMERIC_FIELDS:
+        if field in entry and not isinstance(entry[field], (int, float)):
+            try:
+                entry[field] = float(entry[field])
+            except ValueError:
+                entry[field] = None  # Handle conversion errors
+    
+    return entry
 
 def fetch_and_store_station_data():
     data = fetch_stations_data()
@@ -24,16 +42,15 @@ def fetch_and_store_station_data():
         return
 
     try:
-        station_data = [
-            {
-                "data_hora": parse_datetime(hour),
-                "data": parse_datetime(hour).strftime("%Y-%m-%d"),
-                "hora": parse_datetime(hour).strftime("%H:%M"),
-                **obs.get(IPMA["closest_station"]["idStation"], {})
-            }
-            for hour, obs in data.items()
-            if IPMA["closest_station"]["idStation"] in obs and obs[IPMA["closest_station"]["idStation"]] is not None
-        ]
+        station_data = []
+        for hour, obs in data.items():
+            if IPMA["closest_station"]["idStation"] in obs and obs[IPMA["closest_station"]["idStation"]] is not None:
+                entry = {
+                    "data_hora": parse_datetime(hour),
+                    **obs[IPMA["closest_station"]["idStation"]]
+                }
+                entry = clean_entry(entry)  # Clean data before storing
+                station_data.append(entry)
     except Exception as e:
         logger.error(f"Error processing station data: {e}")
         return
@@ -52,6 +69,7 @@ def fetch_and_store_station_data():
         logger.info(f"Fetched, processed, and stored {len(station_data)} records successfully")
     except Exception as e:
         logger.error(f"Error storing data to MongoDB: {e}")
+
 
 
 #fetch weather warnings for closest regions from IPMA API
@@ -122,7 +140,7 @@ def warnings_by_region():
     }
 
     pretty_result = json.dumps(aggregated_warnings, indent=4, ensure_ascii=False)
-    print(pretty_result)
+    #print(pretty_result)
 
     return aggregated_warnings
 
