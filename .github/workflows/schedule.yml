@@ -84,30 +84,29 @@ jobs:
           echo "📂 Listing app/ directory:"
           ls -la app/
           python app/view.py
-
+          
       - name: Commit and push index.html to GitHub Pages
         run: |
           echo "🔍 Fetching latest changes..."
-          
-          echo "🔍 Current path before git commands:"
-          pwd
-          echo "📂 Listing files:"
-          ls -la
-          echo "📂 Listing app/ directory:"
-          ls -la app/
-          echo "🔍 Git status before committing:"
-          git status
-          
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git config --global user.name "github-actions[bot]"
 
-          git stash
-          git pull --rebase origin main
-          git stash pop || echo "No stash to pop"
+          # Ensure Git recognizes changes
+          git update-index --refresh
+          git diff --exit-code app/static/tables.js || touch app/static/tables.js
 
-          # Force Git to track tables.js
+          # Normalize line endings & permissions
+          git config core.fileMode false
+          git config core.autocrlf input
+
+          # Stage changes BEFORE pulling
           git add -f app/static/tables.js
           git add index.html
 
+          # Pull after staging to avoid overwrite
+          git pull --rebase origin main || echo "Skipping pull due to conflict"
+
+          # Commit only if changes exist
           git commit -m "update view" || echo "No changes to commit"
           git push
+
