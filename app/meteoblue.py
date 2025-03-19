@@ -64,21 +64,22 @@ def parse_soup_forecast():
         elif row_name:
             clean_rows[row_name] = [cell.get_text(strip=True) for cell in row.find_all(["td", "th"])]
 
+    # ✅ Ensure numeric conversion of extracted data
+    def to_float_list(lst):
+        return [float(x) if isinstance(x, (int, float)) or x.replace('.', '', 1).isdigit() else None for x in lst]
+
     forecast = {
         "date": clean_rows.get("date", []),
         "weekday": clean_rows.get("weekday", []),
-        "min": canvas_data.get("temperature_min", []),
-        "max": canvas_data.get("temperature_max", []),
-        #"t_spread": canvas_data.get("temperature_spread", []),
+        "min": to_float_list(canvas_data.get("temperature_min", [])),  # Convert to float
+        "max": to_float_list(canvas_data.get("temperature_max", [])),  # Convert to float
         "pred": clean_rows.get("predictability", []),
-        "prec mm": canvas_data.get("precipitation", []),
+        "prec mm": to_float_list(canvas_data.get("precipitation", [])),  # Convert to float
         "prob %": clean_rows.get("probability", []),
-        #"p_spread": canvas_data.get("precipitation_spread", []),
         "obs": clean_rows.get("obs", []),
     }
 
     return forecast
-
 
 
 def show_forecast():
