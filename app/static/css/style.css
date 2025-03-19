@@ -181,6 +181,12 @@ th {
     font-weight: 600;
 }
 
+.table-title {
+    font-size: 0.8rem;
+    text-align: center;
+    margin-bottom: 0.2rem;
+}
+
 .table-container {
     display: flex;
     gap: 2rem;

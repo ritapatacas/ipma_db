@@ -3,6 +3,7 @@ import pandas as pd
 import os
 import json
 import logging
+from connections import load_config
 
 
 WIND_DIR = {
@@ -36,10 +37,37 @@ DATE_FORMAT = {
     "month": "%b %y",
 }
 
+WARNING_ICONS = {
+    "Nevoeiro": "fa-smog",
+    "Tempo Quente": "fa-temperature-high",
+    "Tempo Frio": "fa-temperature-low",
+    "Precipitação": "fa-cloud-rain",
+    "Neve": "fa-snowflake",
+    "Trovoada": "fa-bolt",
+    "Vento": "fa-wind",
+}
+
+WARNING_LEVEL_COLORS = {
+    "green": '#26ba81',
+    "yellow": '#FFD43B',
+    "orange": '#f58d38',
+    "red": '#ea3939',
+}
+
+def get_warning_level_icon(level: str) -> str:
+    """Returns an HTML icon for the warning level."""
+    color = WARNING_LEVEL_COLORS.get(level.lower(), "")  # Ensures lowercase match
+    return f'<i class="fa-solid fa-circle" style="color: {color};"></i>' if color else ""
+
+
 logging.basicConfig(
     level=logging.INFO, format="\n> %(levelname)s:%(name)s: %(message)s"
 )
 logger = logging.getLogger(__name__)
+
+def get_closest_regions():
+    config = load_config()
+    return config["ipma"]["closest_regions"]
 
 
 def parse_datetime(date_str, formats=["%Y-%m-%dT%H:%M:%S", "%Y-%m-%dT%H:%M"]):

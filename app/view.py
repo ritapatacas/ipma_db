@@ -1,25 +1,65 @@
 import os
-from jinja2 import Environment, FileSystemLoader
-import pandas as pd
 from collections import defaultdict
+
+import pandas as pd
+from jinja2 import Environment, FileSystemLoader
 from bs4 import BeautifulSoup
 from meteoblue import parse_soup_forecast
+
 from analyze import (
     observations,
     summarize_cold_hours,
     summarize_missing_entries,
     warnings_by_region,
 )
+from utils import get_closest_regions, WARNING_ICONS, get_warning_level_icon
 
+
+# DATA PROCESSING: Load Raw Data
 df_forecast = pd.DataFrame(parse_soup_forecast())
 df_observations = pd.DataFrame(observations())
 df_show_missing_entries = pd.DataFrame(summarize_missing_entries("month"))
 df_cold_hours = pd.DataFrame(summarize_cold_hours("month"))
 
-print("\n == forecast\n", df_forecast.head(10))
-print("\n\n == observations\n", df_observations.head(10))
-print("\n\n == missing entries\n", df_show_missing_entries.head(10))
-print("\n\n == cold hours\n", df_cold_hours.head(10))
+def debug_print_data():
+    print("\n == Forecast Data ==\n", df_forecast.head(10))
+    print("\n == Observations Data ==\n", df_observations.head(10))
+    print("\n == Missing Entries Data ==\n", df_show_missing_entries.head(10))
+    print("\n == Cold Hours Data ==\n", df_cold_hours.head(10))
+
+#debug_print_data()
+
+
+def format_forecast(df: pd.DataFrame, mobile: bool = False) -> pd.DataFrame:
+    df = df.copy()
+    if mobile:
+        if {"date", "weekday", "min", "max", "prec mm", "prob %"}.issubset(df.columns):
+            df["date"] = df["date"].str.extract(r"-(\d+)$")
+            df["day"] = df["weekday"].astype(str) + " (" + df["date"].astype(str) + ")"
+            return df[["day", "min", "max", "prec mm", "prob %"]].head(7)
+    else:
+        for col in ["min", "max", "prec mm"]:
+            if col in df.columns:
+                df[col] = df[col].apply(lambda x: f"{float(x):.2f}" if pd.notna(x) else "-")
+    return df
+
+df_forecast = format_forecast(df_forecast)
+df_forecast_mobile = format_forecast(df_forecast, mobile=True)
+
+
+
+
+def format_table_html(df: pd.DataFrame, title: str) -> str:
+    """Generate an HTML table with a title inside <thead>."""
+    if df.empty:
+        return ""
+
+    table_html = df.to_html(index=False, border=0, classes="custom-table")
+    table_html = table_html.replace(
+        "<thead>",
+        f"<thead>\n    <tr><th colspan='{len(df.columns)}'><h3 class='table-title'>{title}</h3></th></tr>\n"
+    )
+    return table_html
 
 
 def apply_row_span_for_date_column(html_table):
@@ -58,66 +98,24 @@ def apply_row_span_for_date_column(html_table):
     return str(soup)
 
 
-def format_forecast_df(df: pd.DataFrame) -> pd.DataFrame:
-    df = df.copy()
 
-    for col in ["min", "max", "prec mm"]:
-        if col in df.columns:
-            df[col] = df[col].apply(lambda x: f"{float(x):.2f}" if pd.notna(x) else "-")
+table_html_forecast = df_forecast.to_html(index=False, border=0, classes="custom-table desktop-view").replace("`", "\\`")
+table_html_forecast_mobile = df_forecast_mobile.to_html(index=False, border=0, classes="custom-table mobile-view").replace("`", "\\`")
 
-    return df
-
-
-def format_forecast_df_mobile(df: pd.DataFrame) -> pd.DataFrame:
-    df = df.copy()
-
-    if {"date", "weekday", "min", "max", "prec mm", "prob %"}.issubset(df.columns):
-        df["date"] = df["date"].str.extract(r"-(\d+)$")
-        df["day"] = df["weekday"].astype(str) + " (" + df["date"].astype(str) + ")"
-        df = df[["day", "min", "max", "prec mm", "prob %"]]
-
-    df = df.head(7)
-
-    return df
-
-
-df_forecast = format_forecast_df(df_forecast)
-df_forecast_mobile = format_forecast_df_mobile(df_forecast)
-
-table_html_forecast = df_forecast.to_html(
-    index=False, border=0, classes="custom-table desktop-view"
-).replace("`", "\\`")
-table_html_forecast_mobile = df_forecast_mobile.to_html(
-    index=False, border=0, classes="custom-table mobile-view"
-).replace("`", "\\`")
-
-table_html_observations_raw = df_observations.to_html(
-    index=False, border=0, classes="custom-table"
-).replace("`", "\\`")
+table_html_observations_raw = df_observations.to_html(index=False, border=0, classes="custom-table").replace("`", "\\`")
 table_html_observations = apply_row_span_for_date_column(table_html_observations_raw)
-table_html_missing = df_show_missing_entries.to_html(
-    index=False, border=0, classes="custom-table"
-).replace("`", "\\`")
-table_html_cold_hours = df_cold_hours.to_html(
-    index=False, border=0, classes="custom-table"
-).replace("`", "\\`")
+
+table_html_missing = format_table_html(df_show_missing_entries, "Missing Entries")
+table_html_cold_hours = format_table_html(df_cold_hours, "Cold Hours")
 
 
-ICONS = {
-    "Nevoeiro": "fa-smog",
-    "Tempo Quente": "fa-temperature-high",
-    "Tempo Frio": "fa-temperature-low",
-    "Precipitação": "fa-cloud-rain",
-    "Neve": "fa-snowflake",
-    "Trovoada": "fa-bolt",
-    "Vento": "fa-wind",
-}
 
 
 def generate_warning_timeline(warnings: list) -> str:
+    """Generate a timeline of warnings for display."""
     timeline_html = ""
     for warning in warnings:
-        icon = ICONS.get(warning["awarenessTypeName"], "fa-triangle-exclamation")
+        icon = WARNING_ICONS.get(warning["awarenessTypeName"], "fa-triangle-exclamation")
         color = warning["awarenessLevelID"]
         start = pd.to_datetime(warning["startTime"]).strftime("%d-%m")
         end = pd.to_datetime(warning["endTime"]).strftime("%d-%m")
@@ -129,49 +127,13 @@ def generate_warning_timeline(warnings: list) -> str:
         """
     return timeline_html
 
-
-def generate_warning_table(warnings: list) -> str:
-    table_html = """
-    <table class="custom-table">
-        <thead>
-            <tr>
-                <th></th>
-                <th>start</th>
-                <th>end</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-    """
-
-
-    for warning in warnings:
-        icon = ICONS.get(warning["awarenessTypeName"], "fa-triangle-exclamation")
-        color = warning["awarenessLevelID"]  # Color class
-        start = pd.to_datetime(warning["startTime"]).strftime("%d-%m")
-        end = pd.to_datetime(warning["endTime"]).strftime("%d-%m")
-        areas = ", ".join(warning["idsAreaAviso"])
-
-        table_html += f"""
-        <tr class="{color}">
-            <td><i class="fa-solid {icon}"></i></td>
-            <td>{start}</td>
-            <td>{end}</td>
-            <td><span data-tooltip="{warning['awarenessTypeName']}{" [" + warning['text'] + "]" if warning['text'] else ""}">{areas}</span></td>
-        </tr>
-        """
-
-
-    table_html += "</tbody></table>"
-    return table_html
-
-
 def generate_warning_timeline_mobile(warnings: list) -> str:
+    """Generate a mobile-friendly warning timeline."""
     grouped_warnings = defaultdict(list)
 
     for warning in warnings:
         key = (warning["startTime"], warning["endTime"], warning["awarenessLevelID"])
-        icon = ICONS.get(warning["awarenessTypeName"], "fa-triangle-exclamation")
+        icon = WARNING_ICONS.get(warning["awarenessTypeName"], "fa-triangle-exclamation")
         areas = ", ".join(warning["idsAreaAviso"])
         grouped_warnings[key].append(
             {"icon": icon, "type": warning["awarenessTypeName"], "areas": areas}
@@ -181,14 +143,8 @@ def generate_warning_timeline_mobile(warnings: list) -> str:
     for (startTime, endTime, color), warnings_list in grouped_warnings.items():
         start = pd.to_datetime(startTime).strftime("%d-%m")
         end = pd.to_datetime(endTime).strftime("%d-%m")
-        icons_html = ""
-        title_parts = []
-
-        for w in warnings_list:
-            icons_html += f'<i class="fa-solid {w["icon"]}"></i> '
-            title_parts.append(f'{w["type"]} [{w["areas"]}]')
-
-        title = " | ".join(title_parts)
+        icons_html = "".join(f'<i class="fa-solid {w["icon"]}"></i> ' for w in warnings_list)
+        title = " | ".join(f'{w["type"]} [{w["areas"]}]' for w in warnings_list)
 
         timeline_html += f"""
         <div class="event {color}" title="{title}">
@@ -197,6 +153,138 @@ def generate_warning_timeline_mobile(warnings: list) -> str:
         """
     timeline_html += "</div>"
     return timeline_html
+
+def organize_warnings(warnings: list) -> dict:
+    closest_regions = get_closest_regions()
+    area_map = {region["idAreaAviso"]: region["acronym"] for region in closest_regions}
+    area_info_map = {region["acronym"]: f"{region['local']} ({region['distance']})" for region in closest_regions}
+    area_order = {region["acronym"]: index + 1 for index, region in enumerate(sorted(closest_regions, key=lambda r: r["acronym"]))}
+
+    grouped_warnings = defaultdict(lambda: {
+        "areas": defaultdict(set),
+        "color": None,
+        "icon": None,
+        "details": defaultdict(list),
+        "level": None,
+        "start_time": None,
+        "end_time": None
+    })
+
+    for warning in warnings:
+        icon = WARNING_ICONS.get(warning["awarenessTypeName"], "fa-triangle-exclamation")
+        color = warning["awarenessLevelID"]
+        start_time = pd.to_datetime(warning["startTime"]).strftime("%d/%m %H:%M")
+        end_time = pd.to_datetime(warning["endTime"]).strftime("%d/%m %H:%M")
+        start_day = pd.to_datetime(warning["startTime"]).strftime("%d")
+        end_day = pd.to_datetime(warning["endTime"]).strftime("%d/%m")
+        date_range = f"{start_day}-{end_day}"
+        warning_type = warning["awarenessTypeName"]
+        warning_level = warning["awarenessLevelID"]
+
+        key = (warning_type, date_range)
+
+        if key not in grouped_warnings:
+            grouped_warnings[key].update({
+                "color": color,
+                "icon": icon,
+                "level": warning_level,
+                "start_time": start_time,
+                "end_time": end_time
+            })
+
+        for area in warning["idsAreaAviso"]:
+            area_acronym = area_map.get(area, area)
+            area_full_name = area_info_map.get(area_acronym, area_acronym)
+            warning_text = warning["text"].strip() if warning["text"] else None
+
+            grouped_warnings[key]["areas"][area_acronym].add(area_full_name)
+            grouped_warnings[key]["details"][area_full_name].append(warning_text or "")
+
+    return grouped_warnings, area_order
+
+
+def generate_warning_modal(warning_type: str, date_range: str, data: dict) -> str:
+    safe_warning_type = warning_type.replace(" ", "-").replace("/", "-")
+    safe_date_range = date_range.replace("/", "-")
+    modal_id = f"modal-{safe_warning_type}-{safe_date_range}"
+
+    modal_details = f"""
+        <strong>alert level:</strong> {data["level"]}
+        <br><strong>start:</strong> {data["start_time"]}
+        <br><strong>end:</strong> {data["end_time"]}
+        <hr>
+    """
+
+    area_texts = [
+        f"<p><strong>{area_full_name}</strong><br>{'<br>'.join(texts) if any(texts) else ''}</p>"
+        for area_full_name, texts in data["details"].items()
+    ]
+
+    modal_details += "".join(area_texts)
+
+    return f"""
+    <dialog id="{modal_id}" class="modal">
+        <article>
+            <header>
+                <a href="#" class="close" aria-label="Close" onclick="closeModal('{modal_id}', event)"></a>
+                <h3>{warning_type}</h3>
+            </header>
+            {modal_details}
+            <footer>
+                <button onclick="closeModal('{modal_id}', event)">Close</button>
+            </footer>
+        </article>
+    </dialog>
+    """
+
+
+def generate_warning_table_html(grouped_warnings: dict, area_order: dict) -> str:
+    table_html = """
+    <table class="custom-table">
+        <thead>
+            <tr>
+                <th colspan='4'><h3 class="table-title">Warnings</h3></th>
+            </tr>
+        </thead>
+        <tbody>
+    """
+
+    modal_html = ""
+
+    for (warning_type, date_range), data in grouped_warnings.items():
+        sorted_areas = sorted(data["areas"].keys(), key=lambda x: area_order.get(x, 99))
+
+        areas_with_tooltip = [
+            f'<span data-tooltip="{", ".join(data["areas"][area])}">{area}</span>'
+            for area in sorted_areas
+        ]
+        areas_display = ", ".join(areas_with_tooltip)
+
+        modal_html += generate_warning_modal(warning_type, date_range, data)
+
+        safe_warning_type = warning_type.replace(" ", "-").replace("/", "-")
+        safe_date_range = date_range.replace("/", "-")
+        modal_id = f"modal-{safe_warning_type}-{safe_date_range}"
+
+        warning_icon = get_warning_level_icon(data["level"])  # 🔥 New: Use the icon instead of text
+
+        table_html += f"""
+        <tr class="{data["color"]}">
+            <td><i class="fa-solid {data["icon"]}"></i></td>
+            <td class="level">{warning_icon}</td>  <!-- 🔥 New: Replaces text with icon -->
+            <td><a href="#" onclick="openModal('{modal_id}', event)">{date_range}</a></td>
+            <td>{areas_display}</td>
+        </tr>
+        """
+
+    table_html += "</tbody></table>" + modal_html
+
+    return table_html
+
+def generate_warning_table(warnings: list) -> str:
+    grouped_warnings, area_order = organize_warnings(warnings)
+    return generate_warning_table_html(grouped_warnings, area_order)
+
 
 
 warnings_data = warnings_by_region()
@@ -207,75 +295,58 @@ warnings_timeline_html_mobile = generate_warning_timeline_mobile(
 )
 
 
-def generate_warning_timeline_mobile(warnings: list) -> str:
-    timeline_html = ""
-    for warning in warnings:
-        icon = ICONS.get(warning["awarenessTypeName"], "fa-triangle-exclamation")
-        color = warning["awarenessLevelID"]
-        start = pd.to_datetime(warning["startTime"]).strftime("%d-%m")
-        end = pd.to_datetime(warning["endTime"]).strftime("%d-%m")
-        areas = ", ".join(warning["idsAreaAviso"])
-        timeline_html += f"""
-        <div class="event {color}" title="Warnign: {warning['awarenessTypeName']}">
-            
-          <i class="fa-solid {icon}" ></i> (<span data-tooltip="Warnign: {warning['awarenessTypeName']} For: {areas}">{start} → {end}></span>)
-        
-        </div>
-        """
-    return timeline_html
 
+# TEMPLATE RENDERING & FILE HANDLING
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 TEMPLATES_DIR = os.path.join(BASE_DIR, "templates")
-
 env = Environment(loader=FileSystemLoader(TEMPLATES_DIR))
-template = env.get_template("index.html")
 
-html = template.render(
-    title="The Owls Are Not What They Berrie",
-    forecast_table=df_forecast.to_html(index=False, border=0, classes="custom-table"),
-    table_html_forecast=table_html_forecast,
-    table_html_forecast_mobile=table_html_forecast_mobile,
-    table_html_observations=table_html_observations,
-    table_html_missing=table_html_missing,
-    table_html_cold_hours=table_html_cold_hours,
-    warnings_timeline=warnings_timeline_html,
-    warnings_timeline_html_mobile=warnings_timeline_html_mobile,
-)
+def render_template() -> str:
+    """Render the main HTML template with all processed data."""
+    template = env.get_template("index.html")
 
-# Ensure we are loading from the correct templates directory
-template_tables = env.get_template("tables.js.jinja")
+    return template.render(
+        title="The Owls Are Not What They Berrie",
+        forecast_table=df_forecast.to_html(index=False, border=0, classes="custom-table"),
+        table_html_forecast=table_html_forecast,
+        table_html_forecast_mobile=table_html_forecast_mobile,
+        table_html_observations=table_html_observations,
+        table_html_missing=table_html_missing,
+        table_html_cold_hours=table_html_cold_hours,
+        warnings_timeline=warnings_timeline_html,
+        warnings_timeline_html_mobile=warnings_timeline_html_mobile,
+    )
 
-# Render the JavaScript file
-tables_js = template_tables.render(
-    table_html_forecast=table_html_forecast,
-    table_html_forecast_mobile=table_html_forecast_mobile,
-    table_html_observations=table_html_observations,
-    table_html_missing=table_html_missing,
-    table_html_cold_hours=table_html_cold_hours,
-    warnings_timeline=warnings_timeline_html,
-)
+def render_tables_js() -> str:
+    """Render the JavaScript table data for dynamic loading."""
+    template_tables = env.get_template("tables.js.jinja")
 
-def save_files(html, tables_js):
-    BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # Inside app/
-    PROJECT_ROOT = os.path.abspath(os.path.join(BASE_DIR, ".."))  # Moves up to ipma_db/
+    return template_tables.render(
+        table_html_forecast=table_html_forecast,
+        table_html_forecast_mobile=table_html_forecast_mobile,
+        table_html_observations=table_html_observations,
+        table_html_missing=table_html_missing,
+        table_html_cold_hours=table_html_cold_hours,
+        warnings_timeline=warnings_timeline_html,
+    )
 
-    # Save index.html in the correct project directory
+def save_files(html: str, tables_js: str):
+    """Save rendered HTML and JavaScript files to the appropriate locations."""
+    PROJECT_ROOT = os.path.abspath(os.path.join(BASE_DIR, ".."))
+
+    # ✅ Save index.html
     index_html_path = os.path.join(PROJECT_ROOT, "index.html")
-
     with open(index_html_path, "w", encoding="utf-8") as f:
         f.write(html)
     print(f"✅ index.html saved at: {index_html_path}")
 
-    # Save tables.js in static/ inside the correct project directory
     tables_js_path = os.path.join(PROJECT_ROOT, "app/static/tables.js")
-
     os.makedirs(os.path.dirname(tables_js_path), exist_ok=True)
-
     with open(tables_js_path, "w", encoding="utf-8") as f:
         f.write(tables_js)
-    
     print(f"✅ tables.js saved at: {tables_js_path}")
 
-
-save_files(html, tables_js)
+html_output = render_template()
+tables_js_output = render_tables_js()
+save_files(html_output, tables_js_output)

@@ -26,6 +26,8 @@ ipma:
       idDistrito: 6
       local: "Coimbra"
       longitude: "-8.4194"
+      distance: "36km NW" # add this hardcoded
+      acronym: "C" # add this hardcoded
     - idRegiao: 1
       idAreaAviso: "LRA"
       idConcelho: 9
@@ -34,6 +36,8 @@ ipma:
       idDistrito: 10
       local: "Leiria"
       longitude: "-8.8069"
+      distance: "58km WSW" # add this hardcoded
+      acronym: "L" # add this hardcoded
     - idRegiao: 1
       idAreaAviso: "CBO"
       idConcelho: 2
@@ -42,6 +46,8 @@ ipma:
       idDistrito: 5
       local: "Castelo Branco"
       longitude: "-7.4957"
+      distance: "59km ESE" # add this hardcoded
+      acronym: "CB" # add this hardcoded
 
 meteoblue:
   closest_places:
