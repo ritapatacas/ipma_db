@@ -35,6 +35,11 @@ def debug_print_data():
 
 def format_forecast(df: pd.DataFrame, mobile: bool = False) -> pd.DataFrame:
     df = df.copy()
+
+    # ✅ Force numeric conversion (fix GH Actions issue)
+    for col in ["min", "max", "prec mm"]:
+        df[col] = pd.to_numeric(df[col], errors="coerce")
+
     if mobile:
         if {"date", "weekday", "min", "max", "prec mm", "prob %"}.issubset(df.columns):
             df["date"] = df["date"].str.extract(r"-(\d+)$")
@@ -44,7 +49,9 @@ def format_forecast(df: pd.DataFrame, mobile: bool = False) -> pd.DataFrame:
         for col in ["min", "max", "prec mm"]:
             if col in df.columns:
                 df[col] = df[col].apply(lambda x: f"{float(x):.2f}" if pd.notna(x) else "-")
+
     return df
+
 
 df_forecast = format_forecast(df_forecast)
 df_forecast_mobile = format_forecast(df_forecast, mobile=True)
