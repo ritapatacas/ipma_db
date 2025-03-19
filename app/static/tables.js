@@ -17,77 +17,77 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>3-19</td>
       <td>Wed</td>
       <td>48.83</td>
-      <td>60.39</td>
-      <td>60%</td>
-      <td>0.05</td>
-      <td>50%</td>
+      <td>60.89</td>
+      <td>65%</td>
+      <td>0.02</td>
+      <td>45%</td>
       <td>Mostly cloudy with occasional rain</td>
     </tr>
     <tr>
       <td>3-20</td>
       <td>Thu</td>
-      <td>47.71</td>
-      <td>56.55</td>
-      <td>40%</td>
-      <td>1.10</td>
-      <td>95%</td>
+      <td>48.31</td>
+      <td>55.11</td>
+      <td>50%</td>
+      <td>1.46</td>
+      <td>100%</td>
       <td>Showers, thunderstorms likely</td>
     </tr>
     <tr>
       <td>3-21</td>
       <td>Fri</td>
-      <td>45.99</td>
-      <td>53.78</td>
+      <td>46.18</td>
+      <td>54.52</td>
       <td>40%</td>
-      <td>1.30</td>
+      <td>1.39</td>
       <td>100%</td>
       <td>Showers, thunderstorms likely</td>
     </tr>
     <tr>
       <td>3-22</td>
       <td>Sat</td>
-      <td>42.71</td>
-      <td>53.15</td>
+      <td>43.32</td>
+      <td>54.14</td>
       <td>35%</td>
-      <td>0.76</td>
-      <td>90%</td>
-      <td>Mostly cloudy with rain</td>
+      <td>0.47</td>
+      <td>95%</td>
+      <td>Showers, thunderstorms likely</td>
     </tr>
     <tr>
       <td>3-23</td>
       <td>Sun</td>
-      <td>40.51</td>
-      <td>50.65</td>
+      <td>41.29</td>
+      <td>51.33</td>
       <td>30%</td>
-      <td>0.11</td>
+      <td>0.01</td>
       <td>65%</td>
       <td>Mostly cloudy with occasional rain</td>
     </tr>
     <tr>
       <td>3-24</td>
       <td>Mon</td>
-      <td>40.39</td>
-      <td>54.03</td>
-      <td>30%</td>
-      <td>0.29</td>
-      <td>50%</td>
-      <td>Mixed with showers</td>
+      <td>39.58</td>
+      <td>53.20</td>
+      <td>40%</td>
+      <td>0.00</td>
+      <td>40%</td>
+      <td>Partly cloudy</td>
     </tr>
     <tr>
       <td>3-25</td>
       <td>Tue</td>
-      <td>46.51</td>
-      <td>55.00</td>
-      <td>35%</td>
-      <td>0.27</td>
+      <td>47.28</td>
+      <td>55.29</td>
+      <td>40%</td>
+      <td>0.05</td>
       <td>20%</td>
-      <td>Mostly cloudy with rain</td>
+      <td>Mostly cloudy with occasional rain</td>
     </tr>
     <tr>
       <td>3-26</td>
       <td>Wed</td>
-      <td>46.06</td>
-      <td>63.08</td>
+      <td>46.37</td>
+      <td>62.99</td>
       <td>50%</td>
       <td>0.00</td>
       <td>15%</td>
@@ -96,8 +96,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>3-27</td>
       <td>Thu</td>
-      <td>46.66</td>
-      <td>57.46</td>
+      <td>46.97</td>
+      <td>57.72</td>
       <td>10%</td>
       <td>0.01</td>
       <td>50%</td>
@@ -106,8 +106,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>3-28</td>
       <td>Fri</td>
-      <td>44.66</td>
-      <td>57.72</td>
+      <td>44.97</td>
+      <td>57.88</td>
       <td>10%</td>
       <td>0.27</td>
       <td>55%</td>
@@ -116,8 +116,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>3-29</td>
       <td>Sat</td>
-      <td>45.14</td>
-      <td>59.92</td>
+      <td>45.45</td>
+      <td>60.01</td>
       <td>15%</td>
       <td>0.28</td>
       <td>60%</td>
@@ -126,8 +126,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>3-30</td>
       <td>Sun</td>
-      <td>43.97</td>
-      <td>62.18</td>
+      <td>44.28</td>
+      <td>62.28</td>
       <td>10%</td>
       <td>0.14</td>
       <td>40%</td>
@@ -136,8 +136,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>3-31</td>
       <td>Mon</td>
-      <td>45.18</td>
-      <td>63.26</td>
+      <td>45.48</td>
+      <td>63.36</td>
       <td>15%</td>
       <td>0.00</td>
       <td>30%</td>
@@ -146,8 +146,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>4-1</td>
       <td>Tue</td>
-      <td>44.86</td>
-      <td>63.67</td>
+      <td>45.17</td>
+      <td>63.77</td>
       <td>25%</td>
       <td>0.00</td>
       <td>30%</td>
@@ -170,50 +170,50 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view"><table clas
     <tr>
       <td>Wed (19)</td>
       <td>48.83</td>
-      <td>60.39</td>
-      <td>0.05</td>
-      <td>50%</td>
+      <td>60.89</td>
+      <td>0.02</td>
+      <td>45%</td>
     </tr>
     <tr>
       <td>Thu (20)</td>
-      <td>47.71</td>
-      <td>56.55</td>
-      <td>1.10</td>
-      <td>95%</td>
+      <td>48.31</td>
+      <td>55.11</td>
+      <td>1.46</td>
+      <td>100%</td>
     </tr>
     <tr>
       <td>Fri (21)</td>
-      <td>45.99</td>
-      <td>53.78</td>
-      <td>1.30</td>
+      <td>46.18</td>
+      <td>54.52</td>
+      <td>1.39</td>
       <td>100%</td>
     </tr>
     <tr>
       <td>Sat (22)</td>
-      <td>42.71</td>
-      <td>53.15</td>
-      <td>0.76</td>
-      <td>90%</td>
+      <td>43.32</td>
+      <td>54.14</td>
+      <td>0.47</td>
+      <td>95%</td>
     </tr>
     <tr>
       <td>Sun (23)</td>
-      <td>40.51</td>
-      <td>50.65</td>
-      <td>0.11</td>
+      <td>41.29</td>
+      <td>51.33</td>
+      <td>0.01</td>
       <td>65%</td>
     </tr>
     <tr>
       <td>Mon (24)</td>
-      <td>40.39</td>
-      <td>54.03</td>
-      <td>0.29</td>
-      <td>50%</td>
+      <td>39.58</td>
+      <td>53.20</td>
+      <td>0.00</td>
+      <td>40%</td>
     </tr>
     <tr>
       <td>Tue (25)</td>
-      <td>46.51</td>
-      <td>55.00</td>
-      <td>0.27</td>
+      <td>47.28</td>
+      <td>55.29</td>
+      <td>0.05</td>
       <td>20%</td>
     </tr>
   </tbody>
@@ -234,7 +234,25 @@ window.observationsTable = `<div class="table-wrapper"><table class="dataframe c
 </thead>
 <tbody>
 <tr>
-<td rowspan="16">19 Mar</td>
+<td rowspan="18">19 Mar</td>
+<td>17h</td>
+<td>15.3</td>
+<td>SE</td>
+<td>17.6</td>
+<td>0.0</td>
+<td>188.8</td>
+</tr>
+<tr>
+
+<td>16h</td>
+<td>15.9</td>
+<td>SE</td>
+<td>16.6</td>
+<td>0.0</td>
+<td>603.8</td>
+</tr>
+<tr>
+
 <td>15h</td>
 <td>16.1</td>
 <td>SE</td>
@@ -594,7 +612,7 @@ window.observationsTable = `<div class="table-wrapper"><table class="dataframe c
 <td>0.0</td>
 </tr>
 <tr>
-<td rowspan="8">17 Mar</td>
+<td rowspan="6">17 Mar</td>
 <td>23h</td>
 <td>10.3</td>
 <td>E</td>
@@ -646,24 +664,6 @@ window.observationsTable = `<div class="table-wrapper"><table class="dataframe c
 <td>7.9</td>
 <td>0.0</td>
 <td>261.8</td>
-</tr>
-<tr>
-
-<td>17h</td>
-<td>12.7</td>
-<td>E</td>
-<td>8.3</td>
-<td>0.0</td>
-<td>888.9</td>
-</tr>
-<tr>
-
-<td>16h</td>
-<td>12.3</td>
-<td>E</td>
-<td>9.0</td>
-<td>0.1</td>
-<td>1292.3</td>
 </tr>
 </tbody>
 </table></div>`;
@@ -875,7 +875,7 @@ window.dashboardTable =
             </header>
             
         <strong>alert level:</strong> yellow
-        <br><strong>start:</strong> 19/03 15:14
+        <br><strong>start:</strong> 19/03 18:26
         <br><strong>end:</strong> 19/03 21:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br>Períodos de chuva, por vezes forte, que pode ocasionalmente ser acopmpanhada de trovoada.</p>
@@ -893,7 +893,7 @@ window.dashboardTable =
             </header>
             
         <strong>alert level:</strong> yellow
-        <br><strong>start:</strong> 19/03 15:14
+        <br><strong>start:</strong> 19/03 18:26
         <br><strong>end:</strong> 19/03 21:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br>Vento forte de sul/sueste, com rajadas até 90 km/h, sendo até 110 km/h nas serras.</p>
@@ -911,8 +911,8 @@ window.dashboardTable =
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 19/03 15:14
-        <br><strong>end:</strong> 22/03 15:00
+        <br><strong>start:</strong> 19/03 18:26
+        <br><strong>end:</strong> 22/03 18:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -929,8 +929,8 @@ window.dashboardTable =
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 19/03 15:14
-        <br><strong>end:</strong> 22/03 15:00
+        <br><strong>start:</strong> 19/03 18:26
+        <br><strong>end:</strong> 22/03 18:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -947,8 +947,8 @@ window.dashboardTable =
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 19/03 15:14
-        <br><strong>end:</strong> 22/03 15:00
+        <br><strong>start:</strong> 19/03 18:26
+        <br><strong>end:</strong> 22/03 18:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -965,8 +965,8 @@ window.dashboardTable =
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 19/03 15:14
-        <br><strong>end:</strong> 22/03 15:00
+        <br><strong>start:</strong> 19/03 18:26
+        <br><strong>end:</strong> 22/03 18:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -983,8 +983,8 @@ window.dashboardTable =
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 19/03 15:14
-        <br><strong>end:</strong> 22/03 15:00
+        <br><strong>start:</strong> 19/03 18:26
+        <br><strong>end:</strong> 22/03 18:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1001,8 +1001,8 @@ window.dashboardTable =
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 19/03 15:14
-        <br><strong>end:</strong> 22/03 15:00
+        <br><strong>start:</strong> 19/03 18:26
+        <br><strong>end:</strong> 22/03 18:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1019,8 +1019,8 @@ window.dashboardTable =
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 19/03 15:14
-        <br><strong>end:</strong> 22/03 15:00
+        <br><strong>start:</strong> 19/03 18:26
+        <br><strong>end:</strong> 22/03 18:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1037,10 +1037,10 @@ window.dashboardTable =
             </header>
             
         <strong>alert level:</strong> yellow
-        <br><strong>start:</strong> 19/03 15:14
+        <br><strong>start:</strong> 19/03 18:26
         <br><strong>end:</strong> 20/03 00:00
         <hr>
-    <p><strong>Castelo Branco (59km ESE)</strong><br>Vento forte de sul/sueste, com rajadas até 80 km/h, sendo até 110 km/h nas serras.</p><p><strong>Coimbra (36km NW)</strong><br>Vento forte de sul/sueste, com rajadas até 90 km/h, sendo até 110 km/h nas serras.</p><p><strong>Leiria (58km WSW)</strong><br>Vento forte de sul/sueste, com rajadas até 95 km/h, e de 110 km/h nas serras.</p>
+    <p><strong>Castelo Branco (59km ESE)</strong><br>Vento forte de sul/sueste, com rajadas até 80 km/h, sendo até 110 km/h nas serras.</p><p><strong>Coimbra (36km NW)</strong><br>Vento forte de sul/sueste, com rajadas até 90 km/h, sendo até 110 km/h nas serras.</p><p><strong>Leiria (58km WSW)</strong><br>Vento forte de sul/sueste, com rajadas até 115 km/h, em especial na faixa costeira e nas serras.</p>
             <footer>
                 <button onclick="closeModal('modal-Vento-19-20-03', event)">Close</button>
             </footer>
