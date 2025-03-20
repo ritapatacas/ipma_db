@@ -40,6 +40,10 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git pull origin main || echo "⚠️ No changes to pull"
 
+      - name: Set working directory
+        working-directory: /home/runner/work/ipma_db/ipma_db
+        run: echo "Setting working directory to ipma_db"
+        
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
