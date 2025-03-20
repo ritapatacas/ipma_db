@@ -1,5 +1,4 @@
 import os
-import locale
 from collections import defaultdict
 
 import pandas as pd
@@ -15,19 +14,10 @@ from analyze import (
 )
 from utils import get_closest_regions, WARNING_ICONS, get_warning_level_icon
 
-locale.setlocale(locale.LC_ALL, "en_US.UTF-8")
-
-
-# DATA PROCESSING: Load Raw Data
-df_forecast = pd.DataFrame(parse_soup_forecast()).astype({
-    "min": "float64",
-    "max": "float64",
-    "prec mm": "float64"
-})
+df_forecast = pd.DataFrame(parse_soup_forecast())
 df_observations = pd.DataFrame(observations())
 df_show_missing_entries = pd.DataFrame(summarize_missing_entries("month"))
 df_cold_hours = pd.DataFrame(summarize_cold_hours("month"))
-print("\n == Forecast Data ==\n", df_forecast.head(10))
 
 def debug_print_data():
     print("\n == Forecast Data ==\n", df_forecast.head(10))
@@ -37,11 +27,9 @@ def debug_print_data():
 
 #debug_print_data()
 
-
 def format_forecast(df: pd.DataFrame, mobile: bool = False) -> pd.DataFrame:
     df = df.copy()
 
-    # ✅ Force numeric conversion (fix GitHub Actions issue)
     for col in ["min", "max", "prec mm"]:
         df[col] = pd.to_numeric(df[col], errors="coerce")
 
@@ -62,21 +50,8 @@ df_forecast = format_forecast(df_forecast)
 df_forecast_mobile = format_forecast(df_forecast, mobile=True)
 
 
-print("\n🛠 DEBUG: Data Types in GitHub Actions 🛠")
-print(df_forecast.dtypes)
-
-print("\n🛠 DEBUG: First 5 Rows of df_forecast 🛠")
-print(df_forecast.head())
-
-print("\n🛠 DEBUG: JSON Output (to check Jinja rendering) 🛠")
-import json
-print(json.dumps(df_forecast.to_dict(orient="records"), indent=4))
-
-print(df_forecast.head(10))
-
 
 def format_table_html(df: pd.DataFrame, title: str) -> str:
-    """Generate an HTML table with a title inside <thead>."""
     if df.empty:
         return ""
 
@@ -124,7 +99,6 @@ def apply_row_span_for_date_column(html_table):
     return str(soup)
 
 
-
 table_html_forecast = df_forecast.to_html(index=False, border=0, classes="custom-table desktop-view").replace("`", "\\`")
 table_html_forecast_mobile = df_forecast_mobile.to_html(index=False, border=0, classes="custom-table mobile-view").replace("`", "\\`")
 
@@ -134,11 +108,8 @@ table_html_observations = apply_row_span_for_date_column(table_html_observations
 table_html_missing = format_table_html(df_show_missing_entries, "Missing Entries")
 table_html_cold_hours = format_table_html(df_cold_hours, "Cold Hours")
 
-print(table_html_forecast)
-
 
 def generate_warning_timeline(warnings: list) -> str:
-    """Generate a timeline of warnings for display."""
     timeline_html = ""
     for warning in warnings:
         icon = WARNING_ICONS.get(warning["awarenessTypeName"], "fa-triangle-exclamation")
@@ -154,7 +125,6 @@ def generate_warning_timeline(warnings: list) -> str:
     return timeline_html
 
 def generate_warning_timeline_mobile(warnings: list) -> str:
-    """Generate a mobile-friendly warning timeline."""
     grouped_warnings = defaultdict(list)
 
     for warning in warnings:
@@ -329,7 +299,6 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, "templates")
 env = Environment(loader=FileSystemLoader(TEMPLATES_DIR))
 
 def render_template() -> str:
-    """Render the main HTML template with all processed data."""
     template = env.get_template("index.html")
 
     return template.render(
@@ -345,7 +314,6 @@ def render_template() -> str:
     )
 
 def render_tables_js() -> str:
-    """Render the JavaScript table data for dynamic loading."""
     template_tables = env.get_template("tables.js.jinja")
 
     return template_tables.render(
@@ -358,20 +326,18 @@ def render_tables_js() -> str:
     )
 
 def save_files(html: str, tables_js: str):
-    """Save rendered HTML and JavaScript files to the appropriate locations."""
     PROJECT_ROOT = os.path.abspath(os.path.join(BASE_DIR, ".."))
 
-    # ✅ Save index.html
     index_html_path = os.path.join(PROJECT_ROOT, "index.html")
     with open(index_html_path, "w", encoding="utf-8") as f:
         f.write(html)
-    print(f"✅ index.html saved at: {index_html_path}")
+    print(f"index.html saved at: {index_html_path}")
 
     tables_js_path = os.path.join(PROJECT_ROOT, "app/static/tables.js")
     os.makedirs(os.path.dirname(tables_js_path), exist_ok=True)
     with open(tables_js_path, "w", encoding="utf-8") as f:
         f.write(tables_js)
-    print(f"✅ tables.js saved at: {tables_js_path}")
+    print(f"tables.js saved at: {tables_js_path}")
 
 html_output = render_template()
 tables_js_output = render_tables_js()
