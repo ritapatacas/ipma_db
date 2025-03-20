@@ -1,17 +1,7 @@
 name: Fetch IPMA & Update View
 on:
   schedule:
-    - cron: "0 0 * * *"
-    - cron: "0 4 * * *"
-    - cron: "0 6 * * *"
-    - cron: "0 8 * * *"
-    - cron: "0 10 * * *"
-    - cron: "0 12 * * *"
-    - cron: "0 14 * * *"
-    - cron: "0 16 * * *"
-    - cron: "0 18 * * *"
-    - cron: "0 20 * * *"
-    - cron: "0 22 * * *"
+    - cron: "0 */2 * * *"
   workflow_dispatch:
 
 jobs:
@@ -40,49 +30,39 @@ jobs:
 
   update-view:
     runs-on: ubuntu-latest
-    environment: ipma
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Pull latest changes
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+          git pull origin main || echo "⚠️ No changes to pull"
+
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: "3.11.9"
+          python-version: "3.11"
 
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
-          pip list  # Debug installed versions
-
-      - name: Fetch latest changes before running script
-        run: |
-          echo "🔍 Pulling latest changes..."
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git config --global user.name "github-actions[bot]"
-          git pull --rebase --autostash origin main || echo "Skipping pull due to conflict"
+          pip list  # Debug installed packages
 
       - name: Run view script
         env:
           MONGO_URI: ${{ secrets.MONGO_URI }}
-        run: |
-          echo "🔍 Running view.py..."
-          python app/view.py
+        run: python app/view.py
 
-      - name: Commit and push index.html to GitHub Pages
+      - name: Commit and push changes
         run: |
           echo "🔍 Checking for file changes..."
-          
-          # Ensure Git recognizes changes
-          git update-index --refresh
           git status
 
-          # Check if files exist before staging
           [ -f app/static/tables.js ] && git add -f app/static/tables.js || echo "⚠️ tables.js not found"
           [ -f index.html ] && git add index.html || echo "⚠️ index.html not found"
 
-          # Commit only if changes exist
           git diff --cached --quiet || git commit -m "update view"
 
-          # Force push to avoid conflicts
-          git push origin main || echo "⚠️ Push failed, retrying..." && git pull --rebase --autostash origin main && git push origin main
+          git push origin main || echo "⚠️ No changes to push"
