@@ -15,20 +15,15 @@ on:
   workflow_dispatch:
 
 jobs:
-  # ------------------------- JOB 1: IPMA FETCH -------------------------
   fetch-ipma:
     runs-on: ubuntu-latest
     environment: ipma
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Install CA Certificates (for TLS)
         run: sudo apt-get update && sudo apt-get install -y ca-certificates
-
-      - name: Force TLS 1.2 (Optional)
-        run: export OPENSSL_CONF=/etc/ssl/
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -43,30 +38,17 @@ jobs:
           MONGO_URI: ${{ secrets.MONGO_URI }}
         run: python app/fetch.py
 
-  # ---------------------- JOB 2: METEOBLUE FETCH + PAGES ----------------------
   update-view:
     runs-on: ubuntu-latest
-    #needs: fetch-ipma
     environment: ipma
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
-      - name: Set working directory
-        working-directory: /home/runner/work/ipma_db/ipma_db
-        run: echo "Setting working directory to ipma_db"
 
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: "3.11.9"
-
-      - name: Set locale to ensure correct number formatting
-        run: |
-          sudo locale-gen en_US.UTF-8
-          export LC_ALL=en_US.UTF-8
-          export LANG=en_US.UTF-8
 
       - name: Install dependencies
         run: |
@@ -78,18 +60,13 @@ jobs:
           echo "🔍 Pulling latest changes..."
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git config --global user.name "github-actions[bot]"
-          git pull --rebase origin main || echo "Skipping pull due to conflict"
+          git pull --rebase --autostash origin main || echo "Skipping pull due to conflict"
 
       - name: Run view script
         env:
           MONGO_URI: ${{ secrets.MONGO_URI }}
         run: |
-          echo "🔍 Current path before git commands:"
-          pwd
-          echo "📂 Listing files:"
-          ls -la
-          echo "📂 Listing app/ directory:"
-          ls -la app/
+          echo "🔍 Running view.py..."
           python app/view.py
 
       - name: Commit and push index.html to GitHub Pages
@@ -98,17 +75,14 @@ jobs:
           
           # Ensure Git recognizes changes
           git update-index --refresh
-          git diff --exit-code app/static/tables.js || touch app/static/tables.js
+          git status
 
-          # Normalize line endings & permissions
-          git config core.fileMode false
-          git config core.autocrlf input
-
-          # Stage modified files
-          git add -f app/static/tables.js
-          git add index.html
+          # Check if files exist before staging
+          [ -f app/static/tables.js ] && git add -f app/static/tables.js || echo "⚠️ tables.js not found"
+          [ -f index.html ] && git add index.html || echo "⚠️ index.html not found"
 
           # Commit only if changes exist
-          git commit -m "update view" || echo "No changes to commit"
-          git push
+          git diff --cached --quiet || git commit -m "update view"
 
+          # Force push to avoid conflicts
+          git push origin main || echo "⚠️ Push failed, retrying..." && git pull --rebase --autostash origin main && git push origin main
