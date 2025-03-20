@@ -17,11 +17,11 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>3-20</td>
       <td>Thu</td>
       <td>9.44</td>
-      <td>13.89</td>
+      <td>14.44</td>
       <td>55%</td>
       <td>1.33</td>
       <td>100%</td>
-      <td>Showers, thunderstorms likely</td>
+      <td>Mostly cloudy with rain</td>
     </tr>
     <tr>
       <td>3-21</td>
@@ -31,25 +31,25 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>45%</td>
       <td>0.98</td>
       <td>100%</td>
-      <td>Showers, thunderstorms likely</td>
+      <td>Overcast with rain</td>
     </tr>
     <tr>
       <td>3-22</td>
       <td>Sat</td>
       <td>6.67</td>
-      <td>11.11</td>
+      <td>10.56</td>
       <td>40%</td>
-      <td>0.84</td>
-      <td>95%</td>
+      <td>0.89</td>
+      <td>100%</td>
       <td>Overcast with rain</td>
     </tr>
     <tr>
       <td>3-23</td>
       <td>Sun</td>
       <td>5.00</td>
-      <td>11.11</td>
+      <td>10.56</td>
       <td>35%</td>
-      <td>0.38</td>
+      <td>0.42</td>
       <td>70%</td>
       <td>Mostly cloudy with rain</td>
     </tr>
@@ -137,7 +137,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>4-1</td>
       <td>Tue</td>
       <td>6.67</td>
-      <td>15.56</td>
+      <td>15.00</td>
       <td>10%</td>
       <td>0.00</td>
       <td>40%</td>
@@ -147,7 +147,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>4-2</td>
       <td>Wed</td>
       <td>6.11</td>
-      <td>15.00</td>
+      <td>14.44</td>
       <td>10%</td>
       <td>0.00</td>
       <td>45%</td>
@@ -170,7 +170,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view"><table clas
     <tr>
       <td>Thu (20)</td>
       <td>9.44</td>
-      <td>13.89</td>
+      <td>14.44</td>
       <td>1.33</td>
       <td>100%</td>
     </tr>
@@ -184,15 +184,15 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view"><table clas
     <tr>
       <td>Sat (22)</td>
       <td>6.67</td>
-      <td>11.11</td>
-      <td>0.84</td>
-      <td>95%</td>
+      <td>10.56</td>
+      <td>0.89</td>
+      <td>100%</td>
     </tr>
     <tr>
       <td>Sun (23)</td>
       <td>5.00</td>
-      <td>11.11</td>
-      <td>0.38</td>
+      <td>10.56</td>
+      <td>0.42</td>
       <td>70%</td>
     </tr>
     <tr>
