@@ -26,6 +26,11 @@ def parse_canvas_data(data):
 def parse_soup_forecast():
     soup = fetch_and_soup_forecast()
     table = soup.find("table", class_="forecast-table")
+
+    if not table:
+        print("\n❌ ERROR: Forecast table not found! The webpage structure might have changed.")
+        return {}
+
     rows = table.find_all("tr")
 
     row_mapping = {
@@ -64,9 +69,14 @@ def parse_soup_forecast():
         elif row_name:
             clean_rows[row_name] = [cell.get_text(strip=True) for cell in row.find_all(["td", "th"])]
 
+    # 🔍 Debug: Print raw extracted data before conversion
+    print("\n🔍 RAW EXTRACTED DATA FROM WEB SCRAPING 🔍")
+    print("clean_rows:", clean_rows)
+    print("canvas_data:", canvas_data)
+
     # ✅ Ensure numeric conversion of extracted data
     def to_float_list(lst):
-        return [float(x) if isinstance(x, (int, float)) or x.replace('.', '', 1).isdigit() else None for x in lst]
+        return [float(x) if isinstance(x, (int, float)) or (isinstance(x, str) and x.replace('.', '', 1).isdigit()) else None for x in lst]
 
     forecast = {
         "date": clean_rows.get("date", []),
@@ -78,6 +88,10 @@ def parse_soup_forecast():
         "prob %": clean_rows.get("probability", []),
         "obs": clean_rows.get("obs", []),
     }
+
+    # 🔍 Debug: Print converted data
+    print("\n✅ DATA AFTER CONVERSION TO FLOATS ✅")
+    print(forecast)
 
     return forecast
 
