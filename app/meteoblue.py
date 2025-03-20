@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import ast
 from prettytable import PrettyTable
+import pandas as pd
 
 FORECAST_URL = "https://www.meteoblue.com/en/weather/14-days/troviscais-fundeiros_portugal_2262489"
 
@@ -40,10 +41,11 @@ def clean_temperature_values(temp_list):
         for temp in temp_list
     ]
 
+
 def parse_soup_forecast():
     soup = fetch_and_soup_forecast()
     table = soup.find("table", class_="forecast-table")
-    
+
     if not table:
         print("❌ ERROR: Forecast table not found! The webpage structure may have changed.")
         return {}
@@ -86,29 +88,34 @@ def parse_soup_forecast():
         elif row_name:
             clean_rows[row_name] = [cell.get_text(strip=True) for cell in row.find_all(["td", "th"])]
 
-    # 🔥 Remove '°' symbol before conversion
+    # 🔥 Remove '°' symbol and convert to float
+    def clean_temperature_values(temp_list):
+        """Removes the '°' symbol and converts to float."""
+        return [
+            float(temp.replace("°", "")) if isinstance(temp, str) and temp.replace("°", "").replace(".", "", 1).isdigit() else None
+            for temp in temp_list
+        ]
+
     clean_rows["min"] = clean_temperature_values(clean_rows.get("min", []))
     clean_rows["max"] = clean_temperature_values(clean_rows.get("max", []))
 
-    # 🔍 Debugging: Print raw extracted data before conversion
-    print("\n🔍 RAW EXTRACTED DATA FROM WEB SCRAPING 🔍")
-    print("clean_rows:", clean_rows)
-    print("canvas_data:", canvas_data)
-
+    # Convert `min` and `max` explicitly to float64 to avoid object dtype
     forecast = {
         "date": clean_rows.get("date", []),
         "weekday": clean_rows.get("weekday", []),
-        "min": clean_rows["min"],  # Already cleaned
-        "max": clean_rows["max"],  # Already cleaned
+        "min": pd.to_numeric(clean_rows["min"], errors="coerce"),  # Convert to float64
+        "max": pd.to_numeric(clean_rows["max"], errors="coerce"),  # Convert to float64
         "pred": clean_rows.get("predictability", []),
-        "prec mm": canvas_data.get("precipitation", []),
+        "prec mm": pd.to_numeric(canvas_data.get("precipitation", []), errors="coerce"),
         "prob %": clean_rows.get("probability", []),
         "obs": clean_rows.get("obs", []),
     }
 
-    # 🔍 Debugging: Print cleaned data
+    # 🔍 Debugging: Print cleaned data with correct types
     print("\n✅ CLEANED DATA (AFTER REMOVING '°' AND CONVERTING TO FLOAT) ✅")
     print(forecast)
+    print("\n🔍 Data Types:")
+    print(pd.DataFrame(forecast).dtypes)
 
     return forecast
 
