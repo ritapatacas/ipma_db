@@ -33,6 +33,12 @@ def detect_and_convert_temperatures(temp_list):
         return [fahrenheit_to_celsius(temp) for temp in temp_list]
     return temp_list
 
+def clean_temperature_values(temp_list):
+    """Removes the '°' symbol and converts to float."""
+    return [
+        float(temp.replace("°", "")) if isinstance(temp, str) and temp.replace("°", "").replace(".", "", 1).isdigit() else None
+        for temp in temp_list
+    ]
 
 def parse_soup_forecast():
     soup = fetch_and_soup_forecast()
@@ -80,6 +86,10 @@ def parse_soup_forecast():
         elif row_name:
             clean_rows[row_name] = [cell.get_text(strip=True) for cell in row.find_all(["td", "th"])]
 
+    # 🔥 Remove '°' symbol before conversion
+    clean_rows["min"] = clean_temperature_values(clean_rows.get("min", []))
+    clean_rows["max"] = clean_temperature_values(clean_rows.get("max", []))
+
     # 🔍 Debugging: Print raw extracted data before conversion
     print("\n🔍 RAW EXTRACTED DATA FROM WEB SCRAPING 🔍")
     print("clean_rows:", clean_rows)
@@ -88,8 +98,8 @@ def parse_soup_forecast():
     forecast = {
         "date": clean_rows.get("date", []),
         "weekday": clean_rows.get("weekday", []),
-        "min": detect_and_convert_temperatures(canvas_data.get("temperature_min", [])),  # Convert if needed
-        "max": detect_and_convert_temperatures(canvas_data.get("temperature_max", [])),  # Convert if needed
+        "min": clean_rows["min"],  # Already cleaned
+        "max": clean_rows["max"],  # Already cleaned
         "pred": clean_rows.get("predictability", []),
         "prec mm": canvas_data.get("precipitation", []),
         "prob %": clean_rows.get("probability", []),
@@ -97,7 +107,7 @@ def parse_soup_forecast():
     }
 
     # 🔍 Debugging: Print cleaned data
-    print("\n✅ CLEANED DATA (AFTER DETECTING °F AND CONVERTING TO °C) ✅")
+    print("\n✅ CLEANED DATA (AFTER REMOVING '°' AND CONVERTING TO FLOAT) ✅")
     print(forecast)
 
     return forecast
