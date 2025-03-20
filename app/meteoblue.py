@@ -1,6 +1,8 @@
 import requests
 from bs4 import BeautifulSoup
 import ast
+from prettytable import PrettyTable
+import pandas as pd
 
 FORECAST_URL = "https://www.meteoblue.com/en/weather/14-days/troviscais-fundeiros_portugal_2262489"
 
@@ -87,3 +89,22 @@ def parse_soup_forecast():
     print("Converted max:", forecast["max"])
 
     return forecast
+
+
+def show_forecast():
+    forecast = parse_soup_forecast()
+    headers = list(forecast.keys())
+    num_days = len(next(iter(forecast.values()), []))
+
+    table = PrettyTable()
+    table.field_names = headers
+
+    for i in range(num_days):
+        row = [forecast[key][i] if i < len(forecast[key]) else "" for key in headers]
+        table.add_row(row)
+
+    print(table)
+
+
+if __name__ == "__main__":
+    show_forecast()
