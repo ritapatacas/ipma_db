@@ -1,8 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
 import ast
-from prettytable import PrettyTable
-import pandas as pd
 
 FORECAST_URL = "https://www.meteoblue.com/en/weather/14-days/troviscais-fundeiros_portugal_2262489"
 
@@ -10,11 +8,9 @@ def fetch_and_soup_forecast():
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3"
     }
-
     response = requests.get(FORECAST_URL, headers=headers)
     response.raise_for_status()
     return BeautifulSoup(response.content, "html.parser")
-
 
 def parse_canvas_data(data):
     try:
@@ -22,34 +18,12 @@ def parse_canvas_data(data):
     except Exception:
         return []
 
-
-def fahrenheit_to_celsius(f_temp):
-    return round((f_temp - 32) * 5.0 / 9.0, 2)
-
-
-def detect_and_convert_temperatures(temp_list):
-
-    if temp_list and max(temp_list) > 90:
-        print("Fahrenheit detected! Converting to Celsius...")
-        return [fahrenheit_to_celsius(temp) for temp in temp_list]
-    return temp_list
-
-def clean_temperature_values(temp_list):
-    """Removes the '°' symbol and converts to float."""
-    return [
-        float(temp.replace("°", "")) if isinstance(temp, str) and temp.replace("°", "").replace(".", "", 1).isdigit() else None
-        for temp in temp_list
-    ]
-
+def fahrenheit_to_celsius(temp_f):
+    return round((temp_f - 32) * 5.0 / 9.0, 2)
 
 def parse_soup_forecast():
     soup = fetch_and_soup_forecast()
     table = soup.find("table", class_="forecast-table")
-
-    if not table:
-        print("❌ ERROR: Forecast table not found! The webpage structure may have changed.")
-        return {}
-
     rows = table.find_all("tr")
 
     row_mapping = {
@@ -80,64 +54,36 @@ def parse_soup_forecast():
                 if canvas.get("id") == "canvas_14_days_forecast_tempereture":
                     canvas_data["temperature_max"] = parse_canvas_data(canvas.get("data-temperatures-max"))
                     canvas_data["temperature_min"] = parse_canvas_data(canvas.get("data-temperatures-min"))
-                    canvas_data["temperature_spread"] = parse_canvas_data(canvas.get("data-temperature-spread"))
                 elif canvas.get("id") == "canvas_14_days_forecast_precipitations":
                     canvas_data["precipitation"] = parse_canvas_data(canvas.get("data-precipitation"))
-                    canvas_data["precipitation_spread"] = parse_canvas_data(canvas.get("data-precipitation-spread"))
 
         elif row_name:
             clean_rows[row_name] = [cell.get_text(strip=True) for cell in row.find_all(["td", "th"])]
 
-    # 🔥 Remove '°' symbol and convert to float
-    def clean_temperature_values(temp_list):
-        """Removes the '°' symbol and converts to float."""
-        return [
-            float(temp.replace("°", "")) if isinstance(temp, str) and temp.replace("°", "").replace(".", "", 1).isdigit() else None
-            for temp in temp_list
-        ]
+    def convert_temperatures(temp_list):
+        converted = []
+        for temp in temp_list:
+            temp = temp.replace("°", "").strip()
+            if temp.isdigit():
+                temp_c = fahrenheit_to_celsius(float(temp))
+                converted.append(temp_c)
+            else:
+                converted.append(None)
+        return converted
 
-    clean_rows["min"] = clean_temperature_values(clean_rows.get("min", []))
-    clean_rows["max"] = clean_temperature_values(clean_rows.get("max", []))
-
-    # 🔍 Debugging: Print raw cleaned data before DataFrame conversion
-    print("\n✅ CLEANED DATA (BEFORE DataFrame Conversion) ✅")
-    print(clean_rows)
-
-    # Convert `min` and `max` explicitly to float64
-    forecast_df = pd.DataFrame({
+    forecast = {
         "date": clean_rows.get("date", []),
         "weekday": clean_rows.get("weekday", []),
-        "min": pd.to_numeric(clean_rows["min"], errors="coerce"),
-        "max": pd.to_numeric(clean_rows["max"], errors="coerce"),
+        "min": convert_temperatures(clean_rows.get("min", [])),
+        "max": convert_temperatures(clean_rows.get("max", [])),
         "pred": clean_rows.get("predictability", []),
-        "prec mm": pd.to_numeric(canvas_data.get("precipitation", []), errors="coerce"),
+        "prec mm": canvas_data.get("precipitation", []),
         "prob %": clean_rows.get("probability", []),
         "obs": clean_rows.get("obs", []),
-    })
+    }
 
-    # 🔍 Debugging: Print final DataFrame
-    print("\n✅ FINAL DataFrame ✅")
-    print(forecast_df.head())
-    print("\n🔍 Data Types After DataFrame Conversion:")
-    print(forecast_df.dtypes)
+    print("\n✅ CLEANED TEMPERATURES (°C) ✅")
+    print("Converted min:", forecast["min"])
+    print("Converted max:", forecast["max"])
 
-    return forecast_df
-
-
-def show_forecast():
-    forecast = parse_soup_forecast()
-    headers = list(forecast.keys())
-    num_days = len(next(iter(forecast.values()), []))
-
-    table = PrettyTable()
-    table.field_names = headers
-
-    for i in range(num_days):
-        row = [forecast[key][i] if i < len(forecast[key]) else "" for key in headers]
-        table.add_row(row)
-
-    print(table)
-
-
-if __name__ == "__main__":
-    show_forecast()
+    return forecast
