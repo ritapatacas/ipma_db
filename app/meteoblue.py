@@ -22,15 +22,12 @@ def parse_canvas_data(data):
     except Exception:
         return []
 
+def clean_temperature_values(temp_list):
+    return [float(temp.replace("°", "")) if isinstance(temp, str) and temp.replace("°", "").replace(".", "", 1).isdigit() else None for temp in temp_list]
 
 def parse_soup_forecast():
     soup = fetch_and_soup_forecast()
     table = soup.find("table", class_="forecast-table")
-
-    if not table:
-        print("\n❌ ERROR: Forecast table not found! The webpage structure might have changed.")
-        return {}
-
     rows = table.find_all("tr")
 
     row_mapping = {
@@ -69,28 +66,24 @@ def parse_soup_forecast():
         elif row_name:
             clean_rows[row_name] = [cell.get_text(strip=True) for cell in row.find_all(["td", "th"])]
 
-    # 🔍 Debug: Print raw extracted data before conversion
+    # 🔍 Debug: Print raw extracted data before cleaning
     print("\n🔍 RAW EXTRACTED DATA FROM WEB SCRAPING 🔍")
     print("clean_rows:", clean_rows)
-    print("canvas_data:", canvas_data)
 
-    # ✅ Ensure numeric conversion of extracted data
-    def to_float_list(lst):
-        return [float(x) if isinstance(x, (int, float)) or (isinstance(x, str) and x.replace('.', '', 1).isdigit()) else None for x in lst]
-
+    # ✅ Remove '°' from temperature strings before converting
     forecast = {
         "date": clean_rows.get("date", []),
         "weekday": clean_rows.get("weekday", []),
-        "min": to_float_list(canvas_data.get("temperature_min", [])),  # Convert to float
-        "max": to_float_list(canvas_data.get("temperature_max", [])),  # Convert to float
+        "min": clean_temperature_values(clean_rows.get("min", [])),  # Remove '°' and convert to float
+        "max": clean_temperature_values(clean_rows.get("max", [])),  # Remove '°' and convert to float
         "pred": clean_rows.get("predictability", []),
-        "prec mm": to_float_list(canvas_data.get("precipitation", [])),  # Convert to float
+        "prec mm": canvas_data.get("precipitation", []),  # Already floats
         "prob %": clean_rows.get("probability", []),
         "obs": clean_rows.get("obs", []),
     }
 
-    # 🔍 Debug: Print converted data
-    print("\n✅ DATA AFTER CONVERSION TO FLOATS ✅")
+    # 🔍 Debug: Print cleaned data
+    print("\n✅ CLEANED DATA (AFTER REMOVING '°') ✅")
     print(forecast)
 
     return forecast
