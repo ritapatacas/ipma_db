@@ -19,10 +19,15 @@ locale.setlocale(locale.LC_ALL, "en_US.UTF-8")
 
 
 # DATA PROCESSING: Load Raw Data
-df_forecast = pd.DataFrame(parse_soup_forecast())
+df_forecast = pd.DataFrame(parse_soup_forecast()).astype({
+    "min": "float64",
+    "max": "float64",
+    "prec mm": "float64"
+})
 df_observations = pd.DataFrame(observations())
 df_show_missing_entries = pd.DataFrame(summarize_missing_entries("month"))
 df_cold_hours = pd.DataFrame(summarize_cold_hours("month"))
+print("\n == Forecast Data ==\n", df_forecast.head(10))
 
 def debug_print_data():
     print("\n == Forecast Data ==\n", df_forecast.head(10))
@@ -36,7 +41,7 @@ def debug_print_data():
 def format_forecast(df: pd.DataFrame, mobile: bool = False) -> pd.DataFrame:
     df = df.copy()
 
-    # ✅ Force numeric conversion (fix GH Actions issue)
+    # ✅ Force numeric conversion (fix GitHub Actions issue)
     for col in ["min", "max", "prec mm"]:
         df[col] = pd.to_numeric(df[col], errors="coerce")
 
