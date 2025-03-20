@@ -35,6 +35,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Pull latest changes
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+          git pull origin main || echo "⚠️ No changes to pull"
+
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
@@ -59,20 +65,18 @@ jobs:
           echo "🔍 Running view.py..."
           python app/view.py
 
-      - name: Commit and push index.html to GitHub Pages
+
+      - name: Commit and push changes
         run: |
           echo "🔍 Checking for file changes..."
-          
-          # Ensure Git recognizes changes
-          git update-index --refresh
           git status
 
-          # Check if files exist before staging
+          # Stage files if they exist
           [ -f app/static/tables.js ] && git add -f app/static/tables.js || echo "⚠️ tables.js not found"
           [ -f index.html ] && git add index.html || echo "⚠️ index.html not found"
 
-          # Commit only if changes exist
+          # Commit only if there are changes
           git diff --cached --quiet || git commit -m "update view"
 
-          # Force push to avoid conflicts
-          git push origin main || echo "⚠️ Push failed, retrying..." && git pull --rebase --autostash origin main && git push origin main
+          # Push changes
+          git push origin main || echo "⚠️ No changes to push"
