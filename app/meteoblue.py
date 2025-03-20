@@ -1,18 +1,25 @@
 import requests
 from bs4 import BeautifulSoup
 import ast
-from prettytable import PrettyTable
 
 FORECAST_URL = "https://www.meteoblue.com/en/weather/14-days/troviscais-fundeiros_portugal_2262489"
 
 def fetch_and_soup_forecast():
-
     headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3"
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3",
+        "Accept-Language": "en-US,en;q=0.9",
+        "Referer": "https://www.meteoblue.com/",
     }
 
-    response = requests.get(FORECAST_URL, headers=headers)
+    session = requests.Session()
+    
+    cookies = {
+        "temperature_unit": "C" 
+    }
+
+    response = session.get(FORECAST_URL, headers=headers, cookies=cookies)
     response.raise_for_status()
+    
     return BeautifulSoup(response.content, "html.parser")
 
 
@@ -22,8 +29,6 @@ def parse_canvas_data(data):
     except Exception:
         return []
 
-def clean_temperature_values(temp_list):
-    return [float(temp.replace("°", "")) if isinstance(temp, str) and temp.replace("°", "").replace(".", "", 1).isdigit() else None for temp in temp_list]
 
 def parse_soup_forecast():
     soup = fetch_and_soup_forecast()
@@ -66,27 +71,21 @@ def parse_soup_forecast():
         elif row_name:
             clean_rows[row_name] = [cell.get_text(strip=True) for cell in row.find_all(["td", "th"])]
 
-    # 🔍 Debug: Print raw extracted data before cleaning
-    print("\n🔍 RAW EXTRACTED DATA FROM WEB SCRAPING 🔍")
-    print("clean_rows:", clean_rows)
-
-    # ✅ Remove '°' from temperature strings before converting
     forecast = {
         "date": clean_rows.get("date", []),
         "weekday": clean_rows.get("weekday", []),
-        "min": clean_temperature_values(clean_rows.get("min", [])),  # Remove '°' and convert to float
-        "max": clean_temperature_values(clean_rows.get("max", [])),  # Remove '°' and convert to float
+        "min": canvas_data.get("temperature_min", []),
+        "max": canvas_data.get("temperature_max", []),
+        #"t_spread": canvas_data.get("temperature_spread", []),
         "pred": clean_rows.get("predictability", []),
-        "prec mm": canvas_data.get("precipitation", []),  # Already floats
+        "prec mm": canvas_data.get("precipitation", []),
         "prob %": clean_rows.get("probability", []),
+        #"p_spread": canvas_data.get("precipitation_spread", []),
         "obs": clean_rows.get("obs", []),
     }
 
-    # 🔍 Debug: Print cleaned data
-    print("\n✅ CLEANED DATA (AFTER REMOVING '°') ✅")
-    print(forecast)
-
     return forecast
+
 
 
 def show_forecast():
