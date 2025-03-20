@@ -99,25 +99,29 @@ def parse_soup_forecast():
     clean_rows["min"] = clean_temperature_values(clean_rows.get("min", []))
     clean_rows["max"] = clean_temperature_values(clean_rows.get("max", []))
 
-    # Convert `min` and `max` explicitly to float64 to avoid object dtype
-    forecast = {
+    # 🔍 Debugging: Print raw cleaned data before DataFrame conversion
+    print("\n✅ CLEANED DATA (BEFORE DataFrame Conversion) ✅")
+    print(clean_rows)
+
+    # Convert `min` and `max` explicitly to float64
+    forecast_df = pd.DataFrame({
         "date": clean_rows.get("date", []),
         "weekday": clean_rows.get("weekday", []),
-        "min": pd.to_numeric(clean_rows["min"], errors="coerce"),  # Convert to float64
-        "max": pd.to_numeric(clean_rows["max"], errors="coerce"),  # Convert to float64
+        "min": pd.to_numeric(clean_rows["min"], errors="coerce"),
+        "max": pd.to_numeric(clean_rows["max"], errors="coerce"),
         "pred": clean_rows.get("predictability", []),
         "prec mm": pd.to_numeric(canvas_data.get("precipitation", []), errors="coerce"),
         "prob %": clean_rows.get("probability", []),
         "obs": clean_rows.get("obs", []),
-    }
+    })
 
-    # 🔍 Debugging: Print cleaned data with correct types
-    print("\n✅ CLEANED DATA (AFTER REMOVING '°' AND CONVERTING TO FLOAT) ✅")
-    print(forecast)
-    print("\n🔍 Data Types:")
-    print(pd.DataFrame(forecast).dtypes)
+    # 🔍 Debugging: Print final DataFrame
+    print("\n✅ FINAL DataFrame ✅")
+    print(forecast_df.head())
+    print("\n🔍 Data Types After DataFrame Conversion:")
+    print(forecast_df.dtypes)
 
-    return forecast
+    return forecast_df
 
 
 def show_forecast():
