@@ -30,12 +30,6 @@ OBSERVATIONS_COLUMN_MAPPING = {
     "intensidadeVento": "wind",
 }
 
-DATE_FORMAT = {
-    "date_time": "%Y-%m-%d %H:%M",
-    "date": "%d %b",
-    "week": "%d %b",
-    "month": "%b %y",
-}
 
 WARNING_ICONS = {
     "Nevoeiro": "fa-smog",

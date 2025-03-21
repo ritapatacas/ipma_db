@@ -13,10 +13,10 @@ from utils import (
     export_json,
     logger,
     WIND_DIR,
-    DATE_FORMAT,
     OBSERVATIONS_COLUMN_MAPPING,
 )
 from meteoblue import show_forecast
+from data_utils import DATE_FORMAT, group_by_period
 
 collection = observations_db
 
@@ -53,17 +53,7 @@ def _load_weather_data() -> pd.DataFrame:
 
 
 def _create_time_periods(df: pd.DataFrame, group_by: str) -> pd.DataFrame:
-    """Add period column based on grouping preference"""
-    df = df.copy()
-    if group_by == "week":
-        df["period"] = df["datetime"] - pd.to_timedelta(
-            (df["datetime"].dt.weekday) % 7, unit="D"
-        )
-    elif group_by == "month":
-        df["period"] = df["datetime"].dt.to_period("M").dt.start_time
-    else:
-        df["period"] = df["datetime"].dt.normalize()
-    return df
+    return group_by_period(df, "datetime", group_by)
 
 
 def print_data_table(
