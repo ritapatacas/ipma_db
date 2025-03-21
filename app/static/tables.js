@@ -20,7 +20,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>7.22</td>
       <td>12.22</td>
       <td>60%</td>
-      <td>1.01</td>
+      <td>1.02</td>
       <td>100%</td>
       <td>Mostly cloudy with rain</td>
     </tr>
@@ -30,7 +30,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>6.11</td>
       <td>10.56</td>
       <td>50%</td>
-      <td>1.51</td>
+      <td>1.38</td>
       <td>100%</td>
       <td>Mostly cloudy with rain</td>
     </tr>
@@ -51,7 +51,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>12.78</td>
       <td>65%</td>
       <td>0.00</td>
-      <td>20%</td>
+      <td>15%</td>
       <td>Partly cloudy</td>
     </tr>
     <tr>
@@ -61,7 +61,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>15.56</td>
       <td>70%</td>
       <td>0.00</td>
-      <td>5%</td>
+      <td>0%</td>
       <td>Clear and few clouds</td>
     </tr>
     <tr>
@@ -78,10 +78,10 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>3-27</td>
       <td>Thu</td>
       <td>7.78</td>
-      <td>16.11</td>
-      <td>35%</td>
+      <td>16.67</td>
+      <td>40%</td>
       <td>0.00</td>
-      <td>20%</td>
+      <td>15%</td>
       <td>Clear, cloudless sky</td>
     </tr>
     <tr>
@@ -89,9 +89,9 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>Fri</td>
       <td>7.78</td>
       <td>17.22</td>
-      <td>20%</td>
-      <td>0.00</td>
       <td>35%</td>
+      <td>0.00</td>
+      <td>20%</td>
       <td>Clear, cloudless sky</td>
     </tr>
     <tr>
@@ -99,9 +99,9 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>Sat</td>
       <td>7.22</td>
       <td>16.67</td>
-      <td>20%</td>
-      <td>0.00</td>
       <td>35%</td>
+      <td>0.00</td>
+      <td>20%</td>
       <td>Clear, cloudless sky</td>
     </tr>
     <tr>
@@ -109,7 +109,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>Sun</td>
       <td>6.11</td>
       <td>17.22</td>
-      <td>50%</td>
+      <td>45%</td>
       <td>0.00</td>
       <td>15%</td>
       <td>Clear, cloudless sky</td>
@@ -128,10 +128,10 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>4-1</td>
       <td>Tue</td>
       <td>7.22</td>
-      <td>17.22</td>
-      <td>30%</td>
+      <td>17.78</td>
+      <td>35%</td>
       <td>0.00</td>
-      <td>25%</td>
+      <td>20%</td>
       <td>Clear, cloudless sky</td>
     </tr>
     <tr>
@@ -149,9 +149,9 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>Thu</td>
       <td>7.22</td>
       <td>16.67</td>
-      <td>5%</td>
+      <td>10%</td>
       <td>0.00</td>
-      <td>45%</td>
+      <td>40%</td>
       <td>Clear, cloudless sky</td>
     </tr>
   </tbody>
@@ -173,14 +173,14 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">
       <td>Fri (21)</td>
       <td>7.22</td>
       <td>12.22</td>
-      <td>1.01</td>
+      <td>1.02</td>
       <td>100%</td>
     </tr>
     <tr>
       <td>Sat (22)</td>
       <td>6.11</td>
       <td>10.56</td>
-      <td>1.51</td>
+      <td>1.38</td>
       <td>100%</td>
     </tr>
     <tr>
@@ -195,14 +195,14 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">
       <td>4.44</td>
       <td>12.78</td>
       <td>0.00</td>
-      <td>20%</td>
+      <td>15%</td>
     </tr>
     <tr>
       <td>Tue (25)</td>
       <td>5.00</td>
       <td>15.56</td>
       <td>0.00</td>
-      <td>5%</td>
+      <td>0%</td>
     </tr>
     <tr>
       <td>Wed (26)</td>
@@ -214,14 +214,14 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">
     <tr>
       <td>Thu (27)</td>
       <td>7.78</td>
-      <td>16.11</td>
+      <td>16.67</td>
       <td>0.00</td>
-      <td>20%</td>
+      <td>15%</td>
     </tr>
   </tbody>
 </table></div>`;
 
-window.evapotranspirationData = [{"max": 2.72545, "mean": 2.58501, "min": 2.51425, "period": "19 Mar", "range": 0.211192, "std": 0.041785}, {"max": 1.970399, "mean": 1.95676, "min": 1.940369, "period": "18 Mar", "range": 0.030033, "std": 0.006987}, {"max": 1.628299, "mean": 1.52915, "min": 1.457389, "period": "17 Mar", "range": 0.170909, "std": 0.033697}, {"max": 2.205319, "mean": 2.163209, "min": 2.11467, "period": "16 Mar", "range": 0.090649, "std": 0.022819}, {"max": 1.96596, "mean": 1.95621, "min": 1.932729, "period": "15 Mar", "range": 0.033223, "std": 0.007206}, {"max": 2.594079, "mean": 2.546809, "min": 2.49825, "period": "14 Mar", "range": 0.095828, "std": 0.0221}, {"max": 1.79391, "mean": 1.762799, "min": 1.716369, "period": "13 Mar", "range": 0.077537, "std": 0.022547}];
+window.evapotranspirationData = [{"max": 2.689049, "mean": 2.52899, "min": 2.397779, "period": "20 Mar", "range": 0.291271, "std": 0.066176}, {"max": 2.72545, "mean": 2.58501, "min": 2.51425, "period": "19 Mar", "range": 0.211192, "std": 0.041785}, {"max": 1.970399, "mean": 1.95676, "min": 1.940369, "period": "18 Mar", "range": 0.030033, "std": 0.006987}, {"max": 1.628299, "mean": 1.52915, "min": 1.457389, "period": "17 Mar", "range": 0.170909, "std": 0.033697}, {"max": 2.205319, "mean": 2.163209, "min": 2.11467, "period": "16 Mar", "range": 0.090649, "std": 0.022819}, {"max": 1.96596, "mean": 1.95621, "min": 1.932729, "period": "15 Mar", "range": 0.033223, "std": 0.007206}, {"max": 2.594079, "mean": 2.546809, "min": 2.49825, "period": "14 Mar", "range": 0.095828, "std": 0.0221}];
 window.observationsTable = `<div class="table-wrapper"><table class="dataframe custom-table">
 <thead>
 <tr style="text-align: right;">
@@ -693,6 +693,14 @@ window.observationsTable = `<div class="table-wrapper"><table class="dataframe c
   </thead>
   <tbody>
     <tr>
+      <td>20 Mar</td>
+      <td>2.689049</td>
+      <td>2.528990</td>
+      <td>2.397779</td>
+      <td>0.291271</td>
+      <td>0.066176</td>
+    </tr>
+    <tr>
       <td>19 Mar</td>
       <td>2.725450</td>
       <td>2.585010</td>
@@ -739,14 +747,6 @@ window.observationsTable = `<div class="table-wrapper"><table class="dataframe c
       <td>2.498250</td>
       <td>0.095828</td>
       <td>0.022100</td>
-    </tr>
-    <tr>
-      <td>13 Mar</td>
-      <td>1.793910</td>
-      <td>1.762799</td>
-      <td>1.716369</td>
-      <td>0.077537</td>
-      <td>0.022547</td>
     </tr>
   </tbody>
 </table>
@@ -829,11 +829,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Mar 25</td>
-      <td>121</td>
+      <td>123</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>461</td>
+      <td>463</td>
     </tr>
   </tbody>
 </table>
@@ -929,7 +929,7 @@ window.dashboardTable = `<div class="table-container">
         <tr class="orange hover:bg-gray-200 dark:hover:bg-gray-700 transition">
             <td><i class="fa-solid fa-snowflake"></i></td>
             <td class="level"><i class="fa-solid fa-circle" style="color: #f58d38;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
-            <td><a href="#" onclick="openModal('modal-Neve-21-22-03', event)">21-22/03</a></td>
+            <td><a href="#" onclick="openModal('modal-Neve-21-23-03', event)">21-23/03</a></td>
             <td><span data-tooltip="Castelo Branco (59km ESE)">CB</span></td>
         </tr>
         
@@ -937,6 +937,13 @@ window.dashboardTable = `<div class="table-container">
             <td><i class="fa-solid fa-snowflake"></i></td>
             <td class="level"><i class="fa-solid fa-circle" style="color: #FFD43B;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
             <td><a href="#" onclick="openModal('modal-Neve-22-23-03', event)">22-23/03</a></td>
+            <td><span data-tooltip="Coimbra (36km NW)">C</span></td>
+        </tr>
+        
+        <tr class="yellow hover:bg-gray-200 dark:hover:bg-gray-700 transition">
+            <td><i class="fa-solid fa-snowflake"></i></td>
+            <td class="level"><i class="fa-solid fa-circle" style="color: #FFD43B;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
+            <td><a href="#" onclick="openModal('modal-Neve-23-23-03', event)">23-23/03</a></td>
             <td><span data-tooltip="Castelo Branco (59km ESE)">CB</span></td>
         </tr>
         </tbody></table>
@@ -948,8 +955,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 21/03 06:51
-        <br><strong>end:</strong> 24/03 06:00
+        <br><strong>start:</strong> 21/03 11:02
+        <br><strong>end:</strong> 24/03 11:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -966,8 +973,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 21/03 06:51
-        <br><strong>end:</strong> 24/03 06:00
+        <br><strong>start:</strong> 21/03 11:02
+        <br><strong>end:</strong> 24/03 11:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -984,8 +991,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 21/03 06:51
-        <br><strong>end:</strong> 24/03 06:00
+        <br><strong>start:</strong> 21/03 11:02
+        <br><strong>end:</strong> 24/03 11:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1002,8 +1009,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 21/03 06:51
-        <br><strong>end:</strong> 24/03 06:00
+        <br><strong>start:</strong> 21/03 11:02
+        <br><strong>end:</strong> 24/03 11:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1020,8 +1027,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 21/03 06:51
-        <br><strong>end:</strong> 24/03 06:00
+        <br><strong>start:</strong> 21/03 11:02
+        <br><strong>end:</strong> 24/03 11:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1038,8 +1045,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 21/03 06:51
-        <br><strong>end:</strong> 24/03 06:00
+        <br><strong>start:</strong> 21/03 11:02
+        <br><strong>end:</strong> 24/03 11:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1056,8 +1063,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 21/03 06:51
-        <br><strong>end:</strong> 24/03 06:00
+        <br><strong>start:</strong> 21/03 11:02
+        <br><strong>end:</strong> 24/03 11:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1074,7 +1081,7 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> yellow
-        <br><strong>start:</strong> 21/03 06:51
+        <br><strong>start:</strong> 21/03 11:02
         <br><strong>end:</strong> 21/03 18:00
         <hr>
     <p><strong>Castelo Branco (59km ESE)</strong><br>Queda de neve de 1200/1400 metros de altitude. Acumulação até 4 cm acima de 1200 metros e até 20 cm acima de 1600 metros.Impactos Prováveis: Perturbação causada por queda de neve com acumulação e possível formação de gelo (p. ex., vias condicionadas ou interditas, danos em estruturas ou árvores, abastecimentos locais prejudicados).</p>
@@ -1092,7 +1099,7 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> yellow
-        <br><strong>start:</strong> 21/03 06:51
+        <br><strong>start:</strong> 21/03 11:02
         <br><strong>end:</strong> 22/03 06:00
         <hr>
     <p><strong>Coimbra (36km NW)</strong><br>Aguaceiros por vezes fortes, que poderão ser ocasionalmente sob a forma de granizo e acompanhados de trovoadas.</p>
@@ -1110,7 +1117,7 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> yellow
-        <br><strong>start:</strong> 21/03 06:51
+        <br><strong>start:</strong> 21/03 11:02
         <br><strong>end:</strong> 22/03 12:00
         <hr>
     <p><strong>Coimbra (36km NW)</strong><br>Vento sudoeste com rajadas até 80 km/h, rodando para noroeste a partir da madrugada.</p><p><strong>Leiria (58km WSW)</strong><br>Vento sudoeste com rajadas até 80 km/h, rodando para noroeste a partir da madrugada.</p>
@@ -1138,20 +1145,20 @@ window.dashboardTable = `<div class="table-container">
         </article>
     </dialog>
     
-    <dialog id="modal-Neve-21-22-03" class="modal">
+    <dialog id="modal-Neve-21-23-03" class="modal">
         <article>
             <header>
-                <a href="#" class="close" aria-label="Close" onclick="closeModal('modal-Neve-21-22-03', event)"></a>
+                <a href="#" class="close" aria-label="Close" onclick="closeModal('modal-Neve-21-23-03', event)"></a>
                 <h3>Neve</h3>
             </header>
             
         <strong>alert level:</strong> orange
         <br><strong>start:</strong> 21/03 18:00
-        <br><strong>end:</strong> 22/03 12:00
+        <br><strong>end:</strong> 23/03 00:00
         <hr>
-    <p><strong>Castelo Branco (59km ESE)</strong><br>Queda de neve acima de 1200 a 1400 metros de altitude, diminuindo temporariamente a cota para 1000 metros de altitude. Acumulação até 10 cm acima de 1200 metros e até 30 cm acima de 1600 metros.Impactos Prováveis: Perturbação moderada causada por queda de neve com acumulação e possível formação de  gelo (p. ex., vias condicionadas ou interditas, danos em estruturas ou árvores, abastecimentos locais prejudicados).</p>
+    <p><strong>Castelo Branco (59km ESE)</strong><br>Queda de neve acima de 1200 a 1400 metros de altitude, diminuindo  a cota para 1000/1200 metros de altitude a partir da manhã de dia 22. Acumulação até 15 cm acima de 1200 metros e até 50 cm acima de 1600 metros.Impactos Prováveis: Perturbação moderada causada por queda de neve com acumulação e possível formação de  gelo (p. ex., vias condicionadas ou interditas, danos em estruturas ou árvores, abastecimentos locais prejudicados).</p>
             <footer>
-                <button onclick="closeModal('modal-Neve-21-22-03', event)">Close</button>
+                <button onclick="closeModal('modal-Neve-21-23-03', event)">Close</button>
             </footer>
         </article>
     </dialog>
@@ -1164,12 +1171,30 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> yellow
-        <br><strong>start:</strong> 22/03 12:00
-        <br><strong>end:</strong> 23/03 10:00
+        <br><strong>start:</strong> 22/03 09:00
+        <br><strong>end:</strong> 23/03 00:00
         <hr>
-    <p><strong>Castelo Branco (59km ESE)</strong><br>Queda de neve acima da cota de 1000 a 1200 metros de altitude. Acumulação até 4 cm acima de 1200 metros e até 20 cm acima de 1600 metros.Impactos Prováveis: Perturbação causada por queda de neve com acumulação e possível formação de gelo (p. ex., vias condicionadas ou interditas, danos em estruturas ou árvores, abastecimentos locais prejudicados).</p>
+    <p><strong>Coimbra (36km NW)</strong><br>Queda de neve acima de 1000/1200 m de altitude, com acumulação que poderá ser da ordem de 5 cm.Impactos Prováveis: Perturbação causada por queda de neve com acumulação e possível formação de gelo (p. ex., vias condicionadas ou interditas, danos em estruturas ou árvores, abastecimentos locais prejudicados).</p>
             <footer>
                 <button onclick="closeModal('modal-Neve-22-23-03', event)">Close</button>
+            </footer>
+        </article>
+    </dialog>
+    
+    <dialog id="modal-Neve-23-23-03" class="modal">
+        <article>
+            <header>
+                <a href="#" class="close" aria-label="Close" onclick="closeModal('modal-Neve-23-23-03', event)"></a>
+                <h3>Neve</h3>
+            </header>
+            
+        <strong>alert level:</strong> yellow
+        <br><strong>start:</strong> 23/03 00:00
+        <br><strong>end:</strong> 23/03 18:00
+        <hr>
+    <p><strong>Castelo Branco (59km ESE)</strong><br>Queda de neve acima da cota de 1000 a 1200 metros de altitude. Acumulação até 5 cm acima de 1200 metros.Impactos Prováveis: Perturbação causada por queda de neve com acumulação e possível formação de gelo (p. ex., vias condicionadas ou interditas, danos em estruturas ou árvores, abastecimentos locais prejudicados).</p>
+            <footer>
+                <button onclick="closeModal('modal-Neve-23-23-03', event)">Close</button>
             </footer>
         </article>
     </dialog>
