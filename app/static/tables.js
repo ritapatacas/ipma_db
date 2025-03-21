@@ -221,78 +221,8 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">
   </tbody>
 </table></div>`;
 
-window.evapotranspirationData = [{"maximum": 2.72545, "mean": 2.58501, "minimum": 2.51425, "period": "19 Mar", "range": 0.211192, "std": 0.041785}, {"maximum": 1.970399, "mean": 1.95676, "minimum": 1.940369, "period": "18 Mar", "range": 0.030033, "std": 0.006987}, {"maximum": 1.628299, "mean": 1.52915, "minimum": 1.457389, "period": "17 Mar", "range": 0.170909, "std": 0.033697}, {"maximum": 2.205319, "mean": 2.163209, "minimum": 2.11467, "period": "16 Mar", "range": 0.090649, "std": 0.022819}, {"maximum": 1.96596, "mean": 1.95621, "minimum": 1.932729, "period": "15 Mar", "range": 0.033223, "std": 0.007206}];
-window.observationsTable = `<details class="dropdown">
-  <summary>Dropdown</summary>
-  <ul>
-    <li><a href="#">Ansião</a></li>
-    <li><a href="#">Evapotranspiration</a></li>
-  </ul>
-</details>
-
-<h3>Evapotranspiration Data (Last 7 Days)</h3>
-
-<table class="dataframe custom-table">
-  <thead>
-    <tr style="text-align: right;">
-      <th>period</th>
-      <th>minimum</th>
-      <th>maximum</th>
-      <th>mean</th>
-      <th>range</th>
-      <th>std</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>19 Mar</td>
-      <td>2.514250</td>
-      <td>2.725450</td>
-      <td>2.585010</td>
-      <td>0.211192</td>
-      <td>0.041785</td>
-    </tr>
-    <tr>
-      <td>18 Mar</td>
-      <td>1.940369</td>
-      <td>1.970399</td>
-      <td>1.956760</td>
-      <td>0.030033</td>
-      <td>0.006987</td>
-    </tr>
-    <tr>
-      <td>17 Mar</td>
-      <td>1.457389</td>
-      <td>1.628299</td>
-      <td>1.529150</td>
-      <td>0.170909</td>
-      <td>0.033697</td>
-    </tr>
-    <tr>
-      <td>16 Mar</td>
-      <td>2.114670</td>
-      <td>2.205319</td>
-      <td>2.163209</td>
-      <td>0.090649</td>
-      <td>0.022819</td>
-    </tr>
-    <tr>
-      <td>15 Mar</td>
-      <td>1.932729</td>
-      <td>1.965960</td>
-      <td>1.956210</td>
-      <td>0.033223</td>
-      <td>0.007206</td>
-    </tr>
-  </tbody>
-</table>
-
-<!-- ✅ Ensure the Chart Canvas Exists -->
-<div id="evapoChartContainer">
-  <canvas id="evapoChart" width="800" height="400"></canvas>
-</div>
-
-<div class="table-wrapper"><table class="dataframe custom-table">
+window.evapotranspirationData = [{"max": 2.72545, "mean": 2.58501, "min": 2.51425, "period": "19 Mar", "range": 0.211192, "std": 0.041785}, {"max": 1.970399, "mean": 1.95676, "min": 1.940369, "period": "18 Mar", "range": 0.030033, "std": 0.006987}, {"max": 1.628299, "mean": 1.52915, "min": 1.457389, "period": "17 Mar", "range": 0.170909, "std": 0.033697}, {"max": 2.205319, "mean": 2.163209, "min": 2.11467, "period": "16 Mar", "range": 0.090649, "std": 0.022819}, {"max": 1.96596, "mean": 1.95621, "min": 1.932729, "period": "15 Mar", "range": 0.033223, "std": 0.007206}, {"max": 2.594079, "mean": 2.546809, "min": 2.49825, "period": "14 Mar", "range": 0.095828, "std": 0.0221}, {"max": 1.79391, "mean": 1.762799, "min": 1.716369, "period": "13 Mar", "range": 0.077537, "std": 0.022547}];
+window.observationsTable = `<div class="table-wrapper"><table class="dataframe custom-table">
 <thead>
 <tr style="text-align: right;">
 <th>date</th>
@@ -738,7 +668,93 @@ window.observationsTable = `<details class="dropdown">
 <td>0.0</td>
 </tr>
 </tbody>
-</table></div>`;
+</table></div>
+
+<details class="dropdown">
+  <summary>Dropdown</summary>
+  <ul>
+    <li><a href="#">Ansião</a></li>
+    <li><a href="#">Evapotranspiration</a></li>
+  </ul>
+</details>
+
+<table class="dataframe custom-table">
+  <thead>
+    <tr><th colspan='6'><h3 class='table-title'>Evaporatranspiration</h3></th></tr>
+
+    <tr style="text-align: right;">
+      <th>period</th>
+      <th>max</th>
+      <th>mean</th>
+      <th>min</th>
+      <th>range</th>
+      <th>std</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>19 Mar</td>
+      <td>2.725450</td>
+      <td>2.585010</td>
+      <td>2.514250</td>
+      <td>0.211192</td>
+      <td>0.041785</td>
+    </tr>
+    <tr>
+      <td>18 Mar</td>
+      <td>1.970399</td>
+      <td>1.956760</td>
+      <td>1.940369</td>
+      <td>0.030033</td>
+      <td>0.006987</td>
+    </tr>
+    <tr>
+      <td>17 Mar</td>
+      <td>1.628299</td>
+      <td>1.529150</td>
+      <td>1.457389</td>
+      <td>0.170909</td>
+      <td>0.033697</td>
+    </tr>
+    <tr>
+      <td>16 Mar</td>
+      <td>2.205319</td>
+      <td>2.163209</td>
+      <td>2.114670</td>
+      <td>0.090649</td>
+      <td>0.022819</td>
+    </tr>
+    <tr>
+      <td>15 Mar</td>
+      <td>1.965960</td>
+      <td>1.956210</td>
+      <td>1.932729</td>
+      <td>0.033223</td>
+      <td>0.007206</td>
+    </tr>
+    <tr>
+      <td>14 Mar</td>
+      <td>2.594079</td>
+      <td>2.546809</td>
+      <td>2.498250</td>
+      <td>0.095828</td>
+      <td>0.022100</td>
+    </tr>
+    <tr>
+      <td>13 Mar</td>
+      <td>1.793910</td>
+      <td>1.762799</td>
+      <td>1.716369</td>
+      <td>0.077537</td>
+      <td>0.022547</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ✅ Ensure the Chart Canvas Exists -->
+<div id="evapoChartContainer">
+  <canvas id="evapoChart" width="800" height="400"></canvas>
+</div>`;
 
 
 window.dashboardTable = `<div class="table-container">
@@ -813,11 +829,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Mar 25</td>
-      <td>116</td>
+      <td>117</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>456</td>
+      <td>457</td>
     </tr>
   </tbody>
 </table>
