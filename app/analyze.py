@@ -95,7 +95,7 @@ def observations(last_n: int = 48) -> pd.DataFrame:
 
     latest = df.tail(last_n).sort_values("datetime", ascending=False)
     display_df = latest.assign(
-        date=latest["datetime"].dt.strftime(DATE_FORMAT["date"]),
+        date=latest["datetime"].dt.strftime(DATE_FORMAT["day"]),
         time=latest["datetime"].dt.strftime("%Hh"),
     ).drop(columns=["datetime"])[
         ["date", "time", "temp", "wind dir", "wind km", "prec", "rad"]
@@ -169,7 +169,7 @@ def _add_total_row(df: pd.DataFrame, value_col: str) -> pd.DataFrame:
 
 def _format_summary_periods(df: pd.DataFrame, group_by: str) -> pd.DataFrame:
     """Format period column with appropriate date formatting"""
-    date_format = DATE_FORMAT.get(group_by, DATE_FORMAT["date"])
+    date_format = DATE_FORMAT.get(group_by, DATE_FORMAT["day"])
     df["period"] = df["period"].apply(
         lambda x: x.strftime(date_format) if not isinstance(x, str) else x
     )

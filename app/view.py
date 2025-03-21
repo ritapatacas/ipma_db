@@ -19,7 +19,7 @@ df_observations = pd.DataFrame(observations())
 df_show_missing_entries = pd.DataFrame(summarize_missing_entries("month"))
 df_cold_hours = pd.DataFrame(summarize_cold_hours("month"))
 
-df_evapotranspiration = fetch_and_group_evapotranspiration_data("day", 7)
+df_evapotranspiration = fetch_and_group_evapotranspiration_data("day")
 
 
 def debug_print_data():
@@ -52,10 +52,6 @@ def format_forecast(df: pd.DataFrame, mobile: bool = False) -> pd.DataFrame:
 
 df_forecast = format_forecast(df_forecast)
 df_forecast_mobile = format_forecast(df_forecast, mobile=True)
-
-def format_evapotranspiration(df: pd.DataFrame) -> str:
-    """Converts evapotranspiration DataFrame into HTML table."""
-    return df.to_html(index=False, border=0, classes="custom-table")
 
 def format_table_html(df: pd.DataFrame, title: str) -> str:
     if df.empty:
@@ -114,8 +110,17 @@ table_html_observations = apply_row_span_for_date_column(table_html_observations
 table_html_missing = format_table_html(df_show_missing_entries, "Missing Entries")
 table_html_cold_hours = format_table_html(df_cold_hours, "Cold Hours")
 
-table_html_evapotranspiration = format_evapotranspiration(df_evapotranspiration)
+table_html_evapotranspiration = format_table_html(df_evapotranspiration, "Evaporatranspiration")
 
+
+def prepare_evapo_json(df: pd.DataFrame) -> list[dict]:
+    df = df.copy()
+    if "period" not in df.columns and "date" in df.columns:
+        df = df.rename(columns={"date": "period"})
+    df["period"] = df["period"].astype(str)
+    return df.to_dict(orient="records")
+
+evapotranspiration_data = prepare_evapo_json(df_evapotranspiration)
 
 def generate_warning_timeline(warnings: list) -> str:
     timeline_html = ""
@@ -306,10 +311,6 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 TEMPLATES_DIR = os.path.join(BASE_DIR, "templates")
 env = Environment(loader=FileSystemLoader(TEMPLATES_DIR))
 
-df_evapotranspiration = fetch_and_group_evapotranspiration_data("day", 7)
-
-# Convert evapotranspiration DataFrame into a JSON-like structure
-evapotranspiration_data = df_evapotranspiration.to_dict(orient="records")
 
 
 def render_template() -> str:
@@ -322,8 +323,8 @@ def render_template() -> str:
         table_html_missing=table_html_missing,
         table_html_cold_hours=table_html_cold_hours,
         warnings_timeline=warnings_timeline_html,
-        table_html_evapotranspiration=df_evapotranspiration.to_html(index=False, border=0, classes="custom-table"),
-        evapotranspiration_data=evapotranspiration_data  # ✅ Injecting as JSON
+        table_html_evapotranspiration=table_html_evapotranspiration,
+        evapotranspiration_data=evapotranspiration_data,
     )
 
 def render_tables_js() -> str:
@@ -335,8 +336,8 @@ def render_tables_js() -> str:
         table_html_missing=table_html_missing,
         table_html_cold_hours=table_html_cold_hours,
         warnings_timeline=warnings_timeline_html,
-        table_html_evapotranspiration=df_evapotranspiration.to_html(index=False, border=0, classes="custom-table"),
-        evapotranspiration_data=evapotranspiration_data  # ✅ Injecting as JSON
+        table_html_evapotranspiration=table_html_evapotranspiration,
+        evapotranspiration_data=evapotranspiration_data,
     )
 
 def save_files(html: str, tables_js: str):

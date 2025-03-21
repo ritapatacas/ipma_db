@@ -6,19 +6,22 @@ from utils import logger
 
 collection = get_mongo_collection("evapotranspiration")
 
-
 def process_and_store_evapotranspiration():
     data = fetch_evapotranspiration()
     df = pd.read_csv(StringIO(data))
 
+    # ✅ Only keep expected columns
+    df = df[["date", "minimum", "maximum", "mean", "range", "std"]]
+
+    # ✅ Standardize to match stored schema
     records = []
     for _, row in df.iterrows():
         record = {
             "date": row["date"],
             "minimum": float(row["minimum"]),
+            "mean": float(row["mean"]),
             "maximum": float(row["maximum"]),
             "range": float(row["range"]),
-            "mean": float(row["mean"]),
             "std": float(row["std"]),
         }
         records.append(record)

@@ -6,7 +6,9 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">
   {% autoescape false %}{{ table_html_forecast_mobile }}{% endautoescape %}</div>`;
 
 window.evapotranspirationData = {{ evapotranspiration_data | tojson }};
-window.observationsTable = `<details class="dropdown">
+window.observationsTable = `<div class="table-wrapper">{% autoescape false %}{{ table_html_observations }}{% endautoescape %}</div>
+
+<details class="dropdown">
   <summary>Dropdown</summary>
   <ul>
     <li><a href="#">Ansião</a></li>
@@ -14,16 +16,12 @@ window.observationsTable = `<details class="dropdown">
   </ul>
 </details>
 
-<h3>Evapotranspiration Data (Last 7 Days)</h3>
-
 {{ table_html_evapotranspiration | safe }}
 
 <!-- ✅ Ensure the Chart Canvas Exists -->
 <div id="evapoChartContainer">
   <canvas id="evapoChart" width="800" height="400"></canvas>
-</div>
-
-<div class="table-wrapper">{% autoescape false %}{{ table_html_observations }}{% endautoescape %}</div>`;
+</div>`;
 
 
 window.dashboardTable = `<div class="table-container">

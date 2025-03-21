@@ -2,7 +2,7 @@ import pandas as pd
 
 DATE_FORMAT = {
     "date_time": "%Y-%m-%d %H:%M",
-    "date": "%d %b",   # Used when grouping by "day"
+    "day": "%d %b",   # Used when grouping by "day"
     "week": "%d %b",
     "month": "%b %y",
 }
@@ -43,8 +43,6 @@ def group_by_period(df: pd.DataFrame, date_column: str, period: str) -> pd.DataF
 
     elif period == "day":
         df["period"] = df[date_column].dt.normalize()
-        # ✅ Apply DATE_FORMAT["date"] when grouping by day
-        df["period"] = df["period"].dt.strftime(DATE_FORMAT["date"])
 
     elif period == "hour":
         df["period"] = df[date_column].dt.floor("H")
