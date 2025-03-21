@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const btnObservations = document.getElementById("btn-observations");
   const btnDashboard = document.getElementById("btn-dashboard");
 
-  // ✅ TOGGLE THEME
+  // TOGGLE THEME
   document.getElementById("theme-toggle").addEventListener("click", () => {
     const currentTheme = document.documentElement.getAttribute("data-theme");
     const newTheme = currentTheme === "dark" ? "light" : "dark";
@@ -36,6 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
     showcaseDiv.innerHTML = content;
     window.location.hash = page;
     updateButtonStyles(page);
+    attachModalCloseListeners();
 
     // ✅ Load chart only when switching to "observations"
     if (page === "observations") {
@@ -71,9 +72,64 @@ document.addEventListener("DOMContentLoaded", function () {
     updateShowcase(page);
   }
 
-  window.addEventListener("hashchange", loadPageFromHash);
+ window.openModal = function (modalId, event) {
+  if (event) event.preventDefault(); // Stop default link behavior
+  const modal = document.getElementById(modalId);
+  if (modal) {
+      console.log("Opening modal:", modalId);
+      modal.showModal();
+      document.body.classList.add("modal-open");
+  } else {
+      console.error("Modal not found:", modalId);
+  }
+};
 
-  // ✅ LISTEN FOR DATA LOAD EVENT FROM `tables.js.jinja`
+window.closeModal = function (modalId, event) {
+  if (event) event.preventDefault(); // Stop default link behavior
+  const modal = document.getElementById(modalId);
+  if (modal) {
+      console.log("Closing modal:", modalId);
+      modal.close();
+      document.body.classList.remove("modal-open");
+  } else {
+      console.error("Modal not found:", modalId);
+  }
+};
+
+function attachModalCloseListeners() {
+  document.querySelectorAll("dialog").forEach((modal) => {
+      modal.addEventListener("click", (event) => {
+          if (event.target === modal) {
+              modal.close();
+              document.body.classList.remove("modal-open");
+          }
+      });
+  });
+}
+
+attachModalCloseListeners();
+
+function observeModals() {
+  const observer = new MutationObserver(() => {
+      attachModalCloseListeners();
+  });
+
+  observer.observe(document.body, { childList: true, subtree: true });
+}
+observeModals();
+
+btnForecast.addEventListener("click", () => updateShowcase("forecast"));
+btnObservations.addEventListener("click", () => updateShowcase("observations"));
+btnDashboard.addEventListener("click", () => updateShowcase("dashboard"));
+
+  window.addEventListener("hashchange", loadPageFromHash);
+    window.addEventListener("resize", () => {
+        if (window.location.hash.includes("forecast")) {
+            updateShowcase("forecast");
+        }
+        updateNavbarText();
+
+    });
   window.addEventListener("evapotranspirationLoaded", () => {
     console.log("🚀 Evapotranspiration data is ready! Creating chart...");
     loadEvapotranspirationChart();
@@ -122,7 +178,7 @@ function createEvapoChart(data) {
   }
 
   // ✅ Clean Data: Remove anomalies where max or min values are 0
-  let filteredData = data.filter(row => row.maximum !== 0 && row.minimum !== 0);
+  let filteredData = data.filter(row => row.max !== 0 && row.min !== 0);
 
   // ✅ Check if data is **hourly or daily** based on period format
   let isHourly = filteredData.some(row => row.period.match(/^\d{1,2}h$/));
@@ -130,8 +186,8 @@ function createEvapoChart(data) {
   // ✅ Format X-Axis Labels (Sort by Date & Time)
   let labels = filteredData.map(row => row.period);
   let meanData = filteredData.map(row => row.mean);
-  let maxData = filteredData.map(row => row.maximum);
-  let minData = filteredData.map(row => row.minimum);
+  let maxData = filteredData.map(row => row.max);
+  let minData = filteredData.map(row => row.min);
 
   // ✅ Improve Chart Styling
   window.evapoChart = new Chart(ctx, {
