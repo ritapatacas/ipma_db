@@ -1,44 +1,46 @@
 document.addEventListener("DOMContentLoaded", function () {
   const showcaseDiv = document.getElementById("showcase");
 
-  const btnForecast = document.getElementById("btn-forecast");
-  const btnObservations = document.getElementById("btn-observations");
-  const btnDashboard = document.getElementById("btn-dashboard");
+  setupThemeToggle();
+  setupModalHandlers();
+  setupNavigation();
 
-  // TOGGLE THEME
-  document.getElementById("theme-toggle").addEventListener("click", () => {
-    const currentTheme = document.documentElement.getAttribute("data-theme");
-    const newTheme = currentTheme === "dark" ? "light" : "dark";
-    document.documentElement.setAttribute("data-theme", newTheme);
-    localStorage.setItem("theme", newTheme);
-  });
+  function setupNavigation() {
+    const pages = ["forecast", "observations", "dashboard"];
 
-  function getForecastTable() {
-    return window.innerWidth <= 1025 ? window.forecastTableMobile : window.forecastTable;
+    pages.forEach((page) => {
+      const btn = document.getElementById(`btn-${page}`);
+      if (btn) {
+        btn.addEventListener("click", () => updateShowcase(page));
+      }
+    });
+
+    window.addEventListener("hashchange", () => {
+      const page = window.location.hash.replace("#", "") || "forecast";
+      updateShowcase(page);
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.location.hash.includes("forecast")) updateShowcase("forecast");
+      updateNavbarText();
+    });
+
+    updateNavbarText();
+    updateShowcase(window.location.hash.replace("#", "") || "forecast");
   }
 
   function updateShowcase(page) {
-    let content;
-    switch (page) {
-      case "forecast":
-        content = getForecastTable();
-        break;
-      case "observations":
-        content = window.observationsTable;
-        break;
-      case "dashboard":
-        content = window.dashboardTable;
-        break;
-      default:
-        content = "<p>Page not found</p>";
-    }
+    const tableMap = {
+      forecast: window.innerWidth <= 1025 ? window.forecastTableMobile : window.forecastTable,
+      observations: window.observationsTable,
+      dashboard: window.dashboardTable,
+    };
 
-    showcaseDiv.innerHTML = content;
+    showcaseDiv.innerHTML = tableMap[page] || "<p>Page not found</p>";
     window.location.hash = page;
     updateButtonStyles(page);
     attachModalCloseListeners();
 
-    // ✅ Load chart only when switching to "observations"
     if (page === "observations") {
       loadEvapotranspirationChart();
     }
@@ -46,245 +48,196 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function updateButtonStyles(page) {
     document.querySelectorAll("nav a[data-page]").forEach((btn) => {
-      btn.dataset.page === page
-        ? btn.classList.add("active")
-        : btn.classList.remove("active");
+      btn.classList.toggle("active", btn.dataset.page === page);
     });
   }
 
   function updateNavbarText() {
-    const width = window.innerWidth;
-    if (btnForecast && btnObservations && btnDashboard) {
-      if (width <= 1025) {
-        btnForecast.innerHTML = '<i class="fa-solid fa-cloud-sun-rain"></i>';
-        btnObservations.innerHTML = '<i class="fa-solid fa-eye"></i>';
-        btnDashboard.innerHTML = '<i class="fa-solid fa-chart-line"></i>';
-      } else {
-        btnForecast.textContent = "forecast";
-        btnObservations.textContent = "observations";
-        btnDashboard.textContent = "dashboard";
+    const iconMap = {
+      forecast: '<i class="fa-solid fa-cloud-sun-rain"></i>',
+      observations: '<i class="fa-solid fa-eye"></i>',
+      dashboard: '<i class="fa-solid fa-chart-line"></i>',
+    };
+
+    ["forecast", "observations", "dashboard"].forEach((key) => {
+      const btn = document.getElementById(`btn-${key}`);
+      if (btn) {
+        btn.innerHTML = window.innerWidth <= 1025 ? iconMap[key] : key;
       }
+    });
+  }
+
+  function setupThemeToggle() {
+    const toggle = document.getElementById("theme-toggle");
+    if (!toggle) return;
+
+    toggle.addEventListener("click", () => {
+      const currentTheme = document.documentElement.getAttribute("data-theme");
+      const newTheme = currentTheme === "dark" ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", newTheme);
+      localStorage.setItem("theme", newTheme);
+    });
+  }
+
+  function setupModalHandlers() {
+    window.openModal = function (modalId, event) {
+      if (event) event.preventDefault();
+      const modal = document.getElementById(modalId);
+      if (modal) {
+        modal.showModal();
+        document.body.classList.add("modal-open");
+      } else {
+        console.error("Modal not found:", modalId);
+      }
+    };
+
+    window.closeModal = function (modalId, event) {
+      if (event) event.preventDefault();
+      const modal = document.getElementById(modalId);
+      if (modal) {
+        modal.close();
+        document.body.classList.remove("modal-open");
+      } else {
+        console.error("Modal not found:", modalId);
+      }
+    };
+
+    const observer = new MutationObserver(() => attachModalCloseListeners());
+    observer.observe(document.body, { childList: true, subtree: true });
+  }
+
+  function attachModalCloseListeners() {
+    document.querySelectorAll("dialog").forEach((modal) => {
+      modal.removeEventListener("click", handleModalClick); // prevent duplicates
+      modal.addEventListener("click", handleModalClick);
+    });
+  }
+  
+  function handleModalClick(event) {
+    if (event.target === event.currentTarget) {
+      event.currentTarget.close();
+      document.body.classList.remove("modal-open");
     }
   }
-
-  function loadPageFromHash() {
-    const page = window.location.hash.replace("#", "") || "forecast";
-    updateShowcase(page);
-  }
-
- window.openModal = function (modalId, event) {
-  if (event) event.preventDefault(); // Stop default link behavior
-  const modal = document.getElementById(modalId);
-  if (modal) {
-      console.log("Opening modal:", modalId);
-      modal.showModal();
-      document.body.classList.add("modal-open");
-  } else {
-      console.error("Modal not found:", modalId);
-  }
-};
-
-window.closeModal = function (modalId, event) {
-  if (event) event.preventDefault(); // Stop default link behavior
-  const modal = document.getElementById(modalId);
-  if (modal) {
-      console.log("Closing modal:", modalId);
-      modal.close();
-      document.body.classList.remove("modal-open");
-  } else {
-      console.error("Modal not found:", modalId);
-  }
-};
-
-function attachModalCloseListeners() {
-  document.querySelectorAll("dialog").forEach((modal) => {
-      modal.addEventListener("click", (event) => {
-          if (event.target === modal) {
-              modal.close();
-              document.body.classList.remove("modal-open");
-          }
-      });
-  });
-}
-
-attachModalCloseListeners();
-
-function observeModals() {
-  const observer = new MutationObserver(() => {
-      attachModalCloseListeners();
-  });
-
-  observer.observe(document.body, { childList: true, subtree: true });
-}
-observeModals();
-
-btnForecast.addEventListener("click", () => updateShowcase("forecast"));
-btnObservations.addEventListener("click", () => updateShowcase("observations"));
-btnDashboard.addEventListener("click", () => updateShowcase("dashboard"));
-
-  window.addEventListener("hashchange", loadPageFromHash);
-    window.addEventListener("resize", () => {
-        if (window.location.hash.includes("forecast")) {
-            updateShowcase("forecast");
-        }
-        updateNavbarText();
-
-    });
-  window.addEventListener("evapotranspirationLoaded", () => {
-    console.log("🚀 Evapotranspiration data is ready! Creating chart...");
-    loadEvapotranspirationChart();
-  });
+  
 
   function loadEvapotranspirationChart() {
     if (!window.evapotranspirationData || window.evapotranspirationData.length === 0) {
-      console.warn("⚠️ No evapotranspiration data available. Chart will not be created.");
+      console.warn("⚠️ No evapotranspiration data available.");
       return;
     }
 
-    let canvas = document.getElementById("evapoChart");
+    const canvas = document.getElementById("evapoChart");
     if (!canvas) {
-      console.error("❌ Chart canvas #evapoChart not found. Skipping chart creation.");
+      console.error("❌ Canvas #evapoChart not found.");
       return;
     }
 
-    console.log("✅ Data & canvas found! Creating chart...");
     createEvapoChart(window.evapotranspirationData);
   }
 
-  updateNavbarText();
-  loadPageFromHash();
+  window.addEventListener("evapotranspirationLoaded", () => {
+    console.log("🚀 Evapotranspiration data loaded, drawing chart...");
+    loadEvapotranspirationChart();
+  });
 });
 
+
+
 function createEvapoChart(data) {
-  console.log("📊 Creating Chart with Data:", data);
+  if (!Array.isArray(data) || data.length === 0) return;
 
-  if (!Array.isArray(data) || data.length === 0) {
-    console.error("⚠️ Chart data is empty or invalid.");
-    return;
-  }
+  const canvas = document.getElementById("evapoChart");
+  if (!canvas) return;
 
-  let canvas = document.getElementById("evapoChart");
-  if (!canvas) {
-    console.error("⚠️ Canvas element #evapoChart not found!");
-    return;
-  }
+  const ctx = canvas.getContext("2d");
+  if (window.evapoChart instanceof Chart) window.evapoChart.destroy();
 
-  let ctx = canvas.getContext("2d");
+  const filtered = data.filter(row => row.max !== 0 && row.min !== 0);
+  const isHourly = filtered.some(row => row.period.match(/^\d{1,2}h$/));
 
-  // ✅ Destroy old Chart if it exists
-  if (window.evapoChart instanceof Chart) {
-    console.log("🛑 Destroying existing Chart.js instance...");
-    window.evapoChart.destroy();
-  }
+  const labels = filtered.map(row => row.period);
+  const maxData = filtered.map(row => row.max);
+  const minData = filtered.map(row => row.min);
+  const meanData = filtered.map(row => row.mean);
 
-  // ✅ Clean Data: Remove anomalies where max or min values are 0
-  let filteredData = data.filter(row => row.max !== 0 && row.min !== 0);
-
-  // ✅ Check if data is **hourly or daily** based on period format
-  let isHourly = filteredData.some(row => row.period.match(/^\d{1,2}h$/));
-  
-  // ✅ Format X-Axis Labels (Sort by Date & Time)
-  let labels = filteredData.map(row => row.period);
-  let meanData = filteredData.map(row => row.mean);
-  let maxData = filteredData.map(row => row.max);
-  let minData = filteredData.map(row => row.min);
-
-  // ✅ Improve Chart Styling
   window.evapoChart = new Chart(ctx, {
     type: "line",
     data: {
-      labels: labels,
+      labels,
       datasets: [
         {
           label: "Mean",
           data: meanData,
           borderColor: "blue",
-          backgroundColor: "rgba(0, 0, 255, 0.2)",
-          borderWidth: 1,   // Thicker lines
-          pointRadius: 2,   // Bigger dots
           pointBackgroundColor: "blue",
-          pointHoverRadius: 6,
+          borderWidth: 1,
+          pointRadius: 2,
           fill: false,
         },
         {
           label: "Max",
           data: maxData,
           borderColor: "red",
-          backgroundColor: "rgba(255, 0, 0, 0.2)",
+          pointBackgroundColor: "red",
           borderWidth: 1,
           pointRadius: 2,
-          pointBackgroundColor: "red",
-          pointHoverRadius: 6,
           fill: false,
         },
         {
           label: "Min",
           data: minData,
           borderColor: "green",
-          backgroundColor: "rgba(0, 255, 0, 0.2)",
+          pointBackgroundColor: "green",
           borderWidth: 1,
           pointRadius: 2,
-          pointBackgroundColor: "green",
-          pointHoverRadius: 6,
           fill: false,
         },
-      ],
+      ]
     },
     options: {
       responsive: true,
       maintainAspectRatio: false,
       scales: {
         x: {
-          title: { display: true, text: isHourly ? "Hour of the Day" : "day", font: { size: 1 } },
+          title: { display: true, text: isHourly ? "Hour" : "Day" },
           ticks: {
             maxRotation: 0,
             minRotation: 0,
-            autoSkip: true,
             font: { size: 12 },
-            callback: function(value, index, values) {
-              return isHourly ? `${labels[index]}h` : labels[index]; // Add 'h' for hourly data
-            },
           },
           grid: {
             color: "rgba(200, 200, 200, 0.3)",
           },
         },
         y: {
-          title: { display: true, text: "(mm)", font: { size: 12 } },
+          title: { display: true, text: "Evapotranspiration (mm)" },
           beginAtZero: true,
           suggestedMin: Math.min(...minData) - 0.5,
           suggestedMax: Math.max(...maxData) + 0.5,
           ticks: {
-            stepSize: 0.5, // Ensures better readability on the Y-axis
+            stepSize: 0.5,
             font: { size: 12 },
           },
           grid: {
-            color: "rgba(150, 150, 150, 0.3)", // Softer grid lines
+            color: "rgba(150, 150, 150, 0.3)",
           },
-        },
+        }
       },
       plugins: {
         legend: {
-          display: true,
           position: "top",
           labels: {
-            boxWidth: 15,
-            font: { size: 12 },
-          },
+            font: { size: 12 }
+          }
         },
         tooltip: {
-          enabled: true,
-          mode: "index",
-          intersect: false,
           callbacks: {
-            label: function (tooltipItem) {
-              return `${tooltipItem.dataset.label}: ${tooltipItem.raw.toFixed(2)} mm`;
-            },
-          },
-        },
-      },
-    },
+            label: (tooltipItem) =>
+              `${tooltipItem.dataset.label}: ${tooltipItem.raw.toFixed(2)} mm`,
+          }
+        }
+      }
+    }
   });
-
-  console.log("✅ Chart successfully created!");
 }
