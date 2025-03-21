@@ -20,7 +20,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>7.22</td>
       <td>12.22</td>
       <td>60%</td>
-      <td>1.02</td>
+      <td>0.99</td>
       <td>100%</td>
       <td>Mostly cloudy with rain</td>
     </tr>
@@ -30,7 +30,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>6.11</td>
       <td>10.56</td>
       <td>50%</td>
-      <td>1.38</td>
+      <td>1.78</td>
       <td>100%</td>
       <td>Mostly cloudy with rain</td>
     </tr>
@@ -173,14 +173,14 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">
       <td>Fri (21)</td>
       <td>7.22</td>
       <td>12.22</td>
-      <td>1.02</td>
+      <td>0.99</td>
       <td>100%</td>
     </tr>
     <tr>
       <td>Sat (22)</td>
       <td>6.11</td>
       <td>10.56</td>
-      <td>1.38</td>
+      <td>1.78</td>
       <td>100%</td>
     </tr>
     <tr>
@@ -829,11 +829,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Mar 25</td>
-      <td>123</td>
+      <td>125</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>463</td>
+      <td>465</td>
     </tr>
   </tbody>
 </table>
