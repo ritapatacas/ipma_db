@@ -1,5 +1,6 @@
+// ✅ Declare global variables first
 window.forecastTable = `<div class="table-wrapper desktop-view">
-<table class="dataframe custom-table desktop-view">
+  <table class="dataframe custom-table desktop-view">
   <thead>
     <tr style="text-align: right;">
       <th>date</th>
@@ -16,42 +17,42 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>3-21</td>
       <td>Fri</td>
-      <td>7.78</td>
+      <td>7.22</td>
       <td>12.22</td>
-      <td>60%</td>
-      <td>0.98</td>
+      <td>55%</td>
+      <td>1.00</td>
       <td>100%</td>
       <td>Overcast with rain</td>
     </tr>
     <tr>
       <td>3-22</td>
       <td>Sat</td>
-      <td>6.67</td>
-      <td>10.56</td>
+      <td>6.11</td>
+      <td>10.00</td>
       <td>45%</td>
-      <td>0.94</td>
+      <td>1.61</td>
       <td>100%</td>
-      <td>Overcast with rain</td>
+      <td>Mostly cloudy with rain</td>
     </tr>
     <tr>
       <td>3-23</td>
       <td>Sun</td>
-      <td>5.00</td>
+      <td>4.44</td>
       <td>10.56</td>
       <td>40%</td>
-      <td>0.39</td>
-      <td>70%</td>
-      <td>Mostly cloudy with rain</td>
+      <td>0.20</td>
+      <td>50%</td>
+      <td>Mixed with showers</td>
     </tr>
     <tr>
       <td>3-24</td>
       <td>Mon</td>
       <td>4.44</td>
       <td>12.22</td>
-      <td>60%</td>
+      <td>65%</td>
       <td>0.00</td>
-      <td>30%</td>
-      <td>Clear and few clouds</td>
+      <td>25%</td>
+      <td>Partly cloudy</td>
     </tr>
     <tr>
       <td>3-25</td>
@@ -60,8 +61,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>14.44</td>
       <td>70%</td>
       <td>0.00</td>
-      <td>5%</td>
-      <td>Partly cloudy</td>
+      <td>0%</td>
+      <td>Clear and few clouds</td>
     </tr>
     <tr>
       <td>3-26</td>
@@ -81,12 +82,12 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>50%</td>
       <td>0.00</td>
       <td>20%</td>
-      <td>Overcast</td>
+      <td>Clear, cloudless sky</td>
     </tr>
     <tr>
       <td>3-28</td>
       <td>Fri</td>
-      <td>7.78</td>
+      <td>7.22</td>
       <td>13.89</td>
       <td>10%</td>
       <td>0.00</td>
@@ -96,31 +97,31 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>3-29</td>
       <td>Sat</td>
-      <td>6.67</td>
+      <td>6.11</td>
       <td>14.44</td>
-      <td>15%</td>
-      <td>0.27</td>
-      <td>55%</td>
-      <td>Mixed with showers</td>
+      <td>10%</td>
+      <td>0.00</td>
+      <td>45%</td>
+      <td>Clear and few clouds</td>
     </tr>
     <tr>
       <td>3-30</td>
       <td>Sun</td>
-      <td>6.67</td>
+      <td>6.11</td>
       <td>15.56</td>
-      <td>10%</td>
-      <td>0.14</td>
       <td>35%</td>
-      <td>Mixed with showers</td>
+      <td>0.00</td>
+      <td>20%</td>
+      <td>Clear, cloudless sky</td>
     </tr>
     <tr>
       <td>3-31</td>
       <td>Mon</td>
       <td>6.11</td>
       <td>16.11</td>
-      <td>20%</td>
+      <td>30%</td>
       <td>0.00</td>
-      <td>25%</td>
+      <td>15%</td>
       <td>Clear, cloudless sky</td>
     </tr>
     <tr>
@@ -136,17 +137,17 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>4-2</td>
       <td>Wed</td>
-      <td>7.22</td>
+      <td>6.67</td>
       <td>14.44</td>
-      <td>5%</td>
+      <td>10%</td>
       <td>0.00</td>
-      <td>45%</td>
+      <td>40%</td>
       <td>Clear, cloudless sky</td>
     </tr>
     <tr>
       <td>4-3</td>
       <td>Thu</td>
-      <td>6.67</td>
+      <td>6.11</td>
       <td>15.00</td>
       <td>5%</td>
       <td>0.00</td>
@@ -156,7 +157,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
   </tbody>
 </table></div>`;
 
-window.forecastTableMobile = `<div class="table-wrapper mobile-view"><table class="dataframe custom-table mobile-view">
+window.forecastTableMobile = `<div class="table-wrapper mobile-view">
+  <table class="dataframe custom-table mobile-view">
   <thead>
     <tr style="text-align: right;">
       <th>day</th>
@@ -169,38 +171,38 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view"><table clas
   <tbody>
     <tr>
       <td>Fri (21)</td>
-      <td>7.78</td>
+      <td>7.22</td>
       <td>12.22</td>
-      <td>0.98</td>
+      <td>1.00</td>
       <td>100%</td>
     </tr>
     <tr>
       <td>Sat (22)</td>
-      <td>6.67</td>
-      <td>10.56</td>
-      <td>0.94</td>
+      <td>6.11</td>
+      <td>10.00</td>
+      <td>1.61</td>
       <td>100%</td>
     </tr>
     <tr>
       <td>Sun (23)</td>
-      <td>5.00</td>
+      <td>4.44</td>
       <td>10.56</td>
-      <td>0.39</td>
-      <td>70%</td>
+      <td>0.20</td>
+      <td>50%</td>
     </tr>
     <tr>
       <td>Mon (24)</td>
       <td>4.44</td>
       <td>12.22</td>
       <td>0.00</td>
-      <td>30%</td>
+      <td>25%</td>
     </tr>
     <tr>
       <td>Tue (25)</td>
       <td>5.00</td>
       <td>14.44</td>
       <td>0.00</td>
-      <td>5%</td>
+      <td>0%</td>
     </tr>
     <tr>
       <td>Wed (26)</td>
@@ -219,8 +221,78 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view"><table clas
   </tbody>
 </table></div>`;
 
+window.evapotranspirationData = [{"maximum": 2.72545, "mean": 2.58501, "minimum": 2.51425, "period": "19 Mar", "range": 0.211192, "std": 0.041785}, {"maximum": 1.970399, "mean": 1.95676, "minimum": 1.940369, "period": "18 Mar", "range": 0.030033, "std": 0.006987}, {"maximum": 1.628299, "mean": 1.52915, "minimum": 1.457389, "period": "17 Mar", "range": 0.170909, "std": 0.033697}, {"maximum": 2.205319, "mean": 2.163209, "minimum": 2.11467, "period": "16 Mar", "range": 0.090649, "std": 0.022819}, {"maximum": 1.96596, "mean": 1.95621, "minimum": 1.932729, "period": "15 Mar", "range": 0.033223, "std": 0.007206}];
+window.observationsTable = `<details class="dropdown">
+  <summary>Dropdown</summary>
+  <ul>
+    <li><a href="#">Ansião</a></li>
+    <li><a href="#">Evapotranspiration</a></li>
+  </ul>
+</details>
 
-window.observationsTable = `<div class="table-wrapper"><table class="dataframe custom-table">
+<h3>Evapotranspiration Data (Last 7 Days)</h3>
+
+<table class="dataframe custom-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>period</th>
+      <th>minimum</th>
+      <th>maximum</th>
+      <th>mean</th>
+      <th>range</th>
+      <th>std</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>19 Mar</td>
+      <td>2.514250</td>
+      <td>2.725450</td>
+      <td>2.585010</td>
+      <td>0.211192</td>
+      <td>0.041785</td>
+    </tr>
+    <tr>
+      <td>18 Mar</td>
+      <td>1.940369</td>
+      <td>1.970399</td>
+      <td>1.956760</td>
+      <td>0.030033</td>
+      <td>0.006987</td>
+    </tr>
+    <tr>
+      <td>17 Mar</td>
+      <td>1.457389</td>
+      <td>1.628299</td>
+      <td>1.529150</td>
+      <td>0.170909</td>
+      <td>0.033697</td>
+    </tr>
+    <tr>
+      <td>16 Mar</td>
+      <td>2.114670</td>
+      <td>2.205319</td>
+      <td>2.163209</td>
+      <td>0.090649</td>
+      <td>0.022819</td>
+    </tr>
+    <tr>
+      <td>15 Mar</td>
+      <td>1.932729</td>
+      <td>1.965960</td>
+      <td>1.956210</td>
+      <td>0.033223</td>
+      <td>0.007206</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ✅ Ensure the Chart Canvas Exists -->
+<div id="evapoChartContainer">
+  <canvas id="evapoChart" width="800" height="400"></canvas>
+</div>
+
+<div class="table-wrapper"><table class="dataframe custom-table">
 <thead>
 <tr style="text-align: right;">
 <th>date</th>
@@ -669,10 +741,9 @@ window.observationsTable = `<div class="table-wrapper"><table class="dataframe c
 </table></div>`;
 
 
-window.dashboardTable = 
-`<div class="table-container">
-    <div class="table-wrapper">
-      <table class="dataframe custom-table">
+window.dashboardTable = `<div class="table-container">
+  <div class="table-wrapper">
+    <table class="dataframe custom-table">
   <thead>
     <tr><th colspan='2'><h3 class='table-title'>Cold Hours</h3></th></tr>
 
@@ -708,9 +779,9 @@ window.dashboardTable =
     </tr>
   </tbody>
 </table>
-    </div>
-    <div class="table-wrapper">
-      <table class="dataframe custom-table">
+  </div>
+  <div class="table-wrapper">
+    <table class="dataframe custom-table">
   <thead>
     <tr><th colspan='2'><h3 class='table-title'>Missing Entries</h3></th></tr>
 
@@ -742,15 +813,15 @@ window.dashboardTable =
     </tr>
     <tr>
       <td>Mar 25</td>
-      <td>109</td>
+      <td>116</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>449</td>
+      <td>456</td>
     </tr>
   </tbody>
 </table>
-    </div>
+  </div>
 
   <div class="warning-timeline">
     
@@ -809,13 +880,6 @@ window.dashboardTable =
             <td class="level"><i class="fa-solid fa-circle" style="color: #26ba81;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
             <td><a href="#" onclick="openModal('modal-Vento-20-23-03', event)">20-23/03</a></td>
             <td><span data-tooltip="Coimbra (36km NW)">C</span>, <span data-tooltip="Castelo Branco (59km ESE)">CB</span>, <span data-tooltip="Leiria (58km WSW)">L</span></td>
-        </tr>
-        
-        <tr class="yellow hover:bg-gray-200 dark:hover:bg-gray-700 transition">
-            <td><i class="fa-solid fa-cloud-rain"></i></td>
-            <td class="level"><i class="fa-solid fa-circle" style="color: #FFD43B;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
-            <td><a href="#" onclick="openModal('modal-Precipitação-20-21-03', event)">20-21/03</a></td>
-            <td><span data-tooltip="Castelo Branco (59km ESE)">CB</span></td>
         </tr>
         
         <tr class="yellow hover:bg-gray-200 dark:hover:bg-gray-700 transition">
@@ -982,24 +1046,6 @@ window.dashboardTable =
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
                 <button onclick="closeModal('modal-Vento-20-23-03', event)">Close</button>
-            </footer>
-        </article>
-    </dialog>
-    
-    <dialog id="modal-Precipitação-20-21-03" class="modal">
-        <article>
-            <header>
-                <a href="#" class="close" aria-label="Close" onclick="closeModal('modal-Precipitação-20-21-03', event)"></a>
-                <h3>Precipitação</h3>
-            </header>
-            
-        <strong>alert level:</strong> yellow
-        <br><strong>start:</strong> 20/03 21:46
-        <br><strong>end:</strong> 21/03 00:00
-        <hr>
-    <p><strong>Castelo Branco (59km ESE)</strong><br>Precipitação, por vezes forte, podendo ser de granizo e acompanhada de trovoada.</p>
-            <footer>
-                <button onclick="closeModal('modal-Precipitação-20-21-03', event)">Close</button>
             </footer>
         </article>
     </dialog>
