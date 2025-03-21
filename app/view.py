@@ -5,7 +5,7 @@ import pandas as pd
 from jinja2 import Environment, FileSystemLoader
 from bs4 import BeautifulSoup
 from meteoblue import parse_soup_forecast
-
+from evapotranspiration_view import fetch_and_group_evapotranspiration_data
 from analyze import (
     observations,
     summarize_cold_hours,
@@ -19,11 +19,15 @@ df_observations = pd.DataFrame(observations())
 df_show_missing_entries = pd.DataFrame(summarize_missing_entries("month"))
 df_cold_hours = pd.DataFrame(summarize_cold_hours("month"))
 
+df_evapotranspiration = fetch_and_group_evapotranspiration_data("day", 7)
+
+
 def debug_print_data():
     print("\n == Forecast Data ==\n", df_forecast.head(10))
     print("\n == Observations Data ==\n", df_observations.head(10))
     print("\n == Missing Entries Data ==\n", df_show_missing_entries.head(10))
     print("\n == Cold Hours Data ==\n", df_cold_hours.head(10))
+    print("\n == Evapotranspiration Data ==\n", df_evapotranspiration.head(10))
 
 #debug_print_data()
 
@@ -49,7 +53,9 @@ def format_forecast(df: pd.DataFrame, mobile: bool = False) -> pd.DataFrame:
 df_forecast = format_forecast(df_forecast)
 df_forecast_mobile = format_forecast(df_forecast, mobile=True)
 
-
+def format_evapotranspiration(df: pd.DataFrame) -> str:
+    """Converts evapotranspiration DataFrame into HTML table."""
+    return df.to_html(index=False, border=0, classes="custom-table")
 
 def format_table_html(df: pd.DataFrame, title: str) -> str:
     if df.empty:
@@ -107,6 +113,8 @@ table_html_observations = apply_row_span_for_date_column(table_html_observations
 
 table_html_missing = format_table_html(df_show_missing_entries, "Missing Entries")
 table_html_cold_hours = format_table_html(df_cold_hours, "Cold Hours")
+
+table_html_evapotranspiration = format_evapotranspiration(df_evapotranspiration)
 
 
 def generate_warning_timeline(warnings: list) -> str:
@@ -298,24 +306,28 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 TEMPLATES_DIR = os.path.join(BASE_DIR, "templates")
 env = Environment(loader=FileSystemLoader(TEMPLATES_DIR))
 
+df_evapotranspiration = fetch_and_group_evapotranspiration_data("day", 7)
+
+# Convert evapotranspiration DataFrame into a JSON-like structure
+evapotranspiration_data = df_evapotranspiration.to_dict(orient="records")
+
+
 def render_template() -> str:
     template = env.get_template("index.html")
-
     return template.render(
         title="The Owls Are Not What They Berrie",
-        forecast_table=df_forecast.to_html(index=False, border=0, classes="custom-table"),
         table_html_forecast=table_html_forecast,
         table_html_forecast_mobile=table_html_forecast_mobile,
         table_html_observations=table_html_observations,
         table_html_missing=table_html_missing,
         table_html_cold_hours=table_html_cold_hours,
         warnings_timeline=warnings_timeline_html,
-        warnings_timeline_html_mobile=warnings_timeline_html_mobile,
+        table_html_evapotranspiration=df_evapotranspiration.to_html(index=False, border=0, classes="custom-table"),
+        evapotranspiration_data=evapotranspiration_data  # ✅ Injecting as JSON
     )
 
 def render_tables_js() -> str:
     template_tables = env.get_template("tables.js.jinja")
-
     return template_tables.render(
         table_html_forecast=table_html_forecast,
         table_html_forecast_mobile=table_html_forecast_mobile,
@@ -323,6 +335,8 @@ def render_tables_js() -> str:
         table_html_missing=table_html_missing,
         table_html_cold_hours=table_html_cold_hours,
         warnings_timeline=warnings_timeline_html,
+        table_html_evapotranspiration=df_evapotranspiration.to_html(index=False, border=0, classes="custom-table"),
+        evapotranspiration_data=evapotranspiration_data  # ✅ Injecting as JSON
     )
 
 def save_files(html: str, tables_js: str):
