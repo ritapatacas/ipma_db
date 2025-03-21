@@ -32,7 +32,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>45%</td>
       <td>1.00</td>
       <td>100%</td>
-      <td>Overcast with rain</td>
+      <td>Mostly cloudy with rain</td>
     </tr>
     <tr>
       <td>3-23</td>
@@ -42,7 +42,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>40%</td>
       <td>0.39</td>
       <td>70%</td>
-      <td>Mostly cloudy with rain</td>
+      <td>Mixed with showers</td>
     </tr>
     <tr>
       <td>3-24</td>
@@ -52,7 +52,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>65%</td>
       <td>0.00</td>
       <td>25%</td>
-      <td>Clear and few clouds</td>
+      <td>Partly cloudy</td>
     </tr>
     <tr>
       <td>3-25</td>
@@ -62,7 +62,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>70%</td>
       <td>0.00</td>
       <td>0%</td>
-      <td>Partly cloudy</td>
+      <td>Clear and few clouds</td>
     </tr>
     <tr>
       <td>3-26</td>
@@ -82,7 +82,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>50%</td>
       <td>0.00</td>
       <td>20%</td>
-      <td>Overcast</td>
+      <td>Clear, cloudless sky</td>
     </tr>
     <tr>
       <td>3-28</td>
@@ -813,11 +813,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Mar 25</td>
-      <td>113</td>
+      <td>115</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>453</td>
+      <td>455</td>
     </tr>
   </tbody>
 </table>
