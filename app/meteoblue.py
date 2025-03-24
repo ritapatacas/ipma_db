@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 import ast
 from prettytable import PrettyTable
 import pandas as pd
+from data_utils import ICON_MAP
 
 FORECAST_URL = "https://www.meteoblue.com/en/weather/14-days/troviscais-fundeiros_portugal_2262489"
 
@@ -25,6 +26,8 @@ def fahrenheit_to_celsius(temp_f):
 
 def parse_soup_forecast():
     soup = fetch_and_soup_forecast()
+    is_fahrenheit = is_forecast_in_fahrenheit(soup)
+
     table = soup.find("table", class_="forecast-table")
     rows = table.find_all("tr")
 
@@ -47,8 +50,11 @@ def parse_soup_forecast():
         row_name = row_mapping.get(idx)
 
         if row_name == "obs":
-            titles = [img.get("title", "").strip() for img in row.find_all("img")]
+            imgs = row.find_all("img")
+            titles = [img.get("title", "").strip() for img in imgs]
+            icons = [str(img) for img in imgs]
             clean_rows[row_name] = titles
+            clean_rows["icon"] = icons
 
         elif row_name in ["temperature-canva", "precipitation-canva"]:
             canvas = row.find("canvas")
@@ -62,26 +68,32 @@ def parse_soup_forecast():
         elif row_name:
             clean_rows[row_name] = [cell.get_text(strip=True) for cell in row.find_all(["td", "th"])]
 
-    def convert_temperatures(temp_list):
-        converted = []
+    def clean_temperature_values(temp_list):
+        cleaned = []
         for temp in temp_list:
             temp = temp.replace("°", "").strip()
-            if temp.isdigit():
-                temp_c = fahrenheit_to_celsius(float(temp))
-                converted.append(temp_c)
+            if temp.replace('.', '', 1).isdigit():
+                cleaned.append(float(temp))
             else:
-                converted.append(None)
-        return converted
+                cleaned.append(None)
+        return cleaned
+
+    def convert_temperatures(temp_list):
+        return [fahrenheit_to_celsius(temp) if temp is not None else None for temp in temp_list]
+
+    raw_min = clean_temperature_values(clean_rows.get("min", []))
+    raw_max = clean_temperature_values(clean_rows.get("max", []))
 
     forecast = {
         "date": clean_rows.get("date", []),
         "weekday": clean_rows.get("weekday", []),
-        "min": convert_temperatures(clean_rows.get("min", [])),
-        "max": convert_temperatures(clean_rows.get("max", [])),
+        "min": convert_temperatures(raw_min) if is_fahrenheit else raw_min,
+        "max": convert_temperatures(raw_max) if is_fahrenheit else raw_max,
         "pred": clean_rows.get("predictability", []),
         "prec mm": canvas_data.get("precipitation", []),
         "prob %": clean_rows.get("probability", []),
         "obs": clean_rows.get("obs", []),
+        "icon": clean_rows.get("icon", []),
     }
 
     print("\n✅ CLEANED TEMPERATURES (°C) ✅")
@@ -89,6 +101,13 @@ def parse_soup_forecast():
     print("Converted max:", forecast["max"])
 
     return forecast
+
+def is_forecast_in_fahrenheit(soup):
+    current_temp_div = soup.find("div", class_="h1 current-temp")
+    if current_temp_div:
+        text = current_temp_div.get_text(strip=True)
+        return "°F" in text
+    return False
 
 
 def show_forecast():
@@ -104,6 +123,32 @@ def show_forecast():
         table.add_row(row)
 
     print(table)
+
+def obs_to_icon_html(obs_text):
+    icon_class = ICON_MAP.get(obs_text, "fa-question")
+    return f'<i class="fas {icon_class}" data-tooltip="{obs_text}"></i>'
+
+def generate_html_forecast():
+    forecast = parse_soup_forecast()
+    headers = list(forecast.keys())
+    num_days = len(next(iter(forecast.values()), []))
+
+    html = '<table class="table">\n<thead>\n<tr>'
+    for header in headers:
+        html += f"<th>{header}</th>"
+    html += "</tr>\n</thead>\n<tbody>\n"
+
+    for i in range(num_days):
+        html += "<tr>"
+        for key in headers:
+            value = forecast[key][i] if i < len(forecast[key]) else ""
+            if key == "obs":
+                value = obs_to_icon_html(value)
+            html += f"<td>{value}</td>"
+        html += "</tr>\n"
+
+    html += "</tbody>\n</table>"
+    return html
 
 
 if __name__ == "__main__":
