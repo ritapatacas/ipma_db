@@ -7,6 +7,17 @@ DATE_FORMAT = {
     "month": "%b %y",
 }
 
+ICON_MAP = {
+    "Sunny": "fa-sun",
+    "Cloudy": "fa-cloud",
+    "Partly cloudy": "fa-cloud-sun",
+    "Rain": "fa-cloud-showers-heavy",
+    "Snow": "fa-snowflake",
+    "Thunderstorm": "fa-bolt",
+    "Fog": "fa-smog",
+    "Clear": "fa-moon",
+}
+
 
 def group_by_period(df: pd.DataFrame, date_column: str, period: str) -> pd.DataFrame:
     """

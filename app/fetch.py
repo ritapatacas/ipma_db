@@ -176,7 +176,7 @@ def fetch_evapotranspiration():
         print("Request for " , IPMA_API_URIS["evapotranspiration"])
         res.raise_for_status()
         logger.info(f"✅ Successfully fetched evapotranspiration.")
-        return res.text  # Return CSV content as string
+        return res.text
     except requests.RequestException as e:
         logger.error(f"❌ Error fetching evapotranspiration: {e}")
         return None
@@ -195,5 +195,7 @@ def fetch_pdsi():
 if __name__ == "__main__":
     fetch_and_store_station_data()
     fetch_pdsi()
+    fetch_daily_precipitation()
+    fetch_evapotranspiration()
     # aggregate_warnings_by_region(fetch_warnings())
     # fetch_daily_forecast()
