@@ -941,11 +941,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Mar 25</td>
-      <td>219</td>
+      <td>221</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>559</td>
+      <td>561</td>
     </tr>
   </tbody>
 </table>
