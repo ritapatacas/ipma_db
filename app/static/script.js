@@ -5,6 +5,28 @@ document.addEventListener("DOMContentLoaded", function () {
   setupModalHandlers();
   setupNavigation();
 
+  setupDropdownHandlers();
+  const observationLinks = document.querySelectorAll('[data-table]');
+  const allDataTables = document.querySelectorAll('.data-table');
+  const dropdownLabel = document.getElementById('dropdown-label');
+
+  observationLinks.forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      const tableId = this.dataset.table;
+      const tableName = this.textContent.trim();
+
+      // Atualiza visibilidade das tabelas
+      allDataTables.forEach(table => table.style.display = 'none');
+      document.getElementById(`data-table-${tableId}`).style.display = 'block';
+
+      // Atualiza o texto do summary
+      dropdownLabel.textContent = tableName;
+    });
+  });
+
+  
+
   function setupNavigation() {
     const pages = ["forecast", "observations", "dashboard"];
 
@@ -136,10 +158,34 @@ document.addEventListener("DOMContentLoaded", function () {
     createEvapoChart(window.evapotranspirationData);
   }
 
+  function showDataTable(type) {
+  const tables = document.querySelectorAll('.data-table');
+  tables.forEach(table => table.style.display = 'none');
+
+  const target = document.getElementById(`data-table-${type}`);
+  if (target) {
+    target.style.display = 'block';
+  }
+}
+
+function setupDropdownHandlers() {
+  const dropdownLinks = document.querySelectorAll('.dropdown a[data-table]');
+  dropdownLinks.forEach(link => {
+    link.addEventListener('click', function (event) {
+      event.preventDefault();
+      const type = link.getAttribute('data-table');
+      if (type) showDataTable(type);
+    });
+  });
+}
+
+
+
   window.addEventListener("evapotranspirationLoaded", () => {
     console.log("🚀 Evapotranspiration data loaded, drawing chart...");
     loadEvapotranspirationChart();
   });
+  
 });
 
 
