@@ -1,43 +1,49 @@
 // ✅ Declare global variables first
 window.forecastTable = `<div class="table-wrapper desktop-view">
-  {% autoescape false %}{{ table_html_forecast }}{% endautoescape %}</div>`;
+  {% autoescape false %}{{ table_html_forecast }}{% endautoescape %}</div>
+  <iframe src="https://www.meteoblue.com/en/weather/maps/widget/troviscais-fundeiros_portugal_2262489?windAnimation=1&gust=1&satellite=1&cloudsAndPrecipitation=1&temperature=1&sunshine=0&extremeForecastIndex=1&geoloc=fixed&tempunit=C&windunit=km%252Fh&lengthunit=metric&zoom=10&autowidth=auto"  frameborder="0" scrolling="NO" allowtransparency="true" sandbox="allow-same-origin allow-scripts allow-popups allow-popups-to-escape-sandbox" style="width: 550px; height: 350px"></iframe><div></div>`;
 
-window.forecastTableMobile = `<div class="table-wrapper mobile-view">
-  {% autoescape false %}{{ table_html_forecast_mobile }}{% endautoescape %}</div>`;
+window.forecastTableMobile = `<div class="table-wrapper mobile-view">  {% autoescape false %}{{ table_html_forecast_mobile }}{% endautoescape %}</div>
+<iframe src="https://www.meteoblue.com/en/weather/maps/widget/troviscais-fundeiros_portugal_2262489?windAnimation=1&gust=1&satellite=1&cloudsAndPrecipitation=1&temperature=1&sunshine=0&extremeForecastIndex=1&geoloc=fixed&tempunit=C&windunit=km%252Fh&lengthunit=metric&zoom=10&autowidth=auto"  frameborder="0" scrolling="NO" allowtransparency="true" sandbox="allow-same-origin allow-scripts allow-popups allow-popups-to-escape-sandbox" style="width: 80%; height: 550px"></iframe><div>
+`;
 
 window.evapotranspirationData = {{ evapotranspiration_data | tojson }};
 
+
+
 window.observationsTable = `
-
-
-
-<details class="dropdown">
-  <summary>Dropdown</summary>
+<details class="dropdown custom-dropdown" id="observations-dropdown">
+  <summary id="dropdown-label">Select</summary>
   <ul>
-    <li><a href="#">Ansião</a></li>
-    <li><a href="#">Evapotranspiration</a></li>
-    <li><a href="#">Precipitation</a></li>
+    <li><a href="#" data-table="observations">Observations</a></li>
+    <li><a href="#" data-table="evapotranspiration">Evapotranspiration</a></li>
+    <li><a href="#" data-table="precipitation">Precipitation</a></li>
   </ul>
 </details>
-<div class="table-wrapper">{% autoescape false %}
 
-{{ table_html_observations }}{% endautoescape %}
 
+
+</details>
+
+<div id="data-table-observations" class="data-table">
+  <div class="table-wrapper">{% autoescape false %}{{ table_html_observations }}{% endautoescape %}</div>
 </div>
 
-<div class="table-wrapper mobile-view">
-{{ table_html_percipitation | safe }}
+<div id="data-table-evapotranspiration" class="data-table" style="display:none;">
+  <div class="table-wrapper mobile-view">
+    {{ table_html_evapotranspiration | safe }}
+  </div>
+  <div id="evapoChartContainer">
+    <canvas id="evapoChart" width="800" height="400"></canvas>
+  </div>
 </div>
 
-<div class="table-wrapper mobile-view">
-
-{{ table_html_evapotranspiration | safe }}
+<div id="data-table-precipitation" class="data-table" style="display:none;">
+  <div class="table-wrapper mobile-view">
+    {{ table_html_percipitation | safe }}
+  </div>
 </div>
-
-<!-- ✅ Ensure the Chart Canvas Exists -->
-<div id="evapoChartContainer">
-  <canvas id="evapoChart" width="800" height="400"></canvas>
-</div>`;
+`;
 
 
 window.dashboardTable = `<div class="table-container">

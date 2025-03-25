@@ -14,8 +14,8 @@ def format_forecast(df: pd.DataFrame, mobile: bool = False) -> pd.DataFrame:
     df["day"] = "(" + df["date"].astype(str) + ") " + df["weekday"].astype(str)
 
     if mobile:
-        df["day"] = df["day"].str.extract(r"-(\d+)$")  # Only the day of the month
-        if {"date", "weekday", "min", "max", "prec mm", "prob %", "obs"}.issubset(df.columns):
+        df["day"] = df["date"].str.extract(r"-(\d+)$")[0] + " (" + df["weekday"].astype(str) + ")"
+        if {"day", "weekday", "min", "max", "prec mm", "prob %", "obs"}.issubset(df.columns):
             return df[["day", "min", "max", "prec mm", "prob %", "obs"]].head(7)
 
     else:
