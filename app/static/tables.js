@@ -18,25 +18,25 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/16_iday_simple.svg" title="Mostly cloudy with occasional rain"/></td>
       <td>9.44</td>
       <td>15.56</td>
-      <td>0.18</td>
+      <td>0.11</td>
       <td>100%</td>
-      <td>55%</td>
+      <td>60%</td>
     </tr>
     <tr>
       <td>(4-4) Fri</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/08_iday_simple.svg" title="Showers, thunderstorms likely"/></td>
-      <td>12.22</td>
-      <td>13.89</td>
-      <td>1.13</td>
+      <td>11.67</td>
+      <td>13.33</td>
+      <td>0.94</td>
       <td>100%</td>
       <td>55%</td>
     </tr>
     <tr>
       <td>(4-5) Sat</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/16_iday_simple.svg" title="Mostly cloudy with occasional rain"/></td>
-      <td>11.11</td>
-      <td>15.00</td>
-      <td>0.10</td>
+      <td>10.56</td>
+      <td>15.56</td>
+      <td>0.06</td>
       <td>45%</td>
       <td>50%</td>
     </tr>
@@ -88,7 +88,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(4-11) Fri</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/06_iday_simple.svg" title="Overcast with rain"/></td>
-      <td>13.33</td>
+      <td>12.78</td>
       <td>16.67</td>
       <td>0.38</td>
       <td>65%</td>
@@ -159,23 +159,23 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
       <td>3 (Thu)</td>
       <td>9.44</td>
       <td>15.56</td>
-      <td>0.1811</td>
+      <td>0.1102</td>
       <td>100%</td>
       <td>Mostly cloudy with occasional rain</td>
     </tr>
     <tr>
       <td>4 (Fri)</td>
-      <td>12.22</td>
-      <td>13.89</td>
-      <td>1.1339</td>
+      <td>11.67</td>
+      <td>13.33</td>
+      <td>0.9409</td>
       <td>100%</td>
       <td>Showers, thunderstorms likely</td>
     </tr>
     <tr>
       <td>5 (Sat)</td>
-      <td>11.11</td>
-      <td>15.00</td>
-      <td>0.0984</td>
+      <td>10.56</td>
+      <td>15.56</td>
+      <td>0.0551</td>
       <td>45%</td>
       <td>Mostly cloudy with occasional rain</td>
     </tr>
@@ -951,11 +951,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Apr 25</td>
-      <td>55</td>
+      <td>57</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>767</td>
+      <td>769</td>
     </tr>
   </tbody>
 </table>
@@ -1049,8 +1049,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 03/04 00:15
-        <br><strong>end:</strong> 06/04 00:00
+        <br><strong>start:</strong> 03/04 06:30
+        <br><strong>end:</strong> 06/04 06:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1067,8 +1067,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 03/04 00:15
-        <br><strong>end:</strong> 06/04 00:00
+        <br><strong>start:</strong> 03/04 06:30
+        <br><strong>end:</strong> 06/04 06:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1085,8 +1085,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 03/04 00:15
-        <br><strong>end:</strong> 06/04 00:00
+        <br><strong>start:</strong> 03/04 06:30
+        <br><strong>end:</strong> 06/04 06:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1103,8 +1103,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 03/04 00:15
-        <br><strong>end:</strong> 06/04 00:00
+        <br><strong>start:</strong> 03/04 06:30
+        <br><strong>end:</strong> 06/04 06:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1121,8 +1121,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 03/04 00:15
-        <br><strong>end:</strong> 06/04 00:00
+        <br><strong>start:</strong> 03/04 06:30
+        <br><strong>end:</strong> 06/04 06:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1139,8 +1139,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 03/04 00:15
-        <br><strong>end:</strong> 06/04 00:00
+        <br><strong>start:</strong> 03/04 06:30
+        <br><strong>end:</strong> 06/04 06:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1157,8 +1157,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 03/04 00:15
-        <br><strong>end:</strong> 06/04 00:00
+        <br><strong>start:</strong> 03/04 06:30
+        <br><strong>end:</strong> 06/04 06:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
