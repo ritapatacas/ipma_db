@@ -951,11 +951,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Apr 25</td>
-      <td>89</td>
+      <td>91</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>801</td>
+      <td>803</td>
     </tr>
   </tbody>
 </table>
@@ -982,7 +982,7 @@ window.dashboardTable = `<div class="table-container">
             <td><i class="fa-solid fa-wind"></i></td>
             <td class="level"><i class="fa-solid fa-circle" style="color: #FFD43B;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
             <td><a href="#" onclick="openModal('modal-Vento-04-04-04', event)">04-04/04</a></td>
-            <td><span data-tooltip="Coimbra (36km NW)">C</span>, <span data-tooltip="Castelo Branco (59km ESE)">CB</span>, <span data-tooltip="Leiria (58km WSW)">L</span></td>
+            <td><span data-tooltip="Coimbra (36km NW)">C</span>, <span data-tooltip="Leiria (58km WSW)">L</span></td>
         </tr>
         
         <tr class="green hover:bg-gray-200 dark:hover:bg-gray-700 transition">
@@ -1070,7 +1070,7 @@ window.dashboardTable = `<div class="table-container">
         <br><strong>start:</strong> 04/04 12:53
         <br><strong>end:</strong> 04/04 18:00
         <hr>
-    <p><strong>Leiria (58km WSW)</strong><br>Vento forte do quadrante sul, com rajadas até 90 km/h.</p><p><strong>Coimbra (36km NW)</strong><br>Vento forte do quadrante sul, com rajadas até 90 km/h.</p><p><strong>Castelo Branco (59km ESE)</strong><br>Nas terras altas: Vento forte do quadrante sul com rajadas até 110 km/h.</p>
+    <p><strong>Leiria (58km WSW)</strong><br>Vento forte do quadrante sul, com rajadas até 90 km/h.</p><p><strong>Coimbra (36km NW)</strong><br>Vento forte do quadrante sul, com rajadas até 90 km/h.</p>
             <footer>
                 <button onclick="closeModal('modal-Vento-04-04-04', event)">Close</button>
             </footer>
