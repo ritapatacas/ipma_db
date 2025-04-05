@@ -27,7 +27,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/08_iday_simple.svg" title="Showers, thunderstorms likely"/></td>
       <td>10.00</td>
       <td>14.44</td>
-      <td>0.37</td>
+      <td>0.10</td>
       <td>95%</td>
       <td>50%</td>
     </tr>
@@ -167,7 +167,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
       <td>6 (Sun)</td>
       <td>10.00</td>
       <td>14.44</td>
-      <td>0.3740</td>
+      <td>0.0984</td>
       <td>95%</td>
       <td>Showers, thunderstorms likely</td>
     </tr>
@@ -951,11 +951,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Apr 25</td>
-      <td>111</td>
+      <td>113</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>823</td>
+      <td>825</td>
     </tr>
   </tbody>
 </table>
