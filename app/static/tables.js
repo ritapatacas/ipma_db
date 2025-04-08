@@ -56,7 +56,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>15.00</td>
       <td>0.39</td>
       <td>90%</td>
-      <td>45%</td>
+      <td>40%</td>
     </tr>
     <tr>
       <td>(4-13) Sun</td>
@@ -951,11 +951,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Apr 25</td>
-      <td>171</td>
+      <td>173</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>883</td>
+      <td>885</td>
     </tr>
   </tbody>
 </table>
