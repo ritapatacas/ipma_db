@@ -18,7 +18,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/14_iday_simple.svg" title="Mostly cloudy with rain"/></td>
       <td>5.00</td>
       <td>12.22</td>
-      <td>0.24</td>
+      <td>0.20</td>
       <td>85%</td>
       <td>60%</td>
     </tr>
@@ -45,35 +45,35 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/14_iday_simple.svg" title="Mostly cloudy with rain"/></td>
       <td>6.11</td>
       <td>9.44</td>
-      <td>0.60</td>
-      <td>85%</td>
+      <td>0.59</td>
+      <td>80%</td>
       <td>35%</td>
     </tr>
     <tr>
       <td>(4-20) Sun</td>
-      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/14_iday_simple.svg" title="Mostly cloudy with rain"/></td>
+      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/16_iday_simple.svg" title="Mostly cloudy with occasional rain"/></td>
       <td>7.22</td>
       <td>12.78</td>
-      <td>0.20</td>
+      <td>0.18</td>
       <td>55%</td>
-      <td>25%</td>
+      <td>30%</td>
     </tr>
     <tr>
       <td>(4-21) Mon</td>
-      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/16_iday_simple.svg" title="Mostly cloudy with occasional rain"/></td>
-      <td>8.33</td>
+      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/03_iday_simple.svg" title="Partly cloudy"/></td>
+      <td>8.89</td>
       <td>13.89</td>
-      <td>0.15</td>
-      <td>65%</td>
+      <td>0.00</td>
+      <td>60%</td>
       <td>20%</td>
     </tr>
     <tr>
       <td>(4-22) Tue</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/02_iday_simple.svg" title="Clear and few clouds"/></td>
       <td>7.78</td>
-      <td>16.11</td>
+      <td>16.67</td>
       <td>0.00</td>
-      <td>50%</td>
+      <td>45%</td>
       <td>20%</td>
     </tr>
     <tr>
@@ -81,8 +81,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/07_iday_simple.svg" title="Mixed with showers"/></td>
       <td>9.44</td>
       <td>18.89</td>
-      <td>0.20</td>
-      <td>50%</td>
+      <td>0.16</td>
+      <td>35%</td>
       <td>10%</td>
     </tr>
     <tr>
@@ -91,8 +91,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>10.56</td>
       <td>19.44</td>
       <td>0.00</td>
-      <td>40%</td>
-      <td>10%</td>
+      <td>35%</td>
+      <td>15%</td>
     </tr>
     <tr>
       <td>(4-25) Fri</td>
@@ -100,26 +100,26 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>11.11</td>
       <td>20.56</td>
       <td>0.00</td>
-      <td>35%</td>
-      <td>10%</td>
+      <td>20%</td>
+      <td>25%</td>
     </tr>
     <tr>
       <td>(4-26) Sat</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday_simple.svg" title="Clear, cloudless sky"/></td>
-      <td>11.67</td>
+      <td>12.22</td>
       <td>20.56</td>
       <td>0.00</td>
-      <td>30%</td>
+      <td>25%</td>
       <td>10%</td>
     </tr>
     <tr>
       <td>(4-27) Sun</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday_simple.svg" title="Clear, cloudless sky"/></td>
       <td>11.67</td>
-      <td>20.00</td>
+      <td>20.56</td>
       <td>0.00</td>
-      <td>30%</td>
-      <td>20%</td>
+      <td>25%</td>
+      <td>25%</td>
     </tr>
     <tr>
       <td>(4-28) Mon</td>
@@ -127,8 +127,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>11.67</td>
       <td>19.44</td>
       <td>0.00</td>
-      <td>25%</td>
-      <td>20%</td>
+      <td>30%</td>
+      <td>15%</td>
     </tr>
     <tr>
       <td>(4-29) Tue</td>
@@ -137,7 +137,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>20.00</td>
       <td>0.00</td>
       <td>30%</td>
-      <td>15%</td>
+      <td>10%</td>
     </tr>
   </tbody>
 </table></div>
@@ -159,7 +159,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
       <td>16 (Wed)</td>
       <td>5.00</td>
       <td>12.22</td>
-      <td>0.2402</td>
+      <td>0.2047</td>
       <td>85%</td>
       <td>Mostly cloudy with rain</td>
     </tr>
@@ -183,32 +183,32 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
       <td>19 (Sat)</td>
       <td>6.11</td>
       <td>9.44</td>
-      <td>0.6024</td>
-      <td>85%</td>
+      <td>0.5945</td>
+      <td>80%</td>
       <td>Mostly cloudy with rain</td>
     </tr>
     <tr>
       <td>20 (Sun)</td>
       <td>7.22</td>
       <td>12.78</td>
-      <td>0.2008</td>
+      <td>0.1850</td>
       <td>55%</td>
-      <td>Mostly cloudy with rain</td>
+      <td>Mostly cloudy with occasional rain</td>
     </tr>
     <tr>
       <td>21 (Mon)</td>
-      <td>8.33</td>
+      <td>8.89</td>
       <td>13.89</td>
-      <td>0.1496</td>
-      <td>65%</td>
-      <td>Mostly cloudy with occasional rain</td>
+      <td>0.0000</td>
+      <td>60%</td>
+      <td>Partly cloudy</td>
     </tr>
     <tr>
       <td>22 (Tue)</td>
       <td>7.78</td>
-      <td>16.11</td>
+      <td>16.67</td>
       <td>0.0000</td>
-      <td>50%</td>
+      <td>45%</td>
       <td>Clear and few clouds</td>
     </tr>
   </tbody>
@@ -216,7 +216,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
 <iframe src="https://www.meteoblue.com/en/weather/maps/widget/troviscais-fundeiros_portugal_2262489?windAnimation=1&gust=1&satellite=1&cloudsAndPrecipitation=1&temperature=1&sunshine=0&extremeForecastIndex=1&geoloc=fixed&tempunit=C&windunit=km%252Fh&lengthunit=metric&zoom=10&autowidth=auto"  frameborder="0" scrolling="NO" allowtransparency="true" sandbox="allow-same-origin allow-scripts allow-popups allow-popups-to-escape-sandbox" style="width: 80%; height: 550px"></iframe><div>
 `;
 
-window.evapotranspirationData = [{"max": 2.460099, "mean": 2.30779, "min": 2.079449, "period": "13 Apr", "range": 0.380647, "std": 0.095385}, {"max": 2.216769, "mean": 2.138849, "min": 2.0643, "period": "12 Apr", "range": 0.152471, "std": 0.044688}, {"max": 2.114079, "mean": 2.018539, "min": 1.931229, "period": "11 Apr", "range": 0.182842, "std": 0.050369}, {"max": 3.766809, "mean": 3.666759, "min": 3.55958, "period": "10 Apr", "range": 0.20723, "std": 0.057406}, {"max": 4.36942, "mean": 4.319829, "min": 4.26771, "period": "09 Apr", "range": 0.101712, "std": 0.020286}, {"max": 4.03128, "mean": 4.00435, "min": 3.97881, "period": "08 Apr", "range": 0.05247, "std": 0.012452}, {"max": 3.407299, "mean": 3.34188, "min": 3.298939, "period": "07 Apr", "range": 0.108359, "std": 0.024828}];
+window.evapotranspirationData = [{"max": 1.79828, "mean": 1.755869, "min": 1.69579, "period": "14 Apr", "range": 0.102498, "std": 0.02763}, {"max": 2.460099, "mean": 2.30779, "min": 2.079449, "period": "13 Apr", "range": 0.380647, "std": 0.095385}, {"max": 2.216769, "mean": 2.138849, "min": 2.0643, "period": "12 Apr", "range": 0.152471, "std": 0.044688}, {"max": 2.114079, "mean": 2.018539, "min": 1.931229, "period": "11 Apr", "range": 0.182842, "std": 0.050369}, {"max": 3.766809, "mean": 3.666759, "min": 3.55958, "period": "10 Apr", "range": 0.20723, "std": 0.057406}, {"max": 4.36942, "mean": 4.319829, "min": 4.26771, "period": "09 Apr", "range": 0.101712, "std": 0.020286}, {"max": 4.03128, "mean": 4.00435, "min": 3.97881, "period": "08 Apr", "range": 0.05247, "std": 0.012452}];
 
 
 
@@ -701,6 +701,14 @@ window.observationsTable = `
   </thead>
   <tbody>
     <tr>
+      <td>14 Apr</td>
+      <td>1.798280</td>
+      <td>1.755869</td>
+      <td>1.695790</td>
+      <td>0.102498</td>
+      <td>0.027630</td>
+    </tr>
+    <tr>
       <td>13 Apr</td>
       <td>2.460099</td>
       <td>2.307790</td>
@@ -748,14 +756,6 @@ window.observationsTable = `
       <td>0.052470</td>
       <td>0.012452</td>
     </tr>
-    <tr>
-      <td>07 Apr</td>
-      <td>3.407299</td>
-      <td>3.341880</td>
-      <td>3.298939</td>
-      <td>0.108359</td>
-      <td>0.024828</td>
-    </tr>
   </tbody>
 </table>
   </div>
@@ -784,6 +784,18 @@ window.observationsTable = `
     </tr>
   </thead>
   <tbody>
+    <tr>
+      <td>15 Apr</td>
+      <td>19.744740</td>
+      <td>16.148104</td>
+      <td>13.377464</td>
+      <td>6.367275</td>
+      <td>1.677370</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
     <tr>
       <td>14 Apr</td>
       <td>12.564165</td>
@@ -846,18 +858,6 @@ window.observationsTable = `
     </tr>
     <tr>
       <td>09 Apr</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <td>08 Apr</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
@@ -951,11 +951,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Apr 25</td>
-      <td>373</td>
+      <td>375</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>1085</td>
+      <td>1087</td>
     </tr>
   </tbody>
 </table>
@@ -1028,8 +1028,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 16/04 06:17
-        <br><strong>end:</strong> 19/04 06:00
+        <br><strong>start:</strong> 16/04 11:54
+        <br><strong>end:</strong> 19/04 11:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1046,8 +1046,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 16/04 06:17
-        <br><strong>end:</strong> 19/04 06:00
+        <br><strong>start:</strong> 16/04 11:54
+        <br><strong>end:</strong> 19/04 11:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1064,8 +1064,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 16/04 06:17
-        <br><strong>end:</strong> 19/04 06:00
+        <br><strong>start:</strong> 16/04 11:54
+        <br><strong>end:</strong> 19/04 11:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1082,8 +1082,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 16/04 06:17
-        <br><strong>end:</strong> 19/04 06:00
+        <br><strong>start:</strong> 16/04 11:54
+        <br><strong>end:</strong> 19/04 11:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1100,8 +1100,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 16/04 06:17
-        <br><strong>end:</strong> 19/04 06:00
+        <br><strong>start:</strong> 16/04 11:54
+        <br><strong>end:</strong> 19/04 11:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1118,8 +1118,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 16/04 06:17
-        <br><strong>end:</strong> 19/04 06:00
+        <br><strong>start:</strong> 16/04 11:54
+        <br><strong>end:</strong> 19/04 11:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1136,8 +1136,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 16/04 06:17
-        <br><strong>end:</strong> 19/04 06:00
+        <br><strong>start:</strong> 16/04 11:54
+        <br><strong>end:</strong> 19/04 11:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
