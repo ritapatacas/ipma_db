@@ -46,7 +46,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>7.78</td>
       <td>11.67</td>
       <td>0.32</td>
-      <td>50%</td>
+      <td>55%</td>
       <td>30%</td>
     </tr>
     <tr>
@@ -91,7 +91,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>10.56</td>
       <td>20.00</td>
       <td>0.00</td>
-      <td>5%</td>
+      <td>10%</td>
       <td>35%</td>
     </tr>
     <tr>
@@ -101,7 +101,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>20.00</td>
       <td>0.00</td>
       <td>5%</td>
-      <td>40%</td>
+      <td>35%</td>
     </tr>
     <tr>
       <td>(4-27) Sun</td>
@@ -118,8 +118,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>10.56</td>
       <td>20.56</td>
       <td>0.00</td>
-      <td>15%</td>
-      <td>35%</td>
+      <td>10%</td>
+      <td>40%</td>
     </tr>
     <tr>
       <td>(4-29) Tue</td>
@@ -184,7 +184,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
       <td>7.78</td>
       <td>11.67</td>
       <td>0.3150</td>
-      <td>50%</td>
+      <td>55%</td>
       <td>Mostly cloudy with rain</td>
     </tr>
     <tr>
@@ -951,11 +951,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Apr 25</td>
-      <td>395</td>
+      <td>397</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>1107</td>
+      <td>1109</td>
     </tr>
   </tbody>
 </table>
@@ -1035,8 +1035,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 17/04 06:18
-        <br><strong>end:</strong> 20/04 06:00
+        <br><strong>start:</strong> 17/04 09:09
+        <br><strong>end:</strong> 20/04 09:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1053,8 +1053,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 17/04 06:18
-        <br><strong>end:</strong> 20/04 06:00
+        <br><strong>start:</strong> 17/04 09:09
+        <br><strong>end:</strong> 20/04 09:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1071,8 +1071,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 17/04 06:18
-        <br><strong>end:</strong> 20/04 06:00
+        <br><strong>start:</strong> 17/04 09:09
+        <br><strong>end:</strong> 20/04 09:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1089,8 +1089,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 17/04 06:18
-        <br><strong>end:</strong> 20/04 06:00
+        <br><strong>start:</strong> 17/04 09:09
+        <br><strong>end:</strong> 20/04 09:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1107,8 +1107,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 17/04 06:18
-        <br><strong>end:</strong> 20/04 06:00
+        <br><strong>start:</strong> 17/04 09:09
+        <br><strong>end:</strong> 20/04 09:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1125,8 +1125,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 17/04 06:18
-        <br><strong>end:</strong> 20/04 06:00
+        <br><strong>start:</strong> 17/04 09:09
+        <br><strong>end:</strong> 20/04 09:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1143,8 +1143,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 17/04 06:18
-        <br><strong>end:</strong> 20/04 06:00
+        <br><strong>start:</strong> 17/04 09:09
+        <br><strong>end:</strong> 20/04 09:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1164,7 +1164,7 @@ window.dashboardTable = `<div class="table-container">
         <br><strong>start:</strong> 18/04 18:00
         <br><strong>end:</strong> 20/04 06:00
         <hr>
-    <p><strong>Castelo Branco (59km ESE)</strong><br>Queda de neve acima de 1600 m, com acumulação até 5 cm, que poderá ser até 10 cm nos pontos mais altos.Impactos Prováveis: Perturbação causada por queda de neve com acumulação e possível formação de gelo (p. ex., vias condicionadas ou interditas, danos em estruturas ou árvores, abastecimentos locais prejudicados).</p>
+    <p><strong>Castelo Branco (59km ESE)</strong><br>Queda de neve acima de 1600 m, com acumulação até 5 cm, que poderá ser até 25 cm nos pontos mais altos.Impactos Prováveis: Perturbação causada por queda de neve com acumulação e possível formação de gelo (p. ex., vias condicionadas ou interditas, danos em estruturas ou árvores, abastecimentos locais prejudicados).</p>
             <footer>
                 <button onclick="closeModal('modal-Neve-18-20-04', event)">Close</button>
             </footer>
