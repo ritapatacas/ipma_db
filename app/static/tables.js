@@ -18,7 +18,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/08_iday_simple.svg" title="Showers, thunderstorms likely"/></td>
       <td>10.00</td>
       <td>14.44</td>
-      <td>0.73</td>
+      <td>0.68</td>
       <td>100%</td>
       <td>55%</td>
     </tr>
@@ -27,7 +27,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/14_iday_simple.svg" title="Mostly cloudy with rain"/></td>
       <td>7.22</td>
       <td>11.11</td>
-      <td>0.52</td>
+      <td>0.53</td>
       <td>85%</td>
       <td>50%</td>
     </tr>
@@ -55,7 +55,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>7.22</td>
       <td>14.44</td>
       <td>0.00</td>
-      <td>30%</td>
+      <td>25%</td>
       <td>60%</td>
     </tr>
     <tr>
@@ -159,7 +159,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
       <td>18 (Fri)</td>
       <td>10.00</td>
       <td>14.44</td>
-      <td>0.7283</td>
+      <td>0.6772</td>
       <td>100%</td>
       <td>Showers, thunderstorms likely</td>
     </tr>
@@ -167,7 +167,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
       <td>19 (Sat)</td>
       <td>7.22</td>
       <td>11.11</td>
-      <td>0.5236</td>
+      <td>0.5315</td>
       <td>85%</td>
       <td>Mostly cloudy with rain</td>
     </tr>
@@ -192,7 +192,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
       <td>7.22</td>
       <td>14.44</td>
       <td>0.0000</td>
-      <td>30%</td>
+      <td>25%</td>
       <td>Partly cloudy</td>
     </tr>
     <tr>
@@ -951,11 +951,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Apr 25</td>
-      <td>423</td>
+      <td>425</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>1135</td>
+      <td>1137</td>
     </tr>
   </tbody>
 </table>
