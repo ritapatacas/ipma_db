@@ -26,9 +26,9 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(5-5) Mon</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/03_iday_simple.svg" title="Partly cloudy"/></td>
       <td>11.11</td>
-      <td>16.67</td>
+      <td>17.22</td>
       <td>0.00</td>
-      <td>30%</td>
+      <td>25%</td>
       <td>75%</td>
     </tr>
     <tr>
@@ -71,7 +71,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(5-10) Sat</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/03_iday_simple.svg" title="Partly cloudy"/></td>
       <td>10.56</td>
-      <td>18.33</td>
+      <td>18.89</td>
       <td>0.00</td>
       <td>50%</td>
       <td>30%</td>
@@ -166,9 +166,9 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     <tr>
       <td>5 (Mon)</td>
       <td>11.11</td>
-      <td>16.67</td>
+      <td>17.22</td>
       <td>0.0000</td>
-      <td>30%</td>
+      <td>25%</td>
       <td>Partly cloudy</td>
     </tr>
     <tr>
@@ -206,7 +206,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     <tr>
       <td>10 (Sat)</td>
       <td>10.56</td>
-      <td>18.33</td>
+      <td>18.89</td>
       <td>0.0000</td>
       <td>50%</td>
       <td>Partly cloudy</td>
@@ -955,11 +955,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>May 25</td>
-      <td>83</td>
+      <td>85</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>1515</td>
+      <td>1517</td>
     </tr>
   </tbody>
 </table>
@@ -975,6 +975,13 @@ window.dashboardTable = `<div class="table-container">
         </thead>
         <tbody>
     
+        <tr class="yellow hover:bg-gray-200 dark:hover:bg-gray-700 transition">
+            <td><i class="fa-solid fa-cloud-rain"></i></td>
+            <td class="level"><i class="fa-solid fa-circle" style="color: #FFD43B;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
+            <td><a href="#" onclick="openModal('modal-Precipitação-04-04-05', event)">04-04/05</a></td>
+            <td><span data-tooltip="Coimbra (36km NW)">C</span>, <span data-tooltip="Castelo Branco (59km ESE)">CB</span>, <span data-tooltip="Leiria (58km WSW)">L</span></td>
+        </tr>
+        
         <tr class="green hover:bg-gray-200 dark:hover:bg-gray-700 transition">
             <td><i class="fa-solid fa-smog"></i></td>
             <td class="level"><i class="fa-solid fa-circle" style="color: #26ba81;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
@@ -1023,14 +1030,25 @@ window.dashboardTable = `<div class="table-container">
             <td><a href="#" onclick="openModal('modal-Vento-04-07-05', event)">04-07/05</a></td>
             <td><span data-tooltip="Coimbra (36km NW)">C</span>, <span data-tooltip="Castelo Branco (59km ESE)">CB</span>, <span data-tooltip="Leiria (58km WSW)">L</span></td>
         </tr>
-        
-        <tr class="yellow hover:bg-gray-200 dark:hover:bg-gray-700 transition">
-            <td><i class="fa-solid fa-cloud-rain"></i></td>
-            <td class="level"><i class="fa-solid fa-circle" style="color: #FFD43B;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
-            <td><a href="#" onclick="openModal('modal-Precipitação-04-04-05', event)">04-04/05</a></td>
-            <td><span data-tooltip="Coimbra (36km NW)">C</span>, <span data-tooltip="Castelo Branco (59km ESE)">CB</span>, <span data-tooltip="Leiria (58km WSW)">L</span></td>
-        </tr>
         </tbody></table>
+    <dialog id="modal-Precipitação-04-04-05" class="modal">
+        <article>
+            <header>
+                <a href="#" class="close" aria-label="Close" onclick="closeModal('modal-Precipitação-04-04-05', event)"></a>
+                <h3>Precipitação</h3>
+            </header>
+            
+        <strong>alert level:</strong> yellow
+        <br><strong>start:</strong> 04/05 10:29
+        <br><strong>end:</strong> 04/05 15:00
+        <hr>
+    <p><strong>Leiria (58km WSW)</strong><br>Aguaceiros, localmente fortes, que poderão ser ocasionalmente de granizo e acompanhados de trovoadas.</p><p><strong>Castelo Branco (59km ESE)</strong><br>Aguaceiros, localmente fortes, que poderão ser ocasionalmente de granizo e acompanhados de trovoadas.</p><p><strong>Coimbra (36km NW)</strong><br>Aguaceiros, localmente fortes, que poderão ser ocasionalmente de granizo e acompanhados de trovoadas.</p>
+            <footer>
+                <button onclick="closeModal('modal-Precipitação-04-04-05', event)">Close</button>
+            </footer>
+        </article>
+    </dialog>
+    
     <dialog id="modal-Nevoeiro-04-07-05" class="modal">
         <article>
             <header>
@@ -1039,8 +1057,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 04/05 06:45
-        <br><strong>end:</strong> 07/05 06:00
+        <br><strong>start:</strong> 04/05 10:29
+        <br><strong>end:</strong> 07/05 10:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1057,8 +1075,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 04/05 06:45
-        <br><strong>end:</strong> 07/05 06:00
+        <br><strong>start:</strong> 04/05 10:29
+        <br><strong>end:</strong> 07/05 10:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1075,8 +1093,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 04/05 06:45
-        <br><strong>end:</strong> 07/05 06:00
+        <br><strong>start:</strong> 04/05 10:29
+        <br><strong>end:</strong> 07/05 10:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1093,8 +1111,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 04/05 06:45
-        <br><strong>end:</strong> 07/05 06:00
+        <br><strong>start:</strong> 04/05 10:29
+        <br><strong>end:</strong> 07/05 10:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1111,8 +1129,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 04/05 06:45
-        <br><strong>end:</strong> 07/05 06:00
+        <br><strong>start:</strong> 04/05 10:29
+        <br><strong>end:</strong> 07/05 10:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1129,8 +1147,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 04/05 06:45
-        <br><strong>end:</strong> 07/05 06:00
+        <br><strong>start:</strong> 04/05 10:29
+        <br><strong>end:</strong> 07/05 10:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1147,30 +1165,12 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 04/05 06:45
-        <br><strong>end:</strong> 07/05 06:00
+        <br><strong>start:</strong> 04/05 10:29
+        <br><strong>end:</strong> 07/05 10:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
                 <button onclick="closeModal('modal-Vento-04-07-05', event)">Close</button>
-            </footer>
-        </article>
-    </dialog>
-    
-    <dialog id="modal-Precipitação-04-04-05" class="modal">
-        <article>
-            <header>
-                <a href="#" class="close" aria-label="Close" onclick="closeModal('modal-Precipitação-04-04-05', event)"></a>
-                <h3>Precipitação</h3>
-            </header>
-            
-        <strong>alert level:</strong> yellow
-        <br><strong>start:</strong> 04/05 09:00
-        <br><strong>end:</strong> 04/05 15:00
-        <hr>
-    <p><strong>Leiria (58km WSW)</strong><br>Aguaceiros, localmente fortes, que poderão ser ocasionalmente de granizo e acompanhados de trovoadas.</p><p><strong>Castelo Branco (59km ESE)</strong><br>Aguaceiros, localmente fortes, que poderão ser ocasionalmente de granizo e acompanhados de trovoadas.</p><p><strong>Coimbra (36km NW)</strong><br>Aguaceiros, localmente fortes, que poderão ser ocasionalmente de granizo e acompanhados de trovoadas.</p>
-            <footer>
-                <button onclick="closeModal('modal-Precipitação-04-04-05', event)">Close</button>
             </footer>
         </article>
     </dialog>
