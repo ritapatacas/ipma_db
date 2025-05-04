@@ -955,11 +955,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>May 25</td>
-      <td>87</td>
+      <td>89</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>1519</td>
+      <td>1521</td>
     </tr>
   </tbody>
 </table>
@@ -975,13 +975,6 @@ window.dashboardTable = `<div class="table-container">
         </thead>
         <tbody>
     
-        <tr class="yellow hover:bg-gray-200 dark:hover:bg-gray-700 transition">
-            <td><i class="fa-solid fa-cloud-rain"></i></td>
-            <td class="level"><i class="fa-solid fa-circle" style="color: #FFD43B;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
-            <td><a href="#" onclick="openModal('modal-Precipitação-04-04-05', event)">04-04/05</a></td>
-            <td><span data-tooltip="Coimbra (36km NW)">C</span>, <span data-tooltip="Castelo Branco (59km ESE)">CB</span>, <span data-tooltip="Leiria (58km WSW)">L</span></td>
-        </tr>
-        
         <tr class="green hover:bg-gray-200 dark:hover:bg-gray-700 transition">
             <td><i class="fa-solid fa-smog"></i></td>
             <td class="level"><i class="fa-solid fa-circle" style="color: #26ba81;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
@@ -1031,24 +1024,6 @@ window.dashboardTable = `<div class="table-container">
             <td><span data-tooltip="Coimbra (36km NW)">C</span>, <span data-tooltip="Castelo Branco (59km ESE)">CB</span>, <span data-tooltip="Leiria (58km WSW)">L</span></td>
         </tr>
         </tbody></table>
-    <dialog id="modal-Precipitação-04-04-05" class="modal">
-        <article>
-            <header>
-                <a href="#" class="close" aria-label="Close" onclick="closeModal('modal-Precipitação-04-04-05', event)"></a>
-                <h3>Precipitação</h3>
-            </header>
-            
-        <strong>alert level:</strong> yellow
-        <br><strong>start:</strong> 04/05 10:29
-        <br><strong>end:</strong> 04/05 15:00
-        <hr>
-    <p><strong>Leiria (58km WSW)</strong><br>Aguaceiros, localmente fortes, que poderão ser ocasionalmente de granizo e acompanhados de trovoadas.</p><p><strong>Castelo Branco (59km ESE)</strong><br>Aguaceiros, localmente fortes, que poderão ser ocasionalmente de granizo e acompanhados de trovoadas.</p><p><strong>Coimbra (36km NW)</strong><br>Aguaceiros, localmente fortes, que poderão ser ocasionalmente de granizo e acompanhados de trovoadas.</p>
-            <footer>
-                <button onclick="closeModal('modal-Precipitação-04-04-05', event)">Close</button>
-            </footer>
-        </article>
-    </dialog>
-    
     <dialog id="modal-Nevoeiro-04-07-05" class="modal">
         <article>
             <header>
