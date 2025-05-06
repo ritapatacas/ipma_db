@@ -14,15 +14,6 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
   </thead>
   <tbody>
     <tr>
-      <td>(5-5) Mon</td>
-      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/03_iday_simple.svg" title="Partly cloudy"/></td>
-      <td>11.67</td>
-      <td>17.78</td>
-      <td>0.00</td>
-      <td>30%</td>
-      <td>70%</td>
-    </tr>
-    <tr>
       <td>(5-6) Tue</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/03_iday_simple.svg" title="Partly cloudy"/></td>
       <td>10.56</td>
@@ -35,7 +26,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(5-7) Wed</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/03_iday_simple.svg" title="Partly cloudy"/></td>
       <td>11.67</td>
-      <td>18.89</td>
+      <td>18.33</td>
       <td>0.00</td>
       <td>10%</td>
       <td>85%</td>
@@ -46,14 +37,14 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>9.44</td>
       <td>13.89</td>
       <td>0.00</td>
-      <td>40%</td>
+      <td>35%</td>
       <td>65%</td>
     </tr>
     <tr>
       <td>(5-9) Fri</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/16_iday_simple.svg" title="Mostly cloudy with occasional rain"/></td>
       <td>8.33</td>
-      <td>13.89</td>
+      <td>14.44</td>
       <td>0.10</td>
       <td>55%</td>
       <td>45%</td>
@@ -62,7 +53,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(5-10) Sat</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/08_iday_simple.svg" title="Showers, thunderstorms likely"/></td>
       <td>9.44</td>
-      <td>13.89</td>
+      <td>14.44</td>
       <td>0.38</td>
       <td>80%</td>
       <td>40%</td>
@@ -71,25 +62,25 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(5-11) Sun</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/14_iday_simple.svg" title="Mostly cloudy with rain"/></td>
       <td>9.44</td>
-      <td>13.89</td>
+      <td>14.44</td>
       <td>1.15</td>
       <td>75%</td>
       <td>30%</td>
     </tr>
     <tr>
       <td>(5-12) Mon</td>
-      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/07_iday_simple.svg" title="Mixed with showers"/></td>
-      <td>11.11</td>
-      <td>15.00</td>
-      <td>0.23</td>
-      <td>65%</td>
+      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/14_iday_simple.svg" title="Mostly cloudy with rain"/></td>
+      <td>9.44</td>
+      <td>14.44</td>
+      <td>0.41</td>
+      <td>55%</td>
       <td>30%</td>
     </tr>
     <tr>
       <td>(5-13) Tue</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/14_iday_simple.svg" title="Mostly cloudy with rain"/></td>
       <td>10.00</td>
-      <td>14.44</td>
+      <td>13.89</td>
       <td>0.23</td>
       <td>65%</td>
       <td>35%</td>
@@ -97,8 +88,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(5-14) Wed</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/16_iday_simple.svg" title="Mostly cloudy with occasional rain"/></td>
-      <td>10.00</td>
-      <td>15.00</td>
+      <td>9.44</td>
+      <td>14.44</td>
       <td>0.18</td>
       <td>70%</td>
       <td>30%</td>
@@ -116,7 +107,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(5-16) Fri</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday_simple.svg" title="Clear, cloudless sky"/></td>
       <td>9.44</td>
-      <td>17.78</td>
+      <td>17.22</td>
       <td>0.00</td>
       <td>35%</td>
       <td>20%</td>
@@ -134,10 +125,19 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(5-18) Sun</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday_simple.svg" title="Clear, cloudless sky"/></td>
       <td>11.67</td>
-      <td>19.44</td>
+      <td>18.89</td>
       <td>0.00</td>
       <td>25%</td>
       <td>20%</td>
+    </tr>
+    <tr>
+      <td>(5-19) Mon</td>
+      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday_simple.svg" title="Clear, cloudless sky"/></td>
+      <td>11.67</td>
+      <td>19.44</td>
+      <td>0.00</td>
+      <td>30%</td>
+      <td>15%</td>
     </tr>
   </tbody>
 </table></div>
@@ -156,14 +156,6 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
   </thead>
   <tbody>
     <tr>
-      <td>5 (Mon)</td>
-      <td>11.67</td>
-      <td>17.78</td>
-      <td>0.0000</td>
-      <td>30%</td>
-      <td>Partly cloudy</td>
-    </tr>
-    <tr>
       <td>6 (Tue)</td>
       <td>10.56</td>
       <td>18.89</td>
@@ -174,7 +166,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     <tr>
       <td>7 (Wed)</td>
       <td>11.67</td>
-      <td>18.89</td>
+      <td>18.33</td>
       <td>0.0000</td>
       <td>10%</td>
       <td>Partly cloudy</td>
@@ -184,13 +176,13 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
       <td>9.44</td>
       <td>13.89</td>
       <td>0.0000</td>
-      <td>40%</td>
+      <td>35%</td>
       <td>Partly cloudy</td>
     </tr>
     <tr>
       <td>9 (Fri)</td>
       <td>8.33</td>
-      <td>13.89</td>
+      <td>14.44</td>
       <td>0.0953</td>
       <td>55%</td>
       <td>Mostly cloudy with occasional rain</td>
@@ -198,7 +190,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     <tr>
       <td>10 (Sat)</td>
       <td>9.44</td>
-      <td>13.89</td>
+      <td>14.44</td>
       <td>0.3795</td>
       <td>80%</td>
       <td>Showers, thunderstorms likely</td>
@@ -206,9 +198,17 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     <tr>
       <td>11 (Sun)</td>
       <td>9.44</td>
-      <td>13.89</td>
-      <td>1.1528</td>
+      <td>14.44</td>
+      <td>1.1489</td>
       <td>75%</td>
+      <td>Mostly cloudy with rain</td>
+    </tr>
+    <tr>
+      <td>12 (Mon)</td>
+      <td>9.44</td>
+      <td>14.44</td>
+      <td>0.4059</td>
+      <td>55%</td>
       <td>Mostly cloudy with rain</td>
     </tr>
   </tbody>
@@ -955,11 +955,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>May 25</td>
-      <td>119</td>
+      <td>121</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>1551</td>
+      <td>1553</td>
     </tr>
   </tbody>
 </table>
