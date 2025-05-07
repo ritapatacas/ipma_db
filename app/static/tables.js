@@ -62,7 +62,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(5-12) Mon</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/03_iday_simple.svg" title="Partly cloudy"/></td>
       <td>7.22</td>
-      <td>15.00</td>
+      <td>15.56</td>
       <td>0.00</td>
       <td>25%</td>
       <td>65%</td>
@@ -198,7 +198,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     <tr>
       <td>12 (Mon)</td>
       <td>7.22</td>
-      <td>15.00</td>
+      <td>15.56</td>
       <td>0.0000</td>
       <td>25%</td>
       <td>Partly cloudy</td>
@@ -785,6 +785,18 @@ window.observationsTable = `
   </thead>
   <tbody>
     <tr>
+      <td>06 May</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
       <td>05 May</td>
       <td>2.106425</td>
       <td>1.454264</td>
@@ -851,18 +863,6 @@ window.observationsTable = `
       <td>16.920050</td>
       <td>5.267977</td>
       <td>0.990858</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <td>29 Apr</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -955,11 +955,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>May 25</td>
-      <td>157</td>
+      <td>159</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>1589</td>
+      <td>1591</td>
     </tr>
   </tbody>
 </table>
