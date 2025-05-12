@@ -134,7 +134,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(5-25) Sun</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday_simple.svg" title="Clear, cloudless sky"/></td>
       <td>12.78</td>
-      <td>22.22</td>
+      <td>22.78</td>
       <td>0.00</td>
       <td>25%</td>
       <td>15%</td>
@@ -785,6 +785,18 @@ window.observationsTable = `
   </thead>
   <tbody>
     <tr>
+      <td>11 May</td>
+      <td>0.013134</td>
+      <td>0.007235</td>
+      <td>0.004600</td>
+      <td>0.008533</td>
+      <td>0.001744</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
       <td>10 May</td>
       <td>2.623171</td>
       <td>2.035200</td>
@@ -851,18 +863,6 @@ window.observationsTable = `
       <td>0.909964</td>
       <td>1.196461</td>
       <td>0.307465</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <td>04 May</td>
-      <td>14.396238</td>
-      <td>13.615342</td>
-      <td>12.496492</td>
-      <td>1.899746</td>
-      <td>0.432933</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -955,11 +955,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>May 25</td>
-      <td>277</td>
+      <td>279</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>1709</td>
+      <td>1711</td>
     </tr>
   </tbody>
 </table>
