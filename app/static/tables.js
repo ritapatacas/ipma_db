@@ -46,7 +46,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>19.44</td>
       <td>32.78</td>
       <td>0.00</td>
-      <td>10%</td>
+      <td>15%</td>
       <td>55%</td>
     </tr>
     <tr>
@@ -91,8 +91,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>15.56</td>
       <td>24.44</td>
       <td>0.00</td>
-      <td>30%</td>
       <td>25%</td>
+      <td>30%</td>
     </tr>
     <tr>
       <td>(6-4) Wed</td>
@@ -100,7 +100,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>15.00</td>
       <td>24.44</td>
       <td>0.00</td>
-      <td>25%</td>
+      <td>20%</td>
       <td>25%</td>
     </tr>
     <tr>
@@ -109,8 +109,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>16.11</td>
       <td>25.00</td>
       <td>0.00</td>
-      <td>25%</td>
-      <td>25%</td>
+      <td>20%</td>
+      <td>30%</td>
     </tr>
     <tr>
       <td>(6-6) Fri</td>
@@ -118,8 +118,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>16.11</td>
       <td>25.00</td>
       <td>0.00</td>
-      <td>15%</td>
-      <td>30%</td>
+      <td>10%</td>
+      <td>35%</td>
     </tr>
     <tr>
       <td>(6-7) Sat</td>
@@ -136,7 +136,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>15.00</td>
       <td>26.67</td>
       <td>0.00</td>
-      <td>20%</td>
+      <td>10%</td>
       <td>40%</td>
     </tr>
   </tbody>
@@ -184,7 +184,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
       <td>19.44</td>
       <td>32.78</td>
       <td>0.0004</td>
-      <td>10%</td>
+      <td>15%</td>
       <td>Showers, thunderstorms likely</td>
     </tr>
     <tr>
@@ -955,11 +955,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>May 25</td>
-      <td>613</td>
+      <td>615</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>2045</td>
+      <td>2047</td>
     </tr>
   </tbody>
 </table>
