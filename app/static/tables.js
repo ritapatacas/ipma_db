@@ -64,7 +64,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>15.00</td>
       <td>24.44</td>
       <td>0.00</td>
-      <td>5%</td>
+      <td>10%</td>
       <td>60%</td>
     </tr>
     <tr>
@@ -82,8 +82,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>12.22</td>
       <td>23.33</td>
       <td>0.00</td>
-      <td>35%</td>
-      <td>15%</td>
+      <td>25%</td>
+      <td>25%</td>
     </tr>
     <tr>
       <td>(6-5) Thu</td>
@@ -92,7 +92,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>25.00</td>
       <td>0.00</td>
       <td>10%</td>
-      <td>35%</td>
+      <td>40%</td>
     </tr>
     <tr>
       <td>(6-6) Fri</td>
@@ -100,8 +100,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>15.56</td>
       <td>26.11</td>
       <td>0.00</td>
-      <td>5%</td>
-      <td>40%</td>
+      <td>15%</td>
+      <td>35%</td>
     </tr>
     <tr>
       <td>(6-7) Sat</td>
@@ -127,7 +127,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>15.56</td>
       <td>26.11</td>
       <td>0.00</td>
-      <td>5%</td>
+      <td>0%</td>
       <td>45%</td>
     </tr>
     <tr>
@@ -200,7 +200,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
       <td>15.00</td>
       <td>24.44</td>
       <td>0.0000</td>
-      <td>5%</td>
+      <td>10%</td>
       <td>Clear and few clouds</td>
     </tr>
     <tr>
@@ -955,11 +955,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>May 25</td>
-      <td>661</td>
+      <td>663</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>2093</td>
+      <td>2095</td>
     </tr>
   </tbody>
 </table>
