@@ -167,7 +167,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
       <td>29 (Thu)</td>
       <td>20.56</td>
       <td>34.44</td>
-      <td>0.0079</td>
+      <td>0.0127</td>
       <td>20%</td>
       <td>Showers, thunderstorms likely</td>
     </tr>
@@ -955,11 +955,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>May 25</td>
-      <td>652</td>
+      <td>653</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>2084</td>
+      <td>2085</td>
     </tr>
   </tbody>
 </table>
