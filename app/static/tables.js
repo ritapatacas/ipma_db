@@ -64,7 +64,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>12.78</td>
       <td>21.67</td>
       <td>0.00</td>
-      <td>10%</td>
+      <td>5%</td>
       <td>65%</td>
     </tr>
     <tr>
@@ -91,8 +91,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>16.11</td>
       <td>27.22</td>
       <td>0.00</td>
-      <td>15%</td>
-      <td>45%</td>
+      <td>20%</td>
+      <td>40%</td>
     </tr>
     <tr>
       <td>(6-10) Tue</td>
@@ -100,8 +100,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>16.11</td>
       <td>25.56</td>
       <td>0.00</td>
-      <td>15%</td>
-      <td>40%</td>
+      <td>30%</td>
+      <td>30%</td>
     </tr>
     <tr>
       <td>(6-11) Wed</td>
@@ -109,7 +109,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>15.00</td>
       <td>22.78</td>
       <td>0.00</td>
-      <td>15%</td>
+      <td>25%</td>
       <td>35%</td>
     </tr>
     <tr>
@@ -118,8 +118,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>14.44</td>
       <td>24.44</td>
       <td>0.00</td>
-      <td>20%</td>
-      <td>40%</td>
+      <td>10%</td>
+      <td>45%</td>
     </tr>
     <tr>
       <td>(6-13) Fri</td>
@@ -127,7 +127,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>14.44</td>
       <td>26.67</td>
       <td>0.00</td>
-      <td>10%</td>
+      <td>5%</td>
       <td>55%</td>
     </tr>
     <tr>
@@ -200,7 +200,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
       <td>12.78</td>
       <td>21.67</td>
       <td>0</td>
-      <td>10%</td>
+      <td>5%</td>
       <td>Clear and few clouds</td>
     </tr>
     <tr>
@@ -959,11 +959,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Jun 25</td>
-      <td>13</td>
+      <td>15</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>2189</td>
+      <td>2191</td>
     </tr>
   </tbody>
 </table>
