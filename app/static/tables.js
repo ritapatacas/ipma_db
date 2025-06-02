@@ -37,7 +37,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>12.78</td>
       <td>21.67</td>
       <td>0.00</td>
-      <td>15%</td>
+      <td>10%</td>
       <td>80%</td>
     </tr>
     <tr>
@@ -176,7 +176,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
       <td>12.78</td>
       <td>21.67</td>
       <td>0</td>
-      <td>15%</td>
+      <td>10%</td>
       <td>Clear and few clouds</td>
     </tr>
     <tr>
@@ -959,11 +959,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Jun 25</td>
-      <td>39</td>
+      <td>41</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>2215</td>
+      <td>2217</td>
     </tr>
   </tbody>
 </table>
