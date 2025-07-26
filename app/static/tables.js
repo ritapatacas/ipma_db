@@ -26,7 +26,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(7-27) Sun</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday_simple.svg" title="Clear, cloudless sky"/></td>
       <td>20.00</td>
-      <td>33.89</td>
+      <td>34.44</td>
       <td>0.00</td>
       <td>0%</td>
       <td>90%</td>
@@ -71,7 +71,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(8-1) Fri</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday_simple.svg" title="Clear, cloudless sky"/></td>
       <td>19.44</td>
-      <td>31.67</td>
+      <td>32.78</td>
       <td>0.00</td>
       <td>0%</td>
       <td>65%</td>
@@ -98,7 +98,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(8-4) Mon</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday_simple.svg" title="Clear, cloudless sky"/></td>
       <td>20.00</td>
-      <td>32.22</td>
+      <td>32.78</td>
       <td>0.00</td>
       <td>0%</td>
       <td>55%</td>
@@ -166,7 +166,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     <tr>
       <td>27 (Sun)</td>
       <td>20.00</td>
-      <td>33.89</td>
+      <td>34.44</td>
       <td>0</td>
       <td>0%</td>
       <td>Clear, cloudless sky</td>
@@ -206,7 +206,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     <tr>
       <td>1 (Fri)</td>
       <td>19.44</td>
-      <td>31.67</td>
+      <td>32.78</td>
       <td>0</td>
       <td>0%</td>
       <td>Clear, cloudless sky</td>
@@ -963,11 +963,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Jul 25</td>
-      <td>611</td>
+      <td>613</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>3507</td>
+      <td>3509</td>
     </tr>
   </tbody>
 </table>
@@ -1038,6 +1038,13 @@ window.dashboardTable = `<div class="table-container">
             <td><a href="#" onclick="openModal('modal-Vento-26-29-07', event)">26-29/07</a></td>
             <td><span data-tooltip="Coimbra (36km NW)">C</span>, <span data-tooltip="Castelo Branco (59km ESE)">CB</span>, <span data-tooltip="Leiria (58km WSW)">L</span></td>
         </tr>
+        
+        <tr class="yellow hover:bg-gray-200 dark:hover:bg-gray-700 transition">
+            <td><i class="fa-solid fa-temperature-high"></i></td>
+            <td class="level"><i class="fa-solid fa-circle" style="color: #FFD43B;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
+            <td><a href="#" onclick="openModal('modal-Tempo-Quente-28-29-07', event)">28-29/07</a></td>
+            <td><span data-tooltip="Coimbra (36km NW)">C</span></td>
+        </tr>
         </tbody></table>
     <dialog id="modal-Tempo-Quente-26-26-07" class="modal">
         <article>
@@ -1047,7 +1054,7 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> yellow
-        <br><strong>start:</strong> 26/07 06:32
+        <br><strong>start:</strong> 26/07 09:47
         <br><strong>end:</strong> 26/07 18:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br>Persistência de valores elevados da temperatura máxima, em especial no interior do distrito.</p><p><strong>Coimbra (36km NW)</strong><br>Persistência de valores elevados da temperatura máxima, em especial no interior do distrito.</p>
@@ -1065,8 +1072,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 26/07 06:32
-        <br><strong>end:</strong> 29/07 06:00
+        <br><strong>start:</strong> 26/07 09:47
+        <br><strong>end:</strong> 29/07 09:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1083,8 +1090,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 26/07 06:32
-        <br><strong>end:</strong> 29/07 06:00
+        <br><strong>start:</strong> 26/07 09:47
+        <br><strong>end:</strong> 29/07 09:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br><br>Persistência de valores elevados da temperatura máxima.</p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1101,8 +1108,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 26/07 06:32
-        <br><strong>end:</strong> 29/07 06:00
+        <br><strong>start:</strong> 26/07 09:47
+        <br><strong>end:</strong> 29/07 09:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1119,8 +1126,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 26/07 06:32
-        <br><strong>end:</strong> 29/07 06:00
+        <br><strong>start:</strong> 26/07 09:47
+        <br><strong>end:</strong> 29/07 09:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1137,8 +1144,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 26/07 06:32
-        <br><strong>end:</strong> 29/07 06:00
+        <br><strong>start:</strong> 26/07 09:47
+        <br><strong>end:</strong> 29/07 09:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1155,8 +1162,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 26/07 06:32
-        <br><strong>end:</strong> 29/07 06:00
+        <br><strong>start:</strong> 26/07 09:47
+        <br><strong>end:</strong> 29/07 09:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1173,12 +1180,30 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 26/07 06:32
-        <br><strong>end:</strong> 29/07 06:00
+        <br><strong>start:</strong> 26/07 09:47
+        <br><strong>end:</strong> 29/07 09:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
                 <button onclick="closeModal('modal-Vento-26-29-07', event)">Close</button>
+            </footer>
+        </article>
+    </dialog>
+    
+    <dialog id="modal-Tempo-Quente-28-29-07" class="modal">
+        <article>
+            <header>
+                <a href="#" class="close" aria-label="Close" onclick="closeModal('modal-Tempo-Quente-28-29-07', event)"></a>
+                <h3>Tempo Quente</h3>
+            </header>
+            
+        <strong>alert level:</strong> yellow
+        <br><strong>start:</strong> 28/07 09:00
+        <br><strong>end:</strong> 29/07 09:00
+        <hr>
+    <p><strong>Coimbra (36km NW)</strong><br>Persistência de valores elevados da temperatura máxima na parte interior.</p>
+            <footer>
+                <button onclick="closeModal('modal-Tempo-Quente-28-29-07', event)">Close</button>
             </footer>
         </article>
     </dialog>
