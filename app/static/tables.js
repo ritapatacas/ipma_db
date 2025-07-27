@@ -16,8 +16,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(7-27) Sun</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday_simple.svg" title="Clear, cloudless sky"/></td>
-      <td>20.00</td>
-      <td>31.67</td>
+      <td>19.44</td>
+      <td>30.00</td>
       <td>0.00</td>
       <td>0%</td>
       <td>90%</td>
@@ -43,7 +43,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(7-30) Wed</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday_simple.svg" title="Clear, cloudless sky"/></td>
-      <td>19.44</td>
+      <td>20.00</td>
       <td>33.89</td>
       <td>0.00</td>
       <td>0%</td>
@@ -61,7 +61,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(8-1) Fri</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday_simple.svg" title="Clear, cloudless sky"/></td>
-      <td>19.44</td>
+      <td>18.89</td>
       <td>31.67</td>
       <td>0.00</td>
       <td>0%</td>
@@ -80,7 +80,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(8-3) Sun</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday_simple.svg" title="Clear, cloudless sky"/></td>
       <td>20.56</td>
-      <td>34.44</td>
+      <td>33.89</td>
       <td>0.00</td>
       <td>0%</td>
       <td>50%</td>
@@ -89,7 +89,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(8-4) Mon</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday_simple.svg" title="Clear, cloudless sky"/></td>
       <td>21.11</td>
-      <td>34.44</td>
+      <td>33.89</td>
       <td>0.00</td>
       <td>0%</td>
       <td>55%</td>
@@ -116,7 +116,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(8-7) Thu</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday_simple.svg" title="Clear, cloudless sky"/></td>
       <td>19.44</td>
-      <td>33.89</td>
+      <td>33.33</td>
       <td>0.00</td>
       <td>5%</td>
       <td>50%</td>
@@ -125,7 +125,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(8-8) Fri</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday_simple.svg" title="Clear, cloudless sky"/></td>
       <td>18.33</td>
-      <td>33.33</td>
+      <td>32.78</td>
       <td>0.00</td>
       <td>0%</td>
       <td>45%</td>
@@ -136,7 +136,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>18.33</td>
       <td>32.78</td>
       <td>0.00</td>
-      <td>5%</td>
+      <td>0%</td>
       <td>45%</td>
     </tr>
   </tbody>
@@ -157,8 +157,8 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
   <tbody>
     <tr>
       <td>27 (Sun)</td>
-      <td>20.00</td>
-      <td>31.67</td>
+      <td>19.44</td>
+      <td>30.00</td>
       <td>0</td>
       <td>0%</td>
       <td>Clear, cloudless sky</td>
@@ -181,7 +181,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     </tr>
     <tr>
       <td>30 (Wed)</td>
-      <td>19.44</td>
+      <td>20.00</td>
       <td>33.89</td>
       <td>0</td>
       <td>0%</td>
@@ -197,7 +197,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     </tr>
     <tr>
       <td>1 (Fri)</td>
-      <td>19.44</td>
+      <td>18.89</td>
       <td>31.67</td>
       <td>0</td>
       <td>0%</td>
@@ -216,7 +216,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
 <iframe src="https://www.meteoblue.com/en/weather/maps/widget/troviscais-fundeiros_portugal_2262489?windAnimation=1&gust=1&satellite=1&cloudsAndPrecipitation=1&temperature=1&sunshine=0&extremeForecastIndex=1&geoloc=fixed&tempunit=C&windunit=km%252Fh&lengthunit=metric&zoom=10&autowidth=auto"  frameborder="0" scrolling="NO" allowtransparency="true" sandbox="allow-same-origin allow-scripts allow-popups allow-popups-to-escape-sandbox" style="width: 80%; height: 550px"></iframe><div>
 `;
 
-window.evapotranspirationData = [{"max": 7.39787, "mean": 7.3383, "min": 7.241199, "period": "25 Jul", "range": 0.156672, "std": 0.038422}, {"max": 5.48738, "mean": 5.36532, "min": 5.261449, "period": "23 Jul", "range": 0.225927, "std": 0.05142}, {"max": 6.078569, "mean": 5.942279, "min": 5.820219, "period": "22 Jul", "range": 0.258349, "std": 0.05879}, {"max": 5.867189, "mean": 5.798009, "min": 5.69215, "period": "21 Jul", "range": 0.175042, "std": 0.036947}, {"max": 4.80283, "mean": 4.730239, "min": 4.63451, "period": "20 Jul", "range": 0.168322, "std": 0.038262}, {"max": 5.386079, "mean": 5.2737, "min": 5.17311, "period": "19 Jul", "range": 0.212965, "std": 0.049793}, {"max": 5.442699, "mean": 5.308479, "min": 5.16543, "period": "18 Jul", "range": 0.277272, "std": 0.064515}];
+window.evapotranspirationData = [{"max": 7.306519, "mean": 7.200079, "min": 7.05633, "period": "26 Jul", "range": 0.250189, "std": 0.061075}, {"max": 7.39787, "mean": 7.3383, "min": 7.241199, "period": "25 Jul", "range": 0.156672, "std": 0.038422}, {"max": 5.48738, "mean": 5.36532, "min": 5.261449, "period": "23 Jul", "range": 0.225927, "std": 0.05142}, {"max": 6.078569, "mean": 5.942279, "min": 5.820219, "period": "22 Jul", "range": 0.258349, "std": 0.05879}, {"max": 5.867189, "mean": 5.798009, "min": 5.69215, "period": "21 Jul", "range": 0.175042, "std": 0.036947}, {"max": 4.80283, "mean": 4.730239, "min": 4.63451, "period": "20 Jul", "range": 0.168322, "std": 0.038262}, {"max": 5.386079, "mean": 5.2737, "min": 5.17311, "period": "19 Jul", "range": 0.212965, "std": 0.049793}];
 
 
 
@@ -701,6 +701,14 @@ window.observationsTable = `
   </thead>
   <tbody>
     <tr>
+      <td>26 Jul</td>
+      <td>7.306519</td>
+      <td>7.200079</td>
+      <td>7.056330</td>
+      <td>0.250189</td>
+      <td>0.061075</td>
+    </tr>
+    <tr>
       <td>25 Jul</td>
       <td>7.397870</td>
       <td>7.338300</td>
@@ -748,14 +756,6 @@ window.observationsTable = `
       <td>0.212965</td>
       <td>0.049793</td>
     </tr>
-    <tr>
-      <td>18 Jul</td>
-      <td>5.442699</td>
-      <td>5.308479</td>
-      <td>5.165430</td>
-      <td>0.277272</td>
-      <td>0.064515</td>
-    </tr>
   </tbody>
 </table>
   </div>
@@ -784,6 +784,18 @@ window.observationsTable = `
     </tr>
   </thead>
   <tbody>
+    <tr>
+      <td>26 Jul</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
     <tr>
       <td>25 Jul</td>
       <td>0.000000</td>
@@ -851,18 +863,6 @@ window.observationsTable = `
       <td>2.634201</td>
       <td>0.530157</td>
       <td>0.111052</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <td>19 Jul</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -963,11 +963,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Jul 25</td>
-      <td>637</td>
+      <td>639</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>3533</td>
+      <td>3535</td>
     </tr>
   </tbody>
 </table>
