@@ -16,7 +16,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(7-27) Sun</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday_simple.svg" title="Clear, cloudless sky"/></td>
-      <td>18.33</td>
+      <td>18.89</td>
       <td>29.44</td>
       <td>0.00</td>
       <td>0%</td>
@@ -25,7 +25,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(7-28) Mon</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday_simple.svg" title="Clear, cloudless sky"/></td>
-      <td>18.33</td>
+      <td>17.78</td>
       <td>34.44</td>
       <td>0.00</td>
       <td>0%</td>
@@ -60,7 +60,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     </tr>
     <tr>
       <td>(8-1) Fri</td>
-      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday_simple.svg" title="Clear, cloudless sky"/></td>
+      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/02_iday_simple.svg" title="Clear and few clouds"/></td>
       <td>18.89</td>
       <td>31.67</td>
       <td>0.00</td>
@@ -157,7 +157,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
   <tbody>
     <tr>
       <td>27 (Sun)</td>
-      <td>18.33</td>
+      <td>18.89</td>
       <td>29.44</td>
       <td>0</td>
       <td>0%</td>
@@ -165,7 +165,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     </tr>
     <tr>
       <td>28 (Mon)</td>
-      <td>18.33</td>
+      <td>17.78</td>
       <td>34.44</td>
       <td>0</td>
       <td>0%</td>
@@ -201,7 +201,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
       <td>31.67</td>
       <td>0</td>
       <td>0%</td>
-      <td>Clear, cloudless sky</td>
+      <td>Clear and few clouds</td>
     </tr>
     <tr>
       <td>2 (Sat)</td>
@@ -963,11 +963,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Jul 25</td>
-      <td>641</td>
+      <td>643</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>3537</td>
+      <td>3539</td>
     </tr>
   </tbody>
 </table>
