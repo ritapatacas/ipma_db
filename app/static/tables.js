@@ -82,7 +82,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>20.56</td>
       <td>32.22</td>
       <td>0.00</td>
-      <td>5%</td>
+      <td>0%</td>
       <td>60%</td>
     </tr>
     <tr>
@@ -963,11 +963,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Jul 25</td>
-      <td>649</td>
+      <td>651</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>3545</td>
+      <td>3547</td>
     </tr>
   </tbody>
 </table>
@@ -1054,8 +1054,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 27/07 18:06
-        <br><strong>end:</strong> 30/07 18:00
+        <br><strong>start:</strong> 27/07 23:26
+        <br><strong>end:</strong> 30/07 23:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1072,8 +1072,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 27/07 18:06
-        <br><strong>end:</strong> 30/07 18:00
+        <br><strong>start:</strong> 27/07 23:26
+        <br><strong>end:</strong> 30/07 23:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br><br>Persistência de valores elevados da temperatura máxima.</p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1090,8 +1090,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 27/07 18:06
-        <br><strong>end:</strong> 30/07 18:00
+        <br><strong>start:</strong> 27/07 23:26
+        <br><strong>end:</strong> 30/07 23:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1108,8 +1108,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 27/07 18:06
-        <br><strong>end:</strong> 30/07 18:00
+        <br><strong>start:</strong> 27/07 23:26
+        <br><strong>end:</strong> 30/07 23:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1126,8 +1126,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 27/07 18:06
-        <br><strong>end:</strong> 30/07 18:00
+        <br><strong>start:</strong> 27/07 23:26
+        <br><strong>end:</strong> 30/07 23:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1144,8 +1144,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 27/07 18:06
-        <br><strong>end:</strong> 30/07 18:00
+        <br><strong>start:</strong> 27/07 23:26
+        <br><strong>end:</strong> 30/07 23:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1162,8 +1162,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 27/07 18:06
-        <br><strong>end:</strong> 30/07 18:00
+        <br><strong>start:</strong> 27/07 23:26
+        <br><strong>end:</strong> 30/07 23:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
