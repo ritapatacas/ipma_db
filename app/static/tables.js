@@ -17,7 +17,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(8-5) Tue</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday_simple.svg" title="Clear, cloudless sky"/></td>
       <td>20.00</td>
-      <td>37.78</td>
+      <td>38.33</td>
       <td>0.00</td>
       <td>0%</td>
       <td>90%</td>
@@ -25,7 +25,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(8-6) Wed</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday_simple.svg" title="Clear, cloudless sky"/></td>
-      <td>22.22</td>
+      <td>21.67</td>
       <td>35.00</td>
       <td>0.00</td>
       <td>0%</td>
@@ -158,14 +158,14 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     <tr>
       <td>5 (Tue)</td>
       <td>20.00</td>
-      <td>37.78</td>
+      <td>38.33</td>
       <td>0</td>
       <td>0%</td>
       <td>Clear, cloudless sky</td>
     </tr>
     <tr>
       <td>6 (Wed)</td>
-      <td>22.22</td>
+      <td>21.67</td>
       <td>35.00</td>
       <td>0</td>
       <td>0%</td>
@@ -967,11 +967,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Aug 25</td>
-      <td>111</td>
+      <td>113</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>3751</td>
+      <td>3753</td>
     </tr>
   </tbody>
 </table>
@@ -1058,7 +1058,7 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> yellow
-        <br><strong>start:</strong> 05/08 10:42
+        <br><strong>start:</strong> 05/08 13:27
         <br><strong>end:</strong> 05/08 18:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br>Persistência de valores elevados da temperatura máxima na parte interior do distrito.</p><p><strong>Coimbra (36km NW)</strong><br>Persistência de valores muito elevados da temperatura máxima, em especial no interior do distrito.</p>
@@ -1076,8 +1076,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 05/08 10:42
-        <br><strong>end:</strong> 08/08 10:00
+        <br><strong>start:</strong> 05/08 13:27
+        <br><strong>end:</strong> 08/08 13:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1094,8 +1094,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 05/08 10:42
-        <br><strong>end:</strong> 08/08 10:00
+        <br><strong>start:</strong> 05/08 13:27
+        <br><strong>end:</strong> 08/08 13:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1112,8 +1112,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 05/08 10:42
-        <br><strong>end:</strong> 08/08 10:00
+        <br><strong>start:</strong> 05/08 13:27
+        <br><strong>end:</strong> 08/08 13:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1130,8 +1130,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 05/08 10:42
-        <br><strong>end:</strong> 08/08 10:00
+        <br><strong>start:</strong> 05/08 13:27
+        <br><strong>end:</strong> 08/08 13:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1148,8 +1148,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 05/08 10:42
-        <br><strong>end:</strong> 08/08 10:00
+        <br><strong>start:</strong> 05/08 13:27
+        <br><strong>end:</strong> 08/08 13:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1166,8 +1166,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 05/08 10:42
-        <br><strong>end:</strong> 08/08 10:00
+        <br><strong>start:</strong> 05/08 13:27
+        <br><strong>end:</strong> 08/08 13:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1184,8 +1184,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 05/08 10:42
-        <br><strong>end:</strong> 08/08 10:00
+        <br><strong>start:</strong> 05/08 13:27
+        <br><strong>end:</strong> 08/08 13:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1202,7 +1202,7 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> yellow
-        <br><strong>start:</strong> 05/08 10:42
+        <br><strong>start:</strong> 05/08 13:27
         <br><strong>end:</strong> 07/08 18:00
         <hr>
     <p><strong>Castelo Branco (59km ESE)</strong><br>Persistência de valores elevados da temperatura máxima.</p><p><strong>Coimbra (36km NW)</strong><br>Persistência de valores elevados da temperatura máxima no interior do distrito.</p>
