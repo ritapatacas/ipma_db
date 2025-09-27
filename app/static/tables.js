@@ -34,8 +34,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(9-29) Mon</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/02_iday_simple.svg" title="Clear and few clouds"/></td>
-      <td>13.89</td>
-      <td>26.11</td>
+      <td>12.78</td>
+      <td>25.56</td>
       <td>0.00</td>
       <td>0%</td>
       <td>80%</td>
@@ -43,7 +43,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(9-30) Tue</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/02_iday_simple.svg" title="Clear and few clouds"/></td>
-      <td>14.44</td>
+      <td>15.00</td>
       <td>26.67</td>
       <td>0.00</td>
       <td>0%</td>
@@ -61,8 +61,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(10-2) Thu</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/02_iday_simple.svg" title="Clear and few clouds"/></td>
-      <td>15.00</td>
-      <td>30.00</td>
+      <td>16.11</td>
+      <td>29.44</td>
       <td>0.00</td>
       <td>0%</td>
       <td>70%</td>
@@ -70,7 +70,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(10-3) Fri</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/02_iday_simple.svg" title="Clear and few clouds"/></td>
-      <td>15.56</td>
+      <td>15.00</td>
       <td>28.89</td>
       <td>0.00</td>
       <td>0%</td>
@@ -79,8 +79,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(10-4) Sat</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/02_iday_simple.svg" title="Clear and few clouds"/></td>
-      <td>13.33</td>
-      <td>26.11</td>
+      <td>13.89</td>
+      <td>25.56</td>
       <td>0.00</td>
       <td>10%</td>
       <td>45%</td>
@@ -88,7 +88,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(10-5) Sun</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/02_iday_simple.svg" title="Clear and few clouds"/></td>
-      <td>12.78</td>
+      <td>13.33</td>
       <td>24.44</td>
       <td>0.00</td>
       <td>15%</td>
@@ -106,7 +106,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(10-7) Tue</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday_simple.svg" title="Clear, cloudless sky"/></td>
-      <td>13.89</td>
+      <td>14.44</td>
       <td>27.22</td>
       <td>0.00</td>
       <td>5%</td>
@@ -124,7 +124,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(10-9) Thu</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday_simple.svg" title="Clear, cloudless sky"/></td>
-      <td>12.78</td>
+      <td>13.33</td>
       <td>26.11</td>
       <td>0.00</td>
       <td>5%</td>
@@ -159,7 +159,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
       <td>27 (Sat)</td>
       <td>6.67</td>
       <td>20.56</td>
-      <td>0.2756</td>
+      <td>0.2838</td>
       <td>85%</td>
       <td>Mostly cloudy with rain</td>
     </tr>
@@ -173,15 +173,15 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     </tr>
     <tr>
       <td>29 (Mon)</td>
-      <td>13.89</td>
-      <td>26.11</td>
+      <td>12.78</td>
+      <td>25.56</td>
       <td>0.0000</td>
       <td>0%</td>
       <td>Clear and few clouds</td>
     </tr>
     <tr>
       <td>30 (Tue)</td>
-      <td>14.44</td>
+      <td>15.00</td>
       <td>26.67</td>
       <td>0.0000</td>
       <td>0%</td>
@@ -197,15 +197,15 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     </tr>
     <tr>
       <td>2 (Thu)</td>
-      <td>15.00</td>
-      <td>30.00</td>
+      <td>16.11</td>
+      <td>29.44</td>
       <td>0.0000</td>
       <td>0%</td>
       <td>Clear and few clouds</td>
     </tr>
     <tr>
       <td>3 (Fri)</td>
-      <td>15.56</td>
+      <td>15.00</td>
       <td>28.89</td>
       <td>0.0000</td>
       <td>0%</td>
@@ -971,11 +971,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Sep 25</td>
-      <td>645</td>
+      <td>647</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>5029</td>
+      <td>5031</td>
     </tr>
   </tbody>
 </table>
@@ -1051,14 +1051,14 @@ window.dashboardTable = `<div class="table-container">
             <td><i class="fa-solid fa-wind"></i></td>
             <td class="level"><i class="fa-solid fa-circle" style="color: #FFD43B;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
             <td><a href="#" onclick="openModal('modal-Vento-27-28-09', event)">27-28/09</a></td>
-            <td><span data-tooltip="Coimbra (36km NW)">C</span>, <span data-tooltip="Leiria (58km WSW)">L</span></td>
+            <td><span data-tooltip="Coimbra (36km NW)">C</span>, <span data-tooltip="Castelo Branco (59km ESE)">CB</span>, <span data-tooltip="Leiria (58km WSW)">L</span></td>
         </tr>
         
         <tr class="yellow hover:bg-gray-200 dark:hover:bg-gray-700 transition">
             <td><i class="fa-solid fa-cloud-rain"></i></td>
             <td class="level"><i class="fa-solid fa-circle" style="color: #FFD43B;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
             <td><a href="#" onclick="openModal('modal-Precipitação-28-28-09', event)">28-28/09</a></td>
-            <td><span data-tooltip="Castelo Branco (59km ESE)">CB</span></td>
+            <td><span data-tooltip="Coimbra (36km NW)">C</span>, <span data-tooltip="Castelo Branco (59km ESE)">CB</span></td>
         </tr>
         </tbody></table>
     <dialog id="modal-Precipitação-27-28-09" class="modal">
@@ -1069,8 +1069,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> yellow
-        <br><strong>start:</strong> 27/09 18:33
-        <br><strong>end:</strong> 28/09 09:00
+        <br><strong>start:</strong> 27/09 20:29
+        <br><strong>end:</strong> 28/09 06:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br>Precipitação, por vezes forte, podendo ser acompanhada de trovoada.</p><p><strong>Coimbra (36km NW)</strong><br>Precipitação, por vezes forte, podendo ser acompanhada de trovoada.</p>
             <footer>
@@ -1087,8 +1087,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 27/09 18:33
-        <br><strong>end:</strong> 30/09 18:00
+        <br><strong>start:</strong> 27/09 20:29
+        <br><strong>end:</strong> 30/09 20:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1105,8 +1105,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 27/09 18:33
-        <br><strong>end:</strong> 30/09 18:00
+        <br><strong>start:</strong> 27/09 20:29
+        <br><strong>end:</strong> 30/09 20:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1123,8 +1123,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 27/09 18:33
-        <br><strong>end:</strong> 30/09 18:00
+        <br><strong>start:</strong> 27/09 20:29
+        <br><strong>end:</strong> 30/09 20:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1141,8 +1141,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 27/09 18:33
-        <br><strong>end:</strong> 30/09 18:00
+        <br><strong>start:</strong> 27/09 20:29
+        <br><strong>end:</strong> 30/09 20:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1159,8 +1159,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 27/09 18:33
-        <br><strong>end:</strong> 30/09 18:00
+        <br><strong>start:</strong> 27/09 20:29
+        <br><strong>end:</strong> 30/09 20:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1177,8 +1177,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 27/09 18:33
-        <br><strong>end:</strong> 30/09 18:00
+        <br><strong>start:</strong> 27/09 20:29
+        <br><strong>end:</strong> 30/09 20:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1195,8 +1195,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 27/09 18:33
-        <br><strong>end:</strong> 30/09 18:00
+        <br><strong>start:</strong> 27/09 20:29
+        <br><strong>end:</strong> 30/09 20:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1213,10 +1213,10 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> yellow
-        <br><strong>start:</strong> 27/09 18:33
-        <br><strong>end:</strong> 28/09 03:00
+        <br><strong>start:</strong> 27/09 20:29
+        <br><strong>end:</strong> 28/09 18:00
         <hr>
-    <p><strong>Coimbra (36km NW)</strong><br>Rajadas até 80 km/h, em especial no litoral e terras altas.</p><p><strong>Leiria (58km WSW)</strong><br>Rajadas até 80 km/h, em especial no litoral e zonas de serra.</p>
+    <p><strong>Coimbra (36km NW)</strong><br>Rajadas até 95 km/h, em especial no litoral e terras altas.</p><p><strong>Leiria (58km WSW)</strong><br>Rajadas até 90 km/h, em especial no litoral e zonas de serra.</p><p><strong>Castelo Branco (59km ESE)</strong><br>Rajadas até 95 km/h, em especial nas terras altas.</p>
             <footer>
                 <button onclick="closeModal('modal-Vento-27-28-09', event)">Close</button>
             </footer>
@@ -1231,10 +1231,10 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> yellow
-        <br><strong>start:</strong> 28/09 03:00
-        <br><strong>end:</strong> 28/09 16:00
+        <br><strong>start:</strong> 28/09 00:00
+        <br><strong>end:</strong> 28/09 03:00
         <hr>
-    <p><strong>Castelo Branco (59km ESE)</strong><br>Precipitação, por vezes forte, podendo ser acompanhada de trovoada.</p>
+    <p><strong>Castelo Branco (59km ESE)</strong><br>Precipitação, por vezes forte, podendo ser acompanhada de trovoada.<br>Precipitação por vezes forte, podendo ser acompanhada de trovoada.</p><p><strong>Coimbra (36km NW)</strong><br>Precipitação por vezes forte, podendo ser acompanhada de trovoada.<br>Precipitação por vezes forte, podendo ser acompanhada de trovoada.</p>
             <footer>
                 <button onclick="closeModal('modal-Precipitação-28-28-09', event)">Close</button>
             </footer>
