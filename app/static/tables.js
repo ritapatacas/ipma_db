@@ -15,9 +15,9 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
   <tbody>
     <tr>
       <td>(10-10) Fri</td>
-      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/02_iday_simple.svg" title="Clear and few clouds"/></td>
+      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday_simple.svg" title="Clear, cloudless sky"/></td>
       <td>16.11</td>
-      <td>25.56</td>
+      <td>26.11</td>
       <td>0.00</td>
       <td>0%</td>
       <td>95%</td>
@@ -71,7 +71,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(10-16) Thu</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/16_iday_simple.svg" title="Mostly cloudy with occasional rain"/></td>
       <td>16.11</td>
-      <td>24.44</td>
+      <td>25.00</td>
       <td>0.17</td>
       <td>25%</td>
       <td>45%</td>
@@ -89,7 +89,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(10-18) Sat</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/04_iday_simple.svg" title="Overcast"/></td>
       <td>14.44</td>
-      <td>20.00</td>
+      <td>20.56</td>
       <td>0.00</td>
       <td>40%</td>
       <td>20%</td>
@@ -116,7 +116,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(10-21) Tue</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/02_iday_simple.svg" title="Clear and few clouds"/></td>
       <td>12.22</td>
-      <td>18.33</td>
+      <td>18.89</td>
       <td>0.00</td>
       <td>45%</td>
       <td>5%</td>
@@ -125,7 +125,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(10-22) Wed</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/02_iday_simple.svg" title="Clear and few clouds"/></td>
       <td>11.11</td>
-      <td>18.33</td>
+      <td>18.89</td>
       <td>0.00</td>
       <td>40%</td>
       <td>10%</td>
@@ -134,7 +134,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(10-23) Thu</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/02_iday_simple.svg" title="Clear and few clouds"/></td>
       <td>12.22</td>
-      <td>18.33</td>
+      <td>18.89</td>
       <td>0.00</td>
       <td>30%</td>
       <td>20%</td>
@@ -158,10 +158,10 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     <tr>
       <td>10 (Fri)</td>
       <td>16.11</td>
-      <td>25.56</td>
+      <td>26.11</td>
       <td>0.0000</td>
       <td>0%</td>
-      <td>Clear and few clouds</td>
+      <td>Clear, cloudless sky</td>
     </tr>
     <tr>
       <td>11 (Sat)</td>
@@ -206,7 +206,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     <tr>
       <td>16 (Thu)</td>
       <td>16.11</td>
-      <td>24.44</td>
+      <td>25.00</td>
       <td>0.1654</td>
       <td>25%</td>
       <td>Mostly cloudy with occasional rain</td>
@@ -785,6 +785,18 @@ window.observationsTable = `
   </thead>
   <tbody>
     <tr>
+      <td>09 Oct</td>
+      <td>0.021744</td>
+      <td>0.010067</td>
+      <td>0.002898</td>
+      <td>0.018847</td>
+      <td>0.004660</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
       <td>08 Oct</td>
       <td>0.024900</td>
       <td>0.019255</td>
@@ -851,18 +863,6 @@ window.observationsTable = `
       <td>0.013304</td>
       <td>0.052875</td>
       <td>0.011826</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <td>02 Oct</td>
-      <td>0.002347</td>
-      <td>0.001000</td>
-      <td>0.000000</td>
-      <td>0.002347</td>
-      <td>0.001007</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -975,11 +975,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Oct 25</td>
-      <td>229</td>
+      <td>231</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>5333</td>
+      <td>5335</td>
     </tr>
   </tbody>
 </table>
@@ -1052,8 +1052,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 10/10 06:26
-        <br><strong>end:</strong> 13/10 06:00
+        <br><strong>start:</strong> 10/10 11:30
+        <br><strong>end:</strong> 13/10 11:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1070,8 +1070,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 10/10 06:26
-        <br><strong>end:</strong> 13/10 06:00
+        <br><strong>start:</strong> 10/10 11:30
+        <br><strong>end:</strong> 13/10 11:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1088,8 +1088,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 10/10 06:26
-        <br><strong>end:</strong> 13/10 06:00
+        <br><strong>start:</strong> 10/10 11:30
+        <br><strong>end:</strong> 13/10 11:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1106,8 +1106,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 10/10 06:26
-        <br><strong>end:</strong> 13/10 06:00
+        <br><strong>start:</strong> 10/10 11:30
+        <br><strong>end:</strong> 13/10 11:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1124,8 +1124,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 10/10 06:26
-        <br><strong>end:</strong> 13/10 06:00
+        <br><strong>start:</strong> 10/10 11:30
+        <br><strong>end:</strong> 13/10 11:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1142,8 +1142,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 10/10 06:26
-        <br><strong>end:</strong> 13/10 06:00
+        <br><strong>start:</strong> 10/10 11:30
+        <br><strong>end:</strong> 13/10 11:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1160,8 +1160,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 10/10 06:26
-        <br><strong>end:</strong> 13/10 06:00
+        <br><strong>start:</strong> 10/10 11:30
+        <br><strong>end:</strong> 13/10 11:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
