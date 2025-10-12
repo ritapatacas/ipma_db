@@ -42,36 +42,36 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     </tr>
     <tr>
       <td>(10-15) Wed</td>
-      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/16_iday_simple.svg" title="Mostly cloudy with occasional rain"/></td>
+      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/03_iday_simple.svg" title="Partly cloudy"/></td>
       <td>15.00</td>
-      <td>26.11</td>
-      <td>0.02</td>
+      <td>26.67</td>
+      <td>0.00</td>
       <td>5%</td>
-      <td>55%</td>
+      <td>80%</td>
     </tr>
     <tr>
       <td>(10-16) Thu</td>
-      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/03_iday_simple.svg" title="Partly cloudy"/></td>
+      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/08_iday_simple.svg" title="Showers, thunderstorms likely"/></td>
       <td>16.11</td>
       <td>25.56</td>
-      <td>0.00</td>
-      <td>10%</td>
-      <td>75%</td>
+      <td>0.12</td>
+      <td>25%</td>
+      <td>55%</td>
     </tr>
     <tr>
       <td>(10-17) Fri</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/03_iday_simple.svg" title="Partly cloudy"/></td>
-      <td>14.44</td>
-      <td>24.44</td>
+      <td>15.00</td>
+      <td>23.89</td>
       <td>0.00</td>
       <td>10%</td>
       <td>60%</td>
     </tr>
     <tr>
       <td>(10-18) Sat</td>
-      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/04_iday_simple.svg" title="Overcast"/></td>
+      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/03_iday_simple.svg" title="Partly cloudy"/></td>
       <td>15.00</td>
-      <td>20.56</td>
+      <td>21.11</td>
       <td>0.00</td>
       <td>20%</td>
       <td>40%</td>
@@ -107,7 +107,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(10-22) Wed</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/02_iday_simple.svg" title="Clear and few clouds"/></td>
       <td>12.78</td>
-      <td>19.44</td>
+      <td>20.00</td>
       <td>0.00</td>
       <td>40%</td>
       <td>25%</td>
@@ -133,7 +133,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(10-25) Sat</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday_simple.svg" title="Clear, cloudless sky"/></td>
-      <td>11.11</td>
+      <td>11.67</td>
       <td>18.33</td>
       <td>0.00</td>
       <td>25%</td>
@@ -182,23 +182,23 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     <tr>
       <td>15 (Wed)</td>
       <td>15.00</td>
-      <td>26.11</td>
-      <td>0.0197</td>
+      <td>26.67</td>
+      <td>0.0000</td>
       <td>5%</td>
-      <td>Mostly cloudy with occasional rain</td>
+      <td>Partly cloudy</td>
     </tr>
     <tr>
       <td>16 (Thu)</td>
       <td>16.11</td>
       <td>25.56</td>
-      <td>0.0000</td>
-      <td>10%</td>
-      <td>Partly cloudy</td>
+      <td>0.1231</td>
+      <td>25%</td>
+      <td>Showers, thunderstorms likely</td>
     </tr>
     <tr>
       <td>17 (Fri)</td>
-      <td>14.44</td>
-      <td>24.44</td>
+      <td>15.00</td>
+      <td>23.89</td>
       <td>0.0000</td>
       <td>10%</td>
       <td>Partly cloudy</td>
@@ -206,10 +206,10 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     <tr>
       <td>18 (Sat)</td>
       <td>15.00</td>
-      <td>20.56</td>
+      <td>21.11</td>
       <td>0.0000</td>
       <td>20%</td>
-      <td>Overcast</td>
+      <td>Partly cloudy</td>
     </tr>
   </tbody>
 </table></div>
@@ -975,11 +975,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Oct 25</td>
-      <td>269</td>
+      <td>271</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>5373</td>
+      <td>5375</td>
     </tr>
   </tbody>
 </table>
