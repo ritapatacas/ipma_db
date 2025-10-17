@@ -26,17 +26,17 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(10-18) Sat</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/02_iday_simple.svg" title="Clear and few clouds"/></td>
       <td>15.00</td>
-      <td>25.56</td>
+      <td>25.00</td>
       <td>0.00</td>
       <td>0%</td>
       <td>80%</td>
     </tr>
     <tr>
       <td>(10-19) Sun</td>
-      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/16_iday_simple.svg" title="Mostly cloudy with occasional rain"/></td>
+      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/14_iday_simple.svg" title="Mostly cloudy with rain"/></td>
       <td>16.11</td>
       <td>22.22</td>
-      <td>0.02</td>
+      <td>0.33</td>
       <td>65%</td>
       <td>55%</td>
     </tr>
@@ -44,7 +44,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(10-20) Mon</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/16_iday_simple.svg" title="Mostly cloudy with occasional rain"/></td>
       <td>16.11</td>
-      <td>20.56</td>
+      <td>20.00</td>
       <td>0.02</td>
       <td>60%</td>
       <td>40%</td>
@@ -53,8 +53,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(10-21) Tue</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/16_iday_simple.svg" title="Mostly cloudy with occasional rain"/></td>
       <td>15.00</td>
-      <td>19.44</td>
-      <td>0.02</td>
+      <td>20.00</td>
+      <td>0.06</td>
       <td>85%</td>
       <td>35%</td>
     </tr>
@@ -107,7 +107,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(10-27) Mon</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday_simple.svg" title="Clear, cloudless sky"/></td>
       <td>7.78</td>
-      <td>15.00</td>
+      <td>14.44</td>
       <td>0.00</td>
       <td>25%</td>
       <td>40%</td>
@@ -124,7 +124,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(10-29) Wed</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday_simple.svg" title="Clear, cloudless sky"/></td>
-      <td>8.89</td>
+      <td>9.44</td>
       <td>15.56</td>
       <td>0.00</td>
       <td>30%</td>
@@ -166,7 +166,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     <tr>
       <td>18 (Sat)</td>
       <td>15.00</td>
-      <td>25.56</td>
+      <td>25.00</td>
       <td>0.0000</td>
       <td>0%</td>
       <td>Clear and few clouds</td>
@@ -175,14 +175,14 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
       <td>19 (Sun)</td>
       <td>16.11</td>
       <td>22.22</td>
-      <td>0.0157</td>
+      <td>0.3272</td>
       <td>65%</td>
-      <td>Mostly cloudy with occasional rain</td>
+      <td>Mostly cloudy with rain</td>
     </tr>
     <tr>
       <td>20 (Mon)</td>
       <td>16.11</td>
-      <td>20.56</td>
+      <td>20.00</td>
       <td>0.0157</td>
       <td>60%</td>
       <td>Mostly cloudy with occasional rain</td>
@@ -190,8 +190,8 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     <tr>
       <td>21 (Tue)</td>
       <td>15.00</td>
-      <td>19.44</td>
-      <td>0.0204</td>
+      <td>20.00</td>
+      <td>0.0572</td>
       <td>85%</td>
       <td>Mostly cloudy with occasional rain</td>
     </tr>
@@ -199,7 +199,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
       <td>22 (Wed)</td>
       <td>16.11</td>
       <td>20.56</td>
-      <td>0.0831</td>
+      <td>0.0808</td>
       <td>90%</td>
       <td>Mostly cloudy with occasional rain</td>
     </tr>
@@ -975,11 +975,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Oct 25</td>
-      <td>401</td>
+      <td>403</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>5505</td>
+      <td>5507</td>
     </tr>
   </tbody>
 </table>
