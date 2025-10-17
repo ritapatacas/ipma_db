@@ -785,6 +785,18 @@ window.observationsTable = `
   </thead>
   <tbody>
     <tr>
+      <td>16 Oct</td>
+      <td>0.355319</td>
+      <td>0.162398</td>
+      <td>0.046362</td>
+      <td>0.308957</td>
+      <td>0.076523</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
       <td>15 Oct</td>
       <td>0.000000</td>
       <td>0.000000</td>
@@ -851,18 +863,6 @@ window.observationsTable = `
       <td>0.002898</td>
       <td>0.018847</td>
       <td>0.004660</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <td>08 Oct</td>
-      <td>0.024900</td>
-      <td>0.019255</td>
-      <td>0.012447</td>
-      <td>0.012453</td>
-      <td>0.002933</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -975,11 +975,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Oct 25</td>
-      <td>397</td>
+      <td>399</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>5501</td>
+      <td>5503</td>
     </tr>
   </tbody>
 </table>
