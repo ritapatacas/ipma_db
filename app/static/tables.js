@@ -17,7 +17,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(10-19) Sun</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/16_iday_simple.svg" title="Mostly cloudy with occasional rain"/></td>
       <td>15.00</td>
-      <td>22.22</td>
+      <td>21.11</td>
       <td>0.07</td>
       <td>70%</td>
       <td>60%</td>
@@ -26,16 +26,16 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(10-20) Mon</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/16_iday_simple.svg" title="Mostly cloudy with occasional rain"/></td>
       <td>13.33</td>
-      <td>20.00</td>
+      <td>19.44</td>
       <td>0.02</td>
-      <td>20%</td>
+      <td>15%</td>
       <td>65%</td>
     </tr>
     <tr>
       <td>(10-21) Tue</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/14_iday_simple.svg" title="Mostly cloudy with rain"/></td>
       <td>14.44</td>
-      <td>19.44</td>
+      <td>20.00</td>
       <td>1.06</td>
       <td>85%</td>
       <td>50%</td>
@@ -62,7 +62,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(10-24) Fri</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/14_iday_simple.svg" title="Mostly cloudy with rain"/></td>
       <td>13.89</td>
-      <td>20.56</td>
+      <td>20.00</td>
       <td>0.62</td>
       <td>55%</td>
       <td>30%</td>
@@ -97,7 +97,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(10-28) Tue</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday_simple.svg" title="Clear, cloudless sky"/></td>
-      <td>10.00</td>
+      <td>9.44</td>
       <td>16.11</td>
       <td>0.00</td>
       <td>30%</td>
@@ -158,7 +158,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     <tr>
       <td>19 (Sun)</td>
       <td>15.00</td>
-      <td>22.22</td>
+      <td>21.11</td>
       <td>0.0748</td>
       <td>70%</td>
       <td>Mostly cloudy with occasional rain</td>
@@ -166,15 +166,15 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     <tr>
       <td>20 (Mon)</td>
       <td>13.33</td>
-      <td>20.00</td>
+      <td>19.44</td>
       <td>0.0157</td>
-      <td>20%</td>
+      <td>15%</td>
       <td>Mostly cloudy with occasional rain</td>
     </tr>
     <tr>
       <td>21 (Tue)</td>
       <td>14.44</td>
-      <td>19.44</td>
+      <td>20.00</td>
       <td>1.0587</td>
       <td>85%</td>
       <td>Mostly cloudy with rain</td>
@@ -198,7 +198,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     <tr>
       <td>24 (Fri)</td>
       <td>13.89</td>
-      <td>20.56</td>
+      <td>20.00</td>
       <td>0.6214</td>
       <td>55%</td>
       <td>Mostly cloudy with rain</td>
@@ -785,6 +785,18 @@ window.observationsTable = `
   </thead>
   <tbody>
     <tr>
+      <td>18 Oct</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
       <td>17 Oct</td>
       <td>0.000000</td>
       <td>0.000000</td>
@@ -846,18 +858,6 @@ window.observationsTable = `
     </tr>
     <tr>
       <td>11 Oct</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.000000</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <td>10 Oct</td>
       <td>0.000000</td>
       <td>0.000000</td>
       <td>0.000000</td>
@@ -975,11 +975,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Oct 25</td>
-      <td>445</td>
+      <td>447</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>5549</td>
+      <td>5551</td>
     </tr>
   </tbody>
 </table>
