@@ -19,7 +19,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>11.67</td>
       <td>20.56</td>
       <td>0.00</td>
-      <td>5%</td>
+      <td>0%</td>
       <td>75%</td>
     </tr>
     <tr>
@@ -37,8 +37,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>13.33</td>
       <td>17.78</td>
       <td>0.70</td>
-      <td>95%</td>
-      <td>50%</td>
+      <td>100%</td>
+      <td>55%</td>
     </tr>
     <tr>
       <td>(10-29) Wed</td>
@@ -46,98 +46,98 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>13.89</td>
       <td>17.78</td>
       <td>0.38</td>
-      <td>85%</td>
+      <td>60%</td>
       <td>40%</td>
     </tr>
     <tr>
       <td>(10-30) Thu</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/14_iday_simple.svg" title="Mostly cloudy with rain"/></td>
-      <td>12.78</td>
+      <td>12.22</td>
       <td>16.11</td>
       <td>0.47</td>
-      <td>80%</td>
+      <td>75%</td>
       <td>30%</td>
     </tr>
     <tr>
       <td>(10-31) Fri</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/06_iday_simple.svg" title="Overcast with rain"/></td>
-      <td>11.67</td>
+      <td>12.22</td>
       <td>16.67</td>
       <td>0.45</td>
-      <td>75%</td>
-      <td>15%</td>
+      <td>85%</td>
+      <td>30%</td>
     </tr>
     <tr>
       <td>(11-1) Sat</td>
-      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/16_iday_simple.svg" title="Mostly cloudy with occasional rain"/></td>
-      <td>13.33</td>
+      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/14_iday_simple.svg" title="Mostly cloudy with rain"/></td>
+      <td>13.89</td>
       <td>17.22</td>
-      <td>0.02</td>
-      <td>70%</td>
+      <td>0.23</td>
+      <td>75%</td>
       <td>15%</td>
     </tr>
     <tr>
       <td>(11-2) Sun</td>
-      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/14_iday_simple.svg" title="Mostly cloudy with rain"/></td>
+      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/06_iday_simple.svg" title="Overcast with rain"/></td>
       <td>11.67</td>
       <td>16.67</td>
-      <td>0.87</td>
+      <td>0.84</td>
       <td>70%</td>
-      <td>15%</td>
+      <td>10%</td>
     </tr>
     <tr>
       <td>(11-3) Mon</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/06_iday_simple.svg" title="Overcast with rain"/></td>
-      <td>12.78</td>
+      <td>12.22</td>
       <td>16.11</td>
-      <td>0.51</td>
-      <td>75%</td>
-      <td>15%</td>
+      <td>0.48</td>
+      <td>70%</td>
+      <td>10%</td>
     </tr>
     <tr>
       <td>(11-4) Tue</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/06_iday_simple.svg" title="Overcast with rain"/></td>
-      <td>12.22</td>
-      <td>15.00</td>
-      <td>0.63</td>
+      <td>12.78</td>
+      <td>16.11</td>
+      <td>0.66</td>
       <td>65%</td>
       <td>15%</td>
     </tr>
     <tr>
       <td>(11-5) Wed</td>
-      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/07_iday_simple.svg" title="Mixed with showers"/></td>
-      <td>10.56</td>
-      <td>14.44</td>
-      <td>0.51</td>
-      <td>55%</td>
+      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/14_iday_simple.svg" title="Mostly cloudy with rain"/></td>
+      <td>11.67</td>
+      <td>15.56</td>
+      <td>0.53</td>
+      <td>60%</td>
       <td>10%</td>
     </tr>
     <tr>
       <td>(11-6) Thu</td>
-      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/07_iday_simple.svg" title="Mixed with showers"/></td>
-      <td>10.00</td>
+      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/14_iday_simple.svg" title="Mostly cloudy with rain"/></td>
+      <td>10.56</td>
       <td>15.00</td>
-      <td>0.50</td>
-      <td>50%</td>
+      <td>0.48</td>
+      <td>55%</td>
       <td>10%</td>
     </tr>
     <tr>
       <td>(11-7) Fri</td>
-      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/14_iday_simple.svg" title="Mostly cloudy with rain"/></td>
-      <td>10.56</td>
-      <td>15.56</td>
-      <td>0.50</td>
-      <td>45%</td>
+      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/02_iday_simple.svg" title="Clear and few clouds"/></td>
+      <td>10.00</td>
+      <td>16.11</td>
+      <td>0.00</td>
+      <td>40%</td>
       <td>15%</td>
     </tr>
     <tr>
       <td>(11-8) Sat</td>
-      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/03_iday_simple.svg" title="Partly cloudy"/></td>
-      <td>11.11</td>
-      <td>16.11</td>
+      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/02_iday_simple.svg" title="Clear and few clouds"/></td>
+      <td>10.56</td>
+      <td>16.67</td>
       <td>0.00</td>
-      <td>45%</td>
-      <td>10%</td>
+      <td>40%</td>
+      <td>20%</td>
     </tr>
   </tbody>
 </table></div>
@@ -160,7 +160,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
       <td>11.67</td>
       <td>20.56</td>
       <td>0.0000</td>
-      <td>5%</td>
+      <td>0%</td>
       <td>Clear and few clouds</td>
     </tr>
     <tr>
@@ -176,7 +176,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
       <td>13.33</td>
       <td>17.78</td>
       <td>0.7033</td>
-      <td>95%</td>
+      <td>100%</td>
       <td>Showers, thunderstorms likely</td>
     </tr>
     <tr>
@@ -184,32 +184,32 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
       <td>13.89</td>
       <td>17.78</td>
       <td>0.3788</td>
-      <td>85%</td>
+      <td>60%</td>
       <td>Showers, thunderstorms likely</td>
     </tr>
     <tr>
       <td>30 (Thu)</td>
-      <td>12.78</td>
+      <td>12.22</td>
       <td>16.11</td>
       <td>0.4663</td>
-      <td>80%</td>
+      <td>75%</td>
       <td>Mostly cloudy with rain</td>
     </tr>
     <tr>
       <td>31 (Fri)</td>
-      <td>11.67</td>
+      <td>12.22</td>
       <td>16.67</td>
       <td>0.4458</td>
-      <td>75%</td>
+      <td>85%</td>
       <td>Overcast with rain</td>
     </tr>
     <tr>
       <td>1 (Sat)</td>
-      <td>13.33</td>
+      <td>13.89</td>
       <td>17.22</td>
-      <td>0.0157</td>
-      <td>70%</td>
-      <td>Mostly cloudy with occasional rain</td>
+      <td>0.2323</td>
+      <td>75%</td>
+      <td>Mostly cloudy with rain</td>
     </tr>
   </tbody>
 </table></div>
@@ -975,11 +975,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Oct 25</td>
-      <td>619</td>
+      <td>621</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>5723</td>
+      <td>5725</td>
     </tr>
   </tbody>
 </table>
