@@ -17,7 +17,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(10-26) Sun</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/02_iday_simple.svg" title="Clear and few clouds"/></td>
       <td>12.22</td>
-      <td>19.44</td>
+      <td>18.89</td>
       <td>0.00</td>
       <td>0%</td>
       <td>65%</td>
@@ -25,8 +25,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(10-27) Mon</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/02_iday_simple.svg" title="Clear and few clouds"/></td>
-      <td>11.11</td>
-      <td>19.44</td>
+      <td>11.67</td>
+      <td>20.00</td>
       <td>0.00</td>
       <td>0%</td>
       <td>80%</td>
@@ -34,9 +34,9 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(10-28) Tue</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/14_iday_simple.svg" title="Mostly cloudy with rain"/></td>
-      <td>13.33</td>
+      <td>13.89</td>
       <td>17.78</td>
-      <td>0.42</td>
+      <td>0.77</td>
       <td>90%</td>
       <td>50%</td>
     </tr>
@@ -45,34 +45,34 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/08_iday_simple.svg" title="Showers, thunderstorms likely"/></td>
       <td>13.89</td>
       <td>17.22</td>
-      <td>0.56</td>
+      <td>0.98</td>
       <td>95%</td>
       <td>40%</td>
     </tr>
     <tr>
       <td>(10-30) Thu</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/08_iday_simple.svg" title="Showers, thunderstorms likely"/></td>
-      <td>12.78</td>
+      <td>12.22</td>
       <td>15.56</td>
-      <td>0.75</td>
+      <td>0.71</td>
       <td>85%</td>
       <td>25%</td>
     </tr>
     <tr>
       <td>(10-31) Fri</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/16_iday_simple.svg" title="Mostly cloudy with occasional rain"/></td>
-      <td>11.67</td>
-      <td>16.67</td>
-      <td>0.05</td>
+      <td>11.11</td>
+      <td>16.11</td>
+      <td>0.18</td>
       <td>70%</td>
       <td>25%</td>
     </tr>
     <tr>
       <td>(11-1) Sat</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/07_iday_simple.svg" title="Mixed with showers"/></td>
-      <td>13.89</td>
-      <td>17.78</td>
-      <td>0.43</td>
+      <td>13.33</td>
+      <td>16.67</td>
+      <td>1.15</td>
       <td>70%</td>
       <td>15%</td>
     </tr>
@@ -88,7 +88,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(11-3) Mon</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/14_iday_simple.svg" title="Mostly cloudy with rain"/></td>
-      <td>12.22</td>
+      <td>11.67</td>
       <td>15.00</td>
       <td>0.56</td>
       <td>75%</td>
@@ -106,7 +106,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(11-5) Wed</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday_simple.svg" title="Clear, cloudless sky"/></td>
-      <td>11.11</td>
+      <td>10.56</td>
       <td>15.56</td>
       <td>0.00</td>
       <td>45%</td>
@@ -124,7 +124,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(11-7) Fri</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/02_iday_simple.svg" title="Clear and few clouds"/></td>
-      <td>12.22</td>
+      <td>11.67</td>
       <td>16.11</td>
       <td>0.00</td>
       <td>40%</td>
@@ -134,7 +134,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(11-8) Sat</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/02_iday_simple.svg" title="Clear and few clouds"/></td>
       <td>11.67</td>
-      <td>17.22</td>
+      <td>16.67</td>
       <td>0.00</td>
       <td>45%</td>
       <td>15%</td>
@@ -158,24 +158,24 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     <tr>
       <td>26 (Sun)</td>
       <td>12.22</td>
-      <td>19.44</td>
+      <td>18.89</td>
       <td>0.0000</td>
       <td>0%</td>
       <td>Clear and few clouds</td>
     </tr>
     <tr>
       <td>27 (Mon)</td>
-      <td>11.11</td>
-      <td>19.44</td>
+      <td>11.67</td>
+      <td>20.00</td>
       <td>0.0000</td>
       <td>0%</td>
       <td>Clear and few clouds</td>
     </tr>
     <tr>
       <td>28 (Tue)</td>
-      <td>13.33</td>
+      <td>13.89</td>
       <td>17.78</td>
-      <td>0.4220</td>
+      <td>0.7741</td>
       <td>90%</td>
       <td>Mostly cloudy with rain</td>
     </tr>
@@ -183,31 +183,31 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
       <td>29 (Wed)</td>
       <td>13.89</td>
       <td>17.22</td>
-      <td>0.5591</td>
+      <td>0.9793</td>
       <td>95%</td>
       <td>Showers, thunderstorms likely</td>
     </tr>
     <tr>
       <td>30 (Thu)</td>
-      <td>12.78</td>
+      <td>12.22</td>
       <td>15.56</td>
-      <td>0.7543</td>
+      <td>0.7129</td>
       <td>85%</td>
       <td>Showers, thunderstorms likely</td>
     </tr>
     <tr>
       <td>31 (Fri)</td>
-      <td>11.67</td>
-      <td>16.67</td>
-      <td>0.0472</td>
+      <td>11.11</td>
+      <td>16.11</td>
+      <td>0.1783</td>
       <td>70%</td>
       <td>Mostly cloudy with occasional rain</td>
     </tr>
     <tr>
       <td>1 (Sat)</td>
-      <td>13.89</td>
-      <td>17.78</td>
-      <td>0.4291</td>
+      <td>13.33</td>
+      <td>16.67</td>
+      <td>1.1535</td>
       <td>70%</td>
       <td>Mixed with showers</td>
     </tr>
@@ -975,11 +975,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Oct 25</td>
-      <td>603</td>
+      <td>605</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>5707</td>
+      <td>5709</td>
     </tr>
   </tbody>
 </table>
