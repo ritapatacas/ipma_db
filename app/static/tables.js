@@ -17,9 +17,9 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(10-30) Thu</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/16_iday_simple.svg" title="Mostly cloudy with occasional rain"/></td>
       <td>10.00</td>
-      <td>16.11</td>
+      <td>17.22</td>
       <td>0.01</td>
-      <td>20%</td>
+      <td>25%</td>
       <td>75%</td>
     </tr>
     <tr>
@@ -158,9 +158,9 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     <tr>
       <td>30 (Thu)</td>
       <td>10.00</td>
-      <td>16.11</td>
+      <td>17.22</td>
       <td>0.0079</td>
-      <td>20%</td>
+      <td>25%</td>
       <td>Mostly cloudy with occasional rain</td>
     </tr>
     <tr>
@@ -785,6 +785,18 @@ window.observationsTable = `
   </thead>
   <tbody>
     <tr>
+      <td>29 Oct</td>
+      <td>4.167062</td>
+      <td>3.625396</td>
+      <td>3.106348</td>
+      <td>1.060714</td>
+      <td>0.295249</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
       <td>28 Oct</td>
       <td>23.823599</td>
       <td>20.267438</td>
@@ -851,18 +863,6 @@ window.observationsTable = `
       <td>3.330805</td>
       <td>1.704283</td>
       <td>0.401512</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <td>21 Oct</td>
-      <td>20.170073</td>
-      <td>15.382713</td>
-      <td>12.180083</td>
-      <td>7.989989</td>
-      <td>2.056332</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -975,11 +975,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Oct 25</td>
-      <td>709</td>
+      <td>711</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>5813</td>
+      <td>5815</td>
     </tr>
   </tbody>
 </table>
