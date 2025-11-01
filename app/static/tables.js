@@ -18,7 +18,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/08_iday_simple.svg" title="Showers, thunderstorms likely"/></td>
       <td>11.11</td>
       <td>16.11</td>
-      <td>2.73</td>
+      <td>2.62</td>
       <td>85%</td>
       <td>55%</td>
     </tr>
@@ -64,7 +64,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>10.00</td>
       <td>16.11</td>
       <td>0.00</td>
-      <td>25%</td>
+      <td>20%</td>
       <td>30%</td>
     </tr>
     <tr>
@@ -159,7 +159,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
       <td>1 (Sat)</td>
       <td>11.11</td>
       <td>16.11</td>
-      <td>2.7281</td>
+      <td>2.6194</td>
       <td>85%</td>
       <td>Showers, thunderstorms likely</td>
     </tr>
@@ -200,7 +200,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
       <td>10.00</td>
       <td>16.11</td>
       <td>0.0000</td>
-      <td>25%</td>
+      <td>20%</td>
       <td>Partly cloudy</td>
     </tr>
     <tr>
@@ -979,11 +979,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Nov 25</td>
-      <td>11</td>
+      <td>13</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>5859</td>
+      <td>5861</td>
     </tr>
   </tbody>
 </table>
@@ -1048,11 +1048,11 @@ window.dashboardTable = `<div class="table-container">
             <td><span data-tooltip="Coimbra (36km NW)">C</span>, <span data-tooltip="Castelo Branco (59km ESE)">CB</span>, <span data-tooltip="Leiria (58km WSW)">L</span></td>
         </tr>
         
-        <tr class="orange hover:bg-gray-200 dark:hover:bg-gray-700 transition">
+        <tr class="yellow hover:bg-gray-200 dark:hover:bg-gray-700 transition">
             <td><i class="fa-solid fa-cloud-rain"></i></td>
-            <td class="level"><i class="fa-solid fa-circle" style="color: #f58d38;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
+            <td class="level"><i class="fa-solid fa-circle" style="color: #FFD43B;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
             <td><a href="#" onclick="openModal('modal-Precipitação-01-01-11', event)">01-01/11</a></td>
-            <td><span data-tooltip="Coimbra (36km NW)">C</span>, <span data-tooltip="Castelo Branco (59km ESE)">CB</span>, <span data-tooltip="Leiria (58km WSW)">L</span></td>
+            <td><span data-tooltip="Castelo Branco (59km ESE)">CB</span></td>
         </tr>
         </tbody></table>
     <dialog id="modal-Nevoeiro-01-04-11" class="modal">
@@ -1063,8 +1063,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 01/11 06:28
-        <br><strong>end:</strong> 04/11 06:00
+        <br><strong>start:</strong> 01/11 09:47
+        <br><strong>end:</strong> 04/11 09:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1081,8 +1081,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 01/11 06:28
-        <br><strong>end:</strong> 04/11 06:00
+        <br><strong>start:</strong> 01/11 09:47
+        <br><strong>end:</strong> 04/11 09:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1099,8 +1099,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 01/11 06:28
-        <br><strong>end:</strong> 04/11 06:00
+        <br><strong>start:</strong> 01/11 09:47
+        <br><strong>end:</strong> 04/11 09:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1117,8 +1117,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 01/11 06:28
-        <br><strong>end:</strong> 04/11 06:00
+        <br><strong>start:</strong> 01/11 09:47
+        <br><strong>end:</strong> 04/11 09:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1135,8 +1135,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 01/11 06:28
-        <br><strong>end:</strong> 04/11 06:00
+        <br><strong>start:</strong> 01/11 09:47
+        <br><strong>end:</strong> 04/11 09:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1153,8 +1153,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 01/11 06:28
-        <br><strong>end:</strong> 04/11 06:00
+        <br><strong>start:</strong> 01/11 09:47
+        <br><strong>end:</strong> 04/11 09:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1171,8 +1171,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 01/11 06:28
-        <br><strong>end:</strong> 04/11 06:00
+        <br><strong>start:</strong> 01/11 09:47
+        <br><strong>end:</strong> 04/11 09:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1188,11 +1188,11 @@ window.dashboardTable = `<div class="table-container">
                 <h3>Precipitação</h3>
             </header>
             
-        <strong>alert level:</strong> orange
-        <br><strong>start:</strong> 01/11 06:28
+        <strong>alert level:</strong> yellow
+        <br><strong>start:</strong> 01/11 09:47
         <br><strong>end:</strong> 01/11 12:00
         <hr>
-    <p><strong>Castelo Branco (59km ESE)</strong><br>Precipitação persistente e por vezes forte.<br>Precipitação por vezes forte.</p><p><strong>Leiria (58km WSW)</strong><br>Precipitação por vezes forte.</p><p><strong>Coimbra (36km NW)</strong><br>Precipitação por vezes forte.</p>
+    <p><strong>Castelo Branco (59km ESE)</strong><br>Precipitação persistente e por vezes forte.</p>
             <footer>
                 <button onclick="closeModal('modal-Precipitação-01-01-11', event)">Close</button>
             </footer>
