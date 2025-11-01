@@ -16,9 +16,9 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(11-1) Sat</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/08_iday_simple.svg" title="Showers, thunderstorms likely"/></td>
-      <td>11.11</td>
+      <td>10.56</td>
       <td>16.11</td>
-      <td>2.62</td>
+      <td>2.47</td>
       <td>85%</td>
       <td>55%</td>
     </tr>
@@ -157,9 +157,9 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
   <tbody>
     <tr>
       <td>1 (Sat)</td>
-      <td>11.11</td>
+      <td>10.56</td>
       <td>16.11</td>
-      <td>2.6194</td>
+      <td>2.4669</td>
       <td>85%</td>
       <td>Showers, thunderstorms likely</td>
     </tr>
@@ -785,6 +785,18 @@ window.observationsTable = `
   </thead>
   <tbody>
     <tr>
+      <td>31 Oct</td>
+      <td>33.976181</td>
+      <td>30.846056</td>
+      <td>26.927002</td>
+      <td>7.049179</td>
+      <td>1.955866</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
       <td>30 Oct</td>
       <td>0.125647</td>
       <td>0.068157</td>
@@ -851,18 +863,6 @@ window.observationsTable = `
       <td>19.031689</td>
       <td>5.110601</td>
       <td>1.313926</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <td>24 Oct</td>
-      <td>12.346642</td>
-      <td>8.688485</td>
-      <td>6.628387</td>
-      <td>5.718255</td>
-      <td>1.318442</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -979,11 +979,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Nov 25</td>
-      <td>13</td>
+      <td>15</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>5861</td>
+      <td>5863</td>
     </tr>
   </tbody>
 </table>
@@ -1046,13 +1046,6 @@ window.dashboardTable = `<div class="table-container">
             <td class="level"><i class="fa-solid fa-circle" style="color: #26ba81;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
             <td><a href="#" onclick="openModal('modal-Vento-01-04-11', event)">01-04/11</a></td>
             <td><span data-tooltip="Coimbra (36km NW)">C</span>, <span data-tooltip="Castelo Branco (59km ESE)">CB</span>, <span data-tooltip="Leiria (58km WSW)">L</span></td>
-        </tr>
-        
-        <tr class="yellow hover:bg-gray-200 dark:hover:bg-gray-700 transition">
-            <td><i class="fa-solid fa-cloud-rain"></i></td>
-            <td class="level"><i class="fa-solid fa-circle" style="color: #FFD43B;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
-            <td><a href="#" onclick="openModal('modal-Precipitação-01-01-11', event)">01-01/11</a></td>
-            <td><span data-tooltip="Castelo Branco (59km ESE)">CB</span></td>
         </tr>
         </tbody></table>
     <dialog id="modal-Nevoeiro-01-04-11" class="modal">
@@ -1177,24 +1170,6 @@ window.dashboardTable = `<div class="table-container">
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
                 <button onclick="closeModal('modal-Vento-01-04-11', event)">Close</button>
-            </footer>
-        </article>
-    </dialog>
-    
-    <dialog id="modal-Precipitação-01-01-11" class="modal">
-        <article>
-            <header>
-                <a href="#" class="close" aria-label="Close" onclick="closeModal('modal-Precipitação-01-01-11', event)"></a>
-                <h3>Precipitação</h3>
-            </header>
-            
-        <strong>alert level:</strong> yellow
-        <br><strong>start:</strong> 01/11 09:47
-        <br><strong>end:</strong> 01/11 12:00
-        <hr>
-    <p><strong>Castelo Branco (59km ESE)</strong><br>Precipitação persistente e por vezes forte.</p>
-            <footer>
-                <button onclick="closeModal('modal-Precipitação-01-01-11', event)">Close</button>
             </footer>
         </article>
     </dialog>
