@@ -979,11 +979,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Nov 25</td>
-      <td>59</td>
+      <td>61</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>5907</td>
+      <td>5909</td>
     </tr>
   </tbody>
 </table>
@@ -1052,7 +1052,7 @@ window.dashboardTable = `<div class="table-container">
             <td><i class="fa-solid fa-wind"></i></td>
             <td class="level"><i class="fa-solid fa-circle" style="color: #FFD43B;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
             <td><a href="#" onclick="openModal('modal-Vento-04-05-11', event)">04-05/11</a></td>
-            <td><span data-tooltip="Coimbra (36km NW)">C</span>, <span data-tooltip="Leiria (58km WSW)">L</span></td>
+            <td><span data-tooltip="Coimbra (36km NW)">C</span>, <span data-tooltip="Castelo Branco (59km ESE)">CB</span>, <span data-tooltip="Leiria (58km WSW)">L</span></td>
         </tr>
         
         <tr class="yellow hover:bg-gray-200 dark:hover:bg-gray-700 transition">
@@ -1070,8 +1070,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 03/11 07:47
-        <br><strong>end:</strong> 06/11 07:00
+        <br><strong>start:</strong> 03/11 09:20
+        <br><strong>end:</strong> 06/11 09:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1088,8 +1088,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 03/11 07:47
-        <br><strong>end:</strong> 06/11 07:00
+        <br><strong>start:</strong> 03/11 09:20
+        <br><strong>end:</strong> 06/11 09:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1106,8 +1106,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 03/11 07:47
-        <br><strong>end:</strong> 06/11 07:00
+        <br><strong>start:</strong> 03/11 09:20
+        <br><strong>end:</strong> 06/11 09:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1124,8 +1124,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 03/11 07:47
-        <br><strong>end:</strong> 06/11 07:00
+        <br><strong>start:</strong> 03/11 09:20
+        <br><strong>end:</strong> 06/11 09:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1142,8 +1142,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 03/11 07:47
-        <br><strong>end:</strong> 06/11 07:00
+        <br><strong>start:</strong> 03/11 09:20
+        <br><strong>end:</strong> 06/11 09:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1160,8 +1160,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 03/11 07:47
-        <br><strong>end:</strong> 06/11 07:00
+        <br><strong>start:</strong> 03/11 09:20
+        <br><strong>end:</strong> 06/11 09:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1178,8 +1178,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 03/11 07:47
-        <br><strong>end:</strong> 06/11 07:00
+        <br><strong>start:</strong> 03/11 09:20
+        <br><strong>end:</strong> 06/11 09:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1197,9 +1197,9 @@ window.dashboardTable = `<div class="table-container">
             
         <strong>alert level:</strong> yellow
         <br><strong>start:</strong> 04/11 21:00
-        <br><strong>end:</strong> 05/11 06:00
+        <br><strong>end:</strong> 05/11 09:00
         <hr>
-    <p><strong>Leiria (58km WSW)</strong><br>Vento forte do quadrante sul, com rajadas até 80 km/h.</p><p><strong>Coimbra (36km NW)</strong><br>Vento forte do quadrante sul, com rajadas até 80 km/h.</p>
+    <p><strong>Leiria (58km WSW)</strong><br>Vento forte do quadrante sul, com rajadas da  ordem de 80 km/h no litoral, e da ordem de 90 km/h nas terras altas.</p><p><strong>Castelo Branco (59km ESE)</strong><br>Nas terras altas, vento forte do quadrante sul, com rajadas da  ordem de 100 km/h, podendo atingir 110 km/h na serra da Estrela.</p><p><strong>Coimbra (36km NW)</strong><br>Vento forte do quadrante sul, com rajadas da  ordem de 80 km/h no litoral, e da ordem de 100 km/h nas terras altas.</p>
             <footer>
                 <button onclick="closeModal('modal-Vento-04-05-11', event)">Close</button>
             </footer>
