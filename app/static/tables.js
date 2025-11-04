@@ -37,7 +37,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>8.33</td>
       <td>14.44</td>
       <td>0.42</td>
-      <td>45%</td>
+      <td>40%</td>
       <td>40%</td>
     </tr>
     <tr>
@@ -176,7 +176,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
       <td>8.33</td>
       <td>14.44</td>
       <td>0.4175</td>
-      <td>45%</td>
+      <td>40%</td>
       <td>Mixed with showers</td>
     </tr>
     <tr>
@@ -785,6 +785,30 @@ window.observationsTable = `
   </thead>
   <tbody>
     <tr>
+      <td>03 Nov</td>
+      <td>0.013695</td>
+      <td>0.011667</td>
+      <td>0.008155</td>
+      <td>0.005540</td>
+      <td>0.001123</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>02 Nov</td>
+      <td>0.096467</td>
+      <td>0.089563</td>
+      <td>0.078451</td>
+      <td>0.018016</td>
+      <td>0.004196</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
       <td>01 Nov</td>
       <td>34.385578</td>
       <td>31.910626</td>
@@ -839,30 +863,6 @@ window.observationsTable = `
       <td>15.483845</td>
       <td>8.339754</td>
       <td>1.939559</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <td>27 Oct</td>
-      <td>0.003595</td>
-      <td>0.001253</td>
-      <td>0.000000</td>
-      <td>0.003595</td>
-      <td>0.001260</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <td>26 Oct</td>
-      <td>0.047396</td>
-      <td>0.034170</td>
-      <td>0.018535</td>
-      <td>0.028861</td>
-      <td>0.007919</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -979,11 +979,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Nov 25</td>
-      <td>85</td>
+      <td>87</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>5933</td>
+      <td>5935</td>
     </tr>
   </tbody>
 </table>
