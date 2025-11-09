@@ -17,7 +17,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(11-9) Sun</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/05_iday_simple.svg" title="Fog"/></td>
       <td>6.67</td>
-      <td>15.00</td>
+      <td>15.56</td>
       <td>0.00</td>
       <td>5%</td>
       <td>85%</td>
@@ -25,7 +25,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(11-10) Mon</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/16_iday_simple.svg" title="Mostly cloudy with occasional rain"/></td>
-      <td>10.00</td>
+      <td>9.44</td>
       <td>14.44</td>
       <td>0.02</td>
       <td>25%</td>
@@ -134,7 +134,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(11-22) Sat</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday_simple.svg" title="Clear, cloudless sky"/></td>
       <td>6.67</td>
-      <td>12.22</td>
+      <td>12.78</td>
       <td>0.00</td>
       <td>30%</td>
       <td>15%</td>
@@ -158,14 +158,14 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     <tr>
       <td>9 (Sun)</td>
       <td>6.67</td>
-      <td>15.00</td>
+      <td>15.56</td>
       <td>0.0000</td>
       <td>5%</td>
       <td>Fog</td>
     </tr>
     <tr>
       <td>10 (Mon)</td>
-      <td>10.00</td>
+      <td>9.44</td>
       <td>14.44</td>
       <td>0.0233</td>
       <td>25%</td>
@@ -207,7 +207,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
       <td>15 (Sat)</td>
       <td>12.22</td>
       <td>14.44</td>
-      <td>0.9698</td>
+      <td>0.9724</td>
       <td>100%</td>
       <td>Mostly cloudy with rain</td>
     </tr>
@@ -979,11 +979,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Nov 25</td>
-      <td>209</td>
+      <td>211</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>6057</td>
+      <td>6059</td>
     </tr>
   </tbody>
 </table>
