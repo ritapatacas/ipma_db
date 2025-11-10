@@ -81,7 +81,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/14_iday_simple.svg" title="Mostly cloudy with rain"/></td>
       <td>9.44</td>
       <td>13.33</td>
-      <td>0.32</td>
+      <td>0.30</td>
       <td>80%</td>
       <td>30%</td>
     </tr>
@@ -90,7 +90,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/07_iday_simple.svg" title="Mixed with showers"/></td>
       <td>8.33</td>
       <td>12.78</td>
-      <td>0.19</td>
+      <td>0.15</td>
       <td>40%</td>
       <td>25%</td>
     </tr>
@@ -108,7 +108,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/06_iday_simple.svg" title="Overcast with rain"/></td>
       <td>7.22</td>
       <td>11.11</td>
-      <td>0.76</td>
+      <td>0.60</td>
       <td>60%</td>
       <td>5%</td>
     </tr>
@@ -117,7 +117,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/14_iday_simple.svg" title="Mostly cloudy with rain"/></td>
       <td>7.78</td>
       <td>12.78</td>
-      <td>0.33</td>
+      <td>0.29</td>
       <td>50%</td>
       <td>5%</td>
     </tr>
@@ -785,6 +785,18 @@ window.observationsTable = `
   </thead>
   <tbody>
     <tr>
+      <td>09 Nov</td>
+      <td>0.091557</td>
+      <td>0.049302</td>
+      <td>0.023653</td>
+      <td>0.067905</td>
+      <td>0.017091</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
       <td>08 Nov</td>
       <td>0.201596</td>
       <td>0.194001</td>
@@ -851,18 +863,6 @@ window.observationsTable = `
       <td>0.078451</td>
       <td>0.018016</td>
       <td>0.004196</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <td>01 Nov</td>
-      <td>34.385578</td>
-      <td>31.910626</td>
-      <td>26.973309</td>
-      <td>7.412270</td>
-      <td>1.586577</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -979,11 +979,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Nov 25</td>
-      <td>229</td>
+      <td>231</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>6077</td>
+      <td>6079</td>
     </tr>
   </tbody>
 </table>
