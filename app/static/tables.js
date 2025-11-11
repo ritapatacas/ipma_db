@@ -785,6 +785,18 @@ window.observationsTable = `
   </thead>
   <tbody>
     <tr>
+      <td>10 Nov</td>
+      <td>2.713782</td>
+      <td>2.074893</td>
+      <td>0.948845</td>
+      <td>1.764937</td>
+      <td>0.419939</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
       <td>09 Nov</td>
       <td>0.091557</td>
       <td>0.049302</td>
@@ -851,18 +863,6 @@ window.observationsTable = `
       <td>0.008155</td>
       <td>0.005540</td>
       <td>0.001123</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <td>02 Nov</td>
-      <td>0.096467</td>
-      <td>0.089563</td>
-      <td>0.078451</td>
-      <td>0.018016</td>
-      <td>0.004196</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>NaN</td>
@@ -979,11 +979,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Nov 25</td>
-      <td>251</td>
+      <td>255</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>6099</td>
+      <td>6103</td>
     </tr>
   </tbody>
 </table>
@@ -1070,8 +1070,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 11/11 07:24
-        <br><strong>end:</strong> 14/11 07:00
+        <br><strong>start:</strong> 11/11 12:38
+        <br><strong>end:</strong> 14/11 12:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1088,8 +1088,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 11/11 07:24
-        <br><strong>end:</strong> 14/11 07:00
+        <br><strong>start:</strong> 11/11 12:38
+        <br><strong>end:</strong> 14/11 12:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1106,8 +1106,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 11/11 07:24
-        <br><strong>end:</strong> 14/11 07:00
+        <br><strong>start:</strong> 11/11 12:38
+        <br><strong>end:</strong> 14/11 12:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1124,8 +1124,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 11/11 07:24
-        <br><strong>end:</strong> 14/11 07:00
+        <br><strong>start:</strong> 11/11 12:38
+        <br><strong>end:</strong> 14/11 12:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1142,8 +1142,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 11/11 07:24
-        <br><strong>end:</strong> 14/11 07:00
+        <br><strong>start:</strong> 11/11 12:38
+        <br><strong>end:</strong> 14/11 12:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1160,8 +1160,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 11/11 07:24
-        <br><strong>end:</strong> 14/11 07:00
+        <br><strong>start:</strong> 11/11 12:38
+        <br><strong>end:</strong> 14/11 12:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1178,8 +1178,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 11/11 07:24
-        <br><strong>end:</strong> 14/11 07:00
+        <br><strong>start:</strong> 11/11 12:38
+        <br><strong>end:</strong> 14/11 12:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1215,9 +1215,9 @@ window.dashboardTable = `<div class="table-container">
             
         <strong>alert level:</strong> yellow
         <br><strong>start:</strong> 13/11 03:00
-        <br><strong>end:</strong> 13/11 18:00
+        <br><strong>end:</strong> 13/11 21:00
         <hr>
-    <p><strong>Leiria (58km WSW)</strong><br>Rajadas até 80 km/h, em especial no litoral, sendo até 90 km/h nas serras.</p><p><strong>Coimbra (36km NW)</strong><br>Rajadas até 80 km/h, em especial no litoral, sendo até 90 km/h nas serras.</p><p><strong>Castelo Branco (59km ESE)</strong><br>Rajadas até 100 km/h nas terras altas.</p>
+    <p><strong>Leiria (58km WSW)</strong><br>Rajadas até 80 km/h, em especial no litoral, sendo até 90 km/h nas serras.</p><p><strong>Coimbra (36km NW)</strong><br>Rajadas até 80 km/h, em especial no litoral, sendo até 90 km/h nas serras.</p><p><strong>Castelo Branco (59km ESE)</strong><br>Rajadas até 110 km/h nas terras altas.</p>
             <footer>
                 <button onclick="closeModal('modal-Vento-13-13-11', event)">Close</button>
             </footer>
