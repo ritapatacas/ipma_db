@@ -18,8 +18,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/08_iday_simple.svg" title="Showers, thunderstorms likely"/></td>
       <td>12.22</td>
       <td>16.11</td>
-      <td>0.95</td>
-      <td>95%</td>
+      <td>1.74</td>
+      <td>90%</td>
       <td>55%</td>
     </tr>
     <tr>
@@ -27,7 +27,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/08_iday_simple.svg" title="Showers, thunderstorms likely"/></td>
       <td>13.33</td>
       <td>15.56</td>
-      <td>2.48</td>
+      <td>2.58</td>
       <td>95%</td>
       <td>55%</td>
     </tr>
@@ -36,7 +36,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/08_iday_simple.svg" title="Showers, thunderstorms likely"/></td>
       <td>12.22</td>
       <td>13.33</td>
-      <td>0.40</td>
+      <td>0.39</td>
       <td>100%</td>
       <td>55%</td>
     </tr>
@@ -44,8 +44,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(11-15) Sat</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/08_iday_simple.svg" title="Showers, thunderstorms likely"/></td>
       <td>11.67</td>
-      <td>13.89</td>
-      <td>0.90</td>
+      <td>13.33</td>
+      <td>0.91</td>
       <td>95%</td>
       <td>50%</td>
     </tr>
@@ -54,16 +54,16 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/08_iday_simple.svg" title="Showers, thunderstorms likely"/></td>
       <td>11.11</td>
       <td>12.22</td>
-      <td>0.30</td>
+      <td>0.55</td>
       <td>100%</td>
-      <td>45%</td>
+      <td>50%</td>
     </tr>
     <tr>
       <td>(11-17) Mon</td>
-      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/03_iday_simple.svg" title="Partly cloudy"/></td>
+      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/16_iday_simple.svg" title="Mostly cloudy with occasional rain"/></td>
       <td>9.44</td>
       <td>13.89</td>
-      <td>0.00</td>
+      <td>0.09</td>
       <td>35%</td>
       <td>45%</td>
     </tr>
@@ -133,7 +133,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(11-25) Tue</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday_simple.svg" title="Clear, cloudless sky"/></td>
-      <td>8.33</td>
+      <td>7.78</td>
       <td>12.78</td>
       <td>0.00</td>
       <td>20%</td>
@@ -159,15 +159,15 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
       <td>12 (Wed)</td>
       <td>12.22</td>
       <td>16.11</td>
-      <td>0.9462</td>
-      <td>95%</td>
+      <td>1.7428</td>
+      <td>90%</td>
       <td>Showers, thunderstorms likely</td>
     </tr>
     <tr>
       <td>13 (Thu)</td>
       <td>13.33</td>
       <td>15.56</td>
-      <td>2.4780</td>
+      <td>2.5802</td>
       <td>95%</td>
       <td>Showers, thunderstorms likely</td>
     </tr>
@@ -175,15 +175,15 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
       <td>14 (Fri)</td>
       <td>12.22</td>
       <td>13.33</td>
-      <td>0.4006</td>
+      <td>0.3940</td>
       <td>100%</td>
       <td>Showers, thunderstorms likely</td>
     </tr>
     <tr>
       <td>15 (Sat)</td>
       <td>11.67</td>
-      <td>13.89</td>
-      <td>0.8962</td>
+      <td>13.33</td>
+      <td>0.9125</td>
       <td>95%</td>
       <td>Showers, thunderstorms likely</td>
     </tr>
@@ -191,7 +191,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
       <td>16 (Sun)</td>
       <td>11.11</td>
       <td>12.22</td>
-      <td>0.2997</td>
+      <td>0.5457</td>
       <td>100%</td>
       <td>Showers, thunderstorms likely</td>
     </tr>
@@ -199,9 +199,9 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
       <td>17 (Mon)</td>
       <td>9.44</td>
       <td>13.89</td>
-      <td>0.0000</td>
+      <td>0.0894</td>
       <td>35%</td>
-      <td>Partly cloudy</td>
+      <td>Mostly cloudy with occasional rain</td>
     </tr>
     <tr>
       <td>18 (Tue)</td>
@@ -979,11 +979,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Nov 25</td>
-      <td>285</td>
+      <td>287</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>6133</td>
+      <td>6135</td>
     </tr>
   </tbody>
 </table>
@@ -999,13 +999,6 @@ window.dashboardTable = `<div class="table-container">
         </thead>
         <tbody>
     
-        <tr class="yellow hover:bg-gray-200 dark:hover:bg-gray-700 transition">
-            <td><i class="fa-solid fa-cloud-rain"></i></td>
-            <td class="level"><i class="fa-solid fa-circle" style="color: #FFD43B;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
-            <td><a href="#" onclick="openModal('modal-Precipitação-12-12-11', event)">12-12/11</a></td>
-            <td><span data-tooltip="Coimbra (36km NW)">C</span>, <span data-tooltip="Castelo Branco (59km ESE)">CB</span>, <span data-tooltip="Leiria (58km WSW)">L</span></td>
-        </tr>
-        
         <tr class="green hover:bg-gray-200 dark:hover:bg-gray-700 transition">
             <td><i class="fa-solid fa-smog"></i></td>
             <td class="level"><i class="fa-solid fa-circle" style="color: #26ba81;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
@@ -1076,24 +1069,6 @@ window.dashboardTable = `<div class="table-container">
             <td><span data-tooltip="Coimbra (36km NW)">C</span>, <span data-tooltip="Castelo Branco (59km ESE)">CB</span>, <span data-tooltip="Leiria (58km WSW)">L</span></td>
         </tr>
         </tbody></table>
-    <dialog id="modal-Precipitação-12-12-11" class="modal">
-        <article>
-            <header>
-                <a href="#" class="close" aria-label="Close" onclick="closeModal('modal-Precipitação-12-12-11', event)"></a>
-                <h3>Precipitação</h3>
-            </header>
-            
-        <strong>alert level:</strong> yellow
-        <br><strong>start:</strong> 12/11 18:51
-        <br><strong>end:</strong> 12/11 21:00
-        <hr>
-    <p><strong>Leiria (58km WSW)</strong><br>Precipitação, por vezes forte e persistente.</p><p><strong>Castelo Branco (59km ESE)</strong><br>Precipitação, por vezes forte e persistente.</p><p><strong>Coimbra (36km NW)</strong><br>Precipitação, por vezes forte e persistente.</p>
-            <footer>
-                <button onclick="closeModal('modal-Precipitação-12-12-11', event)">Close</button>
-            </footer>
-        </article>
-    </dialog>
-    
     <dialog id="modal-Nevoeiro-12-15-11" class="modal">
         <article>
             <header>
