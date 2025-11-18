@@ -26,7 +26,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(11-19) Wed</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/05_iday_simple.svg" title="Fog"/></td>
       <td>7.22</td>
-      <td>12.78</td>
+      <td>13.33</td>
       <td>0.00</td>
       <td>0%</td>
       <td>80%</td>
@@ -70,7 +70,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(11-24) Mon</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/14_iday_simple.svg" title="Mostly cloudy with rain"/></td>
-      <td>10.00</td>
+      <td>10.56</td>
       <td>12.22</td>
       <td>0.51</td>
       <td>75%</td>
@@ -124,7 +124,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(11-30) Sun</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/02_iday_simple.svg" title="Clear and few clouds"/></td>
-      <td>8.33</td>
+      <td>7.78</td>
       <td>11.67</td>
       <td>0.00</td>
       <td>30%</td>
@@ -159,14 +159,14 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
       <td>18 (Tue)</td>
       <td>6.67</td>
       <td>15.56</td>
-      <td>0.0021</td>
+      <td>0.0039</td>
       <td>0%</td>
       <td>Mixed with showers</td>
     </tr>
     <tr>
       <td>19 (Wed)</td>
       <td>7.22</td>
-      <td>12.78</td>
+      <td>13.33</td>
       <td>0.0000</td>
       <td>0%</td>
       <td>Fog</td>
@@ -205,7 +205,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     </tr>
     <tr>
       <td>24 (Mon)</td>
-      <td>10.00</td>
+      <td>10.56</td>
       <td>12.22</td>
       <td>0.5064</td>
       <td>75%</td>
@@ -979,11 +979,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Nov 25</td>
-      <td>419</td>
+      <td>421</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>6267</td>
+      <td>6269</td>
     </tr>
   </tbody>
 </table>
