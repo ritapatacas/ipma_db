@@ -80,7 +80,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(11-27) Thu</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday_simple.svg" title="Clear, cloudless sky"/></td>
       <td>5.00</td>
-      <td>12.78</td>
+      <td>12.22</td>
       <td>0.00</td>
       <td>10%</td>
       <td>50%</td>
@@ -979,11 +979,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Nov 25</td>
-      <td>467</td>
+      <td>469</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>6315</td>
+      <td>6317</td>
     </tr>
   </tbody>
 </table>
