@@ -17,8 +17,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(12-2) Tue</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/14_iday_simple.svg" title="Mostly cloudy with rain"/></td>
       <td>4.44</td>
-      <td>11.11</td>
-      <td>0.74</td>
+      <td>10.56</td>
+      <td>0.75</td>
       <td>90%</td>
       <td>55%</td>
     </tr>
@@ -98,7 +98,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(12-11) Thu</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/06_iday_simple.svg" title="Overcast with rain"/></td>
       <td>8.89</td>
-      <td>12.22</td>
+      <td>11.67</td>
       <td>0.76</td>
       <td>75%</td>
       <td>10%</td>
@@ -158,8 +158,8 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     <tr>
       <td>2 (Tue)</td>
       <td>4.44</td>
-      <td>11.11</td>
-      <td>0.7407</td>
+      <td>10.56</td>
+      <td>0.7509</td>
       <td>90%</td>
       <td>Mostly cloudy with rain</td>
     </tr>
@@ -983,11 +983,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Dec 25</td>
-      <td>37</td>
+      <td>39</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>6605</td>
+      <td>6607</td>
     </tr>
   </tbody>
 </table>
@@ -1067,8 +1067,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 02/12 07:55
-        <br><strong>end:</strong> 05/12 07:00
+        <br><strong>start:</strong> 02/12 12:09
+        <br><strong>end:</strong> 05/12 12:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1085,8 +1085,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 02/12 07:55
-        <br><strong>end:</strong> 05/12 07:00
+        <br><strong>start:</strong> 02/12 12:09
+        <br><strong>end:</strong> 05/12 12:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1103,8 +1103,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 02/12 07:55
-        <br><strong>end:</strong> 05/12 07:00
+        <br><strong>start:</strong> 02/12 12:09
+        <br><strong>end:</strong> 05/12 12:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1121,8 +1121,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 02/12 07:55
-        <br><strong>end:</strong> 05/12 07:00
+        <br><strong>start:</strong> 02/12 12:09
+        <br><strong>end:</strong> 05/12 12:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1139,8 +1139,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 02/12 07:55
-        <br><strong>end:</strong> 05/12 07:00
+        <br><strong>start:</strong> 02/12 12:09
+        <br><strong>end:</strong> 05/12 12:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1157,8 +1157,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 02/12 07:55
-        <br><strong>end:</strong> 05/12 07:00
+        <br><strong>start:</strong> 02/12 12:09
+        <br><strong>end:</strong> 05/12 12:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1175,8 +1175,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 02/12 07:55
-        <br><strong>end:</strong> 05/12 07:00
+        <br><strong>start:</strong> 02/12 12:09
+        <br><strong>end:</strong> 05/12 12:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1193,7 +1193,7 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> yellow
-        <br><strong>start:</strong> 02/12 07:55
+        <br><strong>start:</strong> 02/12 12:09
         <br><strong>end:</strong> 03/12 00:00
         <hr>
     <p><strong>Castelo Branco (59km ESE)</strong><br>Queda de neve acima de 1200 metros, com acumulação que poderá ser da ordem dos 5 cm acima dos 1400 metros e dos 10 cm nos pontos mais altos da Serra da Estrela.Impactos Prováveis: Perturbação causada por queda de neve com acumulação e possível formação de gelo (p. ex., vias condicionadas ou interditas, danos em estruturas ou árvores, abastecimentos locais prejudicados).</p>
