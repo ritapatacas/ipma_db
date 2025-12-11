@@ -17,7 +17,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(12-11) Thu</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/16_iday_simple.svg" title="Mostly cloudy with occasional rain"/></td>
       <td>8.89</td>
-      <td>12.78</td>
+      <td>12.22</td>
       <td>0.02</td>
       <td>40%</td>
       <td>65%</td>
@@ -25,7 +25,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(12-12) Fri</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/06_iday_simple.svg" title="Overcast with rain"/></td>
-      <td>8.89</td>
+      <td>9.44</td>
       <td>10.56</td>
       <td>0.84</td>
       <td>80%</td>
@@ -61,8 +61,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(12-16) Tue</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/14_iday_simple.svg" title="Mostly cloudy with rain"/></td>
-      <td>6.67</td>
-      <td>10.00</td>
+      <td>7.22</td>
+      <td>10.56</td>
       <td>0.27</td>
       <td>65%</td>
       <td>20%</td>
@@ -70,8 +70,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(12-17) Wed</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/16_iday_simple.svg" title="Mostly cloudy with occasional rain"/></td>
-      <td>5.56</td>
-      <td>12.22</td>
+      <td>6.11</td>
+      <td>13.33</td>
       <td>0.12</td>
       <td>25%</td>
       <td>45%</td>
@@ -79,7 +79,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(12-18) Thu</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/14_iday_simple.svg" title="Mostly cloudy with rain"/></td>
-      <td>8.33</td>
+      <td>8.89</td>
       <td>12.78</td>
       <td>0.49</td>
       <td>60%</td>
@@ -158,14 +158,14 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     <tr>
       <td>11 (Thu)</td>
       <td>8.89</td>
-      <td>12.78</td>
+      <td>12.22</td>
       <td>0.0163</td>
       <td>40%</td>
       <td>Mostly cloudy with occasional rain</td>
     </tr>
     <tr>
       <td>12 (Fri)</td>
-      <td>8.89</td>
+      <td>9.44</td>
       <td>10.56</td>
       <td>0.8438</td>
       <td>80%</td>
@@ -197,16 +197,16 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     </tr>
     <tr>
       <td>16 (Tue)</td>
-      <td>6.67</td>
-      <td>10.00</td>
+      <td>7.22</td>
+      <td>10.56</td>
       <td>0.2740</td>
       <td>65%</td>
       <td>Mostly cloudy with rain</td>
     </tr>
     <tr>
       <td>17 (Wed)</td>
-      <td>5.56</td>
-      <td>12.22</td>
+      <td>6.11</td>
+      <td>13.33</td>
       <td>0.1220</td>
       <td>25%</td>
       <td>Mostly cloudy with occasional rain</td>
@@ -983,11 +983,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Dec 25</td>
-      <td>251</td>
+      <td>253</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>6819</td>
+      <td>6821</td>
     </tr>
   </tbody>
 </table>
@@ -1055,7 +1055,7 @@ window.dashboardTable = `<div class="table-container">
         <tr class="orange hover:bg-gray-200 dark:hover:bg-gray-700 transition">
             <td><i class="fa-solid fa-snowflake"></i></td>
             <td class="level"><i class="fa-solid fa-circle" style="color: #f58d38;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
-            <td><a href="#" onclick="openModal('modal-Neve-11-13-12', event)">11-13/12</a></td>
+            <td><a href="#" onclick="openModal('modal-Neve-12-13-12', event)">12-13/12</a></td>
             <td><span data-tooltip="Castelo Branco (59km ESE)">CB</span></td>
         </tr>
         </tbody></table>
@@ -1067,8 +1067,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 11/12 06:57
-        <br><strong>end:</strong> 14/12 06:00
+        <br><strong>start:</strong> 11/12 09:59
+        <br><strong>end:</strong> 14/12 09:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1085,8 +1085,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 11/12 06:57
-        <br><strong>end:</strong> 14/12 06:00
+        <br><strong>start:</strong> 11/12 09:59
+        <br><strong>end:</strong> 14/12 09:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1103,8 +1103,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 11/12 06:57
-        <br><strong>end:</strong> 14/12 06:00
+        <br><strong>start:</strong> 11/12 09:59
+        <br><strong>end:</strong> 14/12 09:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1121,8 +1121,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 11/12 06:57
-        <br><strong>end:</strong> 14/12 06:00
+        <br><strong>start:</strong> 11/12 09:59
+        <br><strong>end:</strong> 14/12 09:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1139,8 +1139,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 11/12 06:57
-        <br><strong>end:</strong> 14/12 06:00
+        <br><strong>start:</strong> 11/12 09:59
+        <br><strong>end:</strong> 14/12 09:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1157,8 +1157,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 11/12 06:57
-        <br><strong>end:</strong> 14/12 06:00
+        <br><strong>start:</strong> 11/12 09:59
+        <br><strong>end:</strong> 14/12 09:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1175,8 +1175,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 11/12 06:57
-        <br><strong>end:</strong> 14/12 06:00
+        <br><strong>start:</strong> 11/12 09:59
+        <br><strong>end:</strong> 14/12 09:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1185,20 +1185,20 @@ window.dashboardTable = `<div class="table-container">
         </article>
     </dialog>
     
-    <dialog id="modal-Neve-11-13-12" class="modal">
+    <dialog id="modal-Neve-12-13-12" class="modal">
         <article>
             <header>
-                <a href="#" class="close" aria-label="Close" onclick="closeModal('modal-Neve-11-13-12', event)"></a>
+                <a href="#" class="close" aria-label="Close" onclick="closeModal('modal-Neve-12-13-12', event)"></a>
                 <h3>Neve</h3>
             </header>
             
         <strong>alert level:</strong> orange
-        <br><strong>start:</strong> 11/12 21:00
+        <br><strong>start:</strong> 12/12 03:00
         <br><strong>end:</strong> 13/12 00:00
         <hr>
-    <p><strong>Castelo Branco (59km ESE)</strong><br>Queda de neve acima de 1400 m, com acumulação que poderá ser superior a 25 cm acima de 1600 m.Impactos Prováveis: Perturbação moderada causada por queda de neve com acumulação e possível formação de  gelo (p. ex., vias condicionadas ou interditas, danos em estruturas ou árvores, abastecimentos locais prejudicados).</p>
+    <p><strong>Castelo Branco (59km ESE)</strong><br>Queda de neve acima de 1400/1600 m, com acumulação que poderá ser superior a 25 cm nos pontos mais altos da Serra da Estrela.Impactos Prováveis: Perturbação moderada causada por queda de neve com acumulação e possível formação de  gelo (p. ex., vias condicionadas ou interditas, danos em estruturas ou árvores, abastecimentos locais prejudicados).</p>
             <footer>
-                <button onclick="closeModal('modal-Neve-11-13-12', event)">Close</button>
+                <button onclick="closeModal('modal-Neve-12-13-12', event)">Close</button>
             </footer>
         </article>
     </dialog>
