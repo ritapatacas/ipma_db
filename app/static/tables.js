@@ -14,15 +14,6 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
   </thead>
   <tbody>
     <tr>
-      <td>(12-14) Sun</td>
-      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/02_iday_simple.svg" title="Clear and few clouds"/></td>
-      <td>8.33</td>
-      <td>15.56</td>
-      <td>0.00</td>
-      <td>5%</td>
-      <td>75%</td>
-    </tr>
-    <tr>
       <td>(12-15) Mon</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/12_iday_simple.svg" title="Overcast with occasional rain"/></td>
       <td>8.33</td>
@@ -70,7 +61,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(12-20) Sat</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/16_iday_simple.svg" title="Mostly cloudy with occasional rain"/></td>
-      <td>5.00</td>
+      <td>5.56</td>
       <td>10.00</td>
       <td>0.09</td>
       <td>55%</td>
@@ -78,12 +69,12 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     </tr>
     <tr>
       <td>(12-21) Sun</td>
-      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/06_iday_simple.svg" title="Overcast with rain"/></td>
-      <td>6.67</td>
-      <td>10.00</td>
-      <td>0.39</td>
-      <td>65%</td>
-      <td>20%</td>
+      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/16_iday_simple.svg" title="Mostly cloudy with occasional rain"/></td>
+      <td>6.11</td>
+      <td>8.89</td>
+      <td>0.07</td>
+      <td>60%</td>
+      <td>25%</td>
     </tr>
     <tr>
       <td>(12-22) Mon</td>
@@ -139,6 +130,15 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>20%</td>
       <td>40%</td>
     </tr>
+    <tr>
+      <td>(12-28) Sun</td>
+      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday_simple.svg" title="Clear, cloudless sky"/></td>
+      <td>4.44</td>
+      <td>9.44</td>
+      <td>0.00</td>
+      <td>25%</td>
+      <td>35%</td>
+    </tr>
   </tbody>
 </table></div>
   <iframe src="https://www.meteoblue.com/en/weather/maps/widget/troviscais-fundeiros_portugal_2262489?windAnimation=1&gust=1&satellite=1&cloudsAndPrecipitation=1&temperature=1&sunshine=0&extremeForecastIndex=1&geoloc=fixed&tempunit=C&windunit=km%252Fh&lengthunit=metric&zoom=10&autowidth=auto"  frameborder="0" scrolling="NO" allowtransparency="true" sandbox="allow-same-origin allow-scripts allow-popups allow-popups-to-escape-sandbox" style="width: 550px; height: 350px"></iframe><div></div>`;
@@ -155,14 +155,6 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>14 (Sun)</td>
-      <td>8.33</td>
-      <td>15.56</td>
-      <td>0.0000</td>
-      <td>5%</td>
-      <td>Clear and few clouds</td>
-    </tr>
     <tr>
       <td>15 (Mon)</td>
       <td>8.33</td>
@@ -205,10 +197,18 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     </tr>
     <tr>
       <td>20 (Sat)</td>
-      <td>5.00</td>
+      <td>5.56</td>
       <td>10.00</td>
       <td>0.0906</td>
       <td>55%</td>
+      <td>Mostly cloudy with occasional rain</td>
+    </tr>
+    <tr>
+      <td>21 (Sun)</td>
+      <td>6.11</td>
+      <td>8.89</td>
+      <td>0.0662</td>
+      <td>60%</td>
       <td>Mostly cloudy with occasional rain</td>
     </tr>
   </tbody>
@@ -983,11 +983,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Dec 25</td>
-      <td>335</td>
+      <td>337</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>6903</td>
+      <td>6905</td>
     </tr>
   </tbody>
 </table>
