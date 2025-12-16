@@ -25,8 +25,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(12-17) Wed</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/02_iday_simple.svg" title="Clear and few clouds"/></td>
-      <td>5.56</td>
-      <td>14.44</td>
+      <td>5.00</td>
+      <td>13.33</td>
       <td>0.00</td>
       <td>0%</td>
       <td>85%</td>
@@ -34,7 +34,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(12-18) Thu</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/14_iday_simple.svg" title="Mostly cloudy with rain"/></td>
-      <td>7.78</td>
+      <td>7.22</td>
       <td>12.78</td>
       <td>0.26</td>
       <td>95%</td>
@@ -43,7 +43,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(12-19) Fri</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/14_iday_simple.svg" title="Mostly cloudy with rain"/></td>
-      <td>6.67</td>
+      <td>6.11</td>
       <td>11.11</td>
       <td>0.87</td>
       <td>50%</td>
@@ -61,8 +61,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(12-21) Sun</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/06_iday_simple.svg" title="Overcast with rain"/></td>
-      <td>6.11</td>
-      <td>8.89</td>
+      <td>5.56</td>
+      <td>8.33</td>
       <td>0.45</td>
       <td>65%</td>
       <td>20%</td>
@@ -115,7 +115,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(12-27) Sat</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday_simple.svg" title="Clear, cloudless sky"/></td>
-      <td>4.44</td>
+      <td>3.89</td>
       <td>8.89</td>
       <td>0.00</td>
       <td>20%</td>
@@ -133,7 +133,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(12-29) Mon</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday_simple.svg" title="Clear, cloudless sky"/></td>
-      <td>3.33</td>
+      <td>2.78</td>
       <td>8.89</td>
       <td>0.00</td>
       <td>15%</td>
@@ -165,15 +165,15 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     </tr>
     <tr>
       <td>17 (Wed)</td>
-      <td>5.56</td>
-      <td>14.44</td>
+      <td>5.00</td>
+      <td>13.33</td>
       <td>0.0000</td>
       <td>0%</td>
       <td>Clear and few clouds</td>
     </tr>
     <tr>
       <td>18 (Thu)</td>
-      <td>7.78</td>
+      <td>7.22</td>
       <td>12.78</td>
       <td>0.2635</td>
       <td>95%</td>
@@ -181,7 +181,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     </tr>
     <tr>
       <td>19 (Fri)</td>
-      <td>6.67</td>
+      <td>6.11</td>
       <td>11.11</td>
       <td>0.8723</td>
       <td>50%</td>
@@ -197,8 +197,8 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     </tr>
     <tr>
       <td>21 (Sun)</td>
-      <td>6.11</td>
-      <td>8.89</td>
+      <td>5.56</td>
+      <td>8.33</td>
       <td>0.4516</td>
       <td>65%</td>
       <td>Overcast with rain</td>
@@ -983,11 +983,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Dec 25</td>
-      <td>375</td>
+      <td>377</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>6943</td>
+      <td>6945</td>
     </tr>
   </tbody>
 </table>
@@ -1057,13 +1057,6 @@ window.dashboardTable = `<div class="table-container">
             <td class="level"><i class="fa-solid fa-circle" style="color: #26ba81;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
             <td><a href="#" onclick="openModal('modal-Vento-16-19-12', event)">16-19/12</a></td>
             <td><span data-tooltip="Coimbra (36km NW)">C</span>, <span data-tooltip="Castelo Branco (59km ESE)">CB</span>, <span data-tooltip="Leiria (58km WSW)">L</span></td>
-        </tr>
-        
-        <tr class="yellow hover:bg-gray-200 dark:hover:bg-gray-700 transition">
-            <td><i class="fa-solid fa-snowflake"></i></td>
-            <td class="level"><i class="fa-solid fa-circle" style="color: #FFD43B;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
-            <td><a href="#" onclick="openModal('modal-Neve-16-16-12', event)">16-16/12</a></td>
-            <td><span data-tooltip="Castelo Branco (59km ESE)">CB</span></td>
         </tr>
         </tbody></table>
     <dialog id="modal-Vento-16-16-12" class="modal">
@@ -1206,24 +1199,6 @@ window.dashboardTable = `<div class="table-container">
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
                 <button onclick="closeModal('modal-Vento-16-19-12', event)">Close</button>
-            </footer>
-        </article>
-    </dialog>
-    
-    <dialog id="modal-Neve-16-16-12" class="modal">
-        <article>
-            <header>
-                <a href="#" class="close" aria-label="Close" onclick="closeModal('modal-Neve-16-16-12', event)"></a>
-                <h3>Neve</h3>
-            </header>
-            
-        <strong>alert level:</strong> yellow
-        <br><strong>start:</strong> 16/12 12:37
-        <br><strong>end:</strong> 16/12 15:00
-        <hr>
-    <p><strong>Castelo Branco (59km ESE)</strong><br>Queda de neve acima de 1600 m, descendo a cota para 1200/1400 metros a partir do final do dia 15. Acumulações previstas no total do evento da ordem dos 10 a 15 cm nos pontos mais altos da Serra da Estrela e da ordem de 5 cm acima de 1400 metros.Impactos Prováveis: Perturbação causada por queda de neve com acumulação e possível formação de gelo (p. ex., vias condicionadas ou interditas, danos em estruturas ou árvores, abastecimentos locais prejudicados).</p>
-            <footer>
-                <button onclick="closeModal('modal-Neve-16-16-12', event)">Close</button>
             </footer>
         </article>
     </dialog>
