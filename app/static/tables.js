@@ -16,7 +16,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(12-25) Thu</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/07_iday_simple.svg" title="Mixed with showers"/></td>
-      <td>2.22</td>
+      <td>1.67</td>
       <td>9.44</td>
       <td>0.00</td>
       <td>0%</td>
@@ -25,7 +25,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(12-26) Fri</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/05_iday_simple.svg" title="Fog"/></td>
-      <td>0.56</td>
+      <td>0.00</td>
       <td>8.33</td>
       <td>0.00</td>
       <td>5%</td>
@@ -52,7 +52,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(12-29) Mon</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/05_iday_simple.svg" title="Fog"/></td>
-      <td>3.33</td>
+      <td>2.78</td>
       <td>12.22</td>
       <td>0.00</td>
       <td>5%</td>
@@ -70,7 +70,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(12-31) Wed</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/05_iday_simple.svg" title="Fog"/></td>
-      <td>3.33</td>
+      <td>2.78</td>
       <td>10.56</td>
       <td>0.00</td>
       <td>10%</td>
@@ -116,7 +116,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(1-5) Mon</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday_simple.svg" title="Clear, cloudless sky"/></td>
       <td>0.00</td>
-      <td>6.67</td>
+      <td>7.22</td>
       <td>0.00</td>
       <td>20%</td>
       <td>40%</td>
@@ -157,7 +157,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
   <tbody>
     <tr>
       <td>25 (Thu)</td>
-      <td>2.22</td>
+      <td>1.67</td>
       <td>9.44</td>
       <td>0.0039</td>
       <td>0%</td>
@@ -165,7 +165,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     </tr>
     <tr>
       <td>26 (Fri)</td>
-      <td>0.56</td>
+      <td>0.00</td>
       <td>8.33</td>
       <td>0.0000</td>
       <td>5%</td>
@@ -189,7 +189,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     </tr>
     <tr>
       <td>29 (Mon)</td>
-      <td>3.33</td>
+      <td>2.78</td>
       <td>12.22</td>
       <td>0.0000</td>
       <td>5%</td>
@@ -205,7 +205,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     </tr>
     <tr>
       <td>31 (Wed)</td>
-      <td>3.33</td>
+      <td>2.78</td>
       <td>10.56</td>
       <td>0.0000</td>
       <td>10%</td>
@@ -983,11 +983,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Dec 25</td>
-      <td>597</td>
+      <td>599</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>7165</td>
+      <td>7167</td>
     </tr>
   </tbody>
 </table>
