@@ -17,7 +17,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(12-29) Mon</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/07_iday_simple.svg" title="Mixed with showers"/></td>
       <td>2.78</td>
-      <td>11.67</td>
+      <td>11.11</td>
       <td>0.01</td>
       <td>0%</td>
       <td>80%</td>
@@ -61,7 +61,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(1-3) Sat</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/08_iday_simple.svg" title="Showers, thunderstorms likely"/></td>
-      <td>8.89</td>
+      <td>9.44</td>
       <td>11.67</td>
       <td>0.61</td>
       <td>90%</td>
@@ -70,8 +70,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(1-4) Sun</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/14_iday_simple.svg" title="Mostly cloudy with rain"/></td>
-      <td>4.44</td>
-      <td>10.56</td>
+      <td>3.89</td>
+      <td>10.00</td>
       <td>0.20</td>
       <td>55%</td>
       <td>5%</td>
@@ -158,7 +158,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     <tr>
       <td>29 (Mon)</td>
       <td>2.78</td>
-      <td>11.67</td>
+      <td>11.11</td>
       <td>0.0079</td>
       <td>0%</td>
       <td>Mixed with showers</td>
@@ -197,7 +197,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     </tr>
     <tr>
       <td>3 (Sat)</td>
-      <td>8.89</td>
+      <td>9.44</td>
       <td>11.67</td>
       <td>0.6094</td>
       <td>90%</td>
@@ -205,8 +205,8 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     </tr>
     <tr>
       <td>4 (Sun)</td>
-      <td>4.44</td>
-      <td>10.56</td>
+      <td>3.89</td>
+      <td>10.00</td>
       <td>0.1999</td>
       <td>55%</td>
       <td>Mostly cloudy with rain</td>
@@ -983,11 +983,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Dec 25</td>
-      <td>683</td>
+      <td>685</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>7251</td>
+      <td>7253</td>
     </tr>
   </tbody>
 </table>
