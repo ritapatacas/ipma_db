@@ -16,7 +16,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(1-1) Thu</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/16_iday_simple.svg" title="Mostly cloudy with occasional rain"/></td>
-      <td>5.00</td>
+      <td>5.56</td>
       <td>11.11</td>
       <td>0.15</td>
       <td>90%</td>
@@ -25,7 +25,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(1-2) Fri</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/06_iday_simple.svg" title="Overcast with rain"/></td>
-      <td>8.33</td>
+      <td>8.89</td>
       <td>12.22</td>
       <td>0.27</td>
       <td>85%</td>
@@ -46,14 +46,14 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>3.89</td>
       <td>11.67</td>
       <td>0.01</td>
-      <td>15%</td>
-      <td>65%</td>
+      <td>20%</td>
+      <td>60%</td>
     </tr>
     <tr>
       <td>(1-5) Mon</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday_simple.svg" title="Clear, cloudless sky"/></td>
-      <td>1.11</td>
-      <td>7.22</td>
+      <td>0.56</td>
+      <td>6.67</td>
       <td>0.00</td>
       <td>5%</td>
       <td>70%</td>
@@ -61,7 +61,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(1-6) Tue</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/16_iday_simple.svg" title="Mostly cloudy with occasional rain"/></td>
-      <td>0.00</td>
+      <td>-0.56</td>
       <td>7.22</td>
       <td>0.14</td>
       <td>45%</td>
@@ -70,7 +70,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(1-7) Wed</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/07_iday_simple.svg" title="Mixed with showers"/></td>
-      <td>0.56</td>
+      <td>0.00</td>
       <td>7.78</td>
       <td>0.04</td>
       <td>20%</td>
@@ -82,8 +82,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>1.11</td>
       <td>8.89</td>
       <td>0.00</td>
-      <td>30%</td>
-      <td>30%</td>
+      <td>5%</td>
+      <td>50%</td>
     </tr>
     <tr>
       <td>(1-9) Fri</td>
@@ -91,8 +91,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>2.78</td>
       <td>9.44</td>
       <td>0.00</td>
-      <td>45%</td>
-      <td>15%</td>
+      <td>20%</td>
+      <td>40%</td>
     </tr>
     <tr>
       <td>(1-10) Sat</td>
@@ -101,7 +101,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>9.44</td>
       <td>0.00</td>
       <td>40%</td>
-      <td>15%</td>
+      <td>25%</td>
     </tr>
     <tr>
       <td>(1-11) Sun</td>
@@ -109,14 +109,14 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>3.89</td>
       <td>10.00</td>
       <td>0.00</td>
-      <td>45%</td>
+      <td>40%</td>
       <td>20%</td>
     </tr>
     <tr>
       <td>(1-12) Mon</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/02_iday_simple.svg" title="Clear and few clouds"/></td>
       <td>4.44</td>
-      <td>10.00</td>
+      <td>9.44</td>
       <td>0.00</td>
       <td>45%</td>
       <td>15%</td>
@@ -134,10 +134,10 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(1-14) Wed</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/04_iday_simple.svg" title="Overcast"/></td>
       <td>6.11</td>
-      <td>10.56</td>
+      <td>10.00</td>
       <td>0.00</td>
-      <td>50%</td>
-      <td>5%</td>
+      <td>45%</td>
+      <td>10%</td>
     </tr>
   </tbody>
 </table></div>
@@ -157,7 +157,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
   <tbody>
     <tr>
       <td>1 (Thu)</td>
-      <td>5.00</td>
+      <td>5.56</td>
       <td>11.11</td>
       <td>0.1519</td>
       <td>90%</td>
@@ -165,7 +165,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     </tr>
     <tr>
       <td>2 (Fri)</td>
-      <td>8.33</td>
+      <td>8.89</td>
       <td>12.22</td>
       <td>0.2719</td>
       <td>85%</td>
@@ -184,20 +184,20 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
       <td>3.89</td>
       <td>11.67</td>
       <td>0.0052</td>
-      <td>15%</td>
+      <td>20%</td>
       <td>Mostly cloudy with occasional rain</td>
     </tr>
     <tr>
       <td>5 (Mon)</td>
-      <td>1.11</td>
-      <td>7.22</td>
+      <td>0.56</td>
+      <td>6.67</td>
       <td>0.0000</td>
       <td>5%</td>
       <td>Clear, cloudless sky</td>
     </tr>
     <tr>
       <td>6 (Tue)</td>
-      <td>0.00</td>
+      <td>-0.56</td>
       <td>7.22</td>
       <td>0.1400</td>
       <td>45%</td>
@@ -205,7 +205,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     </tr>
     <tr>
       <td>7 (Wed)</td>
-      <td>0.56</td>
+      <td>0.00</td>
       <td>7.78</td>
       <td>0.0440</td>
       <td>20%</td>
@@ -987,11 +987,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Jan 26</td>
-      <td>1</td>
+      <td>3</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>7313</td>
+      <td>7315</td>
     </tr>
   </tbody>
 </table>
@@ -1010,49 +1010,49 @@ window.dashboardTable = `<div class="table-container">
         <tr class="green hover:bg-gray-200 dark:hover:bg-gray-700 transition">
             <td><i class="fa-solid fa-smog"></i></td>
             <td class="level"><i class="fa-solid fa-circle" style="color: #26ba81;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
-            <td><a href="#" onclick="openModal('modal-Nevoeiro-31-03-01', event)">31-03/01</a></td>
+            <td><a href="#" onclick="openModal('modal-Nevoeiro-01-04-01', event)">01-04/01</a></td>
             <td><span data-tooltip="Coimbra (36km NW)">C</span>, <span data-tooltip="Castelo Branco (59km ESE)">CB</span>, <span data-tooltip="Leiria (58km WSW)">L</span></td>
         </tr>
         
         <tr class="green hover:bg-gray-200 dark:hover:bg-gray-700 transition">
             <td><i class="fa-solid fa-temperature-high"></i></td>
             <td class="level"><i class="fa-solid fa-circle" style="color: #26ba81;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
-            <td><a href="#" onclick="openModal('modal-Tempo-Quente-31-03-01', event)">31-03/01</a></td>
+            <td><a href="#" onclick="openModal('modal-Tempo-Quente-01-04-01', event)">01-04/01</a></td>
             <td><span data-tooltip="Coimbra (36km NW)">C</span>, <span data-tooltip="Castelo Branco (59km ESE)">CB</span>, <span data-tooltip="Leiria (58km WSW)">L</span></td>
         </tr>
         
         <tr class="green hover:bg-gray-200 dark:hover:bg-gray-700 transition">
             <td><i class="fa-solid fa-temperature-low"></i></td>
             <td class="level"><i class="fa-solid fa-circle" style="color: #26ba81;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
-            <td><a href="#" onclick="openModal('modal-Tempo-Frio-31-03-01', event)">31-03/01</a></td>
+            <td><a href="#" onclick="openModal('modal-Tempo-Frio-01-04-01', event)">01-04/01</a></td>
             <td><span data-tooltip="Coimbra (36km NW)">C</span>, <span data-tooltip="Castelo Branco (59km ESE)">CB</span>, <span data-tooltip="Leiria (58km WSW)">L</span></td>
         </tr>
         
         <tr class="green hover:bg-gray-200 dark:hover:bg-gray-700 transition">
             <td><i class="fa-solid fa-cloud-rain"></i></td>
             <td class="level"><i class="fa-solid fa-circle" style="color: #26ba81;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
-            <td><a href="#" onclick="openModal('modal-Precipitação-31-03-01', event)">31-03/01</a></td>
+            <td><a href="#" onclick="openModal('modal-Precipitação-01-04-01', event)">01-04/01</a></td>
             <td><span data-tooltip="Coimbra (36km NW)">C</span>, <span data-tooltip="Castelo Branco (59km ESE)">CB</span>, <span data-tooltip="Leiria (58km WSW)">L</span></td>
         </tr>
         
         <tr class="green hover:bg-gray-200 dark:hover:bg-gray-700 transition">
             <td><i class="fa-solid fa-snowflake"></i></td>
             <td class="level"><i class="fa-solid fa-circle" style="color: #26ba81;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
-            <td><a href="#" onclick="openModal('modal-Neve-31-03-01', event)">31-03/01</a></td>
+            <td><a href="#" onclick="openModal('modal-Neve-01-04-01', event)">01-04/01</a></td>
             <td><span data-tooltip="Coimbra (36km NW)">C</span>, <span data-tooltip="Castelo Branco (59km ESE)">CB</span>, <span data-tooltip="Leiria (58km WSW)">L</span></td>
         </tr>
         
         <tr class="green hover:bg-gray-200 dark:hover:bg-gray-700 transition">
             <td><i class="fa-solid fa-bolt"></i></td>
             <td class="level"><i class="fa-solid fa-circle" style="color: #26ba81;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
-            <td><a href="#" onclick="openModal('modal-Trovoada-31-03-01', event)">31-03/01</a></td>
+            <td><a href="#" onclick="openModal('modal-Trovoada-01-04-01', event)">01-04/01</a></td>
             <td><span data-tooltip="Coimbra (36km NW)">C</span>, <span data-tooltip="Castelo Branco (59km ESE)">CB</span>, <span data-tooltip="Leiria (58km WSW)">L</span></td>
         </tr>
         
         <tr class="green hover:bg-gray-200 dark:hover:bg-gray-700 transition">
             <td><i class="fa-solid fa-wind"></i></td>
             <td class="level"><i class="fa-solid fa-circle" style="color: #26ba81;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
-            <td><a href="#" onclick="openModal('modal-Vento-31-03-01', event)">31-03/01</a></td>
+            <td><a href="#" onclick="openModal('modal-Vento-01-04-01', event)">01-04/01</a></td>
             <td><span data-tooltip="Coimbra (36km NW)">C</span>, <span data-tooltip="Castelo Branco (59km ESE)">CB</span>, <span data-tooltip="Leiria (58km WSW)">L</span></td>
         </tr>
         
@@ -1063,128 +1063,128 @@ window.dashboardTable = `<div class="table-container">
             <td><span data-tooltip="Coimbra (36km NW)">C</span>, <span data-tooltip="Castelo Branco (59km ESE)">CB</span>, <span data-tooltip="Leiria (58km WSW)">L</span></td>
         </tr>
         </tbody></table>
-    <dialog id="modal-Nevoeiro-31-03-01" class="modal">
+    <dialog id="modal-Nevoeiro-01-04-01" class="modal">
         <article>
             <header>
-                <a href="#" class="close" aria-label="Close" onclick="closeModal('modal-Nevoeiro-31-03-01', event)"></a>
+                <a href="#" class="close" aria-label="Close" onclick="closeModal('modal-Nevoeiro-01-04-01', event)"></a>
                 <h3>Nevoeiro</h3>
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 31/12 19:04
-        <br><strong>end:</strong> 03/01 19:00
+        <br><strong>start:</strong> 01/01 00:58
+        <br><strong>end:</strong> 04/01 00:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
-                <button onclick="closeModal('modal-Nevoeiro-31-03-01', event)">Close</button>
+                <button onclick="closeModal('modal-Nevoeiro-01-04-01', event)">Close</button>
             </footer>
         </article>
     </dialog>
     
-    <dialog id="modal-Tempo-Quente-31-03-01" class="modal">
+    <dialog id="modal-Tempo-Quente-01-04-01" class="modal">
         <article>
             <header>
-                <a href="#" class="close" aria-label="Close" onclick="closeModal('modal-Tempo-Quente-31-03-01', event)"></a>
+                <a href="#" class="close" aria-label="Close" onclick="closeModal('modal-Tempo-Quente-01-04-01', event)"></a>
                 <h3>Tempo Quente</h3>
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 31/12 19:04
-        <br><strong>end:</strong> 03/01 19:00
+        <br><strong>start:</strong> 01/01 00:58
+        <br><strong>end:</strong> 04/01 00:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
-                <button onclick="closeModal('modal-Tempo-Quente-31-03-01', event)">Close</button>
+                <button onclick="closeModal('modal-Tempo-Quente-01-04-01', event)">Close</button>
             </footer>
         </article>
     </dialog>
     
-    <dialog id="modal-Tempo-Frio-31-03-01" class="modal">
+    <dialog id="modal-Tempo-Frio-01-04-01" class="modal">
         <article>
             <header>
-                <a href="#" class="close" aria-label="Close" onclick="closeModal('modal-Tempo-Frio-31-03-01', event)"></a>
+                <a href="#" class="close" aria-label="Close" onclick="closeModal('modal-Tempo-Frio-01-04-01', event)"></a>
                 <h3>Tempo Frio</h3>
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 31/12 19:04
-        <br><strong>end:</strong> 03/01 19:00
+        <br><strong>start:</strong> 01/01 00:58
+        <br><strong>end:</strong> 04/01 00:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
-                <button onclick="closeModal('modal-Tempo-Frio-31-03-01', event)">Close</button>
+                <button onclick="closeModal('modal-Tempo-Frio-01-04-01', event)">Close</button>
             </footer>
         </article>
     </dialog>
     
-    <dialog id="modal-Precipitação-31-03-01" class="modal">
+    <dialog id="modal-Precipitação-01-04-01" class="modal">
         <article>
             <header>
-                <a href="#" class="close" aria-label="Close" onclick="closeModal('modal-Precipitação-31-03-01', event)"></a>
+                <a href="#" class="close" aria-label="Close" onclick="closeModal('modal-Precipitação-01-04-01', event)"></a>
                 <h3>Precipitação</h3>
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 31/12 19:04
-        <br><strong>end:</strong> 03/01 19:00
+        <br><strong>start:</strong> 01/01 00:58
+        <br><strong>end:</strong> 04/01 00:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
-                <button onclick="closeModal('modal-Precipitação-31-03-01', event)">Close</button>
+                <button onclick="closeModal('modal-Precipitação-01-04-01', event)">Close</button>
             </footer>
         </article>
     </dialog>
     
-    <dialog id="modal-Neve-31-03-01" class="modal">
+    <dialog id="modal-Neve-01-04-01" class="modal">
         <article>
             <header>
-                <a href="#" class="close" aria-label="Close" onclick="closeModal('modal-Neve-31-03-01', event)"></a>
+                <a href="#" class="close" aria-label="Close" onclick="closeModal('modal-Neve-01-04-01', event)"></a>
                 <h3>Neve</h3>
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 31/12 19:04
-        <br><strong>end:</strong> 03/01 19:00
+        <br><strong>start:</strong> 01/01 00:58
+        <br><strong>end:</strong> 04/01 00:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
-                <button onclick="closeModal('modal-Neve-31-03-01', event)">Close</button>
+                <button onclick="closeModal('modal-Neve-01-04-01', event)">Close</button>
             </footer>
         </article>
     </dialog>
     
-    <dialog id="modal-Trovoada-31-03-01" class="modal">
+    <dialog id="modal-Trovoada-01-04-01" class="modal">
         <article>
             <header>
-                <a href="#" class="close" aria-label="Close" onclick="closeModal('modal-Trovoada-31-03-01', event)"></a>
+                <a href="#" class="close" aria-label="Close" onclick="closeModal('modal-Trovoada-01-04-01', event)"></a>
                 <h3>Trovoada</h3>
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 31/12 19:04
-        <br><strong>end:</strong> 03/01 19:00
+        <br><strong>start:</strong> 01/01 00:58
+        <br><strong>end:</strong> 04/01 00:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
-                <button onclick="closeModal('modal-Trovoada-31-03-01', event)">Close</button>
+                <button onclick="closeModal('modal-Trovoada-01-04-01', event)">Close</button>
             </footer>
         </article>
     </dialog>
     
-    <dialog id="modal-Vento-31-03-01" class="modal">
+    <dialog id="modal-Vento-01-04-01" class="modal">
         <article>
             <header>
-                <a href="#" class="close" aria-label="Close" onclick="closeModal('modal-Vento-31-03-01', event)"></a>
+                <a href="#" class="close" aria-label="Close" onclick="closeModal('modal-Vento-01-04-01', event)"></a>
                 <h3>Vento</h3>
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 31/12 19:04
-        <br><strong>end:</strong> 03/01 19:00
+        <br><strong>start:</strong> 01/01 00:58
+        <br><strong>end:</strong> 04/01 00:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
-                <button onclick="closeModal('modal-Vento-31-03-01', event)">Close</button>
+                <button onclick="closeModal('modal-Vento-01-04-01', event)">Close</button>
             </footer>
         </article>
     </dialog>
