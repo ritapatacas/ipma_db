@@ -17,7 +17,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(1-4) Sun</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/03_iday_simple.svg" title="Partly cloudy"/></td>
       <td>6.11</td>
-      <td>14.44</td>
+      <td>13.33</td>
       <td>0.00</td>
       <td>15%</td>
       <td>75%</td>
@@ -61,7 +61,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(1-9) Fri</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/14_iday_simple.svg" title="Mostly cloudy with rain"/></td>
-      <td>6.67</td>
+      <td>7.22</td>
       <td>11.11</td>
       <td>0.30</td>
       <td>65%</td>
@@ -80,7 +80,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(1-11) Sun</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/16_iday_simple.svg" title="Mostly cloudy with occasional rain"/></td>
       <td>6.11</td>
-      <td>11.67</td>
+      <td>11.11</td>
       <td>0.02</td>
       <td>55%</td>
       <td>25%</td>
@@ -107,7 +107,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(1-14) Wed</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/14_iday_simple.svg" title="Mostly cloudy with rain"/></td>
       <td>6.67</td>
-      <td>10.56</td>
+      <td>10.00</td>
       <td>0.56</td>
       <td>65%</td>
       <td>10%</td>
@@ -158,7 +158,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     <tr>
       <td>4 (Sun)</td>
       <td>6.11</td>
-      <td>14.44</td>
+      <td>13.33</td>
       <td>0.0000</td>
       <td>15%</td>
       <td>Partly cloudy</td>
@@ -197,7 +197,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     </tr>
     <tr>
       <td>9 (Fri)</td>
-      <td>6.67</td>
+      <td>7.22</td>
       <td>11.11</td>
       <td>0.3023</td>
       <td>65%</td>
@@ -987,11 +987,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Jan 26</td>
-      <td>83</td>
+      <td>85</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>7395</td>
+      <td>7397</td>
     </tr>
   </tbody>
 </table>
