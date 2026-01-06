@@ -34,7 +34,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(1-8) Thu</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/16_iday_simple.svg" title="Mostly cloudy with occasional rain"/></td>
-      <td>3.89</td>
+      <td>2.78</td>
       <td>10.00</td>
       <td>0.05</td>
       <td>90%</td>
@@ -43,8 +43,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(1-9) Fri</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/16_iday_simple.svg" title="Mostly cloudy with occasional rain"/></td>
-      <td>6.11</td>
-      <td>11.11</td>
+      <td>6.67</td>
+      <td>10.56</td>
       <td>0.13</td>
       <td>55%</td>
       <td>45%</td>
@@ -61,7 +61,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(1-11) Sun</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/03_iday_simple.svg" title="Partly cloudy"/></td>
-      <td>5.56</td>
+      <td>5.00</td>
       <td>11.11</td>
       <td>0.00</td>
       <td>75%</td>
@@ -173,7 +173,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     </tr>
     <tr>
       <td>8 (Thu)</td>
-      <td>3.89</td>
+      <td>2.78</td>
       <td>10.00</td>
       <td>0.0532</td>
       <td>90%</td>
@@ -181,8 +181,8 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     </tr>
     <tr>
       <td>9 (Fri)</td>
-      <td>6.11</td>
-      <td>11.11</td>
+      <td>6.67</td>
+      <td>10.56</td>
       <td>0.1312</td>
       <td>55%</td>
       <td>Mostly cloudy with occasional rain</td>
@@ -197,7 +197,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     </tr>
     <tr>
       <td>11 (Sun)</td>
-      <td>5.56</td>
+      <td>5.00</td>
       <td>11.11</td>
       <td>0.0000</td>
       <td>75%</td>
@@ -987,11 +987,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Jan 26</td>
-      <td>135</td>
+      <td>137</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>7447</td>
+      <td>7449</td>
     </tr>
   </tbody>
 </table>
