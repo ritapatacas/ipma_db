@@ -18,7 +18,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/16_iday_simple.svg" title="Mostly cloudy with occasional rain"/></td>
       <td>2.22</td>
       <td>10.00</td>
-      <td>0.06</td>
+      <td>0.07</td>
       <td>90%</td>
       <td>70%</td>
     </tr>
@@ -33,10 +33,10 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     </tr>
     <tr>
       <td>(1-10) Sat</td>
-      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/07_iday_simple.svg" title="Mixed with showers"/></td>
+      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/03_iday_simple.svg" title="Partly cloudy"/></td>
       <td>6.11</td>
-      <td>11.11</td>
-      <td>0.01</td>
+      <td>10.56</td>
+      <td>0.00</td>
       <td>5%</td>
       <td>80%</td>
     </tr>
@@ -44,8 +44,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(1-11) Sun</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/16_iday_simple.svg" title="Mostly cloudy with occasional rain"/></td>
       <td>6.11</td>
-      <td>11.67</td>
-      <td>0.05</td>
+      <td>11.11</td>
+      <td>0.06</td>
       <td>60%</td>
       <td>45%</td>
     </tr>
@@ -54,7 +54,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/12_iday_simple.svg" title="Overcast with occasional rain"/></td>
       <td>9.44</td>
       <td>11.11</td>
-      <td>0.08</td>
+      <td>0.19</td>
       <td>90%</td>
       <td>40%</td>
     </tr>
@@ -63,16 +63,16 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/06_iday_simple.svg" title="Overcast with rain"/></td>
       <td>7.78</td>
       <td>10.56</td>
-      <td>1.50</td>
+      <td>0.66</td>
       <td>85%</td>
       <td>20%</td>
     </tr>
     <tr>
       <td>(1-14) Wed</td>
-      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/05_iday_simple.svg" title="Fog"/></td>
+      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/16_iday_simple.svg" title="Mostly cloudy with occasional rain"/></td>
       <td>6.67</td>
-      <td>11.11</td>
-      <td>0.00</td>
+      <td>10.56</td>
+      <td>0.02</td>
       <td>45%</td>
       <td>25%</td>
     </tr>
@@ -89,7 +89,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(1-16) Fri</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/14_iday_simple.svg" title="Mostly cloudy with rain"/></td>
       <td>5.56</td>
-      <td>9.44</td>
+      <td>8.89</td>
       <td>0.30</td>
       <td>70%</td>
       <td>20%</td>
@@ -98,7 +98,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(1-17) Sat</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/14_iday_simple.svg" title="Mostly cloudy with rain"/></td>
       <td>5.00</td>
-      <td>8.89</td>
+      <td>8.33</td>
       <td>0.33</td>
       <td>65%</td>
       <td>15%</td>
@@ -107,7 +107,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(1-18) Sun</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/06_iday_simple.svg" title="Overcast with rain"/></td>
       <td>5.00</td>
-      <td>9.44</td>
+      <td>8.89</td>
       <td>0.71</td>
       <td>70%</td>
       <td>10%</td>
@@ -116,7 +116,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(1-19) Mon</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/07_iday_simple.svg" title="Mixed with showers"/></td>
       <td>6.11</td>
-      <td>10.00</td>
+      <td>9.44</td>
       <td>0.61</td>
       <td>80%</td>
       <td>15%</td>
@@ -159,7 +159,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
       <td>8 (Thu)</td>
       <td>2.22</td>
       <td>10.00</td>
-      <td>0.0648</td>
+      <td>0.0687</td>
       <td>90%</td>
       <td>Mostly cloudy with occasional rain</td>
     </tr>
@@ -174,16 +174,16 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     <tr>
       <td>10 (Sat)</td>
       <td>6.11</td>
-      <td>11.11</td>
-      <td>0.0085</td>
+      <td>10.56</td>
+      <td>0.0000</td>
       <td>5%</td>
-      <td>Mixed with showers</td>
+      <td>Partly cloudy</td>
     </tr>
     <tr>
       <td>11 (Sun)</td>
       <td>6.11</td>
-      <td>11.67</td>
-      <td>0.0541</td>
+      <td>11.11</td>
+      <td>0.0636</td>
       <td>60%</td>
       <td>Mostly cloudy with occasional rain</td>
     </tr>
@@ -191,7 +191,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
       <td>12 (Mon)</td>
       <td>9.44</td>
       <td>11.11</td>
-      <td>0.0790</td>
+      <td>0.1910</td>
       <td>90%</td>
       <td>Overcast with occasional rain</td>
     </tr>
@@ -199,17 +199,17 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
       <td>13 (Tue)</td>
       <td>7.78</td>
       <td>10.56</td>
-      <td>1.5016</td>
+      <td>0.6645</td>
       <td>85%</td>
       <td>Overcast with rain</td>
     </tr>
     <tr>
       <td>14 (Wed)</td>
       <td>6.67</td>
-      <td>11.11</td>
-      <td>0.0000</td>
+      <td>10.56</td>
+      <td>0.0248</td>
       <td>45%</td>
-      <td>Fog</td>
+      <td>Mostly cloudy with occasional rain</td>
     </tr>
   </tbody>
 </table></div>
@@ -987,11 +987,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Jan 26</td>
-      <td>171</td>
+      <td>173</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>7483</td>
+      <td>7485</td>
     </tr>
   </tbody>
 </table>
