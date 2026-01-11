@@ -17,8 +17,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(1-11) Sun</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/16_iday_simple.svg" title="Mostly cloudy with occasional rain"/></td>
       <td>4.44</td>
-      <td>10.56</td>
-      <td>0.07</td>
+      <td>11.11</td>
+      <td>0.08</td>
       <td>45%</td>
       <td>65%</td>
     </tr>
@@ -52,7 +52,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(1-15) Thu</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/14_iday_simple.svg" title="Mostly cloudy with rain"/></td>
-      <td>4.44</td>
+      <td>3.89</td>
       <td>10.00</td>
       <td>0.66</td>
       <td>90%</td>
@@ -80,7 +80,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(1-18) Sun</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/14_iday_simple.svg" title="Mostly cloudy with rain"/></td>
       <td>5.56</td>
-      <td>10.00</td>
+      <td>10.56</td>
       <td>0.47</td>
       <td>60%</td>
       <td>5%</td>
@@ -158,8 +158,8 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     <tr>
       <td>11 (Sun)</td>
       <td>4.44</td>
-      <td>10.56</td>
-      <td>0.0672</td>
+      <td>11.11</td>
+      <td>0.0808</td>
       <td>45%</td>
       <td>Mostly cloudy with occasional rain</td>
     </tr>
@@ -189,7 +189,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     </tr>
     <tr>
       <td>15 (Thu)</td>
-      <td>4.44</td>
+      <td>3.89</td>
       <td>10.00</td>
       <td>0.6587</td>
       <td>90%</td>
@@ -987,11 +987,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Jan 26</td>
-      <td>251</td>
+      <td>253</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>7563</td>
+      <td>7565</td>
     </tr>
   </tbody>
 </table>
