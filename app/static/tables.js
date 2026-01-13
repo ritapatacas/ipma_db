@@ -17,8 +17,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(1-13) Tue</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/14_iday_simple.svg" title="Mostly cloudy with rain"/></td>
       <td>7.78</td>
-      <td>11.11</td>
-      <td>1.15</td>
+      <td>10.56</td>
+      <td>1.18</td>
       <td>90%</td>
       <td>60%</td>
     </tr>
@@ -43,7 +43,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(1-16) Fri</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/14_iday_simple.svg" title="Mostly cloudy with rain"/></td>
-      <td>5.00</td>
+      <td>5.56</td>
       <td>8.89</td>
       <td>0.32</td>
       <td>100%</td>
@@ -55,7 +55,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>3.33</td>
       <td>8.33</td>
       <td>0.10</td>
-      <td>70%</td>
+      <td>75%</td>
       <td>40%</td>
     </tr>
     <tr>
@@ -71,7 +71,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(1-19) Mon</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday_simple.svg" title="Clear, cloudless sky"/></td>
       <td>1.67</td>
-      <td>9.44</td>
+      <td>10.00</td>
       <td>0.00</td>
       <td>30%</td>
       <td>50%</td>
@@ -98,7 +98,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(1-22) Thu</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday_simple.svg" title="Clear, cloudless sky"/></td>
       <td>4.44</td>
-      <td>9.44</td>
+      <td>8.89</td>
       <td>0.00</td>
       <td>35%</td>
       <td>30%</td>
@@ -158,8 +158,8 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     <tr>
       <td>13 (Tue)</td>
       <td>7.78</td>
-      <td>11.11</td>
-      <td>1.1491</td>
+      <td>10.56</td>
+      <td>1.1777</td>
       <td>90%</td>
       <td>Mostly cloudy with rain</td>
     </tr>
@@ -181,7 +181,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     </tr>
     <tr>
       <td>16 (Fri)</td>
-      <td>5.00</td>
+      <td>5.56</td>
       <td>8.89</td>
       <td>0.3198</td>
       <td>100%</td>
@@ -192,7 +192,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
       <td>3.33</td>
       <td>8.33</td>
       <td>0.1028</td>
-      <td>70%</td>
+      <td>75%</td>
       <td>Mostly cloudy with occasional rain</td>
     </tr>
     <tr>
@@ -206,7 +206,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     <tr>
       <td>19 (Mon)</td>
       <td>1.67</td>
-      <td>9.44</td>
+      <td>10.00</td>
       <td>0.0000</td>
       <td>30%</td>
       <td>Clear, cloudless sky</td>
@@ -987,11 +987,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Jan 26</td>
-      <td>301</td>
+      <td>303</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>7613</td>
+      <td>7615</td>
     </tr>
   </tbody>
 </table>
@@ -1011,7 +1011,7 @@ window.dashboardTable = `<div class="table-container">
             <td><i class="fa-solid fa-cloud-rain"></i></td>
             <td class="level"><i class="fa-solid fa-circle" style="color: #FFD43B;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
             <td><a href="#" onclick="openModal('modal-Precipitação-13-13-01', event)">13-13/01</a></td>
-            <td><span data-tooltip="Coimbra (36km NW)">C</span>, <span data-tooltip="Castelo Branco (59km ESE)">CB</span>, <span data-tooltip="Leiria (58km WSW)">L</span></td>
+            <td><span data-tooltip="Coimbra (36km NW)">C</span>, <span data-tooltip="Leiria (58km WSW)">L</span></td>
         </tr>
         
         <tr class="green hover:bg-gray-200 dark:hover:bg-gray-700 transition">
@@ -1081,7 +1081,7 @@ window.dashboardTable = `<div class="table-container">
         <br><strong>start:</strong> 13/01 10:05
         <br><strong>end:</strong> 13/01 18:00
         <hr>
-    <p><strong>Leiria (58km WSW)</strong><br>Aguaceiros, por vezes fortes e pontualmente acompanhados de trovoada.</p><p><strong>Coimbra (36km NW)</strong><br>Aguaceiros, por vezes fortes e pontualmente acompanhados de trovoada.</p><p><strong>Castelo Branco (59km ESE)</strong><br>Precipitação persistente e por vezes forte.</p>
+    <p><strong>Leiria (58km WSW)</strong><br>Aguaceiros, por vezes fortes e pontualmente acompanhados de trovoada.</p><p><strong>Coimbra (36km NW)</strong><br>Aguaceiros, por vezes fortes e pontualmente acompanhados de trovoada.</p>
             <footer>
                 <button onclick="closeModal('modal-Precipitação-13-13-01', event)">Close</button>
             </footer>
