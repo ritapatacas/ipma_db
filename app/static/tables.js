@@ -26,7 +26,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(1-16) Fri</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/14_iday_simple.svg" title="Mostly cloudy with rain"/></td>
       <td>5.00</td>
-      <td>8.89</td>
+      <td>8.33</td>
       <td>0.46</td>
       <td>80%</td>
       <td>60%</td>
@@ -53,7 +53,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(1-19) Mon</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/16_iday_simple.svg" title="Mostly cloudy with occasional rain"/></td>
       <td>2.22</td>
-      <td>10.00</td>
+      <td>10.56</td>
       <td>0.17</td>
       <td>30%</td>
       <td>55%</td>
@@ -166,7 +166,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     <tr>
       <td>16 (Fri)</td>
       <td>5.00</td>
-      <td>8.89</td>
+      <td>8.33</td>
       <td>0.4567</td>
       <td>80%</td>
       <td>Mostly cloudy with rain</td>
@@ -190,7 +190,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     <tr>
       <td>19 (Mon)</td>
       <td>2.22</td>
-      <td>10.00</td>
+      <td>10.56</td>
       <td>0.1659</td>
       <td>30%</td>
       <td>Mostly cloudy with occasional rain</td>
@@ -987,11 +987,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Jan 26</td>
-      <td>349</td>
+      <td>351</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>7661</td>
+      <td>7663</td>
     </tr>
   </tbody>
 </table>
@@ -1007,6 +1007,13 @@ window.dashboardTable = `<div class="table-container">
         </thead>
         <tbody>
     
+        <tr class="yellow hover:bg-gray-200 dark:hover:bg-gray-700 transition">
+            <td><i class="fa-solid fa-cloud-rain"></i></td>
+            <td class="level"><i class="fa-solid fa-circle" style="color: #FFD43B;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
+            <td><a href="#" onclick="openModal('modal-Precipitação-15-15-01', event)">15-15/01</a></td>
+            <td><span data-tooltip="Coimbra (36km NW)">C</span>, <span data-tooltip="Leiria (58km WSW)">L</span></td>
+        </tr>
+        
         <tr class="green hover:bg-gray-200 dark:hover:bg-gray-700 transition">
             <td><i class="fa-solid fa-smog"></i></td>
             <td class="level"><i class="fa-solid fa-circle" style="color: #26ba81;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
@@ -1057,19 +1064,30 @@ window.dashboardTable = `<div class="table-container">
         </tr>
         
         <tr class="yellow hover:bg-gray-200 dark:hover:bg-gray-700 transition">
-            <td><i class="fa-solid fa-cloud-rain"></i></td>
-            <td class="level"><i class="fa-solid fa-circle" style="color: #FFD43B;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
-            <td><a href="#" onclick="openModal('modal-Precipitação-15-15-01', event)">15-15/01</a></td>
-            <td><span data-tooltip="Coimbra (36km NW)">C</span>, <span data-tooltip="Leiria (58km WSW)">L</span></td>
-        </tr>
-        
-        <tr class="yellow hover:bg-gray-200 dark:hover:bg-gray-700 transition">
             <td><i class="fa-solid fa-snowflake"></i></td>
             <td class="level"><i class="fa-solid fa-circle" style="color: #FFD43B;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
             <td><a href="#" onclick="openModal('modal-Neve-15-16-01', event)">15-16/01</a></td>
             <td><span data-tooltip="Castelo Branco (59km ESE)">CB</span></td>
         </tr>
         </tbody></table>
+    <dialog id="modal-Precipitação-15-15-01" class="modal">
+        <article>
+            <header>
+                <a href="#" class="close" aria-label="Close" onclick="closeModal('modal-Precipitação-15-15-01', event)"></a>
+                <h3>Precipitação</h3>
+            </header>
+            
+        <strong>alert level:</strong> yellow
+        <br><strong>start:</strong> 15/01 12:27
+        <br><strong>end:</strong> 15/01 15:00
+        <hr>
+    <p><strong>Leiria (58km WSW)</strong><br>Chuva persistente e por vezes forte.</p><p><strong>Coimbra (36km NW)</strong><br>Chuva persistente e por vezes forte.</p>
+            <footer>
+                <button onclick="closeModal('modal-Precipitação-15-15-01', event)">Close</button>
+            </footer>
+        </article>
+    </dialog>
+    
     <dialog id="modal-Nevoeiro-15-18-01" class="modal">
         <article>
             <header>
@@ -1078,8 +1096,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 15/01 07:04
-        <br><strong>end:</strong> 18/01 07:00
+        <br><strong>start:</strong> 15/01 12:27
+        <br><strong>end:</strong> 18/01 12:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1096,8 +1114,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 15/01 07:04
-        <br><strong>end:</strong> 18/01 07:00
+        <br><strong>start:</strong> 15/01 12:27
+        <br><strong>end:</strong> 18/01 12:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1114,8 +1132,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 15/01 07:04
-        <br><strong>end:</strong> 18/01 07:00
+        <br><strong>start:</strong> 15/01 12:27
+        <br><strong>end:</strong> 18/01 12:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1132,8 +1150,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 15/01 07:04
-        <br><strong>end:</strong> 18/01 07:00
+        <br><strong>start:</strong> 15/01 12:27
+        <br><strong>end:</strong> 18/01 12:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1150,8 +1168,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 15/01 07:04
-        <br><strong>end:</strong> 18/01 07:00
+        <br><strong>start:</strong> 15/01 12:27
+        <br><strong>end:</strong> 18/01 12:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1168,8 +1186,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 15/01 07:04
-        <br><strong>end:</strong> 18/01 07:00
+        <br><strong>start:</strong> 15/01 12:27
+        <br><strong>end:</strong> 18/01 12:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1186,30 +1204,12 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 15/01 07:04
-        <br><strong>end:</strong> 18/01 07:00
+        <br><strong>start:</strong> 15/01 12:27
+        <br><strong>end:</strong> 18/01 12:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
                 <button onclick="closeModal('modal-Vento-15-18-01', event)">Close</button>
-            </footer>
-        </article>
-    </dialog>
-    
-    <dialog id="modal-Precipitação-15-15-01" class="modal">
-        <article>
-            <header>
-                <a href="#" class="close" aria-label="Close" onclick="closeModal('modal-Precipitação-15-15-01', event)"></a>
-                <h3>Precipitação</h3>
-            </header>
-            
-        <strong>alert level:</strong> yellow
-        <br><strong>start:</strong> 15/01 12:00
-        <br><strong>end:</strong> 15/01 15:00
-        <hr>
-    <p><strong>Leiria (58km WSW)</strong><br>Chuva persistente e por vezes forte.</p><p><strong>Coimbra (36km NW)</strong><br>Chuva persistente e por vezes forte.</p>
-            <footer>
-                <button onclick="closeModal('modal-Precipitação-15-15-01', event)">Close</button>
             </footer>
         </article>
     </dialog>
@@ -1222,7 +1222,7 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> yellow
-        <br><strong>start:</strong> 15/01 12:00
+        <br><strong>start:</strong> 15/01 12:27
         <br><strong>end:</strong> 16/01 18:00
         <hr>
     <p><strong>Castelo Branco (59km ESE)</strong><br>Queda de neve acima de 1600 m, descendo para 1200 m a partir do fim da tarde, com acumulação até 20 cm nos pontos mais altos da Serra da Estrela.Impactos Prováveis: Perturbação causada por queda de neve com acumulação e possível formação de gelo (p. ex., vias condicionadas ou interditas, danos em estruturas ou árvores, abastecimentos locais prejudicados).</p>
