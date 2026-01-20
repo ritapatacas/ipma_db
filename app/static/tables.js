@@ -61,18 +61,18 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(1-25) Sun</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/14_iday_simple.svg" title="Mostly cloudy with rain"/></td>
-      <td>6.67</td>
-      <td>9.44</td>
+      <td>6.11</td>
+      <td>8.89</td>
       <td>0.98</td>
       <td>95%</td>
       <td>20%</td>
     </tr>
     <tr>
       <td>(1-26) Mon</td>
-      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/14_iday_simple.svg" title="Mostly cloudy with rain"/></td>
+      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/16_iday_simple.svg" title="Mostly cloudy with occasional rain"/></td>
       <td>6.67</td>
       <td>11.11</td>
-      <td>0.45</td>
+      <td>0.18</td>
       <td>90%</td>
       <td>10%</td>
     </tr>
@@ -106,7 +106,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(1-30) Fri</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/06_iday_simple.svg" title="Overcast with rain"/></td>
-      <td>8.89</td>
+      <td>8.33</td>
       <td>11.67</td>
       <td>0.50</td>
       <td>85%</td>
@@ -197,9 +197,9 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     </tr>
     <tr>
       <td>25 (Sun)</td>
-      <td>6.67</td>
-      <td>9.44</td>
-      <td>0.9754</td>
+      <td>6.11</td>
+      <td>8.89</td>
+      <td>0.9832</td>
       <td>95%</td>
       <td>Mostly cloudy with rain</td>
     </tr>
@@ -207,9 +207,9 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
       <td>26 (Mon)</td>
       <td>6.67</td>
       <td>11.11</td>
-      <td>0.4465</td>
+      <td>0.1811</td>
       <td>90%</td>
-      <td>Mostly cloudy with rain</td>
+      <td>Mostly cloudy with occasional rain</td>
     </tr>
   </tbody>
 </table></div>
@@ -987,11 +987,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Jan 26</td>
-      <td>467</td>
+      <td>469</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>7779</td>
+      <td>7781</td>
     </tr>
   </tbody>
 </table>
