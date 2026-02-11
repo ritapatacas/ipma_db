@@ -61,7 +61,7 @@ function buildForecastTable(forecast, mobile) {
     if (mobile) {
       return `<tr><td>${escapeHtml(day)}</td><td>${min}</td><td>${max}</td><td>${prec}</td><td>${prob}</td><td>${obs}</td></tr>`;
     }
-    return `<tr><td>${escapeHtml(day)}</td><td>${icon}</td><td>${min}</td><td>${max}</td><td>${prec}</td><td>${prob}</td><td>${escapeHtml(pred)}</td></tr>`;
+    return `<tr><td>${escapeHtml(day)}</td><td class="forecast-icon">${icon}</td><td>${min}</td><td>${max}</td><td>${prec}</td><td>${prob}</td><td>${escapeHtml(pred)}</td></tr>`;
   });
   const headers = mobile
     ? "<tr><th>day</th><th>min</th><th>max</th><th>prec mm</th><th>prob %</th><th>obs</th></tr>"
@@ -259,22 +259,7 @@ document.addEventListener("DOMContentLoaded", function () {
     setupThemeToggle();
     setupModalHandlers();
     setupNavigation();
-    setupDropdownHandlers();
-
-    const observationLinks = document.querySelectorAll("[data-table]");
-    const allDataTables = document.querySelectorAll(".data-table");
-    const dropdownLabel = document.getElementById("dropdown-label");
-    observationLinks.forEach((link) => {
-      link.addEventListener("click", function (e) {
-        e.preventDefault();
-        const tableId = this.dataset.table;
-        const tableName = this.textContent.trim();
-        allDataTables.forEach((t) => (t.style.display = "none"));
-        const el = document.getElementById("data-table-" + tableId);
-        if (el) el.style.display = "block";
-        if (dropdownLabel) dropdownLabel.textContent = tableName;
-      });
-    });
+    setupDropdownHandlers(showcaseDiv);
 
     updateNavbarText();
     updateShowcase(window.location.hash.replace("#", "") || "forecast");
@@ -388,16 +373,20 @@ function loadEvapotranspirationChart() {
   createEvapoChart(window.evapotranspirationData);
 }
 
-function setupDropdownHandlers() {
-  document.querySelectorAll(".dropdown a[data-table]").forEach((link) => {
-    link.addEventListener("click", function (event) {
-      event.preventDefault();
-      const type = link.getAttribute("data-table");
-      if (!type) return;
-      document.querySelectorAll(".data-table").forEach((t) => (t.style.display = "none"));
-      const target = document.getElementById("data-table-" + type);
-      if (target) target.style.display = "block";
-    });
+function setupDropdownHandlers(showcaseDiv) {
+  if (!showcaseDiv) return;
+  showcaseDiv.addEventListener("click", function (e) {
+    const link = e.target.closest("a[data-table]");
+    if (!link) return;
+    e.preventDefault();
+    e.stopPropagation();
+    const tableId = link.getAttribute("data-table");
+    const tableName = link.textContent.trim();
+    showcaseDiv.querySelectorAll(".data-table").forEach((t) => (t.style.display = "none"));
+    const target = showcaseDiv.querySelector("#data-table-" + tableId);
+    if (target) target.style.display = "block";
+    const label = showcaseDiv.querySelector("#dropdown-label");
+    if (label) label.textContent = tableName;
   });
 }
 
