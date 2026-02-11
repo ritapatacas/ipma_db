@@ -1,0 +1,287 @@
+/* Hide scrollbar for Chrome, Edge, Safari */
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for Firefox and IE */
+body {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+/* Force overlay scrollbar */
+html {
+    overflow-y: overlay;
+}
+
+/* Default: Show the full table */
+.desktop-view {
+    display: table;
+}
+
+.mobile-view {
+    display: none;
+}
+
+
+/* Layout e Reset */
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: var(--pico-background-color);
+    color: var(--pico-color);
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+
+h1 {
+    font-family: "Roboto mono", serif;
+    font-weight: 100;
+    font-size: 1.2em;
+    text-align: left;
+    color: var(--pico-color);
+}
+
+
+/* NAVBAR */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+nav a {
+    padding: 0.4rem 0.4rem;
+    font-size: 0.8rem;
+    margin-left: 0.5rem;
+    border: none;
+    background: transparent;
+    border-radius: 0;
+    cursor: pointer;
+    transition: font-weight 0.1s ease, text-decoration 0.1s ease, opacity 0.3s ease;
+    outline: none;
+    color: inherit;
+}
+
+nav a:hover {
+    border: none;
+    text-decoration: underline;
+    opacity: 0.8;
+    outline: none;
+    color: inherit;
+}
+
+nav a[aria-current="p"] {
+    font-size: 0.8rem;
+    text-decoration: underline !important;
+
+}
+
+#theme-toggle {
+    padding: 0;
+    margin-left: 0;
+    font-size: 1rem;
+    border: none;
+    background: transparent;
+    color: var(--pico-color);
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+#theme-toggle:hover {
+    opacity: 0.7;
+}
+
+/* style.css */
+@media (max-width: 1025px) {
+    .desktop-view {
+        display: none;
+    }
+
+    .mobile-view {
+        display: table;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li a,
+    nav ul li div {
+        display: flex;
+        width: 100%;
+        text-align: center;
+        align-items: center;
+    }
+
+    .nav-links {
+        display: flex !important;
+        align-items: right;
+    }
+
+    .nav-links i {
+        font-size: 2rem;
+    }
+}
+
+
+
+
+
+
+main.container {
+    padding: 2rem;
+}
+
+.showcase {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+
+/* TABLES */
+table.custom-table {
+    font-size: 0.7rem;
+    table-layout: auto;
+    width: auto;
+    max-width: 100%;
+    background-color: var(--pico-card-background-color);
+    color: var(--pico-color);
+    border-radius: var(--pico-border-radius);
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 0.4rem 0.8rem;
+    text-align: left;
+    border-bottom: 1px solid var(--pico-muted-border-color);
+    white-space: normal;
+    /* permite quebra de linha dentro da célula */
+    max-width: 600px;
+    /* (opcional) Limite máximo por célula */
+    word-wrap: break-word;
+    /* quebra palavras longas */
+}
+
+th {
+    font-weight: 600;
+}
+
+.table-title {
+    font-size: 0.8rem;
+    text-align: center;
+    margin-bottom: 0.2rem;
+}
+
+.table-container {
+    display: flex;
+    gap: 2rem;
+    /* Space between tables */
+    justify-content: space-between;
+    /* Optional: Spread tables */
+    align-items: flex-start;
+    /* Align tables to top */
+    flex-wrap: wrap;
+    /* Allow wrapping on smaller screens */
+}
+
+.table-wrapper {
+    display: flex;
+    justify-content: space-around;
+    min-width: auto;
+    /* Minimum width to avoid too small tables */
+    overflow-x: auto;
+    /* Scroll if content overflows */
+}
+
+
+.warning-timeline {
+    font-size: 0.8rem;
+    text-align: left;
+
+}
+
+.custom-table tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Light highlight */
+    transition: background-color 0.3s ease-in-out;
+}
+
+
+
+
+.card {
+    position: relative;
+    border: 1px solid var(--muted-border);
+    border-radius: var(--border-radius);
+    background: var(--card-background-color);
+    box-shadow: var(--shadow-sm);
+}
+.close-button {
+    position: absolute;
+
+    background: transparent;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+
+
+  .custom-dropdown summary {
+    display: flex;
+    align-items: center;        /* Alinha verticalmente */
+    justify-content: center;    /* (Opcional) centra horizontalmente */
+    padding: 0.25rem 0.75rem;
+    background-color: var(--pico-background-color);
+    border: 1px solid var(--pico-muted-border-color);
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.7rem;
+    height: 1rem;              /* Força altura constante para melhor alinhamento */
+    line-height: 1;
+  }
+  
+  
+  .custom-dropdown[open] summary {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  
+  .custom-dropdown ul {
+    padding: 0.25rem;
+    margin: 0;
+    list-style: none;
+    background-color: var(--pico-card-background-color);
+    border: 1px solid var(--pico-muted-border-color);
+    border-top: none;
+    border-radius: 0 0 6px 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .custom-dropdown li a {
+    display: block;
+    padding: 0.3rem 0.5rem;
+    text-decoration: none;
+    color: var(--pico-color);
+  }
+  
+  .custom-dropdown li a:hover {
+    background-color: var(--pico-muted-color);
+  }
+  

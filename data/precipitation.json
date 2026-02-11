@@ -1,0 +1,79 @@
+[
+  {
+    "period": "11 Nov",
+    "maximum": 0.0378189906,
+    "mean": 0.0177943882,
+    "minimum": 0.0068110181,
+    "range": 0.0310079725,
+    "max": null,
+    "min": null,
+    "std": null,
+    "total": null
+  },
+  {
+    "period": "10 Nov",
+    "maximum": 2.7137823105,
+    "mean": 2.0748934506,
+    "minimum": 0.9488449693,
+    "range": 1.7649373412,
+    "max": null,
+    "min": null,
+    "std": null,
+    "total": null
+  },
+  {
+    "period": "09 Nov",
+    "maximum": 0.0915574282,
+    "mean": 0.049301892,
+    "minimum": 0.0236526113,
+    "range": 0.0679048169,
+    "max": null,
+    "min": null,
+    "std": null,
+    "total": null
+  },
+  {
+    "period": "08 Nov",
+    "maximum": 0.2015961558,
+    "mean": 0.1940008425,
+    "minimum": 0.1817712188,
+    "range": 0.019824937,
+    "max": null,
+    "min": null,
+    "std": null,
+    "total": null
+  },
+  {
+    "period": "06 Nov",
+    "maximum": 5.6213874817,
+    "mean": 4.9386940077,
+    "minimum": 4.2051415443,
+    "range": 1.4162459374,
+    "max": null,
+    "min": null,
+    "std": null,
+    "total": null
+  },
+  {
+    "period": "05 Nov",
+    "maximum": 44.8155708313,
+    "mean": 44.1871715456,
+    "minimum": 42.6516838074,
+    "range": 2.1638870239,
+    "max": null,
+    "min": null,
+    "std": null,
+    "total": null
+  },
+  {
+    "period": "04 Nov",
+    "maximum": 0.0015938864,
+    "mean": 0.0001075397,
+    "minimum": 0.0,
+    "range": 0.0015938864,
+    "max": null,
+    "min": null,
+    "std": null,
+    "total": null
+  }
+]

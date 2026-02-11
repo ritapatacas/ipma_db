@@ -1,0 +1,74 @@
+[
+  {
+    "period": "Oct 24",
+    "missing": 69
+  },
+  {
+    "period": "Nov 24",
+    "missing": 228
+  },
+  {
+    "period": "Dec 24",
+    "missing": 28
+  },
+  {
+    "period": "Jan 25",
+    "missing": 0
+  },
+  {
+    "period": "Feb 25",
+    "missing": 15
+  },
+  {
+    "period": "Mar 25",
+    "missing": 84
+  },
+  {
+    "period": "Apr 25",
+    "missing": 5
+  },
+  {
+    "period": "May 25",
+    "missing": 4
+  },
+  {
+    "period": "Jun 25",
+    "missing": 582
+  },
+  {
+    "period": "Jul 25",
+    "missing": 128
+  },
+  {
+    "period": "Aug 25",
+    "missing": 0
+  },
+  {
+    "period": "Sep 25",
+    "missing": 0
+  },
+  {
+    "period": "Oct 25",
+    "missing": 9
+  },
+  {
+    "period": "Nov 25",
+    "missing": 0
+  },
+  {
+    "period": "Dec 25",
+    "missing": 0
+  },
+  {
+    "period": "Jan 26",
+    "missing": 0
+  },
+  {
+    "period": "Feb 26",
+    "missing": 1
+  },
+  {
+    "period": "Total",
+    "missing": 1153
+  }
+]

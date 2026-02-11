@@ -1,0 +1,50 @@
+[
+  {
+    "period": "Nov 24",
+    "cold": 3
+  },
+  {
+    "period": "Dec 24",
+    "cold": 180
+  },
+  {
+    "period": "Jan 25",
+    "cold": 159
+  },
+  {
+    "period": "Feb 25",
+    "cold": 47
+  },
+  {
+    "period": "Mar 25",
+    "cold": 111
+  },
+  {
+    "period": "Apr 25",
+    "cold": 31
+  },
+  {
+    "period": "Jul 25",
+    "cold": 6
+  },
+  {
+    "period": "Nov 25",
+    "cold": 78
+  },
+  {
+    "period": "Dec 25",
+    "cold": 168
+  },
+  {
+    "period": "Jan 26",
+    "cold": 250
+  },
+  {
+    "period": "Feb 26",
+    "cold": 60
+  },
+  {
+    "period": "Total",
+    "cold": 1093
+  }
+]
