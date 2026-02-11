@@ -13,9 +13,10 @@ from analyze import (
     summarize_missing_entries,
     warnings_by_region,
 ) 
-from forecast_view import format_forecast_html_table
+from forecast_view import format_forecast_html_table, load_forecast_dataframe
 from utils import get_closest_regions, WARNING_ICONS, get_warning_level_icon
 
+df_forecast = load_forecast_dataframe()
 df_observations = pd.DataFrame(observations())
 df_show_missing_entries = pd.DataFrame(summarize_missing_entries("month"))
 df_cold_hours = pd.DataFrame(summarize_cold_hours("month"))
@@ -34,7 +35,7 @@ def debug_print_data():
 #debug_print_data()
 
 
-table_html_forecast, table_html_forecast_mobile = format_forecast_html_table()
+table_html_forecast, table_html_forecast_mobile = format_forecast_html_table(df_forecast)
 
 
 
