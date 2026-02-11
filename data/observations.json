@@ -1,6 +1,15 @@
 [
   {
     "date": "11 Feb",
+    "time": "05h",
+    "temp": 13.6,
+    "wind dir": "SW",
+    "wind km": 10.1,
+    "prec": null,
+    "rad": 0.0
+  },
+  {
+    "date": "11 Feb",
     "time": "04h",
     "temp": 13.5,
     "wind dir": "SW",
@@ -12947,15 +12956,6 @@
     "temp": 8.9,
     "wind dir": "E",
     "wind km": 10.1,
-    "prec": 0.0,
-    "rad": 0.0
-  },
-  {
-    "date": "13 Dec",
-    "time": "05h",
-    "temp": 9.0,
-    "wind dir": "NE",
-    "wind km": 7.2,
     "prec": 0.0,
     "rad": 0.0
   }

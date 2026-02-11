@@ -1,4 +1,5 @@
 const DATA_BASE = "data/";
+const DATA_BASE_FALLBACK = "dist/data/";
 
 const WARNING_ICONS = {
   Nevoeiro: "fa-smog",
@@ -39,39 +40,163 @@ function formatDateDMMM(s) {
   return `${day}/${month} ${h}:${m}`;
 }
 
-function buildForecastTable(forecast, mobile) {
-  if (!forecast || forecast.length === 0) {
-    return '<div class="table-wrapper"><table class="custom-table"><tbody><tr><td>No forecast data</td></tr></tbody></table></div>';
+const FORECAST_WEEK_SIZE = 7;
+function toNumber(val) {
+  if (val == null || val === "") return null;
+  const n = Number(String(val).replace(",", ".").replace("%", "").trim());
+  return Number.isFinite(n) ? n : null;
+}
+function firstDefined(row, keys) {
+  for (const k of keys) {
+    if (row[k] != null && row[k] !== "") return row[k];
   }
-  const viewClass = mobile ? "mobile-view" : "desktop-view";
-  const num = num => (num != null && !isNaN(num) ? Number(num).toFixed(2) : "-");
-  const rows = forecast.slice(0, mobile ? 7 : forecast.length).map((row) => {
-    const date = row.date != null ? String(row.date) : "-";
-    const weekday = row.weekday != null ? String(row.weekday) : "-";
-    const day = mobile
-      ? (date.match(/-(\d+)$/) ? date.match(/-(\d+)$/)[1] : date) + " (" + weekday + ")"
-      : "(" + date + ") " + weekday;
-    const min = num(row.min);
-    const max = num(row.max);
-    const prec = row["prec mm"] != null ? num(row["prec mm"]) : "-";
-    const prob = row["prob %"] != null ? String(row["prob %"]) : "-";
-    const pred = row.pred != null ? String(row.pred) : "-";
-    const obs = row.obs != null ? String(row.obs) : "-";
-    const icon = row.icon != null ? String(row.icon) : "";
-    if (mobile) {
-      return `<tr><td>${escapeHtml(day)}</td><td>${min}</td><td>${max}</td><td>${prec}</td><td>${prob}</td><td>${obs}</td></tr>`;
+  return null;
+}
+function formatMdFromIso(dateIso) {
+  if (!dateIso) return null;
+  const m = String(dateIso).match(/^(\d{4})-(\d{2})-(\d{2})/);
+  if (!m) return null;
+  return `${Number(m[2])}-${Number(m[3])}`;
+}
+function buildHourlyMaps(rows) {
+  const byDate = {};
+  const byDay = {};
+  (rows || []).forEach((row) => {
+    const key = formatMdFromIso(row.date);
+    const day = Number(row.day);
+    if (key) {
+      if (!byDate[key]) byDate[key] = [];
+      byDate[key].push(row);
     }
-    return `<tr><td>${escapeHtml(day)}</td><td class="forecast-icon">${icon}</td><td>${min}</td><td>${max}</td><td>${prec}</td><td>${prob}</td><td>${escapeHtml(pred)}</td></tr>`;
+    if (Number.isFinite(day)) {
+      if (!byDay[day]) byDay[day] = [];
+      byDay[day].push(row);
+    }
   });
-  const headers = mobile
-    ? "<tr><th>day</th><th>min</th><th>max</th><th>prec mm</th><th>prob %</th><th>obs</th></tr>"
-    : "<tr><th>day</th><th>icon</th><th>min</th><th>max</th><th>prec mm</th><th>prob %</th><th>pred</th></tr>";
-  const table = `<table class="custom-table ${viewClass}"><thead>${headers}</thead><tbody>${rows.join("")}</tbody></table>`;
-  const iframe =
-    '<iframe src="https://www.meteoblue.com/en/weather/maps/widget/troviscais-fundeiros_portugal_2262489?windAnimation=1&gust=1&satellite=1&cloudsAndPrecipitation=1&temperature=1&sunshine=0&extremeForecastIndex=1&geoloc=fixed&tempunit=C&windunit=km%252Fh&lengthunit=metric&zoom=10&autowidth=auto" frameborder="0" scrolling="NO" allowtransparency="true" sandbox="allow-same-origin allow-scripts allow-popups allow-popups-to-escape-sandbox" style="width: 550px; height: 350px"></iframe>';
-  const iframeMobile =
-    '<iframe src="https://www.meteoblue.com/en/weather/maps/widget/troviscais-fundeiros_portugal_2262489?windAnimation=1&gust=1&satellite=1&cloudsAndPrecipitation=1&temperature=1&sunshine=0&extremeForecastIndex=1&geoloc=fixed&tempunit=C&windunit=km%252Fh&lengthunit=metric&zoom=10&autowidth=auto" frameborder="0" scrolling="NO" allowtransparency="true" sandbox="allow-same-origin allow-scripts allow-popups allow-popups-to-escape-sandbox" style="width: 80%; height: 550px"></iframe>';
-  return `<div class="table-wrapper ${viewClass}">${table}</div>${iframe}<div></div>`;
+  Object.values(byDate).forEach((arr) => arr.sort((a, b) => String(a.time || "").localeCompare(String(b.time || ""))));
+  Object.values(byDay).forEach((arr) => arr.sort((a, b) => String(a.time || "").localeCompare(String(b.time || ""))));
+  return { byDate, byDay };
+}
+function initForecastState(dailyForecast, hourlyForecast) {
+  const daily = Array.isArray(dailyForecast) ? dailyForecast : [];
+  const hourly = Array.isArray(hourlyForecast) ? hourlyForecast : [];
+  window.forecastState = {
+    daily,
+    hourly,
+    maps: buildHourlyMaps(hourly),
+    activeDayIndex: 0,
+    weekStart: 0,
+    metric: "temperature",
+  };
+}
+function getHourlyForDayIndex(index) {
+  const state = window.forecastState || {};
+  const day = (state.daily || [])[index] || {};
+  const dateKey = day.date ? String(day.date) : null;
+  if (dateKey && state.maps && state.maps.byDate && state.maps.byDate[dateKey]) return state.maps.byDate[dateKey];
+  const dayId = index + 1;
+  if (state.maps && state.maps.byDay && state.maps.byDay[dayId]) return state.maps.byDay[dayId];
+  return [];
+}
+function averageWindForDay(index) {
+  const rows = getHourlyForDayIndex(index);
+  if (!rows.length) return null;
+  const vals = rows.map((r) => toNumber(firstDefined(r, ["wind km/h", "wind_km_h", "wind"]))).filter((n) => n != null);
+  if (!vals.length) return null;
+  return vals.reduce((acc, n) => acc + n, 0) / vals.length;
+}
+function buildForecastCardView() {
+  const state = window.forecastState || {};
+  const daily = state.daily || [];
+  if (!daily.length) return "<p>No forecast data</p>";
+  const start = state.weekStart || 0;
+  const end = Math.min(start + FORECAST_WEEK_SIZE, daily.length);
+  const active = Math.min(Math.max(state.activeDayIndex || 0, 0), daily.length - 1);
+  const day = daily[active] || {};
+  const hourly = getHourlyForDayIndex(active);
+  const tempNow = toNumber(firstDefined(hourly[0] || day, ["temp", "max", "min"]));
+  const description = firstDefined(hourly[0] || day, ["obs", "pred"]) || "Forecast";
+  const cards = daily.slice(start, end).map((row, i) => {
+    const idx = start + i;
+    const min = toNumber(firstDefined(row, ["min"]));
+    const max = toNumber(firstDefined(row, ["max"]));
+    const prec = toNumber(firstDefined(row, ["prec mm", "precipitation", "prec_mm"]));
+    const prob = toNumber(firstDefined(row, ["prob %", "probability", "prob"]));
+    const wind = averageWindForDay(idx);
+    return (
+      `<button class="daily-card ${idx === active ? "active" : ""}" data-forecast-day-index="${idx}">` +
+      `<p class="daily-card-date">${escapeHtml(String(row.weekday || "-"))} <span>${escapeHtml(String(row.date || "-"))}</span></p>` +
+      `<div class="daily-card-icon">${row.icon || '<i class="fa-solid fa-cloud"></i>'}</div>` +
+      `<p class="daily-card-temp"><strong>${max != null ? max.toFixed(0) : "-"}</strong> / ${min != null ? min.toFixed(0) : "-"} C</p>` +
+      `<p class="daily-card-meta">prec ${prec != null ? prec.toFixed(1) : "-"} mm | prob ${prob != null ? prob.toFixed(0) : "-"}%</p>` +
+      `<p class="daily-card-meta">wind ${wind != null ? wind.toFixed(0) : "-"} km/h</p>` +
+      `</button>`
+    );
+  }).join("");
+  const prevDisabled = start <= 0 ? "disabled" : "";
+  const nextDisabled = end >= daily.length ? "disabled" : "";
+  return (
+    `<section class="forecast-v2">` +
+    `<header class="forecast-hero">` +
+    `<div><p class="forecast-hero-label">${escapeHtml(String(day.weekday || ""))} ${escapeHtml(String(day.date || ""))}</p><h2>${tempNow != null ? tempNow.toFixed(0) + " C" : "-"} <span>${escapeHtml(String(description))}</span></h2></div>` +
+    `<div class="forecast-tabs">` +
+    `<button class="forecast-tab ${state.metric === "temperature" ? "active" : ""}" data-forecast-metric="temperature">Temperature</button>` +
+    `<button class="forecast-tab ${state.metric === "precipitation" ? "active" : ""}" data-forecast-metric="precipitation">Precipitation</button>` +
+    `<button class="forecast-tab ${state.metric === "wind" ? "active" : ""}" data-forecast-metric="wind">Wind</button>` +
+    `</div>` +
+    `</header>` +
+    `<section class="forecast-chart-panel"><canvas id="forecastHourlyChart" height="140"></canvas></section>` +
+    `<footer class="forecast-week-nav">` +
+    `<button data-forecast-nav="prev" ${prevDisabled}>Semana anterior</button>` +
+    `<div class="daily-cards-row">${cards}</div>` +
+    `<button data-forecast-nav="next" ${nextDisabled}>Seguinte</button>` +
+    `</footer>` +
+    `</section>`
+  );
+}
+function renderForecastChart() {
+  const state = window.forecastState || {};
+  const canvas = document.getElementById("forecastHourlyChart");
+  if (!canvas || !(window.Chart && state.daily && state.daily.length)) return;
+  const rows = getHourlyForDayIndex(state.activeDayIndex || 0);
+  const labels = rows.map((r) => String(r.time || ""));
+  let data = [];
+  let color = "#2f7fd8";
+  let title = "Temperature (C)";
+  if (state.metric === "precipitation") {
+    data = rows.map((r) => toNumber(firstDefined(r, ["prec mm", "precipitation", "prec_mm"])));
+    color = "#1f9d6b";
+    title = "Precipitation (mm)";
+  } else if (state.metric === "wind") {
+    data = rows.map((r) => toNumber(firstDefined(r, ["wind km/h", "wind_km_h", "wind"])));
+    color = "#e6862c";
+    title = "Wind (km/h)";
+  } else {
+    data = rows.map((r) => toNumber(firstDefined(r, ["temp", "temperature"])));
+  }
+  if (!labels.length) {
+    labels.push("No hourly data");
+    data.push(null);
+  }
+  if (window.forecastHourlyChart instanceof Chart) window.forecastHourlyChart.destroy();
+  window.forecastHourlyChart = new Chart(canvas.getContext("2d"), {
+    type: "line",
+    data: {
+      labels,
+      datasets: [{ label: title, data, borderColor: color, backgroundColor: color, pointRadius: 2, borderWidth: 2, tension: 0.3 }],
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: { x: { ticks: { autoSkip: true, maxTicksLimit: 8 } }, y: { beginAtZero: state.metric !== "temperature" } },
+    },
+  });
+}
+function renderForecastView(showcaseDiv) {
+  if (!showcaseDiv) return;
+  showcaseDiv.innerHTML = buildForecastCardView();
+  renderForecastChart();
 }
 
 function escapeHtml(s) {
@@ -124,7 +249,7 @@ function buildSimpleTable(rows, columns, title) {
   const tbody = rows
     .map((row) => "<tr>" + columns.map((col) => "<td>" + escapeHtml(row[col] != null ? String(row[col]) : "") + "</td>").join("") + "</tr>")
     .join("");
-  return `<div class="table-wrapper mobile-view"><table class="custom-table">${thead}<tbody>${tbody}</tbody></table></div>`;
+  return `<div class="table-wrapper"><table class="custom-table">${thead}<tbody>${tbody}</tbody></table></div>`;
 }
 
 function organizeWarnings(warnings, regions) {
@@ -206,15 +331,26 @@ function buildObservationsPage(observations, evapotranspiration, precipitation) 
   const evapoTable = buildSimpleTable(evapotranspiration, ["period", "min", "max", "mean", "range", "std"], "Evaporatranspiration");
   const precipCols = precipitation && precipitation[0] ? Object.keys(precipitation[0]).filter((k) => k !== "_id") : ["period"];
   const precipTable = buildSimpleTable(precipitation, precipCols, "Precipitation");
+  const lastObs = observations && observations.length ? observations[observations.length - 1] : null;
+  const lastObsText = lastObs ? `${escapeHtml(lastObs.date || "-")} ${escapeHtml(lastObs.time || "")}` : "n/a";
   return (
-    `<details class="dropdown custom-dropdown" id="observations-dropdown"><summary id="dropdown-label">Select</summary><ul>` +
-    `<li><a href="#" data-table="observations">Observations</a></li>` +
-    `<li><a href="#" data-table="evapotranspiration">Evapotranspiration</a></li>` +
-    `<li><a href="#" data-table="precipitation">Precipitation</a></li>` +
-    `</ul></details>` +
-    `<div id="data-table-observations" class="data-table"><div class="table-wrapper">${obsTable}</div></div>` +
-    `<div id="data-table-evapotranspiration" class="data-table" style="display:none;">${evapoTable}<div id="evapoChartContainer"><canvas id="evapoChart" width="800" height="400"></canvas></div></div>` +
-    `<div id="data-table-precipitation" class="data-table" style="display:none;">${precipTable}</div>`
+    `<section class="obs-layout">` +
+    `<header class="view-header"><h2>Observacoes</h2><p>Escolha um conjunto de dados</p></header>` +
+    `<div class="obs-tabs" role="tablist" aria-label="Observation data tabs">` +
+    `<button class="obs-tab active" data-tab="observations" role="tab" aria-selected="true" aria-controls="data-table-observations">Observations</button>` +
+    `<button class="obs-tab" data-tab="evapotranspiration" role="tab" aria-selected="false" aria-controls="data-table-evapotranspiration">Evapotranspiration</button>` +
+    `<button class="obs-tab" data-tab="precipitation" role="tab" aria-selected="false" aria-controls="data-table-precipitation">Precipitation</button>` +
+    `</div>` +
+    `<section id="data-table-observations" class="data-table obs-panel is-active" role="tabpanel">` +
+    `<p class="obs-summary">Ultima atualizacao: <strong>${lastObsText}</strong> | Registos: <strong>${observations.length}</strong></p>` +
+    `${obsTable}` +
+    `</section>` +
+    `<section id="data-table-evapotranspiration" class="data-table obs-panel" role="tabpanel" hidden>` +
+    `<article class="chart-card"><h3>Evapotranspiration</h3><div id="evapoChartContainer"><canvas id="evapoChart" width="800" height="400"></canvas></div></article>` +
+    `${evapoTable}` +
+    `</section>` +
+    `<section id="data-table-precipitation" class="data-table obs-panel" role="tabpanel" hidden>${precipTable}</section>` +
+    `</section>`
   );
 }
 
@@ -223,8 +359,14 @@ function buildDashboardPage(coldHours, missingEntries, warningsData, regions) {
   const missingTable = buildSimpleTable(missingEntries, ["period", "missing"], "Missing Entries");
   const warnSection = buildWarningsTable(warningsData, regions);
   return (
-    `<div class="table-container"><div class="table-wrapper">${coldTable}</div>` +
-    `<div class="table-wrapper">${missingTable}</div>${warnSection}</div>`
+    `<section class="dashboard-layout">` +
+    `<header class="view-header"><h2>Dashboard</h2><p>Resumo rapido de indicadores e avisos</p></header>` +
+    `<div class="dashboard-grid">` +
+    `<article class="dashboard-card">${coldTable}</article>` +
+    `<article class="dashboard-card">${missingTable}</article>` +
+    `<article class="dashboard-card dashboard-card-wide">${warnSection}</article>` +
+    `</div>` +
+    `</section>`
   );
 }
 
@@ -232,7 +374,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const showcaseDiv = document.getElementById("showcase");
   if (!showcaseDiv) return;
 
-  const dataUrls = [
+  const dataNames = [
     "observations",
     "evapotranspiration",
     "precipitation",
@@ -241,17 +383,33 @@ document.addEventListener("DOMContentLoaded", function () {
     "warnings",
     "regions",
     "forecast",
-  ].map((name) => DATA_BASE + name + ".json");
+    "forecast_hourly",
+  ];
+
+  function fetchDataFile(name) {
+    const urls = [DATA_BASE + name + ".json", DATA_BASE_FALLBACK + name + ".json"];
+    return (async function () {
+      for (const url of urls) {
+        try {
+          const r = await fetch(url, { cache: "no-store" });
+          if (r.ok) return await r.json();
+        } catch (_) {}
+      }
+      return null;
+    })();
+  }
 
   Promise.all(
-    dataUrls.map((url) =>
-      fetch(url)
-        .then((r) => (r.ok ? r.json() : null))
-        .catch(() => null)
-    )
-  ).then(([observations, evapotranspiration, precipitation, cold_hours, missing_entries, warnings, regions, forecast]) => {
-    window.forecastTable = buildForecastTable(forecast, false);
-    window.forecastTableMobile = buildForecastTable(forecast, true);
+    dataNames.map((name) => fetchDataFile(name))
+  ).then(([observations, evapotranspiration, precipitation, cold_hours, missing_entries, warnings, regions, forecast, forecast_hourly]) => {
+    const loadedCount = [observations, evapotranspiration, precipitation, cold_hours, missing_entries, warnings, regions, forecast, forecast_hourly]
+      .filter((x) => x != null).length;
+    if (loadedCount === 0) {
+      showcaseDiv.innerHTML =
+        '<article class="dashboard-card"><h3>Data load failed</h3><p>No JSON data could be loaded. Serve <code>dist/</code> as the web root, or verify <code>data/*.json</code> paths.</p></article>';
+      return;
+    }
+    initForecastState(forecast || [], forecast_hourly || []);
     window.evapotranspirationData = Array.isArray(evapotranspiration) ? evapotranspiration : [];
     window.observationsTable = buildObservationsPage(observations || [], evapotranspiration || [], precipitation || []);
     window.dashboardTable = buildDashboardPage(cold_hours || [], missing_entries || [], warnings || {}, regions || []);
@@ -259,7 +417,8 @@ document.addEventListener("DOMContentLoaded", function () {
     setupThemeToggle();
     setupModalHandlers();
     setupNavigation();
-    setupDropdownHandlers(showcaseDiv);
+    setupObservationsTabHandlers(showcaseDiv);
+    setupForecastHandlers(showcaseDiv);
 
     updateNavbarText();
     updateShowcase(window.location.hash.replace("#", "") || "forecast");
@@ -289,17 +448,20 @@ function setupNavigation() {
 function updateShowcase(page) {
   const showcaseDiv = document.getElementById("showcase");
   if (!showcaseDiv) return;
-  const forecastHtml = window.innerWidth <= 1025 ? window.forecastTableMobile : window.forecastTable;
+  showcaseDiv.classList.remove("showcase-forecast", "showcase-observations", "showcase-dashboard");
+  showcaseDiv.classList.add("showcase-" + page);
   const tableMap = {
-    forecast: forecastHtml,
     observations: window.observationsTable,
     dashboard: window.dashboardTable,
   };
-  showcaseDiv.innerHTML = tableMap[page] || "<p>Page not found</p>";
+  if (page === "forecast") {
+    renderForecastView(showcaseDiv);
+  } else {
+    showcaseDiv.innerHTML = tableMap[page] || "<p>Page not found</p>";
+  }
   window.location.hash = page;
   updateButtonStyles(page);
   attachModalCloseListeners();
-  if (page === "observations") loadEvapotranspirationChart();
 }
 
 function updateButtonStyles(page) {
@@ -373,20 +535,70 @@ function loadEvapotranspirationChart() {
   createEvapoChart(window.evapotranspirationData);
 }
 
-function setupDropdownHandlers(showcaseDiv) {
+function setupObservationsTabHandlers(showcaseDiv) {
   if (!showcaseDiv) return;
   showcaseDiv.addEventListener("click", function (e) {
-    const link = e.target.closest("a[data-table]");
-    if (!link) return;
+    const tab = e.target.closest("button[data-tab]");
+    if (!tab) return;
     e.preventDefault();
-    e.stopPropagation();
-    const tableId = link.getAttribute("data-table");
-    const tableName = link.textContent.trim();
-    showcaseDiv.querySelectorAll(".data-table").forEach((t) => (t.style.display = "none"));
+    const tableId = tab.getAttribute("data-tab");
+    const tabs = showcaseDiv.querySelectorAll(".obs-tab");
+    const panels = showcaseDiv.querySelectorAll(".obs-panel");
+    tabs.forEach((item) => {
+      const isActive = item === tab;
+      item.classList.toggle("active", isActive);
+      item.setAttribute("aria-selected", isActive ? "true" : "false");
+    });
+    panels.forEach((panel) => {
+      panel.classList.remove("is-active");
+      panel.setAttribute("hidden", "");
+    });
     const target = showcaseDiv.querySelector("#data-table-" + tableId);
-    if (target) target.style.display = "block";
-    const label = showcaseDiv.querySelector("#dropdown-label");
-    if (label) label.textContent = tableName;
+    if (target) {
+      target.classList.add("is-active");
+      target.removeAttribute("hidden");
+    }
+    if (tableId === "evapotranspiration") loadEvapotranspirationChart();
+  });
+}
+
+function setupForecastHandlers(showcaseDiv) {
+  if (!showcaseDiv) return;
+  showcaseDiv.addEventListener("click", function (e) {
+    const navBtn = e.target.closest("button[data-forecast-nav]");
+    if (navBtn) {
+      const state = window.forecastState;
+      if (!state || !state.daily) return;
+      const direction = navBtn.getAttribute("data-forecast-nav");
+      const maxStart = Math.max(0, state.daily.length - FORECAST_WEEK_SIZE);
+      const nextStart = direction === "prev"
+        ? Math.max(0, state.weekStart - FORECAST_WEEK_SIZE)
+        : Math.min(maxStart, state.weekStart + FORECAST_WEEK_SIZE);
+      state.weekStart = nextStart;
+      state.activeDayIndex = nextStart;
+      renderForecastView(showcaseDiv);
+      return;
+    }
+
+    const dayBtn = e.target.closest("button[data-forecast-day-index]");
+    if (dayBtn) {
+      const state = window.forecastState;
+      if (!state) return;
+      const idx = Number(dayBtn.getAttribute("data-forecast-day-index"));
+      if (!Number.isFinite(idx)) return;
+      state.activeDayIndex = idx;
+      state.weekStart = Math.floor(idx / FORECAST_WEEK_SIZE) * FORECAST_WEEK_SIZE;
+      renderForecastView(showcaseDiv);
+      return;
+    }
+
+    const metricBtn = e.target.closest("button[data-forecast-metric]");
+    if (metricBtn) {
+      const state = window.forecastState;
+      if (!state) return;
+      state.metric = metricBtn.getAttribute("data-forecast-metric") || "temperature";
+      renderForecastView(showcaseDiv);
+    }
   });
 }
 
