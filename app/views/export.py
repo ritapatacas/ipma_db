@@ -17,7 +17,7 @@ from app.views.analyze import (
     summarize_cold_hours,
     summarize_missing_entries,
 )
-from app.views.forecast_view import load_forecast_dataframe
+from app.views.forecast_view import load_forecast_dataframe, load_hourly_forecast_dataframe
 
 # Output layout: dist/ at repo root
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -83,6 +83,8 @@ def build_data() -> None:
     # Forecast (Meteoblue)
     df_forecast = load_forecast_dataframe()
     _write_json(os.path.join(DATA_DIR, "forecast.json"), _df_to_records(df_forecast))
+    df_forecast_hourly = load_hourly_forecast_dataframe(days=7)
+    _write_json(os.path.join(DATA_DIR, "forecast_hourly.json"), _df_to_records(df_forecast_hourly))
 
     print(f"Wrote JSON files to {DATA_DIR}")
 

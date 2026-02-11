@@ -1,5 +1,5 @@
 import pandas as pd
-from app.views.meteoblue import parse_soup_forecast
+from app.views.meteoblue import parse_soup_forecast, parse_soup_hourly_forecast
 
 DESKTOP_COLUMNS = ["day", "icon", "min", "max", "prec mm", "prob %", "pred"]
 MOBILE_COLUMNS = ["day", "min", "max", "prec mm", "prob %", "obs"]
@@ -20,6 +20,31 @@ def load_forecast_dataframe() -> pd.DataFrame:
                 "pred",
                 "prec mm",
                 "prob %",
+                "obs",
+                "icon",
+            ]
+        )
+
+
+def load_hourly_forecast_dataframe(days: int = 7) -> pd.DataFrame:
+    try:
+        forecast = parse_soup_hourly_forecast(days=days)
+        return pd.DataFrame(forecast)
+    except Exception as e:
+        print(f"⚠️ Hourly forecast unavailable: {e}")
+        return pd.DataFrame(
+            columns=[
+                "day",
+                "date",
+                "weekday",
+                "time",
+                "temp",
+                "prec mm",
+                "prob %",
+                "humidity %",
+                "wind dir",
+                "wind km/h",
+                "gust km/h",
                 "obs",
                 "icon",
             ]

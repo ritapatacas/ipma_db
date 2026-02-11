@@ -50,34 +50,37 @@ def fetch_precipitation_data():
 def fetch_and_group_precipitation_data(group_by: str) -> pd.DataFrame:
     """Fetch precipitation data and group it based on the provided period."""
     df = fetch_precipitation_data()
-    print(df)
 
     if df.empty:
-        return pd.DataFrame(columns=["period", "precip_total", "precip_max", "precip_min", "precip_std"])
+        return pd.DataFrame(columns=["period", "min", "max", "mean", "range", "std", "total"])
 
-    print("🔹 Original Columns:", df.columns.tolist())  # Debugging before any processing
+    def coalesce_columns(frame: pd.DataFrame, candidates: list[str]) -> pd.Series:
+        available = [c for c in candidates if c in frame.columns]
+        if not available:
+            return pd.Series([pd.NA] * len(frame), index=frame.index)
+        series = frame[available[0]]
+        for col in available[1:]:
+            series = series.where(series.notna(), frame[col])
+        return series
 
-    # Renaming to ensure consistent column names
-    rename_mapping = {
-        "precip_total": "total",
-        "precip_max": "max",
-        "precip_min": "min",
-        "precip_std": "std"
-    }
-    
-    df = df.rename(columns=rename_mapping)
-    print("🔹 After Renaming:", df.columns.tolist())  # Debugging
+    # Normalize source variants into a stable schema used by export/frontend.
+    df = df.copy()
+    df["max"] = pd.to_numeric(coalesce_columns(df, ["precip_max", "maximum", "max"]), errors="coerce")
+    df["min"] = pd.to_numeric(coalesce_columns(df, ["precip_min", "minimum", "min"]), errors="coerce")
+    df["mean"] = pd.to_numeric(coalesce_columns(df, ["mean"]), errors="coerce")
+    df["range"] = pd.to_numeric(coalesce_columns(df, ["range"]), errors="coerce")
+    df["std"] = pd.to_numeric(coalesce_columns(df, ["precip_std", "std"]), errors="coerce")
+    df["total"] = pd.to_numeric(coalesce_columns(df, ["precip_total", "total"]), errors="coerce")
+    df = df[["date", "min", "max", "mean", "range", "std", "total"]]
 
     if group_by == "day":
         df_aggregated = df.head(7).copy()
         df_aggregated = df_aggregated.rename(columns={"date": "period"})
-        print("🔹 Final Columns (Day Grouping):", df_aggregated.columns.tolist())
     else:
         df_grouped = group_by_period(df, "date", group_by)
         df_aggregated = df_grouped.groupby("period").agg(
-            {"total": "sum", "max": "max", "min": "min", "std": "mean"}
+            {"total": "sum", "max": "max", "min": "min", "mean": "mean", "range": "mean", "std": "mean"}
         ).reset_index()
-        print("🔹 Final Columns (Aggregated):", df_aggregated.columns.tolist())
 
     df_aggregated["period"] = pd.to_datetime(df_aggregated["period"]).dt.strftime(DATE_FORMAT[group_by])
 
