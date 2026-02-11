@@ -1,18 +1,29 @@
+import time
 import requests
 import json
 from collections import defaultdict
 from app.data.connections import IPMA, IPMA_API_URIS, observations_db
 from app.utils import parse_datetime, logger
 
+REQUEST_TIMEOUT = 25  # seconds; avoid hanging on slow/unreachable API
+STATION_FETCH_RETRIES = 3
+STATION_FETCH_RETRY_DELAY = 10  # seconds between retries
+
 # Fetch observations data for Ansiao station from IPMA API
 def fetch_stations_data():
-    try:
-        res = requests.get(IPMA_API_URIS["station_observations"])
-        res.raise_for_status()
-        return res.json()
-    except requests.RequestException as e:
-        logger.error(f"{e} error fetching")
-        return None
+    url = IPMA_API_URIS["station_observations"]
+    for attempt in range(1, STATION_FETCH_RETRIES + 1):
+        try:
+            res = requests.get(url, timeout=REQUEST_TIMEOUT)
+            res.raise_for_status()
+            return res.json()
+        except requests.RequestException as e:
+            logger.error(f"{e} error fetching (attempt {attempt}/{STATION_FETCH_RETRIES})")
+            if attempt < STATION_FETCH_RETRIES:
+                time.sleep(STATION_FETCH_RETRY_DELAY)
+            else:
+                return None
+    return None
 
 def clean_entry(entry):
     """Cleans and formats a single station entry."""
@@ -77,7 +88,7 @@ def fetch_and_store_station_data():
 def fetch_warnings():
     id_area_avisos = {region["idAreaAviso"] for region in IPMA["closest_regions"]}
     try:
-        res = requests.get(IPMA_API_URIS["warnings"])
+        res = requests.get(IPMA_API_URIS["warnings"], timeout=REQUEST_TIMEOUT)
         res.raise_for_status()
         warnings = res.json()
         
@@ -149,7 +160,7 @@ def fetch_daily_forecast():
     print(IPMA["closest_region"])
     globalIdLocal = IPMA["closest_region"]["globalIdLocal"]
     try:
-        res = requests.get(IPMA_API_URIS["daily_forecast"].format(globalIdLocal=globalIdLocal))
+        res = requests.get(IPMA_API_URIS["daily_forecast"].format(globalIdLocal=globalIdLocal), timeout=REQUEST_TIMEOUT)
         res.raise_for_status()
         pretty_result = json.dumps(res.json()["data"], indent=4, ensure_ascii=False)
         print(pretty_result)
@@ -161,7 +172,7 @@ def fetch_daily_forecast():
 
 def fetch_daily_precipitation():
     try:
-        res = requests.get(IPMA_API_URIS["daily_precipitation"])
+        res = requests.get(IPMA_API_URIS["daily_precipitation"], timeout=REQUEST_TIMEOUT)
         print("Request for " , IPMA_API_URIS["daily_precipitation"])
         res.raise_for_status()
         logger.info(f"✅ Successfully fetched daily precipitation.")
@@ -172,7 +183,7 @@ def fetch_daily_precipitation():
 
 def fetch_evapotranspiration():
     try:
-        res = requests.get(IPMA_API_URIS["evapotranspiration"])
+        res = requests.get(IPMA_API_URIS["evapotranspiration"], timeout=REQUEST_TIMEOUT)
         print("Request for " , IPMA_API_URIS["evapotranspiration"])
         res.raise_for_status()
         logger.info(f"✅ Successfully fetched evapotranspiration.")
@@ -183,7 +194,7 @@ def fetch_evapotranspiration():
 
 def fetch_pdsi():
     try:
-        res = requests.get(IPMA_API_URIS["pdsi"])
+        res = requests.get(IPMA_API_URIS["pdsi"], timeout=REQUEST_TIMEOUT)
         print("Request for " , IPMA_API_URIS["pdsi"])
         res.raise_for_status()
         logger.info(f"✅ Successfully fetched PDSI.")

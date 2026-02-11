@@ -19,7 +19,7 @@ By adopting this data-driven approach, I aim to **optimize irrigation systems**,
 - **Stores** data in MongoDB for easy querying and analysis.
 
 - **Static snapshot pipeline**: GitHub Actions (`.github/workflows/schedule.yml`) runs every 2 hours: fetches data into MongoDB, then runs the export script to generate static JSON files and copies the frontend into `dist/`. Only that build output is deployed to the **gh-pages** branch. Generated files are never committed to main.
-- Local batch/script execution is still available for manual fetch or export.
+- You can run fetch or export locally when needed (see Running below).
 
 ---
 
