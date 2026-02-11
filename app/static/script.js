@@ -41,6 +41,17 @@ function formatDateDMMM(s) {
 }
 
 const FORECAST_WEEK_SIZE = 7;
+const GOOGLE_WEATHER_ICON_BASE = "https://maps.gstatic.com/weather/v1/";
+function getForecastDetailedDaysCount(dailyLength) {
+  return Math.min(FORECAST_WEEK_SIZE, Math.max(0, dailyLength || 0));
+}
+function clampForecastDayIndex(index, dailyLength) {
+  const maxIndex = getForecastDetailedDaysCount(dailyLength) - 1;
+  if (maxIndex < 0) return 0;
+  const parsed = Number(index);
+  const safe = Number.isFinite(parsed) ? parsed : 0;
+  return Math.min(Math.max(safe, 0), maxIndex);
+}
 function toNumber(val) {
   if (val == null || val === "") return null;
   const n = Number(String(val).replace(",", ".").replace("%", "").trim());
@@ -85,12 +96,12 @@ function initForecastState(dailyForecast, hourlyForecast) {
     hourly,
     maps: buildHourlyMaps(hourly),
     activeDayIndex: 0,
-    weekStart: 0,
     metric: "temperature",
   };
 }
 function getHourlyForDayIndex(index) {
   const state = window.forecastState || {};
+  if (!Number.isFinite(index) || index < 0) return [];
   const day = (state.daily || [])[index] || {};
   const dateKey = day.date ? String(day.date) : null;
   if (dateKey && state.maps && state.maps.byDate && state.maps.byDate[dateKey]) return state.maps.byDate[dateKey];
@@ -105,52 +116,134 @@ function averageWindForDay(index) {
   if (!vals.length) return null;
   return vals.reduce((acc, n) => acc + n, 0) / vals.length;
 }
+function extractIconText(iconHtml) {
+  if (!iconHtml) return "";
+  const text = String(iconHtml);
+  const match = text.match(/(?:alt|title)\s*=\s*"([^"]+)"/i);
+  return match ? match[1] : "";
+}
+function mapConditionToGoogleIconSlug(conditionText) {
+  const text = String(conditionText || "").toLowerCase();
+  if (!text) return null;
+  if (text.includes("thunder")) return "thunderstorms";
+  if (text.includes("snow") || text.includes("flurr")) return "snow";
+  if (text.includes("sleet") || text.includes("freez")) return "sleet";
+  if (text.includes("drizzle")) return "drizzle";
+  if (text.includes("shower")) return "showers";
+  if (text.includes("rain")) return "rain";
+  if (text.includes("fog") || text.includes("mist") || text.includes("haze")) return "fog";
+  if (text.includes("wind")) return "windy";
+  if (text.includes("mostly cloudy")) return "mostly_cloudy";
+  if (text.includes("overcast") || text.includes("cloudy")) return "cloudy";
+  if (text.includes("partly") || text.includes("mixed")) return "partly_cloudy";
+  if (text.includes("mostly clear")) return "mostly_clear";
+  if (text.includes("clear") || text.includes("sunny")) return "clear";
+  return null;
+}
+function renderGoogleWeatherIcon(conditionText, fallbackIconHtml) {
+  const slug = mapConditionToGoogleIconSlug(conditionText);
+  if (!slug) return fallbackIconHtml || '<i class="fa-solid fa-cloud"></i>';
+  const src = `${GOOGLE_WEATHER_ICON_BASE}${slug}.svg`;
+  const alt = escapeHtml(conditionText || slug.replace(/_/g, " "));
+  return `<img src="${src}" alt="${alt}" title="${alt}" loading="lazy">`;
+}
 function buildForecastCardView() {
   const state = window.forecastState || {};
   const daily = state.daily || [];
   if (!daily.length) return "<p>No forecast data</p>";
-  const start = state.weekStart || 0;
-  const end = Math.min(start + FORECAST_WEEK_SIZE, daily.length);
-  const active = Math.min(Math.max(state.activeDayIndex || 0, 0), daily.length - 1);
+  const detailedDaysCount = getForecastDetailedDaysCount(daily.length);
+  const active = clampForecastDayIndex(state.activeDayIndex, daily.length);
+  state.activeDayIndex = active;
+  const detailedDays = daily.slice(0, detailedDaysCount);
+  const extendedDays = daily.slice(detailedDaysCount);
   const day = daily[active] || {};
   const hourly = getHourlyForDayIndex(active);
-  const tempNow = toNumber(firstDefined(hourly[0] || day, ["temp", "max", "min"]));
-  const description = firstDefined(hourly[0] || day, ["obs", "pred"]) || "Forecast";
-  const cards = daily.slice(start, end).map((row, i) => {
-    const idx = start + i;
+  const currentRow = hourly[0] || day;
+  const tempNow = toNumber(firstDefined(currentRow, ["temp", "max", "min"]));
+  const description = firstDefined(currentRow, ["obs", "pred"]) || "Forecast";
+  const fallbackNowIcon = firstDefined(currentRow, ["icon"]) || day.icon || '<i class="fa-solid fa-cloud"></i>';
+  const fallbackNowCondition = extractIconText(fallbackNowIcon) || "Forecast";
+  const rawConditionNow = firstDefined(currentRow, ["obs", "pred"]) || firstDefined(day, ["obs", "pred"]) || fallbackNowCondition;
+  const conditionNow = toNumber(rawConditionNow) != null ? fallbackNowCondition : rawConditionNow;
+  const iconNow = renderGoogleWeatherIcon(conditionNow, fallbackNowIcon);
+  const humidityNow = toNumber(firstDefined(currentRow, ["humidity %", "humidity"]));
+  const windNow = toNumber(firstDefined(currentRow, ["wind km/h", "wind_km_h", "wind"]));
+  const probNow = toNumber(firstDefined(currentRow, ["prob %", "probability", "prob"]));
+  const nowTime = firstDefined(currentRow, ["time"]) || "--:--";
+  const tempF = tempNow != null ? (tempNow * 9 / 5 + 32).toFixed(0) : "-";
+  const cards = detailedDays.map((row, idx) => {
     const min = toNumber(firstDefined(row, ["min"]));
     const max = toNumber(firstDefined(row, ["max"]));
     const prec = toNumber(firstDefined(row, ["prec mm", "precipitation", "prec_mm"]));
     const prob = toNumber(firstDefined(row, ["prob %", "probability", "prob"]));
     const wind = averageWindForDay(idx);
+    const fallbackCardIcon = row.icon || '<i class="fa-solid fa-cloud"></i>';
+    const fallbackCardCondition = extractIconText(fallbackCardIcon) || "";
+    const rawCardCondition = firstDefined(row, ["obs", "pred"]) || fallbackCardCondition;
+    const cardCondition = toNumber(rawCardCondition) != null ? fallbackCardCondition : rawCardCondition;
+    const cardIcon = renderGoogleWeatherIcon(cardCondition, fallbackCardIcon);
     return (
       `<button class="daily-card ${idx === active ? "active" : ""}" data-forecast-day-index="${idx}">` +
       `<p class="daily-card-date">${escapeHtml(String(row.weekday || "-"))} <span>${escapeHtml(String(row.date || "-"))}</span></p>` +
-      `<div class="daily-card-icon">${row.icon || '<i class="fa-solid fa-cloud"></i>'}</div>` +
-      `<p class="daily-card-temp"><strong>${max != null ? max.toFixed(0) : "-"}</strong> / ${min != null ? min.toFixed(0) : "-"} C</p>` +
-      `<p class="daily-card-meta">prec ${prec != null ? prec.toFixed(1) : "-"} mm | prob ${prob != null ? prob.toFixed(0) : "-"}%</p>` +
-      `<p class="daily-card-meta">wind ${wind != null ? wind.toFixed(0) : "-"} km/h</p>` +
+      `<div class="daily-card-icon">${cardIcon}</div>` +
+      `<p class="daily-card-temp"><strong>${max != null ? max.toFixed(0) : "-"}°</strong> <span>${min != null ? min.toFixed(0) : "-"}°</span></p>` +
+      `<p class="daily-card-meta">${prec != null ? prec.toFixed(1) : "-"} mm · ${prob != null ? prob.toFixed(0) : "-"}% · ${wind != null ? wind.toFixed(0) : "-"} km/h</p>` +
       `</button>`
     );
   }).join("");
-  const prevDisabled = start <= 0 ? "disabled" : "";
-  const nextDisabled = end >= daily.length ? "disabled" : "";
+  const extendedCards = extendedDays.map((row) => {
+    const min = toNumber(firstDefined(row, ["min"]));
+    const max = toNumber(firstDefined(row, ["max"]));
+    const prec = toNumber(firstDefined(row, ["prec mm", "precipitation", "prec_mm"]));
+    const prob = toNumber(firstDefined(row, ["prob %", "probability", "prob"]));
+    const fallbackCardIcon = row.icon || '<i class="fa-solid fa-cloud"></i>';
+    const fallbackCardCondition = extractIconText(fallbackCardIcon) || "";
+    const rawCardCondition = firstDefined(row, ["obs", "pred"]) || fallbackCardCondition;
+    const cardCondition = toNumber(rawCardCondition) != null ? fallbackCardCondition : rawCardCondition;
+    const cardIcon = renderGoogleWeatherIcon(cardCondition, fallbackCardIcon);
+    return (
+      `<article class="extended-day-card">` +
+      `<div class="extended-day-top">` +
+      `<p class="extended-day-date">${escapeHtml(String(row.weekday || "-"))} <span>${escapeHtml(String(row.date || "-"))}</span></p>` +
+      `<div class="extended-day-icon">${cardIcon}</div>` +
+      `</div>` +
+      `<p class="extended-day-temp"><strong>${max != null ? max.toFixed(0) : "-"}°</strong> / ${min != null ? min.toFixed(0) : "-"}°</p>` +
+      `<p class="extended-day-meta">${prec != null ? prec.toFixed(1) : "-"} mm · ${prob != null ? prob.toFixed(0) : "-"}%</p>` +
+      `<p class="extended-day-desc">${escapeHtml(String(cardCondition || "Forecast"))}</p>` +
+      `</article>`
+    );
+  }).join("");
   return (
     `<section class="forecast-v2">` +
+    `<header class="view-header forecast-header"><h2>Forecast</h2><p>Detalhe horário disponível nos primeiros 7 dias e resumo diário para o restante período.</p></header>` +
+    `<section class="forecast-block forecast-block-hourly">` +
+    `<header class="forecast-block-heading"><h3>Próximos ${detailedDaysCount} dias (hora a hora)</h3><p>Seleciona um dia para explorar o gráfico por hora.</p></header>` +
     `<header class="forecast-hero">` +
-    `<div><p class="forecast-hero-label">${escapeHtml(String(day.weekday || ""))} ${escapeHtml(String(day.date || ""))}</p><h2>${tempNow != null ? tempNow.toFixed(0) + " C" : "-"} <span>${escapeHtml(String(description))}</span></h2></div>` +
+    `<div class="forecast-hero-left">` +
+    `<div class="forecast-current-icon">${iconNow}</div>` +
+    `<div>` +
+    `<h2>${tempNow != null ? tempNow.toFixed(0) : "-"}<small>C | ${tempF}F</small></h2>` +
+    `<p class="forecast-current-stats">Precipitation: ${probNow != null ? probNow.toFixed(0) : "-"}%</p>` +
+    `<p class="forecast-current-stats">Humidity: ${humidityNow != null ? humidityNow.toFixed(0) : "-"}%</p>` +
+    `<p class="forecast-current-stats">Wind: ${windNow != null ? windNow.toFixed(0) : "-"} km/h</p>` +
+    `</div>` +
+    `</div>` +
+    `<div class="forecast-hero-right"><h3>Weather</h3><p>${escapeHtml(String(day.weekday || ""))} ${escapeHtml(String(day.date || ""))} ${escapeHtml(String(nowTime))}</p><p>${escapeHtml(String(description))}</p></div>` +
+    `</header>` +
     `<div class="forecast-tabs">` +
     `<button class="forecast-tab ${state.metric === "temperature" ? "active" : ""}" data-forecast-metric="temperature">Temperature</button>` +
     `<button class="forecast-tab ${state.metric === "precipitation" ? "active" : ""}" data-forecast-metric="precipitation">Precipitation</button>` +
     `<button class="forecast-tab ${state.metric === "wind" ? "active" : ""}" data-forecast-metric="wind">Wind</button>` +
     `</div>` +
-    `</header>` +
     `<section class="forecast-chart-panel"><canvas id="forecastHourlyChart" height="140"></canvas></section>` +
-    `<footer class="forecast-week-nav">` +
-    `<button data-forecast-nav="prev" ${prevDisabled}>Semana anterior</button>` +
     `<div class="daily-cards-row">${cards}</div>` +
-    `<button data-forecast-nav="next" ${nextDisabled}>Seguinte</button>` +
-    `</footer>` +
+    `</section>` +
+    (extendedDays.length
+      ? (`<section class="forecast-block forecast-block-extended">` +
+        `<header class="forecast-block-heading"><h3>Dias ${detailedDaysCount + 1} a ${daily.length} (resumo diário)</h3><p>Sem detalhe por hora, apenas tendência geral.</p></header>` +
+        `<div class="extended-cards-row">${extendedCards}</div>` +
+        `</section>`)
+      : "") +
     `</section>`
   );
 }
@@ -158,18 +251,24 @@ function renderForecastChart() {
   const state = window.forecastState || {};
   const canvas = document.getElementById("forecastHourlyChart");
   if (!canvas || !(window.Chart && state.daily && state.daily.length)) return;
+  const cssVars = getComputedStyle(document.documentElement);
+  const tickColor = (cssVars.getPropertyValue("--forecast-chart-tick") || "#8f949b").trim();
+  const gridColor = (cssVars.getPropertyValue("--forecast-chart-grid") || "rgba(30, 41, 59, 0.08)").trim();
   const rows = getHourlyForDayIndex(state.activeDayIndex || 0);
   const labels = rows.map((r) => String(r.time || ""));
   let data = [];
-  let color = "#2f7fd8";
+  let color = "#e0ad00";
+  let fillColor = "rgba(224, 173, 0, 0.08)";
   let title = "Temperature (C)";
   if (state.metric === "precipitation") {
     data = rows.map((r) => toNumber(firstDefined(r, ["prec mm", "precipitation", "prec_mm"])));
-    color = "#1f9d6b";
+    color = "#4a88d9";
+    fillColor = "rgba(74, 136, 217, 0.08)";
     title = "Precipitation (mm)";
   } else if (state.metric === "wind") {
     data = rows.map((r) => toNumber(firstDefined(r, ["wind km/h", "wind_km_h", "wind"])));
-    color = "#e6862c";
+    color = "#8c8c8c";
+    fillColor = "rgba(140, 140, 140, 0.08)";
     title = "Wind (km/h)";
   } else {
     data = rows.map((r) => toNumber(firstDefined(r, ["temp", "temperature"])));
@@ -183,13 +282,16 @@ function renderForecastChart() {
     type: "line",
     data: {
       labels,
-      datasets: [{ label: title, data, borderColor: color, backgroundColor: color, pointRadius: 2, borderWidth: 2, tension: 0.3 }],
+      datasets: [{ label: title, data, borderColor: color, backgroundColor: fillColor, fill: true, pointRadius: 0, borderWidth: 1.5, tension: 0.34 }],
     },
     options: {
       responsive: true,
       maintainAspectRatio: false,
       plugins: { legend: { display: false } },
-      scales: { x: { ticks: { autoSkip: true, maxTicksLimit: 8 } }, y: { beginAtZero: state.metric !== "temperature" } },
+      scales: {
+        x: { grid: { display: false, drawBorder: false }, ticks: { autoSkip: true, maxTicksLimit: 8, color: tickColor, maxRotation: 0 } },
+        y: { beginAtZero: state.metric !== "temperature", grid: { color: gridColor, drawBorder: false }, ticks: { color: tickColor, maxTicksLimit: 5 } },
+      },
     },
   });
 }
@@ -565,29 +667,15 @@ function setupObservationsTabHandlers(showcaseDiv) {
 function setupForecastHandlers(showcaseDiv) {
   if (!showcaseDiv) return;
   showcaseDiv.addEventListener("click", function (e) {
-    const navBtn = e.target.closest("button[data-forecast-nav]");
-    if (navBtn) {
-      const state = window.forecastState;
-      if (!state || !state.daily) return;
-      const direction = navBtn.getAttribute("data-forecast-nav");
-      const maxStart = Math.max(0, state.daily.length - FORECAST_WEEK_SIZE);
-      const nextStart = direction === "prev"
-        ? Math.max(0, state.weekStart - FORECAST_WEEK_SIZE)
-        : Math.min(maxStart, state.weekStart + FORECAST_WEEK_SIZE);
-      state.weekStart = nextStart;
-      state.activeDayIndex = nextStart;
-      renderForecastView(showcaseDiv);
-      return;
-    }
-
     const dayBtn = e.target.closest("button[data-forecast-day-index]");
     if (dayBtn) {
       const state = window.forecastState;
       if (!state) return;
       const idx = Number(dayBtn.getAttribute("data-forecast-day-index"));
       if (!Number.isFinite(idx)) return;
+      const maxDetailedIndex = getForecastDetailedDaysCount((state.daily || []).length) - 1;
+      if (idx < 0 || idx > maxDetailedIndex) return;
       state.activeDayIndex = idx;
-      state.weekStart = Math.floor(idx / FORECAST_WEEK_SIZE) * FORECAST_WEEK_SIZE;
       renderForecastView(showcaseDiv);
       return;
     }
