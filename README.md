@@ -137,6 +137,9 @@ pip install -r requirements.txt
   ```bash
   python -m app.views.export
   ```
-  Then open `dist/index.html` in a browser (or serve `dist/` with a local server) so that `data/*.json` are loadable. The live site is served from the **gh-pages** branch after each CI run.
+  Then **serve the `dist/` folder** (not the project root), so that `data/*.json` resolve to `dist/data/*.json`:
+  - Open `dist/index.html` in a browser, or
+  - Run a local server with **document root = `dist/`** (e.g. `cd dist && python -m http.server 5500`, or in VS Code Live Server set the root to `dist/`).  
+  If you serve from the repo root, requests to `data/*.json` will 404 because those files only exist inside `dist/`. The live site is served from the **gh-pages** branch after each CI run.
 
 ---

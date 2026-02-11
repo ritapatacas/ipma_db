@@ -222,6 +222,21 @@ th {
     transition: background-color 0.3s ease-in-out;
 }
 
+/* Forecast table: keep weather icons small */
+.custom-table td.forecast-icon {
+    width: 2rem;
+    text-align: center;
+    vertical-align: middle;
+}
+.custom-table td.forecast-icon img {
+    max-width: 1.25rem;
+    max-height: 1.25rem;
+    vertical-align: middle;
+}
+.custom-table td.forecast-icon i {
+    font-size: 1rem;
+}
+
 
 
 
