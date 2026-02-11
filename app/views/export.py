@@ -34,6 +34,9 @@ def _df_to_records(df: pd.DataFrame) -> list[dict]:
     """Convert DataFrame to JSON-serializable list of dicts (NaT/NaN -> null)."""
     if df.empty:
         return []
+    # pandas to_json(orient='records') requires unique column names
+    if not df.columns.is_unique:
+        df = df.loc[:, ~df.columns.duplicated(keep="last")]
     return json.loads(df.to_json(orient="records", date_format="iso"))
 
 
