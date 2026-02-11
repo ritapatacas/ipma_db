@@ -2,12 +2,10 @@ import pandas as pd
 from io import StringIO
 from datetime import datetime, timedelta
 
-from utils import logger
-from connections import get_mongo_collection
-from fetch import fetch_evapotranspiration
-
-from utils import logger
-from data_utils import DATE_FORMAT, group_by_period
+from app.utils import logger
+from app.data.connections import get_mongo_collection
+from app.data.fetch import fetch_evapotranspiration
+from app.data.data_utils import DATE_FORMAT, group_by_period
 
 
 

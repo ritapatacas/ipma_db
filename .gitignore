@@ -7,7 +7,7 @@ app/obs.json
 app/select_ansiao.py
 
 _fetch.py
-app/__pycache__/*
+**/__pycache__/**
 
 app/static/css/pico/*
 *.csv

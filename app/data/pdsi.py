@@ -1,8 +1,8 @@
 import pandas as pd
 from io import StringIO
-from connections import get_mongo_db, pdsi_db
-from fetch import fetch_pdsi
-from utils import logger
+from app.data.connections import get_mongo_db, pdsi_db
+from app.data.fetch import fetch_pdsi
+from app.utils import logger
 
 db = get_mongo_db()
 collection = pdsi_db

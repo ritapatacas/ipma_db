@@ -4,17 +4,16 @@ from collections import defaultdict
 import pandas as pd
 from jinja2 import Environment, FileSystemLoader
 from bs4 import BeautifulSoup
-from percipitation import fetch_and_group_precipitation_data
-from evapotranspiration import fetch_and_group_evapotranspiration_data
-from percipitation import fetch_and_group_precipitation_data
-from analyze import (
+from app.data.precipitation import fetch_and_group_precipitation_data
+from app.data.evapotranspiration import fetch_and_group_evapotranspiration_data
+from app.views.analyze import (
     observations,
     summarize_cold_hours,
     summarize_missing_entries,
     warnings_by_region,
 ) 
-from forecast_view import format_forecast_html_table, load_forecast_dataframe
-from utils import get_closest_regions, WARNING_ICONS, get_warning_level_icon
+from app.views.forecast_view import format_forecast_html_table, load_forecast_dataframe
+from app.utils import get_closest_regions, WARNING_ICONS, get_warning_level_icon
 
 df_forecast = load_forecast_dataframe()
 df_observations = pd.DataFrame(observations())
@@ -295,7 +294,9 @@ warnings_timeline_html_mobile = generate_warning_timeline_mobile(
 # TEMPLATE RENDERING & FILE HANDLING
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-TEMPLATES_DIR = os.path.join(BASE_DIR, "templates")
+APP_DIR = os.path.abspath(os.path.join(BASE_DIR, ".."))
+PROJECT_ROOT = os.path.abspath(os.path.join(APP_DIR, ".."))
+TEMPLATES_DIR = os.path.join(APP_DIR, "templates")
 env = Environment(loader=FileSystemLoader(TEMPLATES_DIR))
 
 
@@ -330,8 +331,6 @@ def render_tables_js() -> str:
     )
 
 def save_files(html: str, tables_js: str):
-    PROJECT_ROOT = os.path.abspath(os.path.join(BASE_DIR, ".."))
-
     index_html_path = os.path.join(PROJECT_ROOT, "index.html")
     with open(index_html_path, "w", encoding="utf-8") as f:
         f.write(html)

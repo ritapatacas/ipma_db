@@ -1,5 +1,5 @@
 import pandas as pd
-from meteoblue import parse_soup_forecast
+from app.views.meteoblue import parse_soup_forecast
 
 DESKTOP_COLUMNS = ["day", "icon", "min", "max", "prec mm", "prob %", "pred"]
 MOBILE_COLUMNS = ["day", "min", "max", "prec mm", "prob %", "obs"]

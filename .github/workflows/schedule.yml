@@ -4,6 +4,9 @@ on:
     - cron: "0 */2 * * *"
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   fetch-ipma:
     runs-on: ubuntu-latest
@@ -26,20 +29,15 @@ jobs:
       - name: Run IPMA script
         env:
           MONGO_URI: ${{ secrets.MONGO_URI }}
-        run: python app/fetch.py
+        run: python -m app.data.fetch
 
   update-view:
+    needs: fetch-ipma
     runs-on: ubuntu-latest
     environment: ipma
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
-      - name: Pull latest changes
-        run: |
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git config --global user.name "github-actions[bot]"
-          git pull origin main || echo "⚠️ No changes to pull"
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -47,36 +45,22 @@ jobs:
           python-version: "3.11.9"
 
       - name: Install dependencies
-        run: |
-          pip install -r requirements.txt
-          pip list  # Debug installed versions
-
-      - name: Fetch latest changes before running script
-        run: |
-          echo "🔍 Pulling latest changes..."
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git config --global user.name "github-actions[bot]"
-          git pull --rebase --autostash origin main || echo "Skipping pull due to conflict"
+        run: pip install -r requirements.txt
 
       - name: Run view script
         env:
           MONGO_URI: ${{ secrets.MONGO_URI }}
-        run: |
-          echo "🔍 Running view.py..."
-          python app/view.py
-
+        run: python -m app.views.view
 
       - name: Commit and push changes
         run: |
-          echo "🔍 Checking for file changes..."
-          git status
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+          git add index.html app/static/tables.js
 
-          # Stage files if they exist
-          [ -f app/static/tables.js ] && git add -f app/static/tables.js || echo "⚠️ tables.js not found"
-          [ -f index.html ] && git add index.html || echo "⚠️ index.html not found"
-
-          # Commit only if there are changes
-          git diff --cached --quiet || git commit -m "update view"
-
-          # Push changes
-          git push origin main || echo "⚠️ No changes to push"
+          if git diff --cached --quiet; then
+            echo "No view changes to commit."
+          else
+            git commit -m "update view"
+            git push origin main
+          fi

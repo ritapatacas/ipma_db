@@ -3,11 +3,10 @@ from io import StringIO
 from datetime import datetime, timedelta
 import matplotlib.pyplot as plt
 
-from utils import logger
-from connections import get_mongo_collection
-from fetch import fetch_daily_precipitation
-
-from data_utils import DATE_FORMAT, group_by_period
+from app.utils import logger
+from app.data.connections import get_mongo_collection
+from app.data.fetch import fetch_daily_precipitation
+from app.data.data_utils import DATE_FORMAT, group_by_period
 
 collection = get_mongo_collection("precipitation")
 

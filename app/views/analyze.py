@@ -1,22 +1,22 @@
 import pandas as pd
 from datetime import datetime
 from prettytable import PrettyTable
-from connections import get_mongo_collection, observations_db
-from fetch import (
+from app.data.connections import get_mongo_collection, observations_db
+from app.data.fetch import (
     fetch_and_store_station_data,
     warnings_by_region,
     fetch_daily_precipitation,
     fetch_evapotranspiration,
 )
-from utils import (
+from app.utils import (
     clean_no_data,
     export_json,
     logger,
     WIND_DIR,
     OBSERVATIONS_COLUMN_MAPPING,
 )
-from meteoblue import show_forecast
-from data_utils import DATE_FORMAT, group_by_period
+from app.views.meteoblue import show_forecast
+from app.data.data_utils import DATE_FORMAT, group_by_period
 
 collection = observations_db
 

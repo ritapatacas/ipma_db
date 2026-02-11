@@ -18,19 +18,72 @@ By adopting this data-driven approach, I aim to **optimize irrigation systems**,
 
 - **Stores** data in MongoDB for easy querying and analysis.
 
-- **Automated fetching**:
-  - GitHub Actions Workflow: runs several times a day to ensure data continuity.
-  - Local batch script: as a backup to fetch data manually when needed.
+- **Automated fetching and view generation**:
+  - GitHub Actions workflow runs every 2 hours (`.github/workflows/schedule.yml`) to fetch data and refresh the static view.
+  - Local batch/script execution is still available for manual runs.
 
 ---
 
 ## 🛠️ Scripts
 
-| Script      | Purpose                                                         |
+| Script | Purpose |
 |-------------|-----------------------------------------------------------------|
-| `fetch.py`  | Fetches and stores data (used by the automated workflow)        |
-| `analyze.py`| Generates tables with summarized data: last 48h weather, cold hours count, missing data control |
-| `utils.py`  | Utility functions: data parsing, cleaning, exporting, checking for missing data, etc.             |
+| `app/data/fetch.py` | Fetches data from IPMA and stores it in MongoDB. |
+| `app/views/view.py` | Builds the static website outputs: `index.html` and `app/static/tables.js`. |
+| `app/views/analyze.py` | Produces summarized datasets used by the view (cold hours, missing entries, observations). |
+| `app/utils.py` | Shared helpers for parsing, cleaning, and transformations. |
+
+---
+
+## 🏗️ Architecture
+
+GitHub Pages serves static files only. The browser cannot safely connect directly to MongoDB, so the view is pre-rendered in CI.
+
+```mermaid
+flowchart LR
+  subgraph ci [GitHub Actions]
+    Fetch[app/data/fetch.py]
+    View[app/views/view.py]
+    Push[git push]
+    Fetch --> View
+    View --> Push
+  end
+  subgraph external [External]
+    IPMA[IPMA API]
+    Meteoblue[Meteoblue]
+  end
+  subgraph storage [Storage]
+    MongoDB[(MongoDB)]
+  end
+  IPMA --> Fetch
+  Fetch --> MongoDB
+  MongoDB --> View
+  Meteoblue --> View
+  IPMA --> View
+  Push --> Pages[GitHub Pages]
+  Pages --> Browser[Browser]
+```
+
+The CI workflow runs with `MONGO_URI`, reads MongoDB plus live API data, writes static outputs, commits them, and GitHub Pages serves those files.
+
+### Data sources used by `app/views/view.py`
+
+- MongoDB collections (observations, precipitation, evapotranspiration)
+- Meteoblue forecast data
+- IPMA warnings data
+
+---
+
+## 🔭 Future: Date Search
+
+To support searching by arbitrary dates, keep the static snapshot workflow and add a small backend API:
+
+- Example endpoints:
+  - `GET /api/observations?from=YYYY-MM-DD&to=YYYY-MM-DD`
+  - `GET /api/evapotranspiration?date=YYYY-MM-DD`
+  - `GET /api/precipitation?date=YYYY-MM-DD`
+- Frontend adds a date picker and fetches JSON from that API.
+- Existing CI flow (`fetch -> view -> static deploy`) remains unchanged for the latest snapshot.
 
 ---
 
@@ -71,7 +124,7 @@ By adopting this data-driven approach, I aim to **optimize irrigation systems**,
 
 ### 1. Setup
 
-- Edit `connections.py` to set your **MongoDB collection** and **IPMA desired station** ID.
+- Edit `app/data/connections.py` to set your **MongoDB collection** and **IPMA desired station** ID.
 - Create a `.env` file in the project root with your MongoDB URI:
 ```
 MONGO_URI="your-mongodb-cluster-uri"
@@ -87,15 +140,14 @@ pip install -r requirements.txt
 
 ### 3. Running
 
-- Run `fetch.py` to get and store data:
+- Run fetch to get and store data:
 ```
-python fetch.py
+python -m app.data.fetch
 ```
 
-- Run `analyze.py` to generate summarized tables:
+- Run view build to generate static files (`index.html` and `app/static/tables.js`):
 ```
-python analyze.py
+python -m app.views.view
 ```
 
 ---
-

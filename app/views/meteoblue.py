@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import ast
 from prettytable import PrettyTable
 import pandas as pd
-from data_utils import ICON_MAP
+from app.data.data_utils import ICON_MAP
 
 FORECAST_URL = "https://www.meteoblue.com/en/weather/14-days/troviscais-fundeiros_portugal_2262489"
 

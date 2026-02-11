@@ -1,8 +1,8 @@
 import requests
 import json
 from collections import defaultdict
-from connections import IPMA, IPMA_API_URIS, observations_db
-from utils import parse_datetime, logger
+from app.data.connections import IPMA, IPMA_API_URIS, observations_db
+from app.utils import parse_datetime, logger
 
 # Fetch observations data for Ansiao station from IPMA API
 def fetch_stations_data():
