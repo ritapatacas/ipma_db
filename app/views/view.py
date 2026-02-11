@@ -1,8 +1,6 @@
-import os
 from collections import defaultdict
 
 import pandas as pd
-from jinja2 import Environment, FileSystemLoader
 from bs4 import BeautifulSoup
 from app.data.precipitation import fetch_and_group_precipitation_data
 from app.data.evapotranspiration import fetch_and_group_evapotranspiration_data
@@ -93,8 +91,6 @@ table_html_missing = format_table_html(df_show_missing_entries, "Missing Entries
 table_html_cold_hours = format_table_html(df_cold_hours, "Cold Hours")
 
 table_html_evapotranspiration = format_table_html(df_evapotranspiration, "Evaporatranspiration")
-
-table_perceptation = format_table_html(df_precipitation, "Precipitation")
 
 table_html_percipitation = format_table_html(df_precipitation, "Precipitation")
 
@@ -291,57 +287,3 @@ warnings_timeline_html_mobile = generate_warning_timeline_mobile(
 
 
 
-# TEMPLATE RENDERING & FILE HANDLING
-
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-APP_DIR = os.path.abspath(os.path.join(BASE_DIR, ".."))
-PROJECT_ROOT = os.path.abspath(os.path.join(APP_DIR, ".."))
-TEMPLATES_DIR = os.path.join(APP_DIR, "templates")
-env = Environment(loader=FileSystemLoader(TEMPLATES_DIR))
-
-
-
-def render_template() -> str:
-    template = env.get_template("index.html")
-    return template.render(
-        title="The Owls Are Not What They Berrie",
-        table_html_forecast=table_html_forecast,
-        table_html_forecast_mobile=table_html_forecast_mobile,
-        table_html_observations=table_html_observations,
-        table_html_missing=table_html_missing,
-        table_html_cold_hours=table_html_cold_hours,
-        warnings_timeline=warnings_timeline_html,
-        table_html_evapotranspiration=table_html_evapotranspiration,
-        evapotranspiration_data=evapotranspiration_data,
-        table_html_percipitation=table_html_percipitation,
-    )
-
-def render_tables_js() -> str:
-    template_tables = env.get_template("tables.js.jinja")
-    return template_tables.render(
-        table_html_forecast=table_html_forecast,
-        table_html_forecast_mobile=table_html_forecast_mobile,
-        table_html_observations=table_html_observations,
-        table_html_missing=table_html_missing,
-        table_html_cold_hours=table_html_cold_hours,
-        warnings_timeline=warnings_timeline_html,
-        table_html_evapotranspiration=table_html_evapotranspiration,
-        evapotranspiration_data=evapotranspiration_data,
-        table_html_percipitation=table_html_percipitation,
-    )
-
-def save_files(html: str, tables_js: str):
-    index_html_path = os.path.join(PROJECT_ROOT, "index.html")
-    with open(index_html_path, "w", encoding="utf-8") as f:
-        f.write(html)
-    print(f"index.html saved at: {index_html_path}")
-
-    tables_js_path = os.path.join(PROJECT_ROOT, "app/static/tables.js")
-    os.makedirs(os.path.dirname(tables_js_path), exist_ok=True)
-    with open(tables_js_path, "w", encoding="utf-8") as f:
-        f.write(tables_js)
-    print(f"tables.js saved at: {tables_js_path}")
-
-html_output = render_template()
-tables_js_output = render_tables_js()
-save_files(html_output, tables_js_output)

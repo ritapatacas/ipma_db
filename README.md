@@ -18,72 +18,60 @@ By adopting this data-driven approach, I aim to **optimize irrigation systems**,
 
 - **Stores** data in MongoDB for easy querying and analysis.
 
-- **Automated fetching and view generation**:
-  - GitHub Actions workflow runs every 2 hours (`.github/workflows/schedule.yml`) to fetch data and refresh the static view.
-  - Local batch/script execution is still available for manual runs.
+- **Static snapshot pipeline**: GitHub Actions (`.github/workflows/schedule.yml`) runs every 2 hours: fetches data into MongoDB, then runs the export script to generate static JSON files and copies the frontend into `dist/`. Only that build output is deployed to the **gh-pages** branch. Generated files are never committed to main.
+- Local batch/script execution is still available for manual fetch or export.
 
 ---
 
 ## 🛠️ Scripts
 
 | Script | Purpose |
-|-------------|-----------------------------------------------------------------|
+|--------|--------|
 | `app/data/fetch.py` | Fetches data from IPMA and stores it in MongoDB. |
-| `app/views/view.py` | Builds the static website outputs: `index.html` and `app/static/tables.js`. |
-| `app/views/analyze.py` | Produces summarized datasets used by the view (cold hours, missing entries, observations). |
+| `app/views/export.py` | Build step: reads MongoDB (and Meteoblue/IPMA APIs), writes `dist/data/*.json` and copies `index.html` and `app/static` into `dist/`. Used by CI; run locally with `MONGO_URI` to preview the site. |
+| `app/views/analyze.py` | Produces summarized datasets (cold hours, missing entries, observations) used by the export and view. |
 | `app/utils.py` | Shared helpers for parsing, cleaning, and transformations. |
 
 ---
 
 ## 🏗️ Architecture
 
-GitHub Pages serves static files only. The browser cannot safely connect directly to MongoDB, so the view is pre-rendered in CI.
+The site is static: GitHub Pages serves only files from the **gh-pages** branch. The browser cannot connect to MongoDB. The CI workflow runs with `MONGO_URI` in GitHub Actions, reads MongoDB and live APIs, and writes static JSON files into `dist/data/`. The frontend (`index.html` + `app/static/script.js`) loads data via `fetch('data/observations.json')` etc. from that deployed output.
 
 ```mermaid
 flowchart LR
   subgraph ci [GitHub Actions]
-    Fetch[app/data/fetch.py]
-    View[app/views/view.py]
-    Push[git push]
-    Fetch --> View
-    View --> Push
+    Fetch[app/data/fetch]
+    Mongo[(MongoDB)]
+    Build[app/views/export]
+    Deploy[Deploy to gh-pages]
+    Fetch --> Mongo
+    Mongo --> Build
+    Build --> Deploy
   end
-  subgraph external [External]
-    IPMA[IPMA API]
-    Meteoblue[Meteoblue]
+  subgraph pages [GitHub Pages from gh-pages]
+    HTML[index.html]
+    JS[script.js]
+    Data[data/*.json]
   end
-  subgraph storage [Storage]
-    MongoDB[(MongoDB)]
-  end
-  IPMA --> Fetch
-  Fetch --> MongoDB
-  MongoDB --> View
-  Meteoblue --> View
-  IPMA --> View
-  Push --> Pages[GitHub Pages]
-  Pages --> Browser[Browser]
+  Deploy --> pages
+  Browser[Browser] -->|fetch JSON| pages
 ```
 
-The CI workflow runs with `MONGO_URI`, reads MongoDB plus live API data, writes static outputs, commits them, and GitHub Pages serves those files.
+- **main (or default branch)**: Source code only. No `dist/`, no `data/*.json`, no `tables.js` in version control.
+- **gh-pages**: Only the contents of `dist/` after each run: `index.html`, `app/static/script.js`, `app/static/css/style.css`, `data/*.json`. Configure GitHub Pages in repo settings to **Deploy from branch** → **gh-pages** (root).
 
-### Data sources used by `app/views/view.py`
+### Data sources used by the export
 
 - MongoDB collections (observations, precipitation, evapotranspiration)
-- Meteoblue forecast data
-- IPMA warnings data
+- Meteoblue forecast (live at build time)
+- IPMA warnings (live at build time)
 
 ---
 
-## 🔭 Future: Date Search
+## 🔭 Date search (future)
 
-To support searching by arbitrary dates, keep the static snapshot workflow and add a small backend API:
-
-- Example endpoints:
-  - `GET /api/observations?from=YYYY-MM-DD&to=YYYY-MM-DD`
-  - `GET /api/evapotranspiration?date=YYYY-MM-DD`
-  - `GET /api/precipitation?date=YYYY-MM-DD`
-- Frontend adds a date picker and fetches JSON from that API.
-- Existing CI flow (`fetch -> view -> static deploy`) remains unchanged for the latest snapshot.
+The export writes a larger window of observations (e.g. last ~30 days) into `data/observations.json`. To support searching by date in the UI, add a date range filter in the frontend and filter the already-loaded JSON in the browser. No backend required; all filtering is client-side.
 
 ---
 
@@ -140,14 +128,15 @@ pip install -r requirements.txt
 
 ### 3. Running
 
-- Run fetch to get and store data:
-```
-python -m app.data.fetch
-```
+- **Fetch** (writes to MongoDB; requires `MONGO_URI` in `.env`):
+  ```bash
+  python -m app.data.fetch
+  ```
 
-- Run view build to generate static files (`index.html` and `app/static/tables.js`):
-```
-python -m app.views.view
-```
+- **Export** (builds `dist/`: reads MongoDB and APIs, writes `dist/data/*.json` and copies static assets; requires `MONGO_URI`):
+  ```bash
+  python -m app.views.export
+  ```
+  Then open `dist/index.html` in a browser (or serve `dist/` with a local server) so that `data/*.json` are loadable. The live site is served from the **gh-pages** branch after each CI run.
 
 ---

@@ -1,4 +1,4 @@
-name: Fetch IPMA & Update View
+name: Fetch IPMA & Deploy static site
 on:
   schedule:
     - cron: "0 */2 * * *"
@@ -31,7 +31,7 @@ jobs:
           MONGO_URI: ${{ secrets.MONGO_URI }}
         run: python -m app.data.fetch
 
-  update-view:
+  build:
     needs: fetch-ipma
     runs-on: ubuntu-latest
     environment: ipma
@@ -42,25 +42,34 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: "3.11.9"
+          python-version: "3.11"
 
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Run view script
+      - name: Run export script
         env:
           MONGO_URI: ${{ secrets.MONGO_URI }}
-        run: python -m app.views.view
+        run: python -m app.views.export
 
-      - name: Commit and push changes
-        run: |
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git config --global user.name "github-actions[bot]"
-          git add index.html app/static/tables.js
+      - name: Upload dist
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-output
+          path: dist
 
-          if git diff --cached --quiet; then
-            echo "No view changes to commit."
-          else
-            git commit -m "update view"
-            git push origin main
-          fi
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download build
+        uses: actions/download-artifact@v4
+        with:
+          name: build-output
+
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .
+          publish_branch: gh-pages

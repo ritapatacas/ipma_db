@@ -13,3 +13,4 @@ app/static/css/pico/*
 *.csv
 *.zip
 .venv/
+dist/
