@@ -6,11 +6,11 @@ from jinja2 import Environment, FileSystemLoader
 from bs4 import BeautifulSoup
 from app.data.precipitation import fetch_and_group_precipitation_data
 from app.data.evapotranspiration import fetch_and_group_evapotranspiration_data
+from app.data.fetch import warnings_by_region
 from app.views.analyze import (
     observations,
     summarize_cold_hours,
     summarize_missing_entries,
-    warnings_by_region,
 ) 
 from app.views.forecast_view import format_forecast_html_table, load_forecast_dataframe
 from app.utils import get_closest_regions, WARNING_ICONS, get_warning_level_icon
