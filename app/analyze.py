@@ -32,15 +32,24 @@ def _load_weather_data() -> pd.DataFrame:
         df = pd.DataFrame(raw_data)
         df = df.rename(columns=OBSERVATIONS_COLUMN_MAPPING)
 
-        if "datetime" not in df.columns:
-            if "date" in df.columns and "time" in df.columns:
-                df["datetime"] = pd.to_datetime(
-                    df["date"] + " " + df["time"], errors="coerce"
-                )
-            elif "data_hora" in df.columns:
-                df["datetime"] = pd.to_datetime(df["data_hora"], errors="coerce")
+        # Prefer Mongo's canonical datetime field and only fall back to date/time.
+        if "data_hora" in df.columns:
+            df["datetime"] = pd.to_datetime(df["data_hora"], errors="coerce")
+        elif "datetime" not in df.columns:
+            df["datetime"] = pd.NaT
 
-        keep_columns = ["datetime"] + list(OBSERVATIONS_COLUMN_MAPPING.values())
+        if "date" in df.columns and "time" in df.columns:
+            dt_from_parts = pd.to_datetime(
+                df["date"].astype(str).str.strip()
+                + " "
+                + df["time"].astype(str).str.strip(),
+                errors="coerce",
+            )
+            df["datetime"] = df["datetime"].fillna(dt_from_parts)
+
+        keep_columns = ["datetime"] + [
+            col for col in OBSERVATIONS_COLUMN_MAPPING.values() if col in df.columns
+        ]
         return (
             df[keep_columns]
             .dropna(subset=["datetime"])
