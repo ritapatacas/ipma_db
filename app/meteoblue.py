@@ -11,7 +11,7 @@ def fetch_and_soup_forecast():
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3"
     }
-    response = requests.get(FORECAST_URL, headers=headers)
+    response = requests.get(FORECAST_URL, headers=headers, timeout=20)
     response.raise_for_status()
     return BeautifulSoup(response.content, "html.parser")
 
@@ -24,11 +24,31 @@ def parse_canvas_data(data):
 def fahrenheit_to_celsius(temp_f):
     return round((temp_f - 32) * 5.0 / 9.0, 2)
 
+
+def _align_forecast_lengths(forecast: dict) -> dict:
+    """Pad/truncate all forecast arrays so DataFrame creation is safe."""
+    date_len = len(forecast.get("date", []))
+    if date_len == 0:
+        date_len = max((len(v) for v in forecast.values() if isinstance(v, list)), default=0)
+
+    aligned = {}
+    for key, values in forecast.items():
+        values = values if isinstance(values, list) else [values]
+        if len(values) < date_len:
+            values = values + [None] * (date_len - len(values))
+        else:
+            values = values[:date_len]
+        aligned[key] = values
+    return aligned
+
+
 def parse_soup_forecast():
     soup = fetch_and_soup_forecast()
     is_fahrenheit = is_forecast_in_fahrenheit(soup)
 
     table = soup.find("table", class_="forecast-table")
+    if table is None:
+        raise ValueError("Forecast table not found in Meteoblue response")
     rows = table.find_all("tr")
 
     row_mapping = {
@@ -100,7 +120,7 @@ def parse_soup_forecast():
     print("Converted min:", forecast["min"])
     print("Converted max:", forecast["max"])
 
-    return forecast
+    return _align_forecast_lengths(forecast)
 
 def is_forecast_in_fahrenheit(soup):
     current_temp_div = soup.find("div", class_="h1 current-temp")

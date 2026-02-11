@@ -12,3 +12,4 @@ app/__pycache__/*
 app/static/css/pico/*
 *.csv
 *.zip
+.venv/
