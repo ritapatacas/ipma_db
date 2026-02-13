@@ -1,0 +1,660 @@
+/* Hide scrollbar for Chrome, Edge, Safari */
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for Firefox and IE */
+body {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+/* Force overlay scrollbar */
+html {
+    overflow-y: overlay;
+}
+
+/* Default: Show the full table */
+.desktop-view {
+    display: block;
+}
+
+table.desktop-view {
+    display: table;
+}
+
+.mobile-view {
+    display: none;
+}
+
+table.mobile-view {
+    display: none;
+}
+
+
+/* Layout e Reset */
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: var(--pico-background-color);
+    color: var(--pico-color);
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+
+h1 {
+    font-family: "Roboto mono", serif;
+    font-weight: 100;
+    font-size: 1.2em;
+    text-align: left;
+    color: var(--pico-color);
+}
+
+
+/* NAVBAR */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+nav a {
+    padding: 0.4rem 0.4rem;
+    font-size: 0.8rem;
+    margin-left: 0.5rem;
+    border: none;
+    background: transparent;
+    border-radius: 0;
+    cursor: pointer;
+    transition: font-weight 0.1s ease, text-decoration 0.1s ease, opacity 0.3s ease;
+    outline: none;
+    color: inherit;
+}
+
+nav a:hover {
+    border: none;
+    text-decoration: underline;
+    opacity: 0.8;
+    outline: none;
+    color: inherit;
+}
+
+nav a[aria-current="p"] {
+    font-size: 0.8rem;
+    text-decoration: underline !important;
+
+}
+
+#theme-toggle {
+    padding: 0;
+    margin-left: 0;
+    font-size: 1rem;
+    border: none;
+    background: transparent;
+    color: var(--pico-color);
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+#theme-toggle:hover {
+    opacity: 0.7;
+}
+
+/* style.css */
+@media (max-width: 1025px) {
+    .desktop-view {
+        display: none;
+    }
+
+    .mobile-view {
+        display: block;
+    }
+
+    table.mobile-view {
+        display: table;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li a,
+    nav ul li div {
+        display: flex;
+        width: 100%;
+        text-align: center;
+        align-items: center;
+    }
+
+    .nav-links {
+        display: flex !important;
+        align-items: right;
+    }
+
+    .nav-links i {
+        font-size: 2rem;
+    }
+}
+
+
+
+
+
+
+main.container {
+    padding: 2rem;
+}
+
+.showcase {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+
+/* TABLES */
+table.custom-table {
+    font-size: 0.7rem;
+    table-layout: auto;
+    width: auto;
+    max-width: 100%;
+    background-color: var(--pico-card-background-color);
+    color: var(--pico-color);
+    border-radius: var(--pico-border-radius);
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 0.4rem 0.8rem;
+    text-align: left;
+    border-bottom: 1px solid var(--pico-muted-border-color);
+    white-space: normal;
+    /* permite quebra de linha dentro da célula */
+    max-width: 600px;
+    /* (opcional) Limite máximo por célula */
+    word-wrap: break-word;
+    /* quebra palavras longas */
+}
+
+th {
+    font-weight: 600;
+}
+
+.table-title {
+    font-size: 0.8rem;
+    text-align: center;
+    margin-bottom: 0.2rem;
+}
+
+.table-container {
+    display: flex;
+    gap: 2rem;
+    /* Space between tables */
+    justify-content: space-between;
+    /* Optional: Spread tables */
+    align-items: flex-start;
+    /* Align tables to top */
+    flex-wrap: wrap;
+    /* Allow wrapping on smaller screens */
+}
+
+.view-header {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+.view-header h2 {
+    margin-bottom: 0.2rem;
+}
+
+.view-header p {
+    margin: 0;
+    color: var(--pico-muted-color);
+    font-size: 0.85rem;
+}
+
+.table-wrapper {
+    display: flex;
+    justify-content: space-around;
+    min-width: auto;
+    /* Minimum width to avoid too small tables */
+    overflow-x: auto;
+    /* Scroll if content overflows */
+}
+
+
+.warning-timeline {
+    font-size: 0.8rem;
+    text-align: left;
+
+}
+
+.custom-table tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Light highlight */
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Forecast table: keep weather icons small */
+.custom-table td.forecast-icon {
+    width: 2rem;
+    text-align: center;
+    vertical-align: middle;
+}
+.custom-table td.forecast-icon img {
+    max-width: 1.25rem;
+    max-height: 1.25rem;
+    vertical-align: middle;
+}
+.custom-table td.forecast-icon i {
+    font-size: 1rem;
+}
+
+
+
+
+.card {
+    position: relative;
+    border: 1px solid var(--muted-border);
+    border-radius: var(--border-radius);
+    background: var(--card-background-color);
+    box-shadow: var(--shadow-sm);
+}
+.close-button {
+    position: absolute;
+
+    background: transparent;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+
+
+  .custom-dropdown summary {
+    display: flex;
+    align-items: center;        /* Alinha verticalmente */
+    justify-content: center;    /* (Opcional) centra horizontalmente */
+    padding: 0.25rem 0.75rem;
+    background-color: var(--pico-background-color);
+    border: 1px solid var(--pico-muted-border-color);
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.7rem;
+    height: 1rem;              /* Força altura constante para melhor alinhamento */
+    line-height: 1;
+  }
+  
+  
+  .custom-dropdown[open] summary {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  
+  .custom-dropdown ul {
+    padding: 0.25rem;
+    margin: 0;
+    list-style: none;
+    background-color: var(--pico-card-background-color);
+    border: 1px solid var(--pico-muted-border-color);
+    border-top: none;
+    border-radius: 0 0 6px 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .custom-dropdown li a {
+    display: block;
+    padding: 0.3rem 0.5rem;
+    text-decoration: none;
+    color: var(--pico-color);
+  }
+  
+  .custom-dropdown li a:hover {
+    background-color: var(--pico-muted-color);
+  }
+
+nav a.active {
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.forecast-v2 {
+    width: 100%;
+    border: 1px solid #e4e7eb;
+    border-radius: 14px;
+    background: #f5f6f8;
+    padding: 1rem 1rem 0.9rem;
+}
+
+.forecast-hero {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.8rem 1rem;
+    align-items: start;
+    margin-bottom: 0.7rem;
+}
+
+.forecast-hero-left {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.forecast-current-icon img {
+    width: 3.1rem;
+    height: 3.1rem;
+}
+
+.forecast-hero h2 {
+    margin: 0;
+    text-align: left;
+    font-size: 2.35rem;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: #1f2937;
+}
+
+.forecast-hero h2 small {
+    font-size: 1rem;
+    margin-left: 0.2rem;
+    color: #6b7280;
+    font-weight: 500;
+}
+
+.forecast-current-stats {
+    margin: 0.1rem 0 0;
+    font-size: 0.78rem;
+    color: #6b7280;
+    text-align: left;
+    line-height: 1.18;
+}
+
+.forecast-hero-right {
+    text-align: right;
+}
+
+.forecast-hero-right h3 {
+    margin: 0;
+    font-size: 1.05rem;
+    color: #1f2937;
+}
+
+.forecast-hero-right p {
+    margin: 0.05rem 0 0;
+    color: #6b7280;
+    font-size: 0.85rem;
+    line-height: 1.2;
+}
+
+.forecast-tabs {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #e4e7eb;
+    margin-bottom: 0.6rem;
+}
+
+.forecast-tab {
+    border: none;
+    background: transparent;
+    color: #4b5563;
+    border-radius: 0;
+    padding: 0.25rem 0 0.35rem;
+    font-size: 1rem;
+    font-weight: 500;
+    border-bottom: 2px solid transparent;
+}
+
+.forecast-tab.active {
+    background: transparent;
+    color: #111827;
+    border-color: #e0ad00;
+}
+
+.forecast-chart-panel {
+    border: none;
+    border-radius: 8px;
+    padding: 0.2rem 0 0.7rem;
+    margin-bottom: 0.5rem;
+    min-height: 165px;
+}
+
+.forecast-week-nav {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: stretch;
+    gap: 0.5rem;
+}
+
+.forecast-week-arrow {
+    width: 2rem;
+    height: auto;
+    min-width: 2rem;
+    border-radius: 10px;
+    border: 1px solid #d5dce5;
+    background: #ffffff;
+    color: #4b5563;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.05);
+}
+
+.forecast-week-arrow:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+.forecast-week-arrow i {
+    font-size: 0.76rem;
+}
+
+.daily-cards-row {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(115px, 1fr));
+    gap: 0.55rem;
+    align-items: stretch;
+    overflow: hidden;
+}
+
+.daily-card {
+    border: 1px solid #dde3ea;
+    border-radius: 12px;
+    background: #fafbfc;
+    color: #1f2937;
+    padding: 0.58rem 0.5rem;
+    text-align: center;
+    min-width: 0;
+    box-shadow: 0 0 0 rgba(15, 23, 42, 0);
+    transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.daily-card.active {
+    border-color: #c2ccd8;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+}
+
+.daily-card-date {
+    margin: 0;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #111827;
+    line-height: 1.15;
+}
+
+.daily-card-date span {
+    color: #6b7280;
+    font-weight: 500;
+}
+
+.daily-card-icon {
+    min-height: 1.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.28rem;
+}
+
+.daily-card-icon img {
+    max-width: 1.35rem;
+    max-height: 1.35rem;
+}
+
+.daily-card-temp {
+    margin: 0.26rem 0 0.12rem;
+    font-size: 0.92rem;
+    color: #374151;
+}
+
+.daily-card-temp strong {
+    color: #111827;
+}
+
+.daily-card-temp span {
+    color: #6b7280;
+}
+
+.daily-card-meta {
+    margin: 0;
+    font-size: 0.7rem;
+    color: #6b7280;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.obs-layout {
+    width: 100%;
+}
+
+.obs-tabs {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-bottom: 1rem;
+}
+
+.obs-tab {
+    background: transparent;
+    border: 1px solid var(--pico-muted-border-color);
+    color: var(--pico-color);
+    padding: 0.45rem 0.7rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+.obs-tab.active {
+    background: var(--pico-primary-background);
+    color: var(--pico-primary-inverse);
+    border-color: var(--pico-primary-background);
+}
+
+.obs-panel {
+    border: 1px solid var(--pico-muted-border-color);
+    border-radius: var(--pico-border-radius);
+    padding: 0.8rem;
+    background: var(--pico-card-background-color);
+}
+
+.obs-summary {
+    text-align: left;
+    margin: 0 0 0.8rem;
+    font-size: 0.8rem;
+}
+
+.chart-card {
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+#evapoChartContainer {
+    height: 300px;
+}
+
+.dashboard-layout {
+    width: 100%;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.dashboard-card {
+    border: 1px solid var(--pico-muted-border-color);
+    border-radius: var(--pico-border-radius);
+    background: var(--pico-card-background-color);
+    padding: 0.75rem;
+}
+
+.dashboard-card-wide {
+    grid-column: 1 / -1;
+}
+
+@media (max-width: 1025px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .forecast-v2 {
+        padding: 0.85rem 0.75rem 0.85rem;
+    }
+
+    .forecast-hero {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+
+    .forecast-hero-right {
+        text-align: left;
+    }
+
+    .forecast-tab {
+        font-size: 0.94rem;
+    }
+
+    .forecast-chart-panel {
+        min-height: 150px;
+    }
+
+    .forecast-week-arrow {
+        display: none;
+    }
+
+    .daily-cards-row {
+        display: flex;
+        gap: 0.5rem;
+        overflow-x: auto;
+        padding-bottom: 0.2rem;
+        scroll-snap-type: x proximity;
+    }
+
+    .daily-card {
+        min-width: 116px;
+        scroll-snap-align: start;
+    }
+}
+  

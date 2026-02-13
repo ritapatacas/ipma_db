@@ -1,0 +1,156 @@
+[
+  {
+    "date": "2-11",
+    "weekday": "Wed",
+    "min": 11.0,
+    "max": 14.0,
+    "pred": "60",
+    "prec mm": 58.14,
+    "prob %": "90",
+    "obs": "Mostly cloudy with rain",
+    "icon": "<img class=\"fdw-pictogram\" src=\"https://static.meteoblue.com/assets/images/picto/14_iday.svg\" title=\"Mostly cloudy with rain\"/>"
+  },
+  {
+    "date": "2-12",
+    "weekday": "Thu",
+    "min": 9.0,
+    "max": 14.0,
+    "pred": "55",
+    "prec mm": 9.43,
+    "prob %": "100",
+    "obs": "Mostly cloudy with rain",
+    "icon": "<img class=\"fdw-pictogram\" src=\"https://static.meteoblue.com/assets/images/picto/14_iday.svg\" title=\"Mostly cloudy with rain\"/>"
+  },
+  {
+    "date": "2-13",
+    "weekday": "Fri",
+    "min": 6.0,
+    "max": 11.0,
+    "pred": "40",
+    "prec mm": 36.58,
+    "prob %": "90",
+    "obs": "Showers, thunderstorms likely",
+    "icon": "<img class=\"fdw-pictogram\" src=\"https://static.meteoblue.com/assets/images/picto/08_iday.svg\" title=\"Showers, thunderstorms likely\"/>"
+  },
+  {
+    "date": "2-14",
+    "weekday": "Sat",
+    "min": 4.0,
+    "max": 10.0,
+    "pred": "55",
+    "prec mm": 0.33,
+    "prob %": "5",
+    "obs": "Mixed with showers",
+    "icon": "<img class=\"fdw-pictogram\" src=\"https://static.meteoblue.com/assets/images/picto/07_iday.svg\" title=\"Mixed with showers\"/>"
+  },
+  {
+    "date": "2-15",
+    "weekday": "Sun",
+    "min": 4.0,
+    "max": 11.0,
+    "pred": "55",
+    "prec mm": 0.74,
+    "prob %": "30",
+    "obs": "Mostly cloudy with occasional rain",
+    "icon": "<img class=\"fdw-pictogram\" src=\"https://static.meteoblue.com/assets/images/picto/16_iday.svg\" title=\"Mostly cloudy with occasional rain\"/>"
+  },
+  {
+    "date": "2-16",
+    "weekday": "Mon",
+    "min": 8.0,
+    "max": 12.0,
+    "pred": "50",
+    "prec mm": 1.21,
+    "prob %": "40",
+    "obs": "Mostly cloudy with occasional rain",
+    "icon": "<img class=\"fdw-pictogram\" src=\"https://static.meteoblue.com/assets/images/picto/16_iday.svg\" title=\"Mostly cloudy with occasional rain\"/>"
+  },
+  {
+    "date": "2-17",
+    "weekday": "Tue",
+    "min": 8.0,
+    "max": 12.0,
+    "pred": "50",
+    "prec mm": 0.0,
+    "prob %": "40",
+    "obs": "Overcast",
+    "icon": "<img class=\"fdw-pictogram\" src=\"https://static.meteoblue.com/assets/images/picto/04_iday.svg\" title=\"Overcast\"/>"
+  },
+  {
+    "date": "2-18",
+    "weekday": "Wed",
+    "min": 8.0,
+    "max": 14.0,
+    "pred": "20",
+    "prec mm": 10.49,
+    "prob %": "60",
+    "obs": "Mixed with showers",
+    "icon": "<img class=\"fdw-pictogram\" src=\"https://static.meteoblue.com/assets/images/picto/07_iday.svg\" title=\"Mixed with showers\"/>"
+  },
+  {
+    "date": "2-19",
+    "weekday": "Thu",
+    "min": 7.0,
+    "max": 13.0,
+    "pred": "20",
+    "prec mm": 5.23,
+    "prob %": "40",
+    "obs": "Mixed with showers",
+    "icon": "<img class=\"fdw-pictogram\" src=\"https://static.meteoblue.com/assets/images/picto/07_iday.svg\" title=\"Mixed with showers\"/>"
+  },
+  {
+    "date": "2-20",
+    "weekday": "Fri",
+    "min": 7.0,
+    "max": 14.0,
+    "pred": "50",
+    "prec mm": 0.0,
+    "prob %": "10",
+    "obs": "Clear and few clouds",
+    "icon": "<img class=\"fdw-pictogram\" src=\"https://static.meteoblue.com/assets/images/picto/02_iday.svg\" title=\"Clear and few clouds\"/>"
+  },
+  {
+    "date": "2-21",
+    "weekday": "Sat",
+    "min": 7.0,
+    "max": 15.0,
+    "pred": "45",
+    "prec mm": 0.0,
+    "prob %": "20",
+    "obs": "Clear and few clouds",
+    "icon": "<img class=\"fdw-pictogram\" src=\"https://static.meteoblue.com/assets/images/picto/02_iday.svg\" title=\"Clear and few clouds\"/>"
+  },
+  {
+    "date": "2-22",
+    "weekday": "Sun",
+    "min": 7.0,
+    "max": 15.0,
+    "pred": "45",
+    "prec mm": 0.0,
+    "prob %": "25",
+    "obs": "Clear and few clouds",
+    "icon": "<img class=\"fdw-pictogram\" src=\"https://static.meteoblue.com/assets/images/picto/02_iday.svg\" title=\"Clear and few clouds\"/>"
+  },
+  {
+    "date": "2-23",
+    "weekday": "Mon",
+    "min": 7.0,
+    "max": 16.0,
+    "pred": "45",
+    "prec mm": 0.0,
+    "prob %": "15",
+    "obs": "Clear and few clouds",
+    "icon": "<img class=\"fdw-pictogram\" src=\"https://static.meteoblue.com/assets/images/picto/02_iday.svg\" title=\"Clear and few clouds\"/>"
+  },
+  {
+    "date": "2-24",
+    "weekday": "Tue",
+    "min": 7.0,
+    "max": 16.0,
+    "pred": "45",
+    "prec mm": 0.0,
+    "prob %": "15",
+    "obs": "Clear, cloudless sky",
+    "icon": "<img class=\"fdw-pictogram\" src=\"https://static.meteoblue.com/assets/images/picto/01_iday.svg\" title=\"Clear, cloudless sky\"/>"
+  }
+]

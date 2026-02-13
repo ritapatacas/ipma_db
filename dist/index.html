@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <script src="https://kit.fontawesome.com/e96450527c.js"
+      crossorigin="anonymous"></script>
+    <script>
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', currentTheme);
+  </script>
+
+  <link
+  rel="stylesheet"
+  href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css"
+  />
+    <link rel="stylesheet" href="app/static/css/style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <title>The Owls Are Not What They Berrie</title>
+  </head>
+
+  <body>
+
+    <main class="container">
+      <nav>
+        <ul>
+          <li><h1 class="title"><strong>The Owls Are Not What They
+                Berrie</strong></h1></li>
+        </ul>
+        <ul class="nav-links">
+          <li><a href="#forecast" id="btn-forecast" class="button secondary"
+              data-page="forecast">forecast</a></li>
+          <li><a href="#observations" id="btn-observations"
+              class="button secondary"
+              data-page="observations">observations</a></li>
+          <li><a href="#dashboard" id="btn-dashboard" class="button secondary"
+              data-page="dashboard">dashboard</a></li>
+          <li><div id="theme-toggle" class="contrast"><i
+                class="fa-duotone fa-solid fa-circle-half-stroke"></i></div></li>
+        </ul>
+      </nav>
+
+
+
+      <!-- Forecast Table (Both Versions) -->
+      <div id="showcase" class="showcase">
+      </div>
+    </main>
+    <script src="app/static/script.js" defer></script>
+    
+
+  </body>
+
+</html>
