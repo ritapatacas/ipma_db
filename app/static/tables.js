@@ -51,7 +51,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     </tr>
     <tr>
       <td>(2-17) Tue</td>
-      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/03_iday.svg" title="Partly cloudy"/></td>
+      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/16_iday.svg" title="Mostly cloudy with occasional rain"/></td>
       <td>8.33</td>
       <td>13.89</td>
       <td>-</td>
@@ -70,7 +70,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(2-19) Thu</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/14_iday.svg" title="Mostly cloudy with rain"/></td>
-      <td>6.67</td>
+      <td>7.22</td>
       <td>12.22</td>
       <td>-</td>
       <td>None</td>
@@ -193,7 +193,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
       <td>13.89</td>
       <td>NaN</td>
       <td>None</td>
-      <td>Partly cloudy</td>
+      <td>Mostly cloudy with occasional rain</td>
     </tr>
     <tr>
       <td>18 (Wed)</td>
@@ -205,7 +205,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     </tr>
     <tr>
       <td>19 (Thu)</td>
-      <td>6.67</td>
+      <td>7.22</td>
       <td>12.22</td>
       <td>NaN</td>
       <td>None</td>
@@ -249,7 +249,34 @@ window.observationsTable = `
 </thead>
 <tbody>
 <tr>
-<td rowspan="18">13 Feb</td>
+<td rowspan="21">13 Feb</td>
+<td>20h</td>
+<td>7.4</td>
+<td>NW</td>
+<td>25.9</td>
+<td>NaN</td>
+<td>0.0</td>
+</tr>
+<tr>
+
+<td>19h</td>
+<td>8.1</td>
+<td>NW</td>
+<td>22.7</td>
+<td>NaN</td>
+<td>2.6</td>
+</tr>
+<tr>
+
+<td>18h</td>
+<td>8.8</td>
+<td>NW</td>
+<td>37.1</td>
+<td>NaN</td>
+<td>50.4</td>
+</tr>
+<tr>
+
 <td>17h</td>
 <td>9.1</td>
 <td>W</td>
@@ -627,7 +654,7 @@ window.observationsTable = `
 <td>0.0</td>
 </tr>
 <tr>
-<td rowspan="6">11 Feb</td>
+<td rowspan="3">11 Feb</td>
 <td>23h</td>
 <td>11.9</td>
 <td>W</td>
@@ -652,33 +679,6 @@ window.observationsTable = `
 <td>24.5</td>
 <td>NaN</td>
 <td>0.0</td>
-</tr>
-<tr>
-
-<td>20h</td>
-<td>12.6</td>
-<td>W</td>
-<td>27.0</td>
-<td>NaN</td>
-<td>1.6</td>
-</tr>
-<tr>
-
-<td>19h</td>
-<td>13.2</td>
-<td>W</td>
-<td>30.2</td>
-<td>NaN</td>
-<td>0.3</td>
-</tr>
-<tr>
-
-<td>18h</td>
-<td>13.8</td>
-<td>W</td>
-<td>35.6</td>
-<td>NaN</td>
-<td>24.6</td>
 </tr>
 </tbody>
 </table></div>
@@ -929,11 +929,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Feb 26</td>
-      <td>60</td>
+      <td>61</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>1093</td>
+      <td>1094</td>
     </tr>
   </tbody>
 </table>
@@ -1097,13 +1097,6 @@ window.dashboardTable = `<div class="table-container">
             <td><a href="#" onclick="openModal('modal-Neve-13-14-02', event)">13-14/02</a></td>
             <td><span data-tooltip="Castelo Branco (59km ESE)">CB</span></td>
         </tr>
-        
-        <tr class="yellow hover:bg-gray-200 dark:hover:bg-gray-700 transition">
-            <td><i class="fa-solid fa-wind"></i></td>
-            <td class="level"><i class="fa-solid fa-circle" style="color: #FFD43B;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
-            <td><a href="#" onclick="openModal('modal-Vento-13-13-02', event)">13-13/02</a></td>
-            <td><span data-tooltip="Castelo Branco (59km ESE)">CB</span></td>
-        </tr>
         </tbody></table>
     <dialog id="modal-Vento-13-14-02" class="modal">
         <article>
@@ -1263,24 +1256,6 @@ window.dashboardTable = `<div class="table-container">
     <p><strong>Castelo Branco (59km ESE)</strong><br>Queda de neve nos pontos mais altos da Serra da Estrela, baixando gradualmente a cota para 1200/1400 metros a partir da manhã e para 1000 metros no final do dia. Acumulação até 10 cm acima dos 1400 metros e até 25 cm nos pontos mais altos da Serra da Estrela.Impactos Prováveis: Perturbação causada por queda de neve com acumulação e possível formação de gelo (p. ex., vias condicionadas ou interditas, danos em estruturas ou árvores, abastecimentos locais prejudicados).</p>
             <footer>
                 <button onclick="closeModal('modal-Neve-13-14-02', event)">Close</button>
-            </footer>
-        </article>
-    </dialog>
-    
-    <dialog id="modal-Vento-13-13-02" class="modal">
-        <article>
-            <header>
-                <a href="#" class="close" aria-label="Close" onclick="closeModal('modal-Vento-13-13-02', event)"></a>
-                <h3>Vento</h3>
-            </header>
-            
-        <strong>alert level:</strong> yellow
-        <br><strong>start:</strong> 13/02 18:40
-        <br><strong>end:</strong> 13/02 21:00
-        <hr>
-    <p><strong>Castelo Branco (59km ESE)</strong><br>Rajadas até 80 km/h, sendo até 100 km/h nas terras altas.</p>
-            <footer>
-                <button onclick="closeModal('modal-Vento-13-13-02', event)">Close</button>
             </footer>
         </article>
     </dialog>
