@@ -15,7 +15,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
   <tbody>
     <tr>
       <td>(2-14) Sat</td>
-      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/07_iday.svg" title="Mixed with showers"/></td>
+      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/02_iday.svg" title="Clear and few clouds"/></td>
       <td>6.11</td>
       <td>11.11</td>
       <td>-</td>
@@ -161,7 +161,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
       <td>11.11</td>
       <td>NaN</td>
       <td>None</td>
-      <td>Mixed with showers</td>
+      <td>Clear and few clouds</td>
     </tr>
     <tr>
       <td>15 (Sun)</td>
@@ -249,7 +249,34 @@ window.observationsTable = `
 </thead>
 <tbody>
 <tr>
-<td rowspan="22">13 Feb</td>
+<td>14 Feb</td>
+<td>00h</td>
+<td>6.1</td>
+<td>N</td>
+<td>22.0</td>
+<td>NaN</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td rowspan="24">13 Feb</td>
+<td>23h</td>
+<td>6.7</td>
+<td>N</td>
+<td>23.0</td>
+<td>NaN</td>
+<td>0.0</td>
+</tr>
+<tr>
+
+<td>22h</td>
+<td>6.7</td>
+<td>N</td>
+<td>20.5</td>
+<td>NaN</td>
+<td>0.0</td>
+</tr>
+<tr>
+
 <td>21h</td>
 <td>6.9</td>
 <td>NW</td>
@@ -447,7 +474,7 @@ window.observationsTable = `
 <td>0.0</td>
 </tr>
 <tr>
-<td rowspan="24">12 Feb</td>
+<td rowspan="23">12 Feb</td>
 <td>23h</td>
 <td>10.5</td>
 <td>S</td>
@@ -650,33 +677,6 @@ window.observationsTable = `
 <td>11.4</td>
 <td>W</td>
 <td>19.1</td>
-<td>NaN</td>
-<td>0.0</td>
-</tr>
-<tr>
-
-<td>00h</td>
-<td>11.4</td>
-<td>W</td>
-<td>19.4</td>
-<td>NaN</td>
-<td>0.0</td>
-</tr>
-<tr>
-<td rowspan="2">11 Feb</td>
-<td>23h</td>
-<td>11.9</td>
-<td>W</td>
-<td>24.1</td>
-<td>NaN</td>
-<td>0.0</td>
-</tr>
-<tr>
-
-<td>22h</td>
-<td>12.3</td>
-<td>W</td>
-<td>22.7</td>
 <td>NaN</td>
 <td>0.0</td>
 </tr>
@@ -929,11 +929,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Feb 26</td>
-      <td>62</td>
+      <td>67</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>1095</td>
+      <td>1100</td>
     </tr>
   </tbody>
 </table>
@@ -1015,11 +1015,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Feb 26</td>
-      <td>3</td>
+      <td>1</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>1155</td>
+      <td>1153</td>
     </tr>
   </tbody>
 </table>
@@ -1089,13 +1089,6 @@ window.dashboardTable = `<div class="table-container">
             <td class="level"><i class="fa-solid fa-circle" style="color: #26ba81;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
             <td><a href="#" onclick="openModal('modal-Vento-13-16-02', event)">13-16/02</a></td>
             <td><span data-tooltip="Coimbra (36km NW)">C</span>, <span data-tooltip="Castelo Branco (59km ESE)">CB</span>, <span data-tooltip="Leiria (58km WSW)">L</span></td>
-        </tr>
-        
-        <tr class="yellow hover:bg-gray-200 dark:hover:bg-gray-700 transition">
-            <td><i class="fa-solid fa-snowflake"></i></td>
-            <td class="level"><i class="fa-solid fa-circle" style="color: #FFD43B;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
-            <td><a href="#" onclick="openModal('modal-Neve-13-14-02', event)">13-14/02</a></td>
-            <td><span data-tooltip="Castelo Branco (59km ESE)">CB</span></td>
         </tr>
         </tbody></table>
     <dialog id="modal-Vento-13-14-02" class="modal">
@@ -1238,24 +1231,6 @@ window.dashboardTable = `<div class="table-container">
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
                 <button onclick="closeModal('modal-Vento-13-16-02', event)">Close</button>
-            </footer>
-        </article>
-    </dialog>
-    
-    <dialog id="modal-Neve-13-14-02" class="modal">
-        <article>
-            <header>
-                <a href="#" class="close" aria-label="Close" onclick="closeModal('modal-Neve-13-14-02', event)"></a>
-                <h3>Neve</h3>
-            </header>
-            
-        <strong>alert level:</strong> yellow
-        <br><strong>start:</strong> 13/02 18:40
-        <br><strong>end:</strong> 14/02 00:00
-        <hr>
-    <p><strong>Castelo Branco (59km ESE)</strong><br>Queda de neve nos pontos mais altos da Serra da Estrela, baixando gradualmente a cota para 1200/1400 metros a partir da manhã e para 1000 metros no final do dia. Acumulação até 10 cm acima dos 1400 metros e até 25 cm nos pontos mais altos da Serra da Estrela.Impactos Prováveis: Perturbação causada por queda de neve com acumulação e possível formação de gelo (p. ex., vias condicionadas ou interditas, danos em estruturas ou árvores, abastecimentos locais prejudicados).</p>
-            <footer>
-                <button onclick="closeModal('modal-Neve-13-14-02', event)">Close</button>
             </footer>
         </article>
     </dialog>
