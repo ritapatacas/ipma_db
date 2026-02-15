@@ -17,7 +17,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(2-15) Sun</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/03_iday.svg" title="Partly cloudy"/></td>
       <td>6.67</td>
-      <td>12.78</td>
+      <td>12.22</td>
       <td>-</td>
       <td>None</td>
       <td>None</td>
@@ -52,7 +52,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(2-19) Thu</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/16_iday.svg" title="Mostly cloudy with occasional rain"/></td>
-      <td>5.56</td>
+      <td>5.00</td>
       <td>11.11</td>
       <td>-</td>
       <td>None</td>
@@ -88,7 +88,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(2-23) Mon</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/02_iday.svg" title="Clear and few clouds"/></td>
-      <td>7.78</td>
+      <td>8.33</td>
       <td>16.67</td>
       <td>-</td>
       <td>None</td>
@@ -97,7 +97,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(2-24) Tue</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday.svg" title="Clear, cloudless sky"/></td>
-      <td>7.78</td>
+      <td>8.33</td>
       <td>17.22</td>
       <td>-</td>
       <td>None</td>
@@ -106,7 +106,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(2-25) Wed</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/02_iday.svg" title="Clear and few clouds"/></td>
-      <td>7.78</td>
+      <td>8.33</td>
       <td>16.11</td>
       <td>-</td>
       <td>None</td>
@@ -124,7 +124,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(2-27) Fri</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday.svg" title="Clear, cloudless sky"/></td>
-      <td>7.78</td>
+      <td>8.33</td>
       <td>15.00</td>
       <td>-</td>
       <td>None</td>
@@ -158,7 +158,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     <tr>
       <td>15 (Sun)</td>
       <td>6.67</td>
-      <td>12.78</td>
+      <td>12.22</td>
       <td>NaN</td>
       <td>None</td>
       <td>Partly cloudy</td>
@@ -189,7 +189,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     </tr>
     <tr>
       <td>19 (Thu)</td>
-      <td>5.56</td>
+      <td>5.00</td>
       <td>11.11</td>
       <td>NaN</td>
       <td>None</td>
@@ -249,7 +249,34 @@ window.observationsTable = `
 </thead>
 <tbody>
 <tr>
-<td rowspan="12">15 Feb</td>
+<td rowspan="15">15 Feb</td>
+<td>15h</td>
+<td>11.3</td>
+<td>W</td>
+<td>15.5</td>
+<td>NaN</td>
+<td>1048.2</td>
+</tr>
+<tr>
+
+<td>13h</td>
+<td>11.8</td>
+<td>W</td>
+<td>19.4</td>
+<td>NaN</td>
+<td>908.9</td>
+</tr>
+<tr>
+
+<td>12h</td>
+<td>10.7</td>
+<td>W</td>
+<td>13.7</td>
+<td>NaN</td>
+<td>1035.1</td>
+</tr>
+<tr>
+
 <td>11h</td>
 <td>9.6</td>
 <td>NW</td>
@@ -573,7 +600,7 @@ window.observationsTable = `
 <td>0.0</td>
 </tr>
 <tr>
-<td rowspan="12">13 Feb</td>
+<td rowspan="9">13 Feb</td>
 <td>23h</td>
 <td>6.7</td>
 <td>N</td>
@@ -652,33 +679,6 @@ window.observationsTable = `
 <td>36.0</td>
 <td>NaN</td>
 <td>1117.4</td>
-</tr>
-<tr>
-
-<td>14h</td>
-<td>10.4</td>
-<td>NW</td>
-<td>34.2</td>
-<td>NaN</td>
-<td>1176.5</td>
-</tr>
-<tr>
-
-<td>13h</td>
-<td>9.8</td>
-<td>W</td>
-<td>41.0</td>
-<td>NaN</td>
-<td>989.4</td>
-</tr>
-<tr>
-
-<td>12h</td>
-<td>9.6</td>
-<td>NW</td>
-<td>34.6</td>
-<td>NaN</td>
-<td>729.7</td>
 </tr>
 </tbody>
 </table></div>
@@ -1015,11 +1015,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Feb 26</td>
-      <td>3</td>
+      <td>2</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>1155</td>
+      <td>1154</td>
     </tr>
   </tbody>
 </table>
