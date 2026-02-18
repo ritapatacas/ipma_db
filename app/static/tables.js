@@ -16,7 +16,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(2-18) Wed</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/16_iday.svg" title="Mostly cloudy with occasional rain"/></td>
-      <td>47.00</td>
+      <td>48.00</td>
       <td>54.00</td>
       <td>-</td>
       <td>None</td>
@@ -43,7 +43,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(2-21) Sat</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/03_iday.svg" title="Partly cloudy"/></td>
-      <td>44.00</td>
+      <td>45.00</td>
       <td>68.00</td>
       <td>-</td>
       <td>None</td>
@@ -53,7 +53,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(2-22) Sun</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/02_iday.svg" title="Clear and few clouds"/></td>
       <td>47.00</td>
-      <td>70.00</td>
+      <td>69.00</td>
       <td>-</td>
       <td>None</td>
       <td>None</td>
@@ -70,8 +70,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(2-24) Tue</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/05_iday.svg" title="Fog"/></td>
-      <td>50.00</td>
-      <td>61.00</td>
+      <td>49.00</td>
+      <td>62.00</td>
       <td>-</td>
       <td>None</td>
       <td>None</td>
@@ -106,7 +106,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(2-28) Sat</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/07_iday.svg" title="Mixed with showers"/></td>
-      <td>45.00</td>
+      <td>44.00</td>
       <td>53.00</td>
       <td>-</td>
       <td>None</td>
@@ -116,7 +116,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(3-1) Sun</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/07_iday.svg" title="Mixed with showers"/></td>
       <td>42.00</td>
-      <td>54.00</td>
+      <td>55.00</td>
       <td>-</td>
       <td>None</td>
       <td>None</td>
@@ -157,7 +157,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
   <tbody>
     <tr>
       <td>18 (Wed)</td>
-      <td>47.0</td>
+      <td>48.0</td>
       <td>54.0</td>
       <td>NaN</td>
       <td>None</td>
@@ -181,7 +181,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     </tr>
     <tr>
       <td>21 (Sat)</td>
-      <td>44.0</td>
+      <td>45.0</td>
       <td>68.0</td>
       <td>NaN</td>
       <td>None</td>
@@ -190,7 +190,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     <tr>
       <td>22 (Sun)</td>
       <td>47.0</td>
-      <td>70.0</td>
+      <td>69.0</td>
       <td>NaN</td>
       <td>None</td>
       <td>Clear and few clouds</td>
@@ -205,8 +205,8 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     </tr>
     <tr>
       <td>24 (Tue)</td>
-      <td>50.0</td>
-      <td>61.0</td>
+      <td>49.0</td>
+      <td>62.0</td>
       <td>NaN</td>
       <td>None</td>
       <td>Fog</td>
@@ -249,7 +249,34 @@ window.observationsTable = `
 </thead>
 <tbody>
 <tr>
-<td rowspan="18">18 Feb</td>
+<td rowspan="21">18 Feb</td>
+<td>20h</td>
+<td>9.3</td>
+<td>NW</td>
+<td>14.0</td>
+<td>NaN</td>
+<td>0.0</td>
+</tr>
+<tr>
+
+<td>19h</td>
+<td>9.5</td>
+<td>W</td>
+<td>13.7</td>
+<td>NaN</td>
+<td>4.8</td>
+</tr>
+<tr>
+
+<td>18h</td>
+<td>10.4</td>
+<td>NW</td>
+<td>20.9</td>
+<td>NaN</td>
+<td>152.1</td>
+</tr>
+<tr>
+
 <td>17h</td>
 <td>10.7</td>
 <td>NW</td>
@@ -627,7 +654,7 @@ window.observationsTable = `
 <td>0.0</td>
 </tr>
 <tr>
-<td rowspan="6">16 Feb</td>
+<td rowspan="3">16 Feb</td>
 <td>23h</td>
 <td>11.3</td>
 <td>W</td>
@@ -652,33 +679,6 @@ window.observationsTable = `
 <td>11.5</td>
 <td>NaN</td>
 <td>0.0</td>
-</tr>
-<tr>
-
-<td>20h</td>
-<td>11.4</td>
-<td>W</td>
-<td>13.0</td>
-<td>NaN</td>
-<td>0.0</td>
-</tr>
-<tr>
-
-<td>19h</td>
-<td>11.4</td>
-<td>W</td>
-<td>16.2</td>
-<td>NaN</td>
-<td>3.7</td>
-</tr>
-<tr>
-
-<td>18h</td>
-<td>11.5</td>
-<td>W</td>
-<td>17.3</td>
-<td>NaN</td>
-<td>45.6</td>
 </tr>
 </tbody>
 </table></div>
