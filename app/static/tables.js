@@ -25,8 +25,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(2-26) Thu</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/02_iday.svg" title="Clear and few clouds"/></td>
-      <td>46.00</td>
-      <td>72.00</td>
+      <td>45.00</td>
+      <td>69.00</td>
       <td>-</td>
       <td>None</td>
       <td>None</td>
@@ -35,7 +35,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(2-27) Fri</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/04_iday.svg" title="Overcast"/></td>
       <td>46.00</td>
-      <td>61.00</td>
+      <td>62.00</td>
       <td>-</td>
       <td>None</td>
       <td>None</td>
@@ -62,7 +62,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(3-2) Mon</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/06_iday.svg" title="Overcast with rain"/></td>
       <td>47.00</td>
-      <td>59.00</td>
+      <td>60.00</td>
       <td>-</td>
       <td>None</td>
       <td>None</td>
@@ -70,7 +70,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(3-3) Tue</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/04_iday.svg" title="Overcast"/></td>
-      <td>47.00</td>
+      <td>48.00</td>
       <td>62.00</td>
       <td>-</td>
       <td>None</td>
@@ -107,7 +107,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(3-7) Sat</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday.svg" title="Clear, cloudless sky"/></td>
       <td>43.00</td>
-      <td>61.00</td>
+      <td>60.00</td>
       <td>-</td>
       <td>None</td>
       <td>None</td>
@@ -124,8 +124,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(3-9) Mon</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday.svg" title="Clear, cloudless sky"/></td>
-      <td>43.00</td>
-      <td>62.00</td>
+      <td>44.00</td>
+      <td>61.00</td>
       <td>-</td>
       <td>None</td>
       <td>None</td>
@@ -165,8 +165,8 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     </tr>
     <tr>
       <td>26 (Thu)</td>
-      <td>46.0</td>
-      <td>72.0</td>
+      <td>45.0</td>
+      <td>69.0</td>
       <td>NaN</td>
       <td>None</td>
       <td>Clear and few clouds</td>
@@ -174,7 +174,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     <tr>
       <td>27 (Fri)</td>
       <td>46.0</td>
-      <td>61.0</td>
+      <td>62.0</td>
       <td>NaN</td>
       <td>None</td>
       <td>Overcast</td>
@@ -198,14 +198,14 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     <tr>
       <td>2 (Mon)</td>
       <td>47.0</td>
-      <td>59.0</td>
+      <td>60.0</td>
       <td>NaN</td>
       <td>None</td>
       <td>Overcast with rain</td>
     </tr>
     <tr>
       <td>3 (Tue)</td>
-      <td>47.0</td>
+      <td>48.0</td>
       <td>62.0</td>
       <td>NaN</td>
       <td>None</td>
@@ -249,7 +249,25 @@ window.observationsTable = `
 </thead>
 <tbody>
 <tr>
-<td rowspan="12">25 Feb</td>
+<td rowspan="14">25 Feb</td>
+<td>13h</td>
+<td>15.2</td>
+<td>SE</td>
+<td>1.8</td>
+<td>NaN</td>
+<td>499.2</td>
+</tr>
+<tr>
+
+<td>12h</td>
+<td>14.5</td>
+<td>S</td>
+<td>2.2</td>
+<td>NaN</td>
+<td>583.2</td>
+</tr>
+<tr>
+
 <td>11h</td>
 <td>14.0</td>
 <td>SE</td>
@@ -573,7 +591,7 @@ window.observationsTable = `
 <td>0.0</td>
 </tr>
 <tr>
-<td rowspan="12">23 Feb</td>
+<td rowspan="10">23 Feb</td>
 <td>23h</td>
 <td>13.7</td>
 <td>SE</td>
@@ -661,24 +679,6 @@ window.observationsTable = `
 <td>9.4</td>
 <td>NaN</td>
 <td>2557.5</td>
-</tr>
-<tr>
-
-<td>13h</td>
-<td>21.3</td>
-<td>SE</td>
-<td>12.6</td>
-<td>NaN</td>
-<td>592.9</td>
-</tr>
-<tr>
-
-<td>12h</td>
-<td>19.0</td>
-<td>SE</td>
-<td>9.7</td>
-<td>NaN</td>
-<td>1697.8</td>
 </tr>
 </tbody>
 </table></div>
