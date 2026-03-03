@@ -116,7 +116,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(3-14) Sat</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/03_iday.svg" title="Partly cloudy"/></td>
       <td>48.00</td>
-      <td>59.00</td>
+      <td>58.00</td>
       <td>-</td>
       <td>None</td>
       <td>None</td>
@@ -249,7 +249,25 @@ window.observationsTable = `
 </thead>
 <tbody>
 <tr>
-<td rowspan="8">03 Mar</td>
+<td rowspan="10">03 Mar</td>
+<td>09h</td>
+<td>11.2</td>
+<td>NE</td>
+<td>11.9</td>
+<td>0.0</td>
+<td>495.2</td>
+</tr>
+<tr>
+
+<td>08h</td>
+<td>9.9</td>
+<td>E</td>
+<td>11.2</td>
+<td>0.0</td>
+<td>110.1</td>
+</tr>
+<tr>
+
 <td>07h</td>
 <td>10.0</td>
 <td>E</td>
@@ -537,7 +555,7 @@ window.observationsTable = `
 <td>0.0</td>
 </tr>
 <tr>
-<td rowspan="16">01 Mar</td>
+<td rowspan="14">01 Mar</td>
 <td>23h</td>
 <td>8.3</td>
 <td>S</td>
@@ -661,24 +679,6 @@ window.observationsTable = `
 <td>9.0</td>
 <td>0.0</td>
 <td>1458.3</td>
-</tr>
-<tr>
-
-<td>09h</td>
-<td>10.7</td>
-<td>SE</td>
-<td>7.9</td>
-<td>0.0</td>
-<td>667.3</td>
-</tr>
-<tr>
-
-<td>08h</td>
-<td>9.5</td>
-<td>SE</td>
-<td>9.0</td>
-<td>0.0</td>
-<td>75.3</td>
 </tr>
 </tbody>
 </table></div>
@@ -1023,11 +1023,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Mar 26</td>
-      <td>3</td>
+      <td>2</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>1171</td>
+      <td>1170</td>
     </tr>
   </tbody>
 </table>
