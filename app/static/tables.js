@@ -16,8 +16,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(3-5) Thu</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/16_iday.svg" title="Mostly cloudy with occasional rain"/></td>
-      <td>43.00</td>
-      <td>53.00</td>
+      <td>44.00</td>
+      <td>56.00</td>
       <td>-</td>
       <td>None</td>
       <td>None</td>
@@ -80,7 +80,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(3-12) Thu</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/02_iday.svg" title="Clear and few clouds"/></td>
       <td>43.00</td>
-      <td>56.00</td>
+      <td>57.00</td>
       <td>-</td>
       <td>None</td>
       <td>None</td>
@@ -125,7 +125,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(3-17) Tue</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/07_iday.svg" title="Mixed with showers"/></td>
       <td>41.00</td>
-      <td>54.00</td>
+      <td>55.00</td>
       <td>-</td>
       <td>None</td>
       <td>None</td>
@@ -157,8 +157,8 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
   <tbody>
     <tr>
       <td>5 (Thu)</td>
-      <td>43.0</td>
-      <td>53.0</td>
+      <td>44.0</td>
+      <td>56.0</td>
       <td>NaN</td>
       <td>None</td>
       <td>Mostly cloudy with occasional rain</td>
@@ -249,7 +249,43 @@ window.observationsTable = `
 </thead>
 <tbody>
 <tr>
-<td rowspan="10">05 Mar</td>
+<td rowspan="14">05 Mar</td>
+<td>13h</td>
+<td>11.1</td>
+<td>N</td>
+<td>12.6</td>
+<td>0.0</td>
+<td>664.9</td>
+</tr>
+<tr>
+
+<td>12h</td>
+<td>10.4</td>
+<td>NW</td>
+<td>13.7</td>
+<td>0.0</td>
+<td>455.2</td>
+</tr>
+<tr>
+
+<td>11h</td>
+<td>10.1</td>
+<td>N</td>
+<td>7.6</td>
+<td>0.0</td>
+<td>265.7</td>
+</tr>
+<tr>
+
+<td>10h</td>
+<td>9.8</td>
+<td>NW</td>
+<td>10.8</td>
+<td>0.0</td>
+<td>311.1</td>
+</tr>
+<tr>
+
 <td>09h</td>
 <td>9.3</td>
 <td>N</td>
@@ -555,7 +591,7 @@ window.observationsTable = `
 <td>0.0</td>
 </tr>
 <tr>
-<td rowspan="14">03 Mar</td>
+<td rowspan="10">03 Mar</td>
 <td>23h</td>
 <td>12.7</td>
 <td>E</td>
@@ -643,42 +679,6 @@ window.observationsTable = `
 <td>13.0</td>
 <td>0.0</td>
 <td>2323.8</td>
-</tr>
-<tr>
-
-<td>13h</td>
-<td>17.8</td>
-<td>E</td>
-<td>12.2</td>
-<td>0.0</td>
-<td>1017.9</td>
-</tr>
-<tr>
-
-<td>12h</td>
-<td>16.3</td>
-<td>E</td>
-<td>10.8</td>
-<td>0.0</td>
-<td>1458.6</td>
-</tr>
-<tr>
-
-<td>11h</td>
-<td>14.8</td>
-<td>NE</td>
-<td>9.7</td>
-<td>0.0</td>
-<td>1520.1</td>
-</tr>
-<tr>
-
-<td>10h</td>
-<td>12.8</td>
-<td>NE</td>
-<td>10.1</td>
-<td>0.0</td>
-<td>1011.1</td>
 </tr>
 </tbody>
 </table></div>
@@ -1023,11 +1023,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Mar 26</td>
-      <td>3</td>
+      <td>1</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>1171</td>
+      <td>1169</td>
     </tr>
   </tbody>
 </table>
@@ -1043,6 +1043,13 @@ window.dashboardTable = `<div class="table-container">
         </thead>
         <tbody>
     
+        <tr class="yellow hover:bg-gray-200 dark:hover:bg-gray-700 transition">
+            <td><i class="fa-solid fa-wind"></i></td>
+            <td class="level"><i class="fa-solid fa-circle" style="color: #FFD43B;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
+            <td><a href="#" onclick="openModal('modal-Vento-05-06-03', event)">05-06/03</a></td>
+            <td><span data-tooltip="Coimbra (36km NW)">C</span>, <span data-tooltip="Leiria (58km WSW)">L</span></td>
+        </tr>
+        
         <tr class="green hover:bg-gray-200 dark:hover:bg-gray-700 transition">
             <td><i class="fa-solid fa-smog"></i></td>
             <td class="level"><i class="fa-solid fa-circle" style="color: #26ba81;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
@@ -1092,13 +1099,6 @@ window.dashboardTable = `<div class="table-container">
             <td><span data-tooltip="Coimbra (36km NW)">C</span>, <span data-tooltip="Castelo Branco (59km ESE)">CB</span>, <span data-tooltip="Leiria (58km WSW)">L</span></td>
         </tr>
         
-        <tr class="yellow hover:bg-gray-200 dark:hover:bg-gray-700 transition">
-            <td><i class="fa-solid fa-wind"></i></td>
-            <td class="level"><i class="fa-solid fa-circle" style="color: #FFD43B;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
-            <td><a href="#" onclick="openModal('modal-Vento-05-06-03', event)">05-06/03</a></td>
-            <td><span data-tooltip="Coimbra (36km NW)">C</span>, <span data-tooltip="Leiria (58km WSW)">L</span></td>
-        </tr>
-        
         <tr class="orange hover:bg-gray-200 dark:hover:bg-gray-700 transition">
             <td><i class="fa-solid fa-snowflake"></i></td>
             <td class="level"><i class="fa-solid fa-circle" style="color: #f58d38;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
@@ -1113,6 +1113,24 @@ window.dashboardTable = `<div class="table-container">
             <td><span data-tooltip="Leiria (58km WSW)">L</span></td>
         </tr>
         </tbody></table>
+    <dialog id="modal-Vento-05-06-03" class="modal">
+        <article>
+            <header>
+                <a href="#" class="close" aria-label="Close" onclick="closeModal('modal-Vento-05-06-03', event)"></a>
+                <h3>Vento</h3>
+            </header>
+            
+        <strong>alert level:</strong> yellow
+        <br><strong>start:</strong> 05/03 12:53
+        <br><strong>end:</strong> 06/03 09:00
+        <hr>
+    <p><strong>Leiria (58km WSW)</strong><br>No litoral e nas serras: rajadas da ordem de 80 km/h.</p><p><strong>Coimbra (36km NW)</strong><br>No litoral e nas serras: rajadas da ordem de 80 km/h.</p>
+            <footer>
+                <button onclick="closeModal('modal-Vento-05-06-03', event)">Close</button>
+            </footer>
+        </article>
+    </dialog>
+    
     <dialog id="modal-Nevoeiro-05-08-03" class="modal">
         <article>
             <header>
@@ -1121,8 +1139,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 05/03 07:04
-        <br><strong>end:</strong> 08/03 07:00
+        <br><strong>start:</strong> 05/03 12:53
+        <br><strong>end:</strong> 08/03 12:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1139,8 +1157,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 05/03 07:04
-        <br><strong>end:</strong> 08/03 07:00
+        <br><strong>start:</strong> 05/03 12:53
+        <br><strong>end:</strong> 08/03 12:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1157,8 +1175,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 05/03 07:04
-        <br><strong>end:</strong> 08/03 07:00
+        <br><strong>start:</strong> 05/03 12:53
+        <br><strong>end:</strong> 08/03 12:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1175,8 +1193,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 05/03 07:04
-        <br><strong>end:</strong> 08/03 07:00
+        <br><strong>start:</strong> 05/03 12:53
+        <br><strong>end:</strong> 08/03 12:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1193,8 +1211,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 05/03 07:04
-        <br><strong>end:</strong> 08/03 07:00
+        <br><strong>start:</strong> 05/03 12:53
+        <br><strong>end:</strong> 08/03 12:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1211,8 +1229,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 05/03 07:04
-        <br><strong>end:</strong> 08/03 07:00
+        <br><strong>start:</strong> 05/03 12:53
+        <br><strong>end:</strong> 08/03 12:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1229,30 +1247,12 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 05/03 07:04
-        <br><strong>end:</strong> 08/03 07:00
+        <br><strong>start:</strong> 05/03 12:53
+        <br><strong>end:</strong> 08/03 12:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
                 <button onclick="closeModal('modal-Vento-05-08-03', event)">Close</button>
-            </footer>
-        </article>
-    </dialog>
-    
-    <dialog id="modal-Vento-05-06-03" class="modal">
-        <article>
-            <header>
-                <a href="#" class="close" aria-label="Close" onclick="closeModal('modal-Vento-05-06-03', event)"></a>
-                <h3>Vento</h3>
-            </header>
-            
-        <strong>alert level:</strong> yellow
-        <br><strong>start:</strong> 05/03 12:00
-        <br><strong>end:</strong> 06/03 09:00
-        <hr>
-    <p><strong>Leiria (58km WSW)</strong><br>No litoral e nas serras: rajadas da ordem de 80 km/h.</p><p><strong>Coimbra (36km NW)</strong><br>No litoral e nas serras: rajadas da ordem de 80 km/h.</p>
-            <footer>
-                <button onclick="closeModal('modal-Vento-05-06-03', event)">Close</button>
             </footer>
         </article>
     </dialog>
@@ -1268,7 +1268,7 @@ window.dashboardTable = `<div class="table-container">
         <br><strong>start:</strong> 05/03 18:00
         <br><strong>end:</strong> 06/03 15:00
         <hr>
-    <p><strong>Castelo Branco (59km ESE)</strong><br>Queda de neve acima de 1400/1600 metros de altitude, baixando temporariamente a cota para os 800/1000 metros durante a noite e manhã de dia 6, com acumulação da ordem de 20 cm acima dos 1400 metros.Impactos Prováveis: Perturbação moderada causada por queda de neve com acumulação e possível formação de  gelo (p. ex., vias condicionadas ou interditas, danos em estruturas ou árvores, abastecimentos locais prejudicados).</p><p><strong>Coimbra (36km NW)</strong><br>Queda de neve acima de 1000/1200 metros de altitude, baixando temporariamente a cota para os 800/1000 metros durante a noite e manhã de dia 6, com acumulação até 10 cm acima dos 1000/1200 metros.Impactos Prováveis: Perturbação causada por queda de neve com acumulação e possível formação de gelo (p. ex., vias condicionadas ou interditas, danos em estruturas ou árvores, abastecimentos locais prejudicados).</p>
+    <p><strong>Castelo Branco (59km ESE)</strong><br>Queda de neve acima de 1400/1600 metros de altitude, baixando temporariamente a cota para os 800/1000 metros durante a noite e manhã de dia 6, com acumulação da ordem de 20-30 cm acima dos 1000 metros.Impactos Prováveis: Perturbação moderada causada por queda de neve com acumulação e possível formação de  gelo (p. ex., vias condicionadas ou interditas, danos em estruturas ou árvores, abastecimentos locais prejudicados).</p><p><strong>Coimbra (36km NW)</strong><br>Queda de neve acima de 1000/1200 metros de altitude, baixando temporariamente a cota para os 800/1000 metros durante a noite e manhã de dia 6, com acumulação até 10 cm acima dos 1000/1200 metros.Impactos Prováveis: Perturbação causada por queda de neve com acumulação e possível formação de gelo (p. ex., vias condicionadas ou interditas, danos em estruturas ou árvores, abastecimentos locais prejudicados).</p>
             <footer>
                 <button onclick="closeModal('modal-Neve-05-06-03', event)">Close</button>
             </footer>
