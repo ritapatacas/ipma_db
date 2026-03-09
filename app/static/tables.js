@@ -249,7 +249,34 @@ window.observationsTable = `
 </thead>
 <tbody>
 <tr>
-<td rowspan="10">09 Mar</td>
+<td rowspan="13">09 Mar</td>
+<td>13h</td>
+<td>7.5</td>
+<td>NW</td>
+<td>20.5</td>
+<td>0.4</td>
+<td>1259.4</td>
+</tr>
+<tr>
+
+<td>11h</td>
+<td>7.4</td>
+<td>NW</td>
+<td>20.5</td>
+<td>1.2</td>
+<td>213.8</td>
+</tr>
+<tr>
+
+<td>10h</td>
+<td>7.7</td>
+<td>NW</td>
+<td>12.2</td>
+<td>0.7</td>
+<td>174.4</td>
+</tr>
+<tr>
+
 <td>09h</td>
 <td>7.7</td>
 <td>NW</td>
@@ -555,7 +582,7 @@ window.observationsTable = `
 <td>0.0</td>
 </tr>
 <tr>
-<td rowspan="14">07 Mar</td>
+<td rowspan="11">07 Mar</td>
 <td>23h</td>
 <td>6.9</td>
 <td>NW</td>
@@ -652,33 +679,6 @@ window.observationsTable = `
 <td>5.0</td>
 <td>0.0</td>
 <td>1177.5</td>
-</tr>
-<tr>
-
-<td>12h</td>
-<td>13.2</td>
-<td>N</td>
-<td>8.3</td>
-<td>0.0</td>
-<td>1762.8</td>
-</tr>
-<tr>
-
-<td>11h</td>
-<td>11.5</td>
-<td>N</td>
-<td>7.2</td>
-<td>0.0</td>
-<td>2081.7</td>
-</tr>
-<tr>
-
-<td>10h</td>
-<td>9.2</td>
-<td>NE</td>
-<td>7.9</td>
-<td>0.0</td>
-<td>1284.5</td>
 </tr>
 </tbody>
 </table></div>
@@ -933,11 +933,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Mar 26</td>
-      <td>36</td>
+      <td>38</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>1197</td>
+      <td>1199</td>
     </tr>
   </tbody>
 </table>
@@ -1023,11 +1023,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Mar 26</td>
-      <td>3</td>
+      <td>1</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>1171</td>
+      <td>1169</td>
     </tr>
   </tbody>
 </table>
@@ -1114,8 +1114,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 09/03 06:36
-        <br><strong>end:</strong> 12/03 06:00
+        <br><strong>start:</strong> 09/03 12:31
+        <br><strong>end:</strong> 12/03 12:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1132,8 +1132,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 09/03 06:36
-        <br><strong>end:</strong> 12/03 06:00
+        <br><strong>start:</strong> 09/03 12:31
+        <br><strong>end:</strong> 12/03 12:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1150,8 +1150,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 09/03 06:36
-        <br><strong>end:</strong> 12/03 06:00
+        <br><strong>start:</strong> 09/03 12:31
+        <br><strong>end:</strong> 12/03 12:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1168,8 +1168,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 09/03 06:36
-        <br><strong>end:</strong> 12/03 06:00
+        <br><strong>start:</strong> 09/03 12:31
+        <br><strong>end:</strong> 12/03 12:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1186,8 +1186,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 09/03 06:36
-        <br><strong>end:</strong> 12/03 06:00
+        <br><strong>start:</strong> 09/03 12:31
+        <br><strong>end:</strong> 12/03 12:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1204,8 +1204,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 09/03 06:36
-        <br><strong>end:</strong> 12/03 06:00
+        <br><strong>start:</strong> 09/03 12:31
+        <br><strong>end:</strong> 12/03 12:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1222,8 +1222,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 09/03 06:36
-        <br><strong>end:</strong> 12/03 06:00
+        <br><strong>start:</strong> 09/03 12:31
+        <br><strong>end:</strong> 12/03 12:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1240,7 +1240,7 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> yellow
-        <br><strong>start:</strong> 09/03 09:00
+        <br><strong>start:</strong> 09/03 12:31
         <br><strong>end:</strong> 10/03 03:00
         <hr>
     <p><strong>Castelo Branco (59km ESE)</strong><br>Queda de neve acima de 1400/1600 m de altitude, baixando a cota para 600/800 metros durante a tarde, com acumulação da ordem de 10 cm acima de 1000 m.Impactos Prováveis: Perturbação causada por queda de neve com acumulação e possível formação de gelo (p. ex., vias condicionadas ou interditas, danos em estruturas ou árvores, abastecimentos locais prejudicados).</p>
@@ -1258,7 +1258,7 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> yellow
-        <br><strong>start:</strong> 09/03 09:00
+        <br><strong>start:</strong> 09/03 12:31
         <br><strong>end:</strong> 09/03 21:00
         <hr>
     <p><strong>Coimbra (36km NW)</strong><br>Queda de neve acima de 1000/1200 metros de altitude, baixando a cota para 800/1000 metros durante a tarde, e podendo descer temporariamente aos 600/800 metros, com acumulação até 10 cm acima de 1000 metros.Impactos Prováveis: Perturbação causada por queda de neve com acumulação e possível formação de gelo (p. ex., vias condicionadas ou interditas, danos em estruturas ou árvores, abastecimentos locais prejudicados).</p>
