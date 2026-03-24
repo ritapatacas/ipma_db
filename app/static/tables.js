@@ -25,8 +25,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(3-25) Wed</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/02_iday.svg" title="Clear and few clouds"/></td>
-      <td>52.00</td>
-      <td>71.00</td>
+      <td>51.00</td>
+      <td>72.00</td>
       <td>-</td>
       <td>None</td>
       <td>None</td>
@@ -34,7 +34,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(3-26) Thu</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday.svg" title="Clear, cloudless sky"/></td>
-      <td>50.00</td>
+      <td>51.00</td>
       <td>68.00</td>
       <td>-</td>
       <td>None</td>
@@ -52,8 +52,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(3-28) Sat</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/02_iday.svg" title="Clear and few clouds"/></td>
-      <td>47.00</td>
-      <td>69.00</td>
+      <td>48.00</td>
+      <td>68.00</td>
       <td>-</td>
       <td>None</td>
       <td>None</td>
@@ -62,7 +62,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(3-29) Sun</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday.svg" title="Clear, cloudless sky"/></td>
       <td>45.00</td>
-      <td>60.00</td>
+      <td>61.00</td>
       <td>-</td>
       <td>None</td>
       <td>None</td>
@@ -70,8 +70,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(3-30) Mon</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/02_iday.svg" title="Clear and few clouds"/></td>
-      <td>42.00</td>
-      <td>62.00</td>
+      <td>44.00</td>
+      <td>64.00</td>
       <td>-</td>
       <td>None</td>
       <td>None</td>
@@ -165,15 +165,15 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     </tr>
     <tr>
       <td>25 (Wed)</td>
-      <td>52.0</td>
-      <td>71.0</td>
+      <td>51.0</td>
+      <td>72.0</td>
       <td>NaN</td>
       <td>None</td>
       <td>Clear and few clouds</td>
     </tr>
     <tr>
       <td>26 (Thu)</td>
-      <td>50.0</td>
+      <td>51.0</td>
       <td>68.0</td>
       <td>NaN</td>
       <td>None</td>
@@ -189,8 +189,8 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     </tr>
     <tr>
       <td>28 (Sat)</td>
-      <td>47.0</td>
-      <td>69.0</td>
+      <td>48.0</td>
+      <td>68.0</td>
       <td>NaN</td>
       <td>None</td>
       <td>Clear and few clouds</td>
@@ -198,15 +198,15 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     <tr>
       <td>29 (Sun)</td>
       <td>45.0</td>
-      <td>60.0</td>
+      <td>61.0</td>
       <td>NaN</td>
       <td>None</td>
       <td>Clear, cloudless sky</td>
     </tr>
     <tr>
       <td>30 (Mon)</td>
-      <td>42.0</td>
-      <td>62.0</td>
+      <td>44.0</td>
+      <td>64.0</td>
       <td>NaN</td>
       <td>None</td>
       <td>Clear and few clouds</td>
@@ -249,7 +249,25 @@ window.observationsTable = `
 </thead>
 <tbody>
 <tr>
-<td rowspan="6">24 Mar</td>
+<td rowspan="8">24 Mar</td>
+<td>07h</td>
+<td>12.8</td>
+<td>E</td>
+<td>12.2</td>
+<td>0.0</td>
+<td>15.0</td>
+</tr>
+<tr>
+
+<td>06h</td>
+<td>12.8</td>
+<td>E</td>
+<td>11.9</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr>
+
 <td>05h</td>
 <td>12.9</td>
 <td>E</td>
@@ -519,7 +537,7 @@ window.observationsTable = `
 <td>0.0</td>
 </tr>
 <tr>
-<td rowspan="18">22 Mar</td>
+<td rowspan="16">22 Mar</td>
 <td>23h</td>
 <td>11.6</td>
 <td>N</td>
@@ -661,24 +679,6 @@ window.observationsTable = `
 <td>7.9</td>
 <td>0.0</td>
 <td>195.9</td>
-</tr>
-<tr>
-
-<td>07h</td>
-<td>11.6</td>
-<td>E</td>
-<td>7.6</td>
-<td>0.0</td>
-<td>15.2</td>
-</tr>
-<tr>
-
-<td>06h</td>
-<td>11.3</td>
-<td>SE</td>
-<td>7.9</td>
-<td>0.0</td>
-<td>0.0</td>
 </tr>
 </tbody>
 </table></div>
