@@ -17,7 +17,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(3-30) Mon</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday.svg" title="Clear, cloudless sky"/></td>
       <td>44.00</td>
-      <td>68.00</td>
+      <td>69.00</td>
       <td>-</td>
       <td>None</td>
       <td>None</td>
@@ -116,7 +116,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(4-10) Fri</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday.svg" title="Clear, cloudless sky"/></td>
       <td>51.00</td>
-      <td>68.00</td>
+      <td>69.00</td>
       <td>-</td>
       <td>None</td>
       <td>None</td>
@@ -158,7 +158,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     <tr>
       <td>30 (Mon)</td>
       <td>44.0</td>
-      <td>68.0</td>
+      <td>69.0</td>
       <td>NaN</td>
       <td>None</td>
       <td>Clear, cloudless sky</td>
@@ -249,13 +249,22 @@ window.observationsTable = `
 </thead>
 <tbody>
 <tr>
-<td rowspan="11">30 Mar</td>
+<td rowspan="12">30 Mar</td>
 <td>11h</td>
 <td>13.4</td>
 <td>N</td>
 <td>3.6</td>
 <td>0.0</td>
 <td>2638.4</td>
+</tr>
+<tr>
+
+<td>10h</td>
+<td>10.7</td>
+<td>NE</td>
+<td>6.1</td>
+<td>0.0</td>
+<td>2057.0</td>
 </tr>
 <tr>
 
@@ -564,7 +573,7 @@ window.observationsTable = `
 <td>0.0</td>
 </tr>
 <tr>
-<td rowspan="13">28 Mar</td>
+<td rowspan="12">28 Mar</td>
 <td>23h</td>
 <td>12.8</td>
 <td>NE</td>
@@ -670,15 +679,6 @@ window.observationsTable = `
 <td>11.5</td>
 <td>0.0</td>
 <td>3072.6</td>
-</tr>
-<tr>
-
-<td>11h</td>
-<td>14.1</td>
-<td>-</td>
-<td>8.6</td>
-<td>0.0</td>
-<td>2654.4</td>
 </tr>
 </tbody>
 </table></div>
@@ -1023,11 +1023,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Mar 26</td>
-      <td>2</td>
+      <td>3</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>1170</td>
+      <td>1171</td>
     </tr>
   </tbody>
 </table>
