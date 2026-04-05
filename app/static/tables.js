@@ -26,7 +26,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(4-6) Mon</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/07_iday.svg" title="Mixed with showers"/></td>
       <td>53.00</td>
-      <td>72.00</td>
+      <td>71.00</td>
       <td>-</td>
       <td>None</td>
       <td>None</td>
@@ -70,7 +70,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(4-11) Sat</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/14_iday.svg" title="Mostly cloudy with rain"/></td>
-      <td>50.00</td>
+      <td>49.00</td>
       <td>63.00</td>
       <td>-</td>
       <td>None</td>
@@ -166,7 +166,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     <tr>
       <td>6 (Mon)</td>
       <td>53.0</td>
-      <td>72.0</td>
+      <td>71.0</td>
       <td>NaN</td>
       <td>None</td>
       <td>Mixed with showers</td>
@@ -205,7 +205,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     </tr>
     <tr>
       <td>11 (Sat)</td>
-      <td>50.0</td>
+      <td>49.0</td>
       <td>63.0</td>
       <td>NaN</td>
       <td>None</td>
@@ -249,7 +249,25 @@ window.observationsTable = `
 </thead>
 <tbody>
 <tr>
-<td rowspan="14">05 Apr</td>
+<td rowspan="16">05 Apr</td>
+<td>15h</td>
+<td>28.0</td>
+<td>S</td>
+<td>8.3</td>
+<td>0.0</td>
+<td>2842.6</td>
+</tr>
+<tr>
+
+<td>14h</td>
+<td>28.0</td>
+<td>S</td>
+<td>9.7</td>
+<td>0.0</td>
+<td>3136.9</td>
+</tr>
+<tr>
+
 <td>13h</td>
 <td>27.0</td>
 <td>S</td>
@@ -591,7 +609,7 @@ window.observationsTable = `
 <td>0.0</td>
 </tr>
 <tr>
-<td rowspan="10">03 Apr</td>
+<td rowspan="8">03 Apr</td>
 <td>23h</td>
 <td>15.1</td>
 <td>E</td>
@@ -661,24 +679,6 @@ window.observationsTable = `
 <td>12.2</td>
 <td>0.0</td>
 <td>2020.1</td>
-</tr>
-<tr>
-
-<td>15h</td>
-<td>25.2</td>
-<td>N</td>
-<td>13.0</td>
-<td>0.0</td>
-<td>2820.4</td>
-</tr>
-<tr>
-
-<td>14h</td>
-<td>24.4</td>
-<td>NW</td>
-<td>10.8</td>
-<td>0.0</td>
-<td>3166.1</td>
 </tr>
 </tbody>
 </table></div>
