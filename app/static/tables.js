@@ -15,8 +15,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
   <tbody>
     <tr>
       <td>(4-20) Mon</td>
-      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/03_iday.svg" title="Partly cloudy"/></td>
-      <td>54.00</td>
+      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/02_iday.svg" title="Clear and few clouds"/></td>
+      <td>53.00</td>
       <td>79.00</td>
       <td>-</td>
       <td>None</td>
@@ -24,7 +24,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     </tr>
     <tr>
       <td>(4-21) Tue</td>
-      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/03_iday.svg" title="Partly cloudy"/></td>
+      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/08_iday.svg" title="Showers, thunderstorms likely"/></td>
       <td>57.00</td>
       <td>74.00</td>
       <td>-</td>
@@ -33,7 +33,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     </tr>
     <tr>
       <td>(4-22) Wed</td>
-      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/02_iday.svg" title="Clear and few clouds"/></td>
+      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/03_iday.svg" title="Partly cloudy"/></td>
       <td>52.00</td>
       <td>70.00</td>
       <td>-</td>
@@ -79,7 +79,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(4-27) Mon</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/03_iday.svg" title="Partly cloudy"/></td>
-      <td>56.00</td>
+      <td>55.00</td>
       <td>73.00</td>
       <td>-</td>
       <td>None</td>
@@ -157,11 +157,11 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
   <tbody>
     <tr>
       <td>20 (Mon)</td>
-      <td>54.0</td>
+      <td>53.0</td>
       <td>79.0</td>
       <td>NaN</td>
       <td>None</td>
-      <td>Partly cloudy</td>
+      <td>Clear and few clouds</td>
     </tr>
     <tr>
       <td>21 (Tue)</td>
@@ -169,7 +169,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
       <td>74.0</td>
       <td>NaN</td>
       <td>None</td>
-      <td>Partly cloudy</td>
+      <td>Showers, thunderstorms likely</td>
     </tr>
     <tr>
       <td>22 (Wed)</td>
@@ -177,7 +177,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
       <td>70.0</td>
       <td>NaN</td>
       <td>None</td>
-      <td>Clear and few clouds</td>
+      <td>Partly cloudy</td>
     </tr>
     <tr>
       <td>23 (Thu)</td>
@@ -249,7 +249,25 @@ window.observationsTable = `
 </thead>
 <tbody>
 <tr>
-<td>20 Apr</td>
+<td rowspan="3">20 Apr</td>
+<td>02h</td>
+<td>12.7</td>
+<td>NE</td>
+<td>6.8</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr>
+
+<td>01h</td>
+<td>12.5</td>
+<td>NE</td>
+<td>7.6</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr>
+
 <td>00h</td>
 <td>12.9</td>
 <td>N</td>
@@ -474,7 +492,7 @@ window.observationsTable = `
 <td>0.0</td>
 </tr>
 <tr>
-<td rowspan="23">18 Apr</td>
+<td rowspan="21">18 Apr</td>
 <td>23h</td>
 <td>16.6</td>
 <td>NE</td>
@@ -659,24 +677,6 @@ window.observationsTable = `
 <td>17.0</td>
 <td>E</td>
 <td>10.8</td>
-<td>0.0</td>
-<td>0.0</td>
-</tr>
-<tr>
-
-<td>02h</td>
-<td>13.6</td>
-<td>E</td>
-<td>8.6</td>
-<td>0.0</td>
-<td>0.0</td>
-</tr>
-<tr>
-
-<td>01h</td>
-<td>11.4</td>
-<td>E</td>
-<td>14.8</td>
 <td>0.0</td>
 <td>0.0</td>
 </tr>
