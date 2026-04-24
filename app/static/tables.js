@@ -249,7 +249,25 @@ window.observationsTable = `
 </thead>
 <tbody>
 <tr>
-<td rowspan="10">24 Apr</td>
+<td rowspan="12">24 Apr</td>
+<td>11h</td>
+<td>18.7</td>
+<td>N</td>
+<td>10.8</td>
+<td>0.0</td>
+<td>2767.7</td>
+</tr>
+<tr>
+
+<td>10h</td>
+<td>16.0</td>
+<td>N</td>
+<td>10.1</td>
+<td>0.0</td>
+<td>2472.2</td>
+</tr>
+<tr>
+
 <td>09h</td>
 <td>12.9</td>
 <td>NW</td>
@@ -555,7 +573,7 @@ window.observationsTable = `
 <td>0.0</td>
 </tr>
 <tr>
-<td rowspan="14">22 Apr</td>
+<td rowspan="12">22 Apr</td>
 <td>23h</td>
 <td>10.5</td>
 <td>N</td>
@@ -661,24 +679,6 @@ window.observationsTable = `
 <td>6.5</td>
 <td>0.0</td>
 <td>2889.8</td>
-</tr>
-<tr>
-
-<td>11h</td>
-<td>16.4</td>
-<td>W</td>
-<td>5.4</td>
-<td>0.0</td>
-<td>2543.3</td>
-</tr>
-<tr>
-
-<td>10h</td>
-<td>14.6</td>
-<td>W</td>
-<td>6.1</td>
-<td>0.0</td>
-<td>2307.5</td>
 </tr>
 </tbody>
 </table></div>
@@ -1051,6 +1051,13 @@ window.dashboardTable = `<div class="table-container">
         </thead>
         <tbody>
     
+        <tr class="yellow hover:bg-gray-200 dark:hover:bg-gray-700 transition">
+            <td><i class="fa-solid fa-cloud-rain"></i></td>
+            <td class="level"><i class="fa-solid fa-circle" style="color: #FFD43B;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
+            <td><a href="#" onclick="openModal('modal-Precipitação-24-24-04', event)">24-24/04</a></td>
+            <td><span data-tooltip="Castelo Branco (59km ESE)">CB</span></td>
+        </tr>
+        
         <tr class="green hover:bg-gray-200 dark:hover:bg-gray-700 transition">
             <td><i class="fa-solid fa-smog"></i></td>
             <td class="level"><i class="fa-solid fa-circle" style="color: #26ba81;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
@@ -1099,14 +1106,25 @@ window.dashboardTable = `<div class="table-container">
             <td><a href="#" onclick="openModal('modal-Vento-24-27-04', event)">24-27/04</a></td>
             <td><span data-tooltip="Coimbra (36km NW)">C</span>, <span data-tooltip="Castelo Branco (59km ESE)">CB</span>, <span data-tooltip="Leiria (58km WSW)">L</span></td>
         </tr>
-        
-        <tr class="yellow hover:bg-gray-200 dark:hover:bg-gray-700 transition">
-            <td><i class="fa-solid fa-cloud-rain"></i></td>
-            <td class="level"><i class="fa-solid fa-circle" style="color: #FFD43B;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
-            <td><a href="#" onclick="openModal('modal-Precipitação-24-24-04', event)">24-24/04</a></td>
-            <td><span data-tooltip="Castelo Branco (59km ESE)">CB</span></td>
-        </tr>
         </tbody></table>
+    <dialog id="modal-Precipitação-24-24-04" class="modal">
+        <article>
+            <header>
+                <a href="#" class="close" aria-label="Close" onclick="closeModal('modal-Precipitação-24-24-04', event)"></a>
+                <h3>Precipitação</h3>
+            </header>
+            
+        <strong>alert level:</strong> yellow
+        <br><strong>start:</strong> 24/04 12:00
+        <br><strong>end:</strong> 24/04 21:00
+        <hr>
+    <p><strong>Castelo Branco (59km ESE)</strong><br>Precipitação, por vezes forte,  podendo ser acompanhada de trovoada e de queda de granizo.</p>
+            <footer>
+                <button onclick="closeModal('modal-Precipitação-24-24-04', event)">Close</button>
+            </footer>
+        </article>
+    </dialog>
+    
     <dialog id="modal-Nevoeiro-24-27-04" class="modal">
         <article>
             <header>
@@ -1115,8 +1133,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 24/04 06:13
-        <br><strong>end:</strong> 27/04 06:00
+        <br><strong>start:</strong> 24/04 12:01
+        <br><strong>end:</strong> 27/04 12:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1133,8 +1151,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 24/04 06:13
-        <br><strong>end:</strong> 27/04 06:00
+        <br><strong>start:</strong> 24/04 12:01
+        <br><strong>end:</strong> 27/04 12:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1151,8 +1169,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 24/04 06:13
-        <br><strong>end:</strong> 27/04 06:00
+        <br><strong>start:</strong> 24/04 12:01
+        <br><strong>end:</strong> 27/04 12:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1169,8 +1187,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 24/04 06:13
-        <br><strong>end:</strong> 27/04 06:00
+        <br><strong>start:</strong> 24/04 12:01
+        <br><strong>end:</strong> 27/04 12:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1187,8 +1205,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 24/04 06:13
-        <br><strong>end:</strong> 27/04 06:00
+        <br><strong>start:</strong> 24/04 12:01
+        <br><strong>end:</strong> 27/04 12:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1205,8 +1223,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 24/04 06:13
-        <br><strong>end:</strong> 27/04 06:00
+        <br><strong>start:</strong> 24/04 12:01
+        <br><strong>end:</strong> 27/04 12:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1223,30 +1241,12 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 24/04 06:13
-        <br><strong>end:</strong> 27/04 06:00
+        <br><strong>start:</strong> 24/04 12:01
+        <br><strong>end:</strong> 27/04 12:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
                 <button onclick="closeModal('modal-Vento-24-27-04', event)">Close</button>
-            </footer>
-        </article>
-    </dialog>
-    
-    <dialog id="modal-Precipitação-24-24-04" class="modal">
-        <article>
-            <header>
-                <a href="#" class="close" aria-label="Close" onclick="closeModal('modal-Precipitação-24-24-04', event)"></a>
-                <h3>Precipitação</h3>
-            </header>
-            
-        <strong>alert level:</strong> yellow
-        <br><strong>start:</strong> 24/04 12:00
-        <br><strong>end:</strong> 24/04 21:00
-        <hr>
-    <p><strong>Castelo Branco (59km ESE)</strong><br>Precipitação, por vezes forte,  podendo ser acompanhada de trovoada e de queda de granizo.</p>
-            <footer>
-                <button onclick="closeModal('modal-Precipitação-24-24-04', event)">Close</button>
             </footer>
         </article>
     </dialog>
