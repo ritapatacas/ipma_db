@@ -25,7 +25,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(4-25) Sat</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/08_iday.svg" title="Showers, thunderstorms likely"/></td>
-      <td>50.00</td>
+      <td>51.00</td>
       <td>76.00</td>
       <td>-</td>
       <td>None</td>
@@ -165,7 +165,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     </tr>
     <tr>
       <td>25 (Sat)</td>
-      <td>50.0</td>
+      <td>51.0</td>
       <td>76.0</td>
       <td>NaN</td>
       <td>None</td>
@@ -249,7 +249,25 @@ window.observationsTable = `
 </thead>
 <tbody>
 <tr>
-<td rowspan="18">24 Apr</td>
+<td rowspan="20">24 Apr</td>
+<td>19h</td>
+<td>16.8</td>
+<td>NW</td>
+<td>14.0</td>
+<td>0.0</td>
+<td>388.5</td>
+</tr>
+<tr>
+
+<td>18h</td>
+<td>19.0</td>
+<td>NW</td>
+<td>19.4</td>
+<td>0.0</td>
+<td>1091.9</td>
+</tr>
+<tr>
+
 <td>17h</td>
 <td>20.5</td>
 <td>NW</td>
@@ -627,7 +645,7 @@ window.observationsTable = `
 <td>0.0</td>
 </tr>
 <tr>
-<td rowspan="6">22 Apr</td>
+<td rowspan="4">22 Apr</td>
 <td>23h</td>
 <td>10.5</td>
 <td>N</td>
@@ -661,24 +679,6 @@ window.observationsTable = `
 <td>10.1</td>
 <td>0.0</td>
 <td>7.1</td>
-</tr>
-<tr>
-
-<td>19h</td>
-<td>16.3</td>
-<td>NW</td>
-<td>11.2</td>
-<td>0.0</td>
-<td>326.7</td>
-</tr>
-<tr>
-
-<td>18h</td>
-<td>21.0</td>
-<td>NW</td>
-<td>14.8</td>
-<td>0.0</td>
-<td>1041.2</td>
 </tr>
 </tbody>
 </table></div>
