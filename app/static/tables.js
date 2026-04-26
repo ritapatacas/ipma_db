@@ -51,7 +51,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     </tr>
     <tr>
       <td>(4-30) Thu</td>
-      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/07_iday.svg" title="Mixed with showers"/></td>
+      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/16_iday.svg" title="Mostly cloudy with occasional rain"/></td>
       <td>53.00</td>
       <td>68.00</td>
       <td>-</td>
@@ -69,7 +69,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     </tr>
     <tr>
       <td>(5-2) Sat</td>
-      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/03_iday.svg" title="Partly cloudy"/></td>
+      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/04_iday.svg" title="Overcast"/></td>
       <td>50.00</td>
       <td>71.00</td>
       <td>-</td>
@@ -193,7 +193,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
       <td>68.0</td>
       <td>NaN</td>
       <td>None</td>
-      <td>Mixed with showers</td>
+      <td>Mostly cloudy with occasional rain</td>
     </tr>
     <tr>
       <td>1 (Fri)</td>
@@ -209,7 +209,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
       <td>71.0</td>
       <td>NaN</td>
       <td>None</td>
-      <td>Partly cloudy</td>
+      <td>Overcast</td>
     </tr>
   </tbody>
 </table></div>
@@ -249,7 +249,25 @@ window.observationsTable = `
 </thead>
 <tbody>
 <tr>
-<td rowspan="14">26 Apr</td>
+<td rowspan="16">26 Apr</td>
+<td>15h</td>
+<td>25.9</td>
+<td>N</td>
+<td>8.6</td>
+<td>0.0</td>
+<td>2098.5</td>
+</tr>
+<tr>
+
+<td>14h</td>
+<td>24.8</td>
+<td>NW</td>
+<td>9.4</td>
+<td>0.0</td>
+<td>1746.1</td>
+</tr>
+<tr>
+
 <td>13h</td>
 <td>26.9</td>
 <td>NW</td>
@@ -591,7 +609,7 @@ window.observationsTable = `
 <td>0.0</td>
 </tr>
 <tr>
-<td rowspan="10">24 Apr</td>
+<td rowspan="8">24 Apr</td>
 <td>23h</td>
 <td>11.7</td>
 <td>N</td>
@@ -661,24 +679,6 @@ window.observationsTable = `
 <td>18.4</td>
 <td>0.0</td>
 <td>2367.7</td>
-</tr>
-<tr>
-
-<td>15h</td>
-<td>23.0</td>
-<td>NW</td>
-<td>10.8</td>
-<td>0.0</td>
-<td>2909.7</td>
-</tr>
-<tr>
-
-<td>14h</td>
-<td>22.1</td>
-<td>N</td>
-<td>9.4</td>
-<td>0.0</td>
-<td>3048.5</td>
 </tr>
 </tbody>
 </table></div>
