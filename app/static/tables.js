@@ -249,7 +249,16 @@ window.observationsTable = `
 </thead>
 <tbody>
 <tr>
-<td rowspan="19">29 Apr</td>
+<td rowspan="20">29 Apr</td>
+<td>19h</td>
+<td>13.2</td>
+<td>W</td>
+<td>9.4</td>
+<td>0.0</td>
+<td>82.2</td>
+</tr>
+<tr>
+
 <td>18h</td>
 <td>13.9</td>
 <td>W</td>
@@ -636,7 +645,7 @@ window.observationsTable = `
 <td>0.0</td>
 </tr>
 <tr>
-<td rowspan="5">27 Apr</td>
+<td rowspan="4">27 Apr</td>
 <td>23h</td>
 <td>17.1</td>
 <td>NE</td>
@@ -670,15 +679,6 @@ window.observationsTable = `
 <td>9.7</td>
 <td>0.0</td>
 <td>16.7</td>
-</tr>
-<tr>
-
-<td>19h</td>
-<td>22.3</td>
-<td>N</td>
-<td>9.0</td>
-<td>0.0</td>
-<td>406.3</td>
 </tr>
 </tbody>
 </table></div>
@@ -1031,11 +1031,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Apr 26</td>
-      <td>2</td>
+      <td>3</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>1170</td>
+      <td>1171</td>
     </tr>
   </tbody>
 </table>
@@ -1098,20 +1098,6 @@ window.dashboardTable = `<div class="table-container">
             <td class="level"><i class="fa-solid fa-circle" style="color: #26ba81;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
             <td><a href="#" onclick="openModal('modal-Vento-29-02-05', event)">29-02/05</a></td>
             <td><span data-tooltip="Coimbra (36km NW)">C</span>, <span data-tooltip="Castelo Branco (59km ESE)">CB</span>, <span data-tooltip="Leiria (58km WSW)">L</span></td>
-        </tr>
-        
-        <tr class="yellow hover:bg-gray-200 dark:hover:bg-gray-700 transition">
-            <td><i class="fa-solid fa-cloud-rain"></i></td>
-            <td class="level"><i class="fa-solid fa-circle" style="color: #FFD43B;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
-            <td><a href="#" onclick="openModal('modal-Precipitação-29-29-04', event)">29-29/04</a></td>
-            <td><span data-tooltip="Coimbra (36km NW)">C</span>, <span data-tooltip="Castelo Branco (59km ESE)">CB</span></td>
-        </tr>
-        
-        <tr class="yellow hover:bg-gray-200 dark:hover:bg-gray-700 transition">
-            <td><i class="fa-solid fa-bolt"></i></td>
-            <td class="level"><i class="fa-solid fa-circle" style="color: #FFD43B;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
-            <td><a href="#" onclick="openModal('modal-Trovoada-29-29-04', event)">29-29/04</a></td>
-            <td><span data-tooltip="Coimbra (36km NW)">C</span>, <span data-tooltip="Castelo Branco (59km ESE)">CB</span></td>
         </tr>
         </tbody></table>
     <dialog id="modal-Nevoeiro-29-02-05" class="modal">
@@ -1236,42 +1222,6 @@ window.dashboardTable = `<div class="table-container">
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
                 <button onclick="closeModal('modal-Vento-29-02-05', event)">Close</button>
-            </footer>
-        </article>
-    </dialog>
-    
-    <dialog id="modal-Precipitação-29-29-04" class="modal">
-        <article>
-            <header>
-                <a href="#" class="close" aria-label="Close" onclick="closeModal('modal-Precipitação-29-29-04', event)"></a>
-                <h3>Precipitação</h3>
-            </header>
-            
-        <strong>alert level:</strong> yellow
-        <br><strong>start:</strong> 29/04 18:44
-        <br><strong>end:</strong> 29/04 21:00
-        <hr>
-    <p><strong>Castelo Branco (59km ESE)</strong><br>Aguaceiros por vezes fortes, podendo ser de granizo.</p><p><strong>Coimbra (36km NW)</strong><br>Aguaceiros por vezes fortes, podendo ser de granizo.</p>
-            <footer>
-                <button onclick="closeModal('modal-Precipitação-29-29-04', event)">Close</button>
-            </footer>
-        </article>
-    </dialog>
-    
-    <dialog id="modal-Trovoada-29-29-04" class="modal">
-        <article>
-            <header>
-                <a href="#" class="close" aria-label="Close" onclick="closeModal('modal-Trovoada-29-29-04', event)"></a>
-                <h3>Trovoada</h3>
-            </header>
-            
-        <strong>alert level:</strong> yellow
-        <br><strong>start:</strong> 29/04 18:44
-        <br><strong>end:</strong> 29/04 21:00
-        <hr>
-    <p><strong>Castelo Branco (59km ESE)</strong><br>Condições favoráveis à ocorrência de trovoada.</p><p><strong>Coimbra (36km NW)</strong><br>Condições favoráveis à ocorrência de trovoada.</p>
-            <footer>
-                <button onclick="closeModal('modal-Trovoada-29-29-04', event)">Close</button>
             </footer>
         </article>
     </dialog>
