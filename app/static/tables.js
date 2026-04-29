@@ -249,7 +249,25 @@ window.observationsTable = `
 </thead>
 <tbody>
 <tr>
-<td rowspan="15">29 Apr</td>
+<td rowspan="17">29 Apr</td>
+<td>16h</td>
+<td>14.6</td>
+<td>SW</td>
+<td>8.3</td>
+<td>0.0</td>
+<td>658.5</td>
+</tr>
+<tr>
+
+<td>15h</td>
+<td>17.8</td>
+<td>S</td>
+<td>8.6</td>
+<td>0.0</td>
+<td>1640.7</td>
+</tr>
+<tr>
+
 <td>14h</td>
 <td>16.5</td>
 <td>S</td>
@@ -600,7 +618,7 @@ window.observationsTable = `
 <td>0.0</td>
 </tr>
 <tr>
-<td rowspan="9">27 Apr</td>
+<td rowspan="7">27 Apr</td>
 <td>23h</td>
 <td>17.1</td>
 <td>NE</td>
@@ -661,24 +679,6 @@ window.observationsTable = `
 <td>13.7</td>
 <td>0.0</td>
 <td>1134.1</td>
-</tr>
-<tr>
-
-<td>16h</td>
-<td>29.7</td>
-<td>SE</td>
-<td>7.9</td>
-<td>0.0</td>
-<td>2407.1</td>
-</tr>
-<tr>
-
-<td>15h</td>
-<td>28.9</td>
-<td>E</td>
-<td>6.1</td>
-<td>0.0</td>
-<td>2442.2</td>
 </tr>
 </tbody>
 </table></div>
