@@ -249,7 +249,43 @@ window.observationsTable = `
 </thead>
 <tbody>
 <tr>
-<td rowspan="18">01 May</td>
+<td rowspan="22">01 May</td>
+<td>21h</td>
+<td>12.6</td>
+<td>N</td>
+<td>5.8</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr>
+
+<td>20h</td>
+<td>14.0</td>
+<td>NW</td>
+<td>9.4</td>
+<td>0.0</td>
+<td>9.5</td>
+</tr>
+<tr>
+
+<td>19h</td>
+<td>15.7</td>
+<td>NW</td>
+<td>13.3</td>
+<td>0.0</td>
+<td>212.6</td>
+</tr>
+<tr>
+
+<td>18h</td>
+<td>17.4</td>
+<td>NW</td>
+<td>10.8</td>
+<td>0.0</td>
+<td>639.0</td>
+</tr>
+<tr>
+
 <td>17h</td>
 <td>18.7</td>
 <td>NW</td>
@@ -627,7 +663,7 @@ window.observationsTable = `
 <td>0.0</td>
 </tr>
 <tr>
-<td rowspan="6">29 Apr</td>
+<td rowspan="2">29 Apr</td>
 <td>23h</td>
 <td>10.7</td>
 <td>SW</td>
@@ -643,42 +679,6 @@ window.observationsTable = `
 <td>8.3</td>
 <td>0.0</td>
 <td>0.0</td>
-</tr>
-<tr>
-
-<td>21h</td>
-<td>12.2</td>
-<td>SW</td>
-<td>4.0</td>
-<td>0.0</td>
-<td>0.0</td>
-</tr>
-<tr>
-
-<td>20h</td>
-<td>12.8</td>
-<td>W</td>
-<td>7.2</td>
-<td>0.0</td>
-<td>11.8</td>
-</tr>
-<tr>
-
-<td>19h</td>
-<td>13.2</td>
-<td>W</td>
-<td>9.4</td>
-<td>0.0</td>
-<td>82.2</td>
-</tr>
-<tr>
-
-<td>18h</td>
-<td>13.9</td>
-<td>W</td>
-<td>14.8</td>
-<td>0.0</td>
-<td>273.6</td>
 </tr>
 </tbody>
 </table></div>
@@ -1035,11 +1035,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>May 26</td>
-      <td>3</td>
+      <td>1</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>1171</td>
+      <td>1169</td>
     </tr>
   </tbody>
 </table>
