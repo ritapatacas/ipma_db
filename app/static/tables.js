@@ -17,7 +17,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(5-2) Sat</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/16_iday.svg" title="Mostly cloudy with occasional rain"/></td>
       <td>51.00</td>
-      <td>62.00</td>
+      <td>63.00</td>
       <td>-</td>
       <td>None</td>
       <td>None</td>
@@ -42,7 +42,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     </tr>
     <tr>
       <td>(5-5) Tue</td>
-      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/07_iday.svg" title="Mixed with showers"/></td>
+      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/02_iday.svg" title="Clear and few clouds"/></td>
       <td>42.00</td>
       <td>57.00</td>
       <td>-</td>
@@ -134,7 +134,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(5-15) Fri</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/07_iday.svg" title="Mixed with showers"/></td>
       <td>48.00</td>
-      <td>62.00</td>
+      <td>63.00</td>
       <td>-</td>
       <td>None</td>
       <td>None</td>
@@ -158,7 +158,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     <tr>
       <td>2 (Sat)</td>
       <td>51.0</td>
-      <td>62.0</td>
+      <td>63.0</td>
       <td>NaN</td>
       <td>None</td>
       <td>Mostly cloudy with occasional rain</td>
@@ -185,7 +185,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
       <td>57.0</td>
       <td>NaN</td>
       <td>None</td>
-      <td>Mixed with showers</td>
+      <td>Clear and few clouds</td>
     </tr>
     <tr>
       <td>6 (Wed)</td>
@@ -1035,11 +1035,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>May 26</td>
-      <td>1</td>
+      <td>3</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>1169</td>
+      <td>1171</td>
     </tr>
   </tbody>
 </table>
