@@ -16,7 +16,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(5-3) Sun</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/08_iday.svg" title="Showers, thunderstorms likely"/></td>
-      <td>48.00</td>
+      <td>49.00</td>
       <td>60.00</td>
       <td>-</td>
       <td>None</td>
@@ -53,7 +53,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(5-7) Thu</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/03_iday.svg" title="Partly cloudy"/></td>
       <td>47.00</td>
-      <td>62.00</td>
+      <td>63.00</td>
       <td>-</td>
       <td>None</td>
       <td>None</td>
@@ -157,7 +157,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
   <tbody>
     <tr>
       <td>3 (Sun)</td>
-      <td>48.0</td>
+      <td>49.0</td>
       <td>60.0</td>
       <td>NaN</td>
       <td>None</td>
@@ -190,7 +190,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     <tr>
       <td>7 (Thu)</td>
       <td>47.0</td>
-      <td>62.0</td>
+      <td>63.0</td>
       <td>NaN</td>
       <td>None</td>
       <td>Partly cloudy</td>
@@ -249,7 +249,43 @@ window.observationsTable = `
 </thead>
 <tbody>
 <tr>
-<td rowspan="10">03 May</td>
+<td rowspan="14">03 May</td>
+<td>13h</td>
+<td>13.5</td>
+<td>W</td>
+<td>4.7</td>
+<td>3.5</td>
+<td>948.6</td>
+</tr>
+<tr>
+
+<td>12h</td>
+<td>15.6</td>
+<td>SW</td>
+<td>8.6</td>
+<td>2.0</td>
+<td>806.9</td>
+</tr>
+<tr>
+
+<td>11h</td>
+<td>16.0</td>
+<td>S</td>
+<td>7.9</td>
+<td>0.0</td>
+<td>1660.8</td>
+</tr>
+<tr>
+
+<td>10h</td>
+<td>14.8</td>
+<td>SW</td>
+<td>7.2</td>
+<td>0.0</td>
+<td>987.3</td>
+</tr>
+<tr>
+
 <td>09h</td>
 <td>14.0</td>
 <td>S</td>
@@ -555,7 +591,7 @@ window.observationsTable = `
 <td>0.0</td>
 </tr>
 <tr>
-<td rowspan="14">01 May</td>
+<td rowspan="10">01 May</td>
 <td>23h</td>
 <td>12.2</td>
 <td>NE</td>
@@ -643,42 +679,6 @@ window.observationsTable = `
 <td>5.8</td>
 <td>0.0</td>
 <td>1487.6</td>
-</tr>
-<tr>
-
-<td>13h</td>
-<td>19.5</td>
-<td>SE</td>
-<td>3.2</td>
-<td>0.0</td>
-<td>1911.5</td>
-</tr>
-<tr>
-
-<td>12h</td>
-<td>18.9</td>
-<td>W</td>
-<td>10.1</td>
-<td>0.0</td>
-<td>2197.3</td>
-</tr>
-<tr>
-
-<td>11h</td>
-<td>16.4</td>
-<td>W</td>
-<td>6.5</td>
-<td>0.0</td>
-<td>1374.6</td>
-</tr>
-<tr>
-
-<td>10h</td>
-<td>14.8</td>
-<td>W</td>
-<td>5.4</td>
-<td>0.0</td>
-<td>2309.1</td>
 </tr>
 </tbody>
 </table></div>
@@ -1035,11 +1035,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>May 26</td>
-      <td>3</td>
+      <td>1</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>1171</td>
+      <td>1169</td>
     </tr>
   </tbody>
 </table>
