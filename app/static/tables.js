@@ -15,9 +15,9 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
   <tbody>
     <tr>
       <td>(5-4) Mon</td>
-      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/07_iday.svg" title="Mixed with showers"/></td>
+      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/16_iday.svg" title="Mostly cloudy with occasional rain"/></td>
       <td>44.00</td>
-      <td>60.00</td>
+      <td>58.00</td>
       <td>-</td>
       <td>None</td>
       <td>None</td>
@@ -53,7 +53,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(5-8) Fri</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/16_iday.svg" title="Mostly cloudy with occasional rain"/></td>
       <td>47.00</td>
-      <td>62.00</td>
+      <td>63.00</td>
       <td>-</td>
       <td>None</td>
       <td>None</td>
@@ -61,8 +61,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(5-9) Sat</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/08_iday.svg" title="Showers, thunderstorms likely"/></td>
-      <td>49.00</td>
-      <td>62.00</td>
+      <td>50.00</td>
+      <td>61.00</td>
       <td>-</td>
       <td>None</td>
       <td>None</td>
@@ -116,7 +116,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(5-15) Fri</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/02_iday.svg" title="Clear and few clouds"/></td>
       <td>49.00</td>
-      <td>63.00</td>
+      <td>62.00</td>
       <td>-</td>
       <td>None</td>
       <td>None</td>
@@ -158,10 +158,10 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     <tr>
       <td>4 (Mon)</td>
       <td>44.0</td>
-      <td>60.0</td>
+      <td>58.0</td>
       <td>NaN</td>
       <td>None</td>
-      <td>Mixed with showers</td>
+      <td>Mostly cloudy with occasional rain</td>
     </tr>
     <tr>
       <td>5 (Tue)</td>
@@ -190,15 +190,15 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     <tr>
       <td>8 (Fri)</td>
       <td>47.0</td>
-      <td>62.0</td>
+      <td>63.0</td>
       <td>NaN</td>
       <td>None</td>
       <td>Mostly cloudy with occasional rain</td>
     </tr>
     <tr>
       <td>9 (Sat)</td>
-      <td>49.0</td>
-      <td>62.0</td>
+      <td>50.0</td>
+      <td>61.0</td>
       <td>NaN</td>
       <td>None</td>
       <td>Showers, thunderstorms likely</td>
@@ -249,7 +249,43 @@ window.observationsTable = `
 </thead>
 <tbody>
 <tr>
-<td rowspan="11">04 May</td>
+<td rowspan="15">04 May</td>
+<td>14h</td>
+<td>14.8</td>
+<td>NW</td>
+<td>19.1</td>
+<td>0.0</td>
+<td>1887.2</td>
+</tr>
+<tr>
+
+<td>13h</td>
+<td>13.9</td>
+<td>NW</td>
+<td>13.7</td>
+<td>0.4</td>
+<td>2262.1</td>
+</tr>
+<tr>
+
+<td>12h</td>
+<td>12.8</td>
+<td>NW</td>
+<td>4.7</td>
+<td>0.8</td>
+<td>1061.1</td>
+</tr>
+<tr>
+
+<td>11h</td>
+<td>13.3</td>
+<td>NW</td>
+<td>15.5</td>
+<td>0.0</td>
+<td>1666.6</td>
+</tr>
+<tr>
+
 <td>10h</td>
 <td>12.8</td>
 <td>NW</td>
@@ -564,7 +600,7 @@ window.observationsTable = `
 <td>0.0</td>
 </tr>
 <tr>
-<td rowspan="13">02 May</td>
+<td rowspan="9">02 May</td>
 <td>23h</td>
 <td>12.9</td>
 <td>W</td>
@@ -643,42 +679,6 @@ window.observationsTable = `
 <td>10.1</td>
 <td>0.0</td>
 <td>2795.6</td>
-</tr>
-<tr>
-
-<td>14h</td>
-<td>19.8</td>
-<td>SW</td>
-<td>10.8</td>
-<td>0.0</td>
-<td>2581.0</td>
-</tr>
-<tr>
-
-<td>13h</td>
-<td>17.6</td>
-<td>SW</td>
-<td>11.5</td>
-<td>0.0</td>
-<td>1517.0</td>
-</tr>
-<tr>
-
-<td>12h</td>
-<td>16.2</td>
-<td>S</td>
-<td>8.6</td>
-<td>0.0</td>
-<td>1414.2</td>
-</tr>
-<tr>
-
-<td>11h</td>
-<td>16.2</td>
-<td>SW</td>
-<td>7.2</td>
-<td>0.0</td>
-<td>1411.8</td>
 </tr>
 </tbody>
 </table></div>
@@ -1035,11 +1035,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>May 26</td>
-      <td>2</td>
+      <td>0</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>1170</td>
+      <td>1168</td>
     </tr>
   </tbody>
 </table>
