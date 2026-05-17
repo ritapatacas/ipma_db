@@ -13,132 +13,6 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>(5-17) Sun</td>
-      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/02_iday.svg" title="Clear and few clouds"/></td>
-      <td>46.00</td>
-      <td>67.00</td>
-      <td>-</td>
-      <td>None</td>
-      <td>None</td>
-    </tr>
-    <tr>
-      <td>(5-18) Mon</td>
-      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/02_iday.svg" title="Clear and few clouds"/></td>
-      <td>46.00</td>
-      <td>68.00</td>
-      <td>-</td>
-      <td>None</td>
-      <td>None</td>
-    </tr>
-    <tr>
-      <td>(5-19) Tue</td>
-      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/03_iday.svg" title="Partly cloudy"/></td>
-      <td>50.00</td>
-      <td>71.00</td>
-      <td>-</td>
-      <td>None</td>
-      <td>None</td>
-    </tr>
-    <tr>
-      <td>(5-20) Wed</td>
-      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/02_iday.svg" title="Clear and few clouds"/></td>
-      <td>53.00</td>
-      <td>83.00</td>
-      <td>-</td>
-      <td>None</td>
-      <td>None</td>
-    </tr>
-    <tr>
-      <td>(5-21) Thu</td>
-      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/02_iday.svg" title="Clear and few clouds"/></td>
-      <td>59.00</td>
-      <td>84.00</td>
-      <td>-</td>
-      <td>None</td>
-      <td>None</td>
-    </tr>
-    <tr>
-      <td>(5-22) Fri</td>
-      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/03_iday.svg" title="Partly cloudy"/></td>
-      <td>60.00</td>
-      <td>81.00</td>
-      <td>-</td>
-      <td>None</td>
-      <td>None</td>
-    </tr>
-    <tr>
-      <td>(5-23) Sat</td>
-      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/02_iday.svg" title="Clear and few clouds"/></td>
-      <td>57.00</td>
-      <td>74.00</td>
-      <td>-</td>
-      <td>None</td>
-      <td>None</td>
-    </tr>
-    <tr>
-      <td>(5-24) Sun</td>
-      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday.svg" title="Clear, cloudless sky"/></td>
-      <td>57.00</td>
-      <td>80.00</td>
-      <td>-</td>
-      <td>None</td>
-      <td>None</td>
-    </tr>
-    <tr>
-      <td>(5-25) Mon</td>
-      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday.svg" title="Clear, cloudless sky"/></td>
-      <td>57.00</td>
-      <td>80.00</td>
-      <td>-</td>
-      <td>None</td>
-      <td>None</td>
-    </tr>
-    <tr>
-      <td>(5-26) Tue</td>
-      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday.svg" title="Clear, cloudless sky"/></td>
-      <td>57.00</td>
-      <td>80.00</td>
-      <td>-</td>
-      <td>None</td>
-      <td>None</td>
-    </tr>
-    <tr>
-      <td>(5-27) Wed</td>
-      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday.svg" title="Clear, cloudless sky"/></td>
-      <td>57.00</td>
-      <td>78.00</td>
-      <td>-</td>
-      <td>None</td>
-      <td>None</td>
-    </tr>
-    <tr>
-      <td>(5-28) Thu</td>
-      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday.svg" title="Clear, cloudless sky"/></td>
-      <td>56.00</td>
-      <td>78.00</td>
-      <td>-</td>
-      <td>None</td>
-      <td>None</td>
-    </tr>
-    <tr>
-      <td>(5-29) Fri</td>
-      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday.svg" title="Clear, cloudless sky"/></td>
-      <td>56.00</td>
-      <td>78.00</td>
-      <td>-</td>
-      <td>None</td>
-      <td>None</td>
-    </tr>
-    <tr>
-      <td>(5-30) Sat</td>
-      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday.svg" title="Clear, cloudless sky"/></td>
-      <td>56.00</td>
-      <td>78.00</td>
-      <td>-</td>
-      <td>None</td>
-      <td>None</td>
-    </tr>
   </tbody>
 </table></div>
   <iframe src="https://www.meteoblue.com/en/weather/maps/widget/troviscais-fundeiros_portugal_2262489?windAnimation=1&gust=1&satellite=1&cloudsAndPrecipitation=1&temperature=1&sunshine=0&extremeForecastIndex=1&geoloc=fixed&tempunit=C&windunit=km%252Fh&lengthunit=metric&zoom=10&autowidth=auto"  frameborder="0" scrolling="NO" allowtransparency="true" sandbox="allow-same-origin allow-scripts allow-popups allow-popups-to-escape-sandbox" style="width: 550px; height: 350px"></iframe><div></div>`;
@@ -155,62 +29,6 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>17 (Sun)</td>
-      <td>46.0</td>
-      <td>67.0</td>
-      <td>NaN</td>
-      <td>None</td>
-      <td>Clear and few clouds</td>
-    </tr>
-    <tr>
-      <td>18 (Mon)</td>
-      <td>46.0</td>
-      <td>68.0</td>
-      <td>NaN</td>
-      <td>None</td>
-      <td>Clear and few clouds</td>
-    </tr>
-    <tr>
-      <td>19 (Tue)</td>
-      <td>50.0</td>
-      <td>71.0</td>
-      <td>NaN</td>
-      <td>None</td>
-      <td>Partly cloudy</td>
-    </tr>
-    <tr>
-      <td>20 (Wed)</td>
-      <td>53.0</td>
-      <td>83.0</td>
-      <td>NaN</td>
-      <td>None</td>
-      <td>Clear and few clouds</td>
-    </tr>
-    <tr>
-      <td>21 (Thu)</td>
-      <td>59.0</td>
-      <td>84.0</td>
-      <td>NaN</td>
-      <td>None</td>
-      <td>Clear and few clouds</td>
-    </tr>
-    <tr>
-      <td>22 (Fri)</td>
-      <td>60.0</td>
-      <td>81.0</td>
-      <td>NaN</td>
-      <td>None</td>
-      <td>Partly cloudy</td>
-    </tr>
-    <tr>
-      <td>23 (Sat)</td>
-      <td>57.0</td>
-      <td>74.0</td>
-      <td>NaN</td>
-      <td>None</td>
-      <td>Clear and few clouds</td>
-    </tr>
   </tbody>
 </table></div>
 <iframe src="https://www.meteoblue.com/en/weather/maps/widget/troviscais-fundeiros_portugal_2262489?windAnimation=1&gust=1&satellite=1&cloudsAndPrecipitation=1&temperature=1&sunshine=0&extremeForecastIndex=1&geoloc=fixed&tempunit=C&windunit=km%252Fh&lengthunit=metric&zoom=10&autowidth=auto"  frameborder="0" scrolling="NO" allowtransparency="true" sandbox="allow-same-origin allow-scripts allow-popups allow-popups-to-escape-sandbox" style="width: 80%; height: 550px"></iframe><div>
@@ -249,13 +67,40 @@ window.observationsTable = `
 </thead>
 <tbody>
 <tr>
-<td rowspan="17">17 May</td>
+<td rowspan="20">17 May</td>
+<td>19h</td>
+<td>15.1</td>
+<td>NW</td>
+<td>18.4</td>
+<td>0.0</td>
+<td>548.7</td>
+</tr>
+<tr>
+
+<td>18h</td>
+<td>16.5</td>
+<td>NW</td>
+<td>19.8</td>
+<td>0.0</td>
+<td>1121.7</td>
+</tr>
+<tr>
+
 <td>17h</td>
 <td>18.2</td>
 <td>NW</td>
 <td>20.2</td>
 <td>0.0</td>
 <td>2266.6</td>
+</tr>
+<tr>
+
+<td>16h</td>
+<td>18.4</td>
+<td>NW</td>
+<td>21.2</td>
+<td>0.0</td>
+<td>2753.9</td>
 </tr>
 <tr>
 
@@ -618,7 +463,7 @@ window.observationsTable = `
 <td>0.0</td>
 </tr>
 <tr>
-<td rowspan="7">15 May</td>
+<td rowspan="4">15 May</td>
 <td>23h</td>
 <td>10.3</td>
 <td>NW</td>
@@ -652,33 +497,6 @@ window.observationsTable = `
 <td>12.2</td>
 <td>0.0</td>
 <td>84.7</td>
-</tr>
-<tr>
-
-<td>19h</td>
-<td>14.3</td>
-<td>NW</td>
-<td>15.5</td>
-<td>0.0</td>
-<td>557.5</td>
-</tr>
-<tr>
-
-<td>18h</td>
-<td>15.1</td>
-<td>NW</td>
-<td>19.8</td>
-<td>0.0</td>
-<td>961.0</td>
-</tr>
-<tr>
-
-<td>17h</td>
-<td>15.8</td>
-<td>NW</td>
-<td>22.3</td>
-<td>0.0</td>
-<td>1597.2</td>
 </tr>
 </tbody>
 </table></div>
