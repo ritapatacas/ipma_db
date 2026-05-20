@@ -17,7 +17,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(5-20) Wed</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday.svg" title="Clear, cloudless sky"/></td>
       <td>52.00</td>
-      <td>84.00</td>
+      <td>85.00</td>
       <td>-</td>
       <td>None</td>
       <td>None</td>
@@ -89,7 +89,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(5-28) Thu</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday.svg" title="Clear, cloudless sky"/></td>
       <td>61.00</td>
-      <td>84.00</td>
+      <td>85.00</td>
       <td>-</td>
       <td>None</td>
       <td>None</td>
@@ -158,7 +158,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     <tr>
       <td>20 (Wed)</td>
       <td>52.0</td>
-      <td>84.0</td>
+      <td>85.0</td>
       <td>NaN</td>
       <td>None</td>
       <td>Clear, cloudless sky</td>
@@ -1035,11 +1035,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>May 26</td>
-      <td>3</td>
+      <td>5</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>1171</td>
+      <td>1173</td>
     </tr>
   </tbody>
 </table>
