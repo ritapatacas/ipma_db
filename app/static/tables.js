@@ -17,7 +17,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(5-21) Thu</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday.svg" title="Clear, cloudless sky"/></td>
       <td>58.00</td>
-      <td>87.00</td>
+      <td>86.00</td>
       <td>-</td>
       <td>None</td>
       <td>None</td>
@@ -98,7 +98,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(5-30) Sat</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday.svg" title="Clear, cloudless sky"/></td>
       <td>57.00</td>
-      <td>82.00</td>
+      <td>81.00</td>
       <td>-</td>
       <td>None</td>
       <td>None</td>
@@ -158,7 +158,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     <tr>
       <td>21 (Thu)</td>
       <td>58.0</td>
-      <td>87.0</td>
+      <td>86.0</td>
       <td>NaN</td>
       <td>None</td>
       <td>Clear, cloudless sky</td>
@@ -249,13 +249,31 @@ window.observationsTable = `
 </thead>
 <tbody>
 <tr>
-<td rowspan="12">21 May</td>
+<td rowspan="14">21 May</td>
+<td>14h</td>
+<td>31.1</td>
+<td>SW</td>
+<td>5.4</td>
+<td>0.0</td>
+<td>2687.1</td>
+</tr>
+<tr>
+
 <td>12h</td>
 <td>29.3</td>
 <td>SE</td>
 <td>6.8</td>
 <td>0.0</td>
 <td>3264.3</td>
+</tr>
+<tr>
+
+<td>11h</td>
+<td>27.9</td>
+<td>S</td>
+<td>9.7</td>
+<td>0.0</td>
+<td>3073.9</td>
 </tr>
 <tr>
 
@@ -573,7 +591,7 @@ window.observationsTable = `
 <td>0.0</td>
 </tr>
 <tr>
-<td rowspan="12">19 May</td>
+<td rowspan="10">19 May</td>
 <td>23h</td>
 <td>14.3</td>
 <td>N</td>
@@ -661,24 +679,6 @@ window.observationsTable = `
 <td>10.8</td>
 <td>0.0</td>
 <td>1689.3</td>
-</tr>
-<tr>
-
-<td>13h</td>
-<td>19.6</td>
-<td>NW</td>
-<td>12.6</td>
-<td>0.0</td>
-<td>2087.9</td>
-</tr>
-<tr>
-
-<td>12h</td>
-<td>19.2</td>
-<td>NW</td>
-<td>13.3</td>
-<td>0.0</td>
-<td>2590.2</td>
 </tr>
 </tbody>
 </table></div>
