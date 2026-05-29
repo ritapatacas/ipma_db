@@ -88,7 +88,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(6-6) Sat</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday.svg" title="Clear, cloudless sky"/></td>
-      <td>50.00</td>
+      <td>51.00</td>
       <td>71.00</td>
       <td>-</td>
       <td>None</td>
@@ -249,13 +249,22 @@ window.observationsTable = `
 </thead>
 <tbody>
 <tr>
-<td rowspan="16">29 May</td>
+<td rowspan="17">29 May</td>
 <td>16h</td>
 <td>27.1</td>
 <td>NW</td>
 <td>14.8</td>
 <td>0.0</td>
 <td>2741.0</td>
+</tr>
+<tr>
+
+<td>15h</td>
+<td>26.5</td>
+<td>NW</td>
+<td>15.5</td>
+<td>0.0</td>
+<td>2669.3</td>
 </tr>
 <tr>
 
@@ -609,7 +618,7 @@ window.observationsTable = `
 <td>0.0</td>
 </tr>
 <tr>
-<td rowspan="8">27 May</td>
+<td rowspan="7">27 May</td>
 <td>23h</td>
 <td>19.7</td>
 <td>N</td>
@@ -670,15 +679,6 @@ window.observationsTable = `
 <td>14.8</td>
 <td>0.0</td>
 <td>2021.1</td>
-</tr>
-<tr>
-
-<td>16h</td>
-<td>36.0</td>
-<td>NW</td>
-<td>16.9</td>
-<td>0.0</td>
-<td>2664.9</td>
 </tr>
 </tbody>
 </table></div>
