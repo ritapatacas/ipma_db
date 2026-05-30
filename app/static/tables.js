@@ -52,8 +52,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(6-3) Wed</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/02_iday.svg" title="Clear and few clouds"/></td>
-      <td>53.00</td>
-      <td>79.00</td>
+      <td>52.00</td>
+      <td>80.00</td>
       <td>-</td>
       <td>None</td>
       <td>None</td>
@@ -70,8 +70,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(6-5) Fri</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/02_iday.svg" title="Clear and few clouds"/></td>
-      <td>54.00</td>
-      <td>71.00</td>
+      <td>55.00</td>
+      <td>72.00</td>
       <td>-</td>
       <td>None</td>
       <td>None</td>
@@ -189,8 +189,8 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     </tr>
     <tr>
       <td>3 (Wed)</td>
-      <td>53.0</td>
-      <td>79.0</td>
+      <td>52.0</td>
+      <td>80.0</td>
       <td>NaN</td>
       <td>None</td>
       <td>Clear and few clouds</td>
@@ -205,8 +205,8 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     </tr>
     <tr>
       <td>5 (Fri)</td>
-      <td>54.0</td>
-      <td>71.0</td>
+      <td>55.0</td>
+      <td>72.0</td>
       <td>NaN</td>
       <td>None</td>
       <td>Clear and few clouds</td>
@@ -249,7 +249,25 @@ window.observationsTable = `
 </thead>
 <tbody>
 <tr>
-<td rowspan="11">30 May</td>
+<td rowspan="13">30 May</td>
+<td>13h</td>
+<td>22.6</td>
+<td>NW</td>
+<td>20.9</td>
+<td>0.0</td>
+<td>3276.6</td>
+</tr>
+<tr>
+
+<td>11h</td>
+<td>18.2</td>
+<td>N</td>
+<td>14.4</td>
+<td>0.0</td>
+<td>2027.0</td>
+</tr>
+<tr>
+
 <td>10h</td>
 <td>15.9</td>
 <td>NW</td>
@@ -564,7 +582,7 @@ window.observationsTable = `
 <td>0.0</td>
 </tr>
 <tr>
-<td rowspan="13">28 May</td>
+<td rowspan="11">28 May</td>
 <td>23h</td>
 <td>15.1</td>
 <td>N</td>
@@ -661,24 +679,6 @@ window.observationsTable = `
 <td>15.1</td>
 <td>0.0</td>
 <td>3141.3</td>
-</tr>
-<tr>
-
-<td>12h</td>
-<td>27.0</td>
-<td>NW</td>
-<td>9.4</td>
-<td>0.0</td>
-<td>3235.7</td>
-</tr>
-<tr>
-
-<td>11h</td>
-<td>26.0</td>
-<td>NW</td>
-<td>10.8</td>
-<td>0.0</td>
-<td>3209.0</td>
 </tr>
 </tbody>
 </table></div>
