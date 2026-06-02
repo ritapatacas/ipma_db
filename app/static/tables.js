@@ -17,7 +17,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(6-2) Tue</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/02_iday.svg" title="Clear and few clouds"/></td>
       <td>54.00</td>
-      <td>73.00</td>
+      <td>71.00</td>
       <td>-</td>
       <td>None</td>
       <td>None</td>
@@ -158,7 +158,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     <tr>
       <td>2 (Tue)</td>
       <td>54.0</td>
-      <td>73.0</td>
+      <td>71.0</td>
       <td>NaN</td>
       <td>None</td>
       <td>Clear and few clouds</td>
@@ -249,7 +249,34 @@ window.observationsTable = `
 </thead>
 <tbody>
 <tr>
-<td rowspan="8">02 Jun</td>
+<td rowspan="11">02 Jun</td>
+<td>10h</td>
+<td>15.6</td>
+<td>N</td>
+<td>15.8</td>
+<td>0.0</td>
+<td>1227.9</td>
+</tr>
+<tr>
+
+<td>09h</td>
+<td>14.6</td>
+<td>N</td>
+<td>16.9</td>
+<td>0.0</td>
+<td>595.5</td>
+</tr>
+<tr>
+
+<td>08h</td>
+<td>15.4</td>
+<td>N</td>
+<td>20.9</td>
+<td>0.5</td>
+<td>330.6</td>
+</tr>
+<tr>
+
 <td>07h</td>
 <td>15.1</td>
 <td>N</td>
@@ -537,7 +564,7 @@ window.observationsTable = `
 <td>0.0</td>
 </tr>
 <tr>
-<td rowspan="16">31 May</td>
+<td rowspan="13">31 May</td>
 <td>23h</td>
 <td>14.8</td>
 <td>NW</td>
@@ -652,33 +679,6 @@ window.observationsTable = `
 <td>14.8</td>
 <td>0.0</td>
 <td>3190.9</td>
-</tr>
-<tr>
-
-<td>10h</td>
-<td>18.4</td>
-<td>NW</td>
-<td>15.5</td>
-<td>0.0</td>
-<td>1805.7</td>
-</tr>
-<tr>
-
-<td>04h</td>
-<td>13.8</td>
-<td>-</td>
-<td>-</td>
-<td>NaN</td>
-<td>-</td>
-</tr>
-<tr>
-
-<td>03h</td>
-<td>13.8</td>
-<td>NW</td>
-<td>15.1</td>
-<td>0.0</td>
-<td>0.0</td>
 </tr>
 </tbody>
 </table></div>
@@ -1039,11 +1039,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Jun 26</td>
-      <td>2</td>
+      <td>1</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>1175</td>
+      <td>1174</td>
     </tr>
   </tbody>
 </table>
