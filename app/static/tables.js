@@ -26,7 +26,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(6-11) Thu</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday.svg" title="Clear, cloudless sky"/></td>
       <td>63.00</td>
-      <td>92.00</td>
+      <td>93.00</td>
       <td>-</td>
       <td>None</td>
       <td>None</td>
@@ -34,8 +34,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(6-12) Fri</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/02_iday.svg" title="Clear and few clouds"/></td>
-      <td>72.00</td>
-      <td>95.00</td>
+      <td>71.00</td>
+      <td>94.00</td>
       <td>-</td>
       <td>None</td>
       <td>None</td>
@@ -43,7 +43,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(6-13) Sat</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/02_iday.svg" title="Clear and few clouds"/></td>
-      <td>70.00</td>
+      <td>71.00</td>
       <td>93.00</td>
       <td>-</td>
       <td>None</td>
@@ -53,7 +53,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(6-14) Sun</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/02_iday.svg" title="Clear and few clouds"/></td>
       <td>65.00</td>
-      <td>87.00</td>
+      <td>88.00</td>
       <td>-</td>
       <td>None</td>
       <td>None</td>
@@ -125,7 +125,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(6-22) Mon</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday.svg" title="Clear, cloudless sky"/></td>
       <td>60.00</td>
-      <td>82.00</td>
+      <td>83.00</td>
       <td>-</td>
       <td>None</td>
       <td>None</td>
@@ -134,7 +134,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(6-23) Tue</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday.svg" title="Clear, cloudless sky"/></td>
       <td>61.00</td>
-      <td>81.00</td>
+      <td>82.00</td>
       <td>-</td>
       <td>None</td>
       <td>None</td>
@@ -166,22 +166,22 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     <tr>
       <td>11 (Thu)</td>
       <td>63.0</td>
-      <td>92.0</td>
+      <td>93.0</td>
       <td>NaN</td>
       <td>None</td>
       <td>Clear, cloudless sky</td>
     </tr>
     <tr>
       <td>12 (Fri)</td>
-      <td>72.0</td>
-      <td>95.0</td>
+      <td>71.0</td>
+      <td>94.0</td>
       <td>NaN</td>
       <td>None</td>
       <td>Clear and few clouds</td>
     </tr>
     <tr>
       <td>13 (Sat)</td>
-      <td>70.0</td>
+      <td>71.0</td>
       <td>93.0</td>
       <td>NaN</td>
       <td>None</td>
@@ -190,7 +190,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     <tr>
       <td>14 (Sun)</td>
       <td>65.0</td>
-      <td>87.0</td>
+      <td>88.0</td>
       <td>NaN</td>
       <td>None</td>
       <td>Clear and few clouds</td>
@@ -249,7 +249,25 @@ window.observationsTable = `
 </thead>
 <tbody>
 <tr>
-<td rowspan="19">10 Jun</td>
+<td rowspan="21">10 Jun</td>
+<td>20h</td>
+<td>21.4</td>
+<td>N</td>
+<td>12.2</td>
+<td>0.0</td>
+<td>181.5</td>
+</tr>
+<tr>
+
+<td>19h</td>
+<td>24.7</td>
+<td>N</td>
+<td>14.0</td>
+<td>0.0</td>
+<td>792.2</td>
+</tr>
+<tr>
+
 <td>18h</td>
 <td>26.5</td>
 <td>N</td>
@@ -636,7 +654,7 @@ window.observationsTable = `
 <td>0.0</td>
 </tr>
 <tr>
-<td rowspan="5">08 Jun</td>
+<td rowspan="3">08 Jun</td>
 <td>23h</td>
 <td>15.4</td>
 <td>N</td>
@@ -661,24 +679,6 @@ window.observationsTable = `
 <td>16.9</td>
 <td>0.0</td>
 <td>0.0</td>
-</tr>
-<tr>
-
-<td>20h</td>
-<td>17.6</td>
-<td>N</td>
-<td>15.5</td>
-<td>0.0</td>
-<td>62.0</td>
-</tr>
-<tr>
-
-<td>19h</td>
-<td>19.0</td>
-<td>NW</td>
-<td>19.4</td>
-<td>0.0</td>
-<td>307.0</td>
 </tr>
 </tbody>
 </table></div>
