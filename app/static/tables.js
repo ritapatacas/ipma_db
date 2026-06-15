@@ -17,7 +17,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(6-15) Mon</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/02_iday.svg" title="Clear and few clouds"/></td>
       <td>58.00</td>
-      <td>80.00</td>
+      <td>83.00</td>
       <td>-</td>
       <td>None</td>
       <td>None</td>
@@ -25,7 +25,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(6-16) Tue</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday.svg" title="Clear, cloudless sky"/></td>
-      <td>63.00</td>
+      <td>62.00</td>
       <td>87.00</td>
       <td>-</td>
       <td>None</td>
@@ -34,8 +34,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(6-17) Wed</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday.svg" title="Clear, cloudless sky"/></td>
-      <td>65.00</td>
-      <td>90.00</td>
+      <td>66.00</td>
+      <td>89.00</td>
       <td>-</td>
       <td>None</td>
       <td>None</td>
@@ -51,9 +51,9 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     </tr>
     <tr>
       <td>(6-19) Fri</td>
-      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday.svg" title="Clear, cloudless sky"/></td>
+      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/02_iday.svg" title="Clear and few clouds"/></td>
       <td>61.00</td>
-      <td>88.00</td>
+      <td>89.00</td>
       <td>-</td>
       <td>None</td>
       <td>None</td>
@@ -70,8 +70,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(6-21) Sun</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday.svg" title="Clear, cloudless sky"/></td>
-      <td>64.00</td>
-      <td>92.00</td>
+      <td>66.00</td>
+      <td>91.00</td>
       <td>-</td>
       <td>None</td>
       <td>None</td>
@@ -79,8 +79,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(6-22) Mon</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday.svg" title="Clear, cloudless sky"/></td>
-      <td>69.00</td>
-      <td>96.00</td>
+      <td>67.00</td>
+      <td>95.00</td>
       <td>-</td>
       <td>None</td>
       <td>None</td>
@@ -88,8 +88,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(6-23) Tue</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday.svg" title="Clear, cloudless sky"/></td>
-      <td>70.00</td>
-      <td>94.00</td>
+      <td>69.00</td>
+      <td>93.00</td>
       <td>-</td>
       <td>None</td>
       <td>None</td>
@@ -115,8 +115,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(6-26) Fri</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday.svg" title="Clear, cloudless sky"/></td>
-      <td>67.00</td>
-      <td>89.00</td>
+      <td>66.00</td>
+      <td>91.00</td>
       <td>-</td>
       <td>None</td>
       <td>None</td>
@@ -124,8 +124,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(6-27) Sat</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday.svg" title="Clear, cloudless sky"/></td>
-      <td>65.00</td>
-      <td>88.00</td>
+      <td>64.00</td>
+      <td>89.00</td>
       <td>-</td>
       <td>None</td>
       <td>None</td>
@@ -134,7 +134,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(6-28) Sun</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday.svg" title="Clear, cloudless sky"/></td>
       <td>63.00</td>
-      <td>88.00</td>
+      <td>89.00</td>
       <td>-</td>
       <td>None</td>
       <td>None</td>
@@ -158,14 +158,14 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     <tr>
       <td>15 (Mon)</td>
       <td>58.0</td>
-      <td>80.0</td>
+      <td>83.0</td>
       <td>NaN</td>
       <td>None</td>
       <td>Clear and few clouds</td>
     </tr>
     <tr>
       <td>16 (Tue)</td>
-      <td>63.0</td>
+      <td>62.0</td>
       <td>87.0</td>
       <td>NaN</td>
       <td>None</td>
@@ -173,8 +173,8 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     </tr>
     <tr>
       <td>17 (Wed)</td>
-      <td>65.0</td>
-      <td>90.0</td>
+      <td>66.0</td>
+      <td>89.0</td>
       <td>NaN</td>
       <td>None</td>
       <td>Clear, cloudless sky</td>
@@ -190,10 +190,10 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     <tr>
       <td>19 (Fri)</td>
       <td>61.0</td>
-      <td>88.0</td>
+      <td>89.0</td>
       <td>NaN</td>
       <td>None</td>
-      <td>Clear, cloudless sky</td>
+      <td>Clear and few clouds</td>
     </tr>
     <tr>
       <td>20 (Sat)</td>
@@ -205,8 +205,8 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     </tr>
     <tr>
       <td>21 (Sun)</td>
-      <td>64.0</td>
-      <td>92.0</td>
+      <td>66.0</td>
+      <td>91.0</td>
       <td>NaN</td>
       <td>None</td>
       <td>Clear, cloudless sky</td>
@@ -1039,11 +1039,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Jun 26</td>
-      <td>1</td>
+      <td>3</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>1174</td>
+      <td>1176</td>
     </tr>
   </tbody>
 </table>
@@ -1121,6 +1121,34 @@ window.dashboardTable = `<div class="table-container">
             <td><a href="#" onclick="openModal('modal-Trovoada-15-15-06', event)">15-15/06</a></td>
             <td><span data-tooltip="Castelo Branco (59km ESE)">CB</span></td>
         </tr>
+        
+        <tr class="yellow hover:bg-gray-200 dark:hover:bg-gray-700 transition">
+            <td><i class="fa-solid fa-cloud-rain"></i></td>
+            <td class="level"><i class="fa-solid fa-circle" style="color: #FFD43B;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
+            <td><a href="#" onclick="openModal('modal-Precipitação-16-16-06', event)">16-16/06</a></td>
+            <td><span data-tooltip="Castelo Branco (59km ESE)">CB</span></td>
+        </tr>
+        
+        <tr class="yellow hover:bg-gray-200 dark:hover:bg-gray-700 transition">
+            <td><i class="fa-solid fa-bolt"></i></td>
+            <td class="level"><i class="fa-solid fa-circle" style="color: #FFD43B;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
+            <td><a href="#" onclick="openModal('modal-Trovoada-16-16-06', event)">16-16/06</a></td>
+            <td><span data-tooltip="Castelo Branco (59km ESE)">CB</span></td>
+        </tr>
+        
+        <tr class="yellow hover:bg-gray-200 dark:hover:bg-gray-700 transition">
+            <td><i class="fa-solid fa-cloud-rain"></i></td>
+            <td class="level"><i class="fa-solid fa-circle" style="color: #FFD43B;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
+            <td><a href="#" onclick="openModal('modal-Precipitação-17-17-06', event)">17-17/06</a></td>
+            <td><span data-tooltip="Castelo Branco (59km ESE)">CB</span></td>
+        </tr>
+        
+        <tr class="yellow hover:bg-gray-200 dark:hover:bg-gray-700 transition">
+            <td><i class="fa-solid fa-bolt"></i></td>
+            <td class="level"><i class="fa-solid fa-circle" style="color: #FFD43B;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
+            <td><a href="#" onclick="openModal('modal-Trovoada-17-17-06', event)">17-17/06</a></td>
+            <td><span data-tooltip="Castelo Branco (59km ESE)">CB</span></td>
+        </tr>
         </tbody></table>
     <dialog id="modal-Nevoeiro-15-18-06" class="modal">
         <article>
@@ -1130,8 +1158,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 15/06 10:40
-        <br><strong>end:</strong> 18/06 10:00
+        <br><strong>start:</strong> 15/06 15:17
+        <br><strong>end:</strong> 18/06 15:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1148,8 +1176,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 15/06 10:40
-        <br><strong>end:</strong> 18/06 10:00
+        <br><strong>start:</strong> 15/06 15:17
+        <br><strong>end:</strong> 18/06 15:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1166,8 +1194,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 15/06 10:40
-        <br><strong>end:</strong> 18/06 10:00
+        <br><strong>start:</strong> 15/06 15:17
+        <br><strong>end:</strong> 18/06 15:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1184,8 +1212,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 15/06 10:40
-        <br><strong>end:</strong> 18/06 10:00
+        <br><strong>start:</strong> 15/06 15:17
+        <br><strong>end:</strong> 18/06 15:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1202,8 +1230,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 15/06 10:40
-        <br><strong>end:</strong> 18/06 10:00
+        <br><strong>start:</strong> 15/06 15:17
+        <br><strong>end:</strong> 18/06 15:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1220,8 +1248,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 15/06 10:40
-        <br><strong>end:</strong> 18/06 10:00
+        <br><strong>start:</strong> 15/06 15:17
+        <br><strong>end:</strong> 18/06 15:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1238,8 +1266,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 15/06 10:40
-        <br><strong>end:</strong> 18/06 10:00
+        <br><strong>start:</strong> 15/06 15:17
+        <br><strong>end:</strong> 18/06 15:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1256,10 +1284,10 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> yellow
-        <br><strong>start:</strong> 15/06 12:00
+        <br><strong>start:</strong> 15/06 15:17
         <br><strong>end:</strong> 15/06 21:00
         <hr>
-    <p><strong>Castelo Branco (59km ESE)</strong><br>Aguaceiros por vezes forte e acompanhados de trovoada.</p>
+    <p><strong>Castelo Branco (59km ESE)</strong><br>Aguaceiros por vezes fortes, que poderão ser sob a forma de granizo.</p>
             <footer>
                 <button onclick="closeModal('modal-Precipitação-15-15-06', event)">Close</button>
             </footer>
@@ -1274,12 +1302,84 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> yellow
-        <br><strong>start:</strong> 15/06 12:00
+        <br><strong>start:</strong> 15/06 15:17
         <br><strong>end:</strong> 15/06 21:00
         <hr>
-    <p><strong>Castelo Branco (59km ESE)</strong><br>Frequentes e dispersas.</p>
+    <p><strong>Castelo Branco (59km ESE)</strong><br>Condições favoráveis à ocorrência de trovoada.</p>
             <footer>
                 <button onclick="closeModal('modal-Trovoada-15-15-06', event)">Close</button>
+            </footer>
+        </article>
+    </dialog>
+    
+    <dialog id="modal-Precipitação-16-16-06" class="modal">
+        <article>
+            <header>
+                <a href="#" class="close" aria-label="Close" onclick="closeModal('modal-Precipitação-16-16-06', event)"></a>
+                <h3>Precipitação</h3>
+            </header>
+            
+        <strong>alert level:</strong> yellow
+        <br><strong>start:</strong> 16/06 12:00
+        <br><strong>end:</strong> 16/06 21:00
+        <hr>
+    <p><strong>Castelo Branco (59km ESE)</strong><br>Aguaceiros por vezes fortes, que poderão ser sob a forma de granizo.</p>
+            <footer>
+                <button onclick="closeModal('modal-Precipitação-16-16-06', event)">Close</button>
+            </footer>
+        </article>
+    </dialog>
+    
+    <dialog id="modal-Trovoada-16-16-06" class="modal">
+        <article>
+            <header>
+                <a href="#" class="close" aria-label="Close" onclick="closeModal('modal-Trovoada-16-16-06', event)"></a>
+                <h3>Trovoada</h3>
+            </header>
+            
+        <strong>alert level:</strong> yellow
+        <br><strong>start:</strong> 16/06 12:00
+        <br><strong>end:</strong> 16/06 21:00
+        <hr>
+    <p><strong>Castelo Branco (59km ESE)</strong><br>Condições favoráveis à ocorrência de trovoada.</p>
+            <footer>
+                <button onclick="closeModal('modal-Trovoada-16-16-06', event)">Close</button>
+            </footer>
+        </article>
+    </dialog>
+    
+    <dialog id="modal-Precipitação-17-17-06" class="modal">
+        <article>
+            <header>
+                <a href="#" class="close" aria-label="Close" onclick="closeModal('modal-Precipitação-17-17-06', event)"></a>
+                <h3>Precipitação</h3>
+            </header>
+            
+        <strong>alert level:</strong> yellow
+        <br><strong>start:</strong> 17/06 12:00
+        <br><strong>end:</strong> 17/06 21:00
+        <hr>
+    <p><strong>Castelo Branco (59km ESE)</strong><br>Aguaceiros por vezes fortes, que poderão ser sob a forma de granizo.</p>
+            <footer>
+                <button onclick="closeModal('modal-Precipitação-17-17-06', event)">Close</button>
+            </footer>
+        </article>
+    </dialog>
+    
+    <dialog id="modal-Trovoada-17-17-06" class="modal">
+        <article>
+            <header>
+                <a href="#" class="close" aria-label="Close" onclick="closeModal('modal-Trovoada-17-17-06', event)"></a>
+                <h3>Trovoada</h3>
+            </header>
+            
+        <strong>alert level:</strong> yellow
+        <br><strong>start:</strong> 17/06 12:00
+        <br><strong>end:</strong> 17/06 21:00
+        <hr>
+    <p><strong>Castelo Branco (59km ESE)</strong><br>Condições favoráveis à ocorrência de trovoada.</p>
+            <footer>
+                <button onclick="closeModal('modal-Trovoada-17-17-06', event)">Close</button>
             </footer>
         </article>
     </dialog>
