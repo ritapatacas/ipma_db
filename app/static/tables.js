@@ -34,7 +34,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(6-18) Thu</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday.svg" title="Clear, cloudless sky"/></td>
-      <td>63.00</td>
+      <td>62.00</td>
       <td>87.00</td>
       <td>-</td>
       <td>None</td>
@@ -52,8 +52,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(6-20) Sat</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/02_iday.svg" title="Clear and few clouds"/></td>
-      <td>61.00</td>
-      <td>91.00</td>
+      <td>62.00</td>
+      <td>90.00</td>
       <td>-</td>
       <td>None</td>
       <td>None</td>
@@ -71,7 +71,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(6-22) Mon</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday.svg" title="Clear, cloudless sky"/></td>
       <td>68.00</td>
-      <td>94.00</td>
+      <td>93.00</td>
       <td>-</td>
       <td>None</td>
       <td>None</td>
@@ -97,7 +97,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(6-25) Thu</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday.svg" title="Clear, cloudless sky"/></td>
-      <td>70.00</td>
+      <td>69.00</td>
       <td>94.00</td>
       <td>-</td>
       <td>None</td>
@@ -107,7 +107,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(6-26) Fri</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday.svg" title="Clear, cloudless sky"/></td>
       <td>68.00</td>
-      <td>94.00</td>
+      <td>93.00</td>
       <td>-</td>
       <td>None</td>
       <td>None</td>
@@ -173,7 +173,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     </tr>
     <tr>
       <td>18 (Thu)</td>
-      <td>63.0</td>
+      <td>62.0</td>
       <td>87.0</td>
       <td>NaN</td>
       <td>None</td>
@@ -189,8 +189,8 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     </tr>
     <tr>
       <td>20 (Sat)</td>
-      <td>61.0</td>
-      <td>91.0</td>
+      <td>62.0</td>
+      <td>90.0</td>
       <td>NaN</td>
       <td>None</td>
       <td>Clear and few clouds</td>
@@ -206,7 +206,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     <tr>
       <td>22 (Mon)</td>
       <td>68.0</td>
-      <td>94.0</td>
+      <td>93.0</td>
       <td>NaN</td>
       <td>None</td>
       <td>Clear, cloudless sky</td>
@@ -249,7 +249,25 @@ window.observationsTable = `
 </thead>
 <tbody>
 <tr>
-<td rowspan="19">16 Jun</td>
+<td rowspan="21">16 Jun</td>
+<td>20h</td>
+<td>20.5</td>
+<td>NW</td>
+<td>12.2</td>
+<td>0.0</td>
+<td>185.7</td>
+</tr>
+<tr>
+
+<td>19h</td>
+<td>23.4</td>
+<td>NW</td>
+<td>15.8</td>
+<td>0.0</td>
+<td>759.9</td>
+</tr>
+<tr>
+
 <td>18h</td>
 <td>25.1</td>
 <td>NW</td>
@@ -636,7 +654,7 @@ window.observationsTable = `
 <td>0.0</td>
 </tr>
 <tr>
-<td rowspan="5">14 Jun</td>
+<td rowspan="3">14 Jun</td>
 <td>23h</td>
 <td>15.9</td>
 <td>NW</td>
@@ -661,24 +679,6 @@ window.observationsTable = `
 <td>11.5</td>
 <td>0.0</td>
 <td>1.0</td>
-</tr>
-<tr>
-
-<td>20h</td>
-<td>20.5</td>
-<td>W</td>
-<td>16.9</td>
-<td>0.0</td>
-<td>206.6</td>
-</tr>
-<tr>
-
-<td>19h</td>
-<td>23.2</td>
-<td>NW</td>
-<td>13.7</td>
-<td>0.0</td>
-<td>811.8</td>
 </tr>
 </tbody>
 </table></div>
@@ -1039,11 +1039,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Jun 26</td>
-      <td>3</td>
+      <td>0</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>1176</td>
+      <td>1173</td>
     </tr>
   </tbody>
 </table>
@@ -1106,20 +1106,6 @@ window.dashboardTable = `<div class="table-container">
             <td class="level"><i class="fa-solid fa-circle" style="color: #26ba81;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
             <td><a href="#" onclick="openModal('modal-Vento-16-19-06', event)">16-19/06</a></td>
             <td><span data-tooltip="Coimbra (36km NW)">C</span>, <span data-tooltip="Castelo Branco (59km ESE)">CB</span>, <span data-tooltip="Leiria (58km WSW)">L</span></td>
-        </tr>
-        
-        <tr class="yellow hover:bg-gray-200 dark:hover:bg-gray-700 transition">
-            <td><i class="fa-solid fa-cloud-rain"></i></td>
-            <td class="level"><i class="fa-solid fa-circle" style="color: #FFD43B;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
-            <td><a href="#" onclick="openModal('modal-Precipitação-16-16-06', event)">16-16/06</a></td>
-            <td><span data-tooltip="Castelo Branco (59km ESE)">CB</span></td>
-        </tr>
-        
-        <tr class="yellow hover:bg-gray-200 dark:hover:bg-gray-700 transition">
-            <td><i class="fa-solid fa-bolt"></i></td>
-            <td class="level"><i class="fa-solid fa-circle" style="color: #FFD43B;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
-            <td><a href="#" onclick="openModal('modal-Trovoada-16-16-06', event)">16-16/06</a></td>
-            <td><span data-tooltip="Castelo Branco (59km ESE)">CB</span></td>
         </tr>
         
         <tr class="yellow hover:bg-gray-200 dark:hover:bg-gray-700 transition">
@@ -1258,42 +1244,6 @@ window.dashboardTable = `<div class="table-container">
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
                 <button onclick="closeModal('modal-Vento-16-19-06', event)">Close</button>
-            </footer>
-        </article>
-    </dialog>
-    
-    <dialog id="modal-Precipitação-16-16-06" class="modal">
-        <article>
-            <header>
-                <a href="#" class="close" aria-label="Close" onclick="closeModal('modal-Precipitação-16-16-06', event)"></a>
-                <h3>Precipitação</h3>
-            </header>
-            
-        <strong>alert level:</strong> yellow
-        <br><strong>start:</strong> 16/06 15:25
-        <br><strong>end:</strong> 16/06 21:00
-        <hr>
-    <p><strong>Castelo Branco (59km ESE)</strong><br>Aguaceiros por vezes fortes, que poderão ser sob a forma de granizo.</p>
-            <footer>
-                <button onclick="closeModal('modal-Precipitação-16-16-06', event)">Close</button>
-            </footer>
-        </article>
-    </dialog>
-    
-    <dialog id="modal-Trovoada-16-16-06" class="modal">
-        <article>
-            <header>
-                <a href="#" class="close" aria-label="Close" onclick="closeModal('modal-Trovoada-16-16-06', event)"></a>
-                <h3>Trovoada</h3>
-            </header>
-            
-        <strong>alert level:</strong> yellow
-        <br><strong>start:</strong> 16/06 15:25
-        <br><strong>end:</strong> 16/06 21:00
-        <hr>
-    <p><strong>Castelo Branco (59km ESE)</strong><br>Condições favoráveis à ocorrência de trovoada.</p>
-            <footer>
-                <button onclick="closeModal('modal-Trovoada-16-16-06', event)">Close</button>
             </footer>
         </article>
     </dialog>
