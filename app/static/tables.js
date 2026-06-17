@@ -17,7 +17,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(6-17) Wed</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday.svg" title="Clear, cloudless sky"/></td>
       <td>62.00</td>
-      <td>90.00</td>
+      <td>91.00</td>
       <td>-</td>
       <td>None</td>
       <td>None</td>
@@ -158,7 +158,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     <tr>
       <td>17 (Wed)</td>
       <td>62.0</td>
-      <td>90.0</td>
+      <td>91.0</td>
       <td>NaN</td>
       <td>None</td>
       <td>Clear, cloudless sky</td>
@@ -249,7 +249,16 @@ window.observationsTable = `
 </thead>
 <tbody>
 <tr>
-<td rowspan="12">17 Jun</td>
+<td rowspan="13">17 Jun</td>
+<td>12h</td>
+<td>28.5</td>
+<td>W</td>
+<td>7.9</td>
+<td>0.0</td>
+<td>3311.9</td>
+</tr>
+<tr>
+
 <td>11h</td>
 <td>26.1</td>
 <td>NW</td>
@@ -573,7 +582,7 @@ window.observationsTable = `
 <td>0.0</td>
 </tr>
 <tr>
-<td rowspan="12">15 Jun</td>
+<td rowspan="11">15 Jun</td>
 <td>23h</td>
 <td>14.7</td>
 <td>N</td>
@@ -670,15 +679,6 @@ window.observationsTable = `
 <td>20.2</td>
 <td>0.0</td>
 <td>1980.9</td>
-</tr>
-<tr>
-
-<td>12h</td>
-<td>17.5</td>
-<td>NW</td>
-<td>16.2</td>
-<td>0.0</td>
-<td>943.8</td>
 </tr>
 </tbody>
 </table></div>
@@ -1039,11 +1039,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Jun 26</td>
-      <td>1</td>
+      <td>3</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>1174</td>
+      <td>1176</td>
     </tr>
   </tbody>
 </table>
@@ -1130,8 +1130,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 17/06 06:33
-        <br><strong>end:</strong> 20/06 06:00
+        <br><strong>start:</strong> 17/06 12:22
+        <br><strong>end:</strong> 20/06 12:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1148,8 +1148,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 17/06 06:33
-        <br><strong>end:</strong> 20/06 06:00
+        <br><strong>start:</strong> 17/06 12:22
+        <br><strong>end:</strong> 20/06 12:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1166,8 +1166,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 17/06 06:33
-        <br><strong>end:</strong> 20/06 06:00
+        <br><strong>start:</strong> 17/06 12:22
+        <br><strong>end:</strong> 20/06 12:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1184,8 +1184,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 17/06 06:33
-        <br><strong>end:</strong> 20/06 06:00
+        <br><strong>start:</strong> 17/06 12:22
+        <br><strong>end:</strong> 20/06 12:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1202,8 +1202,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 17/06 06:33
-        <br><strong>end:</strong> 20/06 06:00
+        <br><strong>start:</strong> 17/06 12:22
+        <br><strong>end:</strong> 20/06 12:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1220,8 +1220,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 17/06 06:33
-        <br><strong>end:</strong> 20/06 06:00
+        <br><strong>start:</strong> 17/06 12:22
+        <br><strong>end:</strong> 20/06 12:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1238,8 +1238,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 17/06 06:33
-        <br><strong>end:</strong> 20/06 06:00
+        <br><strong>start:</strong> 17/06 12:22
+        <br><strong>end:</strong> 20/06 12:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1256,7 +1256,7 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> yellow
-        <br><strong>start:</strong> 17/06 12:00
+        <br><strong>start:</strong> 17/06 12:22
         <br><strong>end:</strong> 17/06 21:00
         <hr>
     <p><strong>Castelo Branco (59km ESE)</strong><br>Aguaceiros por vezes fortes, que poderão ser sob a forma de granizo.</p>
@@ -1274,7 +1274,7 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> yellow
-        <br><strong>start:</strong> 17/06 12:00
+        <br><strong>start:</strong> 17/06 12:22
         <br><strong>end:</strong> 17/06 21:00
         <hr>
     <p><strong>Castelo Branco (59km ESE)</strong><br>Condições favoráveis à ocorrência de trovoada.</p>
