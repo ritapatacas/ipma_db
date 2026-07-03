@@ -17,7 +17,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(7-3) Fri</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday.svg" title="Clear, cloudless sky">\n</img></td>
       <td>75.00</td>
-      <td>102.00</td>
+      <td>101.00</td>
       <td>-</td>
       <td>None</td>
       <td>None</td>
@@ -25,7 +25,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(7-4) Sat</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/02_iday.svg" title="Clear and few clouds">\n</img></td>
-      <td>77.00</td>
+      <td>76.00</td>
       <td>101.00</td>
       <td>-</td>
       <td>None</td>
@@ -70,8 +70,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(7-9) Thu</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/02_iday.svg" title="Clear and few clouds"/></td>
-      <td>64.00</td>
-      <td>87.00</td>
+      <td>63.00</td>
+      <td>88.00</td>
       <td>-</td>
       <td>None</td>
       <td>None</td>
@@ -79,7 +79,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(7-10) Fri</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday.svg" title="Clear, cloudless sky"/></td>
-      <td>61.00</td>
+      <td>60.00</td>
       <td>86.00</td>
       <td>-</td>
       <td>None</td>
@@ -158,14 +158,14 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     <tr>
       <td>3 (Fri)</td>
       <td>75.0</td>
-      <td>102.0</td>
+      <td>101.0</td>
       <td>NaN</td>
       <td>None</td>
       <td>Clear, cloudless sky</td>
     </tr>
     <tr>
       <td>4 (Sat)</td>
-      <td>77.0</td>
+      <td>76.0</td>
       <td>101.0</td>
       <td>NaN</td>
       <td>None</td>
@@ -205,8 +205,8 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     </tr>
     <tr>
       <td>9 (Thu)</td>
-      <td>64.0</td>
-      <td>87.0</td>
+      <td>63.0</td>
+      <td>88.0</td>
       <td>NaN</td>
       <td>None</td>
       <td>Clear and few clouds</td>
@@ -249,7 +249,43 @@ window.observationsTable = `
 </thead>
 <tbody>
 <tr>
-<td rowspan="6">03 Jul</td>
+<td rowspan="11">03 Jul</td>
+<td>10h</td>
+<td>32.1</td>
+<td>E</td>
+<td>14.4</td>
+<td>0.0</td>
+<td>2634.5</td>
+</tr>
+<tr>
+
+<td>09h</td>
+<td>29.6</td>
+<td>E</td>
+<td>14.0</td>
+<td>0.0</td>
+<td>2015.8</td>
+</tr>
+<tr>
+
+<td>08h</td>
+<td>27.6</td>
+<td>E</td>
+<td>14.0</td>
+<td>0.0</td>
+<td>1317.3</td>
+</tr>
+<tr>
+
+<td>07h</td>
+<td>26.1</td>
+<td>E</td>
+<td>12.6</td>
+<td>0.0</td>
+<td>193.0</td>
+</tr>
+<tr>
+
 <td>06h</td>
 <td>25.5</td>
 <td>E</td>
@@ -263,6 +299,15 @@ window.observationsTable = `
 <td>25.6</td>
 <td>E</td>
 <td>13.7</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+<tr>
+
+<td>04h</td>
+<td>26.2</td>
+<td>E</td>
+<td>12.6</td>
 <td>0.0</td>
 <td>0.0</td>
 </tr>
@@ -519,7 +564,7 @@ window.observationsTable = `
 <td>0.0</td>
 </tr>
 <tr>
-<td rowspan="18">01 Jul</td>
+<td rowspan="13">01 Jul</td>
 <td>23h</td>
 <td>24.3</td>
 <td>E</td>
@@ -634,51 +679,6 @@ window.observationsTable = `
 <td>9.0</td>
 <td>0.0</td>
 <td>3148.1</td>
-</tr>
-<tr>
-
-<td>10h</td>
-<td>26.4</td>
-<td>N</td>
-<td>4.3</td>
-<td>0.0</td>
-<td>2602.0</td>
-</tr>
-<tr>
-
-<td>09h</td>
-<td>22.4</td>
-<td>NE</td>
-<td>11.5</td>
-<td>0.0</td>
-<td>1965.0</td>
-</tr>
-<tr>
-
-<td>08h</td>
-<td>18.1</td>
-<td>NE</td>
-<td>9.7</td>
-<td>0.0</td>
-<td>1281.2</td>
-</tr>
-<tr>
-
-<td>07h</td>
-<td>15.4</td>
-<td>N</td>
-<td>2.2</td>
-<td>0.0</td>
-<td>265.5</td>
-</tr>
-<tr>
-
-<td>06h</td>
-<td>14.6</td>
-<td>-</td>
-<td>0.0</td>
-<td>0.0</td>
-<td>58.5</td>
 </tr>
 </tbody>
 </table></div>
@@ -1043,11 +1043,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Jul 26</td>
-      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>1174</td>
+      <td>1173</td>
     </tr>
   </tbody>
 </table>
