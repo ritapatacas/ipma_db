@@ -249,7 +249,16 @@ window.observationsTable = `
 </thead>
 <tbody>
 <tr>
-<td rowspan="12">19 Jul</td>
+<td rowspan="13">19 Jul</td>
+<td>12h</td>
+<td>24.1</td>
+<td>NW</td>
+<td>10.4</td>
+<td>0.0</td>
+<td>2980.5</td>
+</tr>
+<tr>
+
 <td>11h</td>
 <td>22.3</td>
 <td>NW</td>
@@ -573,7 +582,7 @@ window.observationsTable = `
 <td>0.0</td>
 </tr>
 <tr>
-<td rowspan="12">17 Jul</td>
+<td rowspan="11">17 Jul</td>
 <td>23h</td>
 <td>17.3</td>
 <td>NW</td>
@@ -670,15 +679,6 @@ window.observationsTable = `
 <td>17.3</td>
 <td>0.0</td>
 <td>2275.9</td>
-</tr>
-<tr>
-
-<td>12h</td>
-<td>24.8</td>
-<td>NW</td>
-<td>14.8</td>
-<td>0.0</td>
-<td>2063.1</td>
 </tr>
 </tbody>
 </table></div>
@@ -1043,11 +1043,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Jul 26</td>
-      <td>1</td>
+      <td>2</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>1174</td>
+      <td>1175</td>
     </tr>
   </tbody>
 </table>
