@@ -17,7 +17,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(7-21) Tue</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/07_iday.svg" title="Mixed with showers"/></td>
       <td>57.00</td>
-      <td>85.00</td>
+      <td>84.00</td>
       <td>-</td>
       <td>None</td>
       <td>None</td>
@@ -134,7 +134,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(8-3) Mon</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday.svg" title="Clear, cloudless sky"/></td>
       <td>58.00</td>
-      <td>81.00</td>
+      <td>80.00</td>
       <td>-</td>
       <td>None</td>
       <td>None</td>
@@ -158,7 +158,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     <tr>
       <td>21 (Tue)</td>
       <td>57.0</td>
-      <td>85.0</td>
+      <td>84.0</td>
       <td>NaN</td>
       <td>None</td>
       <td>Mixed with showers</td>
@@ -249,7 +249,52 @@ window.observationsTable = `
 </thead>
 <tbody>
 <tr>
-<td rowspan="10">21 Jul</td>
+<td rowspan="15">21 Jul</td>
+<td>15h</td>
+<td>29.4</td>
+<td>W</td>
+<td>12.6</td>
+<td>0.0</td>
+<td>2826.1</td>
+</tr>
+<tr>
+
+<td>13h</td>
+<td>27.2</td>
+<td>W</td>
+<td>8.6</td>
+<td>0.0</td>
+<td>3454.9</td>
+</tr>
+<tr>
+
+<td>12h</td>
+<td>25.5</td>
+<td>W</td>
+<td>7.2</td>
+<td>0.0</td>
+<td>3323.0</td>
+</tr>
+<tr>
+
+<td>11h</td>
+<td>23.9</td>
+<td>NW</td>
+<td>6.8</td>
+<td>0.0</td>
+<td>2542.5</td>
+</tr>
+<tr>
+
+<td>10h</td>
+<td>22.1</td>
+<td>W</td>
+<td>5.0</td>
+<td>0.0</td>
+<td>2173.4</td>
+</tr>
+<tr>
+
 <td>09h</td>
 <td>20.4</td>
 <td>NW</td>
@@ -555,7 +600,7 @@ window.observationsTable = `
 <td>0.0</td>
 </tr>
 <tr>
-<td rowspan="14">19 Jul</td>
+<td rowspan="9">19 Jul</td>
 <td>23h</td>
 <td>18.3</td>
 <td>W</td>
@@ -634,51 +679,6 @@ window.observationsTable = `
 <td>15.8</td>
 <td>0.0</td>
 <td>2947.6</td>
-</tr>
-<tr>
-
-<td>14h</td>
-<td>25.9</td>
-<td>NW</td>
-<td>11.5</td>
-<td>0.0</td>
-<td>3346.3</td>
-</tr>
-<tr>
-
-<td>13h</td>
-<td>24.6</td>
-<td>W</td>
-<td>10.4</td>
-<td>0.0</td>
-<td>2598.2</td>
-</tr>
-<tr>
-
-<td>12h</td>
-<td>24.1</td>
-<td>NW</td>
-<td>10.4</td>
-<td>0.0</td>
-<td>2980.5</td>
-</tr>
-<tr>
-
-<td>11h</td>
-<td>22.3</td>
-<td>NW</td>
-<td>10.4</td>
-<td>0.0</td>
-<td>1981.5</td>
-</tr>
-<tr>
-
-<td>10h</td>
-<td>20.6</td>
-<td>NW</td>
-<td>13.3</td>
-<td>0.0</td>
-<td>1269.0</td>
 </tr>
 </tbody>
 </table></div>
@@ -1043,11 +1043,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Jul 26</td>
-      <td>4</td>
+      <td>0</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>1177</td>
+      <td>1173</td>
     </tr>
   </tbody>
 </table>
