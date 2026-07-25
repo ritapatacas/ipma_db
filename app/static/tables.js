@@ -17,7 +17,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(7-25) Sat</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/07_iday.svg" title="Mixed with showers"/></td>
       <td>61.00</td>
-      <td>78.00</td>
+      <td>77.00</td>
       <td>-</td>
       <td>None</td>
       <td>None</td>
@@ -89,7 +89,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(8-2) Sun</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday.svg" title="Clear, cloudless sky"/></td>
       <td>60.00</td>
-      <td>82.00</td>
+      <td>81.00</td>
       <td>-</td>
       <td>None</td>
       <td>None</td>
@@ -158,7 +158,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     <tr>
       <td>25 (Sat)</td>
       <td>61.0</td>
-      <td>78.0</td>
+      <td>77.0</td>
       <td>NaN</td>
       <td>None</td>
       <td>Mixed with showers</td>
@@ -249,7 +249,34 @@ window.observationsTable = `
 </thead>
 <tbody>
 <tr>
-<td rowspan="11">25 Jul</td>
+<td rowspan="14">25 Jul</td>
+<td>13h</td>
+<td>23.1</td>
+<td>NW</td>
+<td>20.9</td>
+<td>0.0</td>
+<td>2285.3</td>
+</tr>
+<tr>
+
+<td>12h</td>
+<td>21.6</td>
+<td>NW</td>
+<td>16.9</td>
+<td>0.0</td>
+<td>1548.6</td>
+</tr>
+<tr>
+
+<td>11h</td>
+<td>20.4</td>
+<td>NW</td>
+<td>18.4</td>
+<td>0.0</td>
+<td>990.3</td>
+</tr>
+<tr>
+
 <td>10h</td>
 <td>19.9</td>
 <td>NW</td>
@@ -564,7 +591,7 @@ window.observationsTable = `
 <td>0.0</td>
 </tr>
 <tr>
-<td rowspan="13">23 Jul</td>
+<td rowspan="10">23 Jul</td>
 <td>23h</td>
 <td>18.1</td>
 <td>NW</td>
@@ -652,33 +679,6 @@ window.observationsTable = `
 <td>15.1</td>
 <td>0.0</td>
 <td>3382.3</td>
-</tr>
-<tr>
-
-<td>13h</td>
-<td>27.2</td>
-<td>NW</td>
-<td>11.9</td>
-<td>0.0</td>
-<td>3455.9</td>
-</tr>
-<tr>
-
-<td>12h</td>
-<td>25.5</td>
-<td>W</td>
-<td>11.5</td>
-<td>0.0</td>
-<td>3310.1</td>
-</tr>
-<tr>
-
-<td>11h</td>
-<td>24.2</td>
-<td>NW</td>
-<td>12.2</td>
-<td>0.0</td>
-<td>2977.5</td>
 </tr>
 </tbody>
 </table></div>
