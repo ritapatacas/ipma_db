@@ -43,7 +43,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(8-12) Wed</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/02_iday.svg" title="Clear and few clouds"/></td>
-      <td>61.00</td>
+      <td>62.00</td>
       <td>92.00</td>
       <td>-</td>
       <td>None</td>
@@ -52,7 +52,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(8-13) Thu</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/02_iday.svg" title="Clear and few clouds"/></td>
-      <td>61.00</td>
+      <td>62.00</td>
       <td>91.00</td>
       <td>-</td>
       <td>None</td>
@@ -80,7 +80,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(8-16) Sun</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday.svg" title="Clear, cloudless sky"/></td>
       <td>63.00</td>
-      <td>84.00</td>
+      <td>85.00</td>
       <td>-</td>
       <td>None</td>
       <td>None</td>
@@ -88,7 +88,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(8-17) Mon</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday.svg" title="Clear, cloudless sky"/></td>
-      <td>62.00</td>
+      <td>63.00</td>
       <td>83.00</td>
       <td>-</td>
       <td>None</td>
@@ -116,7 +116,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(8-20) Thu</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday.svg" title="Clear, cloudless sky"/></td>
       <td>66.00</td>
-      <td>84.00</td>
+      <td>85.00</td>
       <td>-</td>
       <td>None</td>
       <td>None</td>
@@ -181,7 +181,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     </tr>
     <tr>
       <td>12 (Wed)</td>
-      <td>61.0</td>
+      <td>62.0</td>
       <td>92.0</td>
       <td>NaN</td>
       <td>None</td>
@@ -189,7 +189,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     </tr>
     <tr>
       <td>13 (Thu)</td>
-      <td>61.0</td>
+      <td>62.0</td>
       <td>91.0</td>
       <td>NaN</td>
       <td>None</td>
@@ -249,7 +249,34 @@ window.observationsTable = `
 </thead>
 <tbody>
 <tr>
-<td rowspan="14">09 Aug</td>
+<td rowspan="17">09 Aug</td>
+<td>16h</td>
+<td>27.9</td>
+<td>NW</td>
+<td>15.1</td>
+<td>0.0</td>
+<td>2508.8</td>
+</tr>
+<tr>
+
+<td>15h</td>
+<td>28.4</td>
+<td>NW</td>
+<td>15.8</td>
+<td>0.0</td>
+<td>2753.6</td>
+</tr>
+<tr>
+
+<td>14h</td>
+<td>28.3</td>
+<td>NW</td>
+<td>19.4</td>
+<td>0.0</td>
+<td>3361.3</td>
+</tr>
+<tr>
+
 <td>13h</td>
 <td>27.9</td>
 <td>NW</td>
@@ -591,7 +618,7 @@ window.observationsTable = `
 <td>0.0</td>
 </tr>
 <tr>
-<td rowspan="10">07 Aug</td>
+<td rowspan="7">07 Aug</td>
 <td>23h</td>
 <td>21.0</td>
 <td>NE</td>
@@ -652,33 +679,6 @@ window.observationsTable = `
 <td>15.1</td>
 <td>0.0</td>
 <td>1785.2</td>
-</tr>
-<tr>
-
-<td>16h</td>
-<td>31.4</td>
-<td>NW</td>
-<td>14.8</td>
-<td>0.0</td>
-<td>2349.6</td>
-</tr>
-<tr>
-
-<td>15h</td>
-<td>32.1</td>
-<td>NW</td>
-<td>19.4</td>
-<td>0.0</td>
-<td>2609.2</td>
-</tr>
-<tr>
-
-<td>14h</td>
-<td>32.5</td>
-<td>NW</td>
-<td>15.8</td>
-<td>0.0</td>
-<td>3106.0</td>
 </tr>
 </tbody>
 </table></div>
@@ -1047,11 +1047,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Aug 26</td>
-      <td>3</td>
+      <td>0</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>1176</td>
+      <td>1173</td>
     </tr>
   </tbody>
 </table>
