@@ -15,7 +15,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
   <tbody>
     <tr>
       <td>(8-9) Sun</td>
-      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/02_iday.svg" title="Clear and few clouds"/></td>
+      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday.svg" title="Clear, cloudless sky"/></td>
       <td>60.00</td>
       <td>85.00</td>
       <td>-</td>
@@ -161,7 +161,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
       <td>85.0</td>
       <td>NaN</td>
       <td>None</td>
-      <td>Clear and few clouds</td>
+      <td>Clear, cloudless sky</td>
     </tr>
     <tr>
       <td>10 (Mon)</td>
@@ -249,7 +249,34 @@ window.observationsTable = `
 </thead>
 <tbody>
 <tr>
-<td rowspan="10">09 Aug</td>
+<td rowspan="13">09 Aug</td>
+<td>12h</td>
+<td>26.4</td>
+<td>N</td>
+<td>12.6</td>
+<td>0.0</td>
+<td>3171.6</td>
+</tr>
+<tr>
+
+<td>11h</td>
+<td>23.8</td>
+<td>NW</td>
+<td>15.8</td>
+<td>0.0</td>
+<td>1937.3</td>
+</tr>
+<tr>
+
+<td>10h</td>
+<td>22.5</td>
+<td>NW</td>
+<td>13.3</td>
+<td>0.0</td>
+<td>1590.1</td>
+</tr>
+<tr>
+
 <td>09h</td>
 <td>20.5</td>
 <td>N</td>
@@ -555,7 +582,7 @@ window.observationsTable = `
 <td>0.0</td>
 </tr>
 <tr>
-<td rowspan="14">07 Aug</td>
+<td rowspan="11">07 Aug</td>
 <td>23h</td>
 <td>21.0</td>
 <td>NE</td>
@@ -652,33 +679,6 @@ window.observationsTable = `
 <td>12.6</td>
 <td>0.0</td>
 <td>3174.9</td>
-</tr>
-<tr>
-
-<td>12h</td>
-<td>29.2</td>
-<td>N</td>
-<td>16.2</td>
-<td>0.0</td>
-<td>3047.5</td>
-</tr>
-<tr>
-
-<td>11h</td>
-<td>26.5</td>
-<td>N</td>
-<td>12.6</td>
-<td>0.0</td>
-<td>2732.3</td>
-</tr>
-<tr>
-
-<td>10h</td>
-<td>22.9</td>
-<td>-</td>
-<td>9.0</td>
-<td>0.0</td>
-<td>2266.7</td>
 </tr>
 </tbody>
 </table></div>
@@ -1047,11 +1047,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Aug 26</td>
-      <td>3</td>
+      <td>2</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>1176</td>
+      <td>1175</td>
     </tr>
   </tbody>
 </table>
