@@ -17,7 +17,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(8-16) Sun</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/02_iday.svg" title="Clear and few clouds"/></td>
       <td>71.00</td>
-      <td>97.00</td>
+      <td>96.00</td>
       <td>-</td>
       <td>None</td>
       <td>None</td>
@@ -158,7 +158,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     <tr>
       <td>16 (Sun)</td>
       <td>71.0</td>
-      <td>97.0</td>
+      <td>96.0</td>
       <td>NaN</td>
       <td>None</td>
       <td>Clear and few clouds</td>
@@ -249,13 +249,40 @@ window.observationsTable = `
 </thead>
 <tbody>
 <tr>
-<td rowspan="11">16 Aug</td>
+<td rowspan="14">16 Aug</td>
+<td>13h</td>
+<td>34.4</td>
+<td>E</td>
+<td>6.8</td>
+<td>0.0</td>
+<td>3173.4</td>
+</tr>
+<tr>
+
 <td>12h</td>
 <td>33.0</td>
 <td>E</td>
 <td>9.7</td>
 <td>0.0</td>
 <td>3028.3</td>
+</tr>
+<tr>
+
+<td>11h</td>
+<td>31.4</td>
+<td>E</td>
+<td>7.9</td>
+<td>0.0</td>
+<td>2485.9</td>
+</tr>
+<tr>
+
+<td>10h</td>
+<td>29.0</td>
+<td>E</td>
+<td>9.4</td>
+<td>0.0</td>
+<td>2198.6</td>
 </tr>
 <tr>
 
@@ -564,7 +591,7 @@ window.observationsTable = `
 <td>0.0</td>
 </tr>
 <tr>
-<td rowspan="13">14 Aug</td>
+<td rowspan="10">14 Aug</td>
 <td>23h</td>
 <td>19.3</td>
 <td>NW</td>
@@ -652,33 +679,6 @@ window.observationsTable = `
 <td>18.0</td>
 <td>0.0</td>
 <td>547.6</td>
-</tr>
-<tr>
-
-<td>13h</td>
-<td>21.3</td>
-<td>NW</td>
-<td>19.8</td>
-<td>0.0</td>
-<td>933.5</td>
-</tr>
-<tr>
-
-<td>12h</td>
-<td>21.5</td>
-<td>W</td>
-<td>16.2</td>
-<td>0.0</td>
-<td>1204.8</td>
-</tr>
-<tr>
-
-<td>11h</td>
-<td>20.9</td>
-<td>NW</td>
-<td>12.2</td>
-<td>0.0</td>
-<td>954.4</td>
 </tr>
 </tbody>
 </table></div>
@@ -1047,11 +1047,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Aug 26</td>
-      <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>1173</td>
+      <td>1174</td>
     </tr>
   </tbody>
 </table>
