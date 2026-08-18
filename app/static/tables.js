@@ -25,8 +25,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(8-19) Wed</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/02_iday.svg" title="Clear and few clouds"/></td>
-      <td>63.00</td>
-      <td>82.00</td>
+      <td>64.00</td>
+      <td>81.00</td>
       <td>-</td>
       <td>None</td>
       <td>None</td>
@@ -43,8 +43,8 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(8-21) Fri</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/02_iday.svg" title="Clear and few clouds"/></td>
-      <td>56.00</td>
-      <td>80.00</td>
+      <td>57.00</td>
+      <td>79.00</td>
       <td>-</td>
       <td>None</td>
       <td>None</td>
@@ -60,7 +60,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     </tr>
     <tr>
       <td>(8-23) Sun</td>
-      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/08_iday.svg" title="Showers, thunderstorms likely"/></td>
+      <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/02_iday.svg" title="Clear and few clouds"/></td>
       <td>58.00</td>
       <td>78.00</td>
       <td>-</td>
@@ -89,7 +89,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(8-26) Wed</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday.svg" title="Clear, cloudless sky"/></td>
       <td>57.00</td>
-      <td>78.00</td>
+      <td>77.00</td>
       <td>-</td>
       <td>None</td>
       <td>None</td>
@@ -133,7 +133,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
     <tr>
       <td>(8-31) Mon</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday.svg" title="Clear, cloudless sky"/></td>
-      <td>59.00</td>
+      <td>60.00</td>
       <td>80.00</td>
       <td>-</td>
       <td>None</td>
@@ -165,8 +165,8 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     </tr>
     <tr>
       <td>19 (Wed)</td>
-      <td>63.0</td>
-      <td>82.0</td>
+      <td>64.0</td>
+      <td>81.0</td>
       <td>NaN</td>
       <td>None</td>
       <td>Clear and few clouds</td>
@@ -181,8 +181,8 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     </tr>
     <tr>
       <td>21 (Fri)</td>
-      <td>56.0</td>
-      <td>80.0</td>
+      <td>57.0</td>
+      <td>79.0</td>
       <td>NaN</td>
       <td>None</td>
       <td>Clear and few clouds</td>
@@ -201,7 +201,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
       <td>78.0</td>
       <td>NaN</td>
       <td>None</td>
-      <td>Showers, thunderstorms likely</td>
+      <td>Clear and few clouds</td>
     </tr>
     <tr>
       <td>24 (Mon)</td>
@@ -249,7 +249,52 @@ window.observationsTable = `
 </thead>
 <tbody>
 <tr>
-<td rowspan="14">18 Aug</td>
+<td rowspan="19">18 Aug</td>
+<td>18h</td>
+<td>28.7</td>
+<td>W</td>
+<td>15.5</td>
+<td>0.0</td>
+<td>1057.8</td>
+</tr>
+<tr>
+
+<td>17h</td>
+<td>29.9</td>
+<td>W</td>
+<td>18.7</td>
+<td>0.0</td>
+<td>1737.0</td>
+</tr>
+<tr>
+
+<td>16h</td>
+<td>35.3</td>
+<td>W</td>
+<td>19.8</td>
+<td>0.0</td>
+<td>2061.3</td>
+</tr>
+<tr>
+
+<td>15h</td>
+<td>36.6</td>
+<td>SW</td>
+<td>13.7</td>
+<td>0.0</td>
+<td>2684.9</td>
+</tr>
+<tr>
+
+<td>14h</td>
+<td>36.0</td>
+<td>SW</td>
+<td>8.3</td>
+<td>0.0</td>
+<td>2993.8</td>
+</tr>
+<tr>
+
 <td>13h</td>
 <td>34.9</td>
 <td>S</td>
@@ -591,7 +636,7 @@ window.observationsTable = `
 <td>0.0</td>
 </tr>
 <tr>
-<td rowspan="10">16 Aug</td>
+<td rowspan="5">16 Aug</td>
 <td>23h</td>
 <td>23.6</td>
 <td>NE</td>
@@ -634,51 +679,6 @@ window.observationsTable = `
 <td>13.7</td>
 <td>0.0</td>
 <td>408.1</td>
-</tr>
-<tr>
-
-<td>18h</td>
-<td>33.0</td>
-<td>N</td>
-<td>16.2</td>
-<td>0.0</td>
-<td>1049.6</td>
-</tr>
-<tr>
-
-<td>17h</td>
-<td>34.9</td>
-<td>N</td>
-<td>15.5</td>
-<td>0.0</td>
-<td>1661.0</td>
-</tr>
-<tr>
-
-<td>16h</td>
-<td>35.0</td>
-<td>NW</td>
-<td>12.2</td>
-<td>0.0</td>
-<td>1012.4</td>
-</tr>
-<tr>
-
-<td>15h</td>
-<td>36.6</td>
-<td>NE</td>
-<td>5.8</td>
-<td>0.0</td>
-<td>2595.2</td>
-</tr>
-<tr>
-
-<td>14h</td>
-<td>35.8</td>
-<td>S</td>
-<td>6.1</td>
-<td>0.0</td>
-<td>3221.7</td>
 </tr>
 </tbody>
 </table></div>
@@ -1047,11 +1047,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Aug 26</td>
-      <td>3</td>
+      <td>0</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>1176</td>
+      <td>1173</td>
     </tr>
   </tbody>
 </table>
@@ -1067,13 +1067,6 @@ window.dashboardTable = `<div class="table-container">
         </thead>
         <tbody>
     
-        <tr class="yellow hover:bg-gray-200 dark:hover:bg-gray-700 transition">
-            <td><i class="fa-solid fa-temperature-high"></i></td>
-            <td class="level"><i class="fa-solid fa-circle" style="color: #FFD43B;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
-            <td><a href="#" onclick="openModal('modal-Tempo-Quente-18-18-08', event)">18-18/08</a></td>
-            <td><span data-tooltip="Coimbra (36km NW)">C</span>, <span data-tooltip="Castelo Branco (59km ESE)">CB</span>, <span data-tooltip="Leiria (58km WSW)">L</span></td>
-        </tr>
-        
         <tr class="green hover:bg-gray-200 dark:hover:bg-gray-700 transition">
             <td><i class="fa-solid fa-smog"></i></td>
             <td class="level"><i class="fa-solid fa-circle" style="color: #26ba81;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
@@ -1123,24 +1116,6 @@ window.dashboardTable = `<div class="table-container">
             <td><span data-tooltip="Coimbra (36km NW)">C</span>, <span data-tooltip="Castelo Branco (59km ESE)">CB</span>, <span data-tooltip="Leiria (58km WSW)">L</span></td>
         </tr>
         </tbody></table>
-    <dialog id="modal-Tempo-Quente-18-18-08" class="modal">
-        <article>
-            <header>
-                <a href="#" class="close" aria-label="Close" onclick="closeModal('modal-Tempo-Quente-18-18-08', event)"></a>
-                <h3>Tempo Quente</h3>
-            </header>
-            
-        <strong>alert level:</strong> yellow
-        <br><strong>start:</strong> 18/08 11:32
-        <br><strong>end:</strong> 18/08 18:00
-        <hr>
-    <p><strong>Leiria (58km WSW)</strong><br>Persistência de valores elevados da temperatura máxima.</p><p><strong>Castelo Branco (59km ESE)</strong><br>Persistência de valores elevados da temperatura máxima.</p><p><strong>Coimbra (36km NW)</strong><br>Em especial no interior: persistência de valores elevados da temperatura máxima.</p>
-            <footer>
-                <button onclick="closeModal('modal-Tempo-Quente-18-18-08', event)">Close</button>
-            </footer>
-        </article>
-    </dialog>
-    
     <dialog id="modal-Nevoeiro-18-21-08" class="modal">
         <article>
             <header>
