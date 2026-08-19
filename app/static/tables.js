@@ -17,7 +17,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(8-19) Wed</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/02_iday.svg" title="Clear and few clouds"/></td>
       <td>64.00</td>
-      <td>85.00</td>
+      <td>86.00</td>
       <td>-</td>
       <td>None</td>
       <td>None</td>
@@ -158,7 +158,7 @@ window.forecastTableMobile = `<div class="table-wrapper mobile-view">  <table cl
     <tr>
       <td>19 (Wed)</td>
       <td>64.0</td>
-      <td>85.0</td>
+      <td>86.0</td>
       <td>NaN</td>
       <td>None</td>
       <td>Clear and few clouds</td>
@@ -249,7 +249,34 @@ window.observationsTable = `
 </thead>
 <tbody>
 <tr>
-<td rowspan="10">19 Aug</td>
+<td rowspan="13">19 Aug</td>
+<td>12h</td>
+<td>26.5</td>
+<td>W</td>
+<td>11.5</td>
+<td>0.0</td>
+<td>2771.4</td>
+</tr>
+<tr>
+
+<td>11h</td>
+<td>25.3</td>
+<td>W</td>
+<td>7.9</td>
+<td>0.0</td>
+<td>2688.1</td>
+</tr>
+<tr>
+
+<td>10h</td>
+<td>22.4</td>
+<td>W</td>
+<td>8.3</td>
+<td>0.0</td>
+<td>2192.0</td>
+</tr>
+<tr>
+
 <td>09h</td>
 <td>19.8</td>
 <td>W</td>
@@ -555,7 +582,7 @@ window.observationsTable = `
 <td>0.0</td>
 </tr>
 <tr>
-<td rowspan="14">17 Aug</td>
+<td rowspan="11">17 Aug</td>
 <td>23h</td>
 <td>23.8</td>
 <td>NW</td>
@@ -652,33 +679,6 @@ window.observationsTable = `
 <td>8.3</td>
 <td>0.0</td>
 <td>3176.8</td>
-</tr>
-<tr>
-
-<td>12h</td>
-<td>37.5</td>
-<td>E</td>
-<td>7.2</td>
-<td>0.0</td>
-<td>2606.5</td>
-</tr>
-<tr>
-
-<td>11h</td>
-<td>36.4</td>
-<td>SE</td>
-<td>8.6</td>
-<td>0.0</td>
-<td>2664.6</td>
-</tr>
-<tr>
-
-<td>10h</td>
-<td>33.5</td>
-<td>NE</td>
-<td>6.5</td>
-<td>0.0</td>
-<td>2159.4</td>
 </tr>
 </tbody>
 </table></div>
@@ -1047,11 +1047,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Aug 26</td>
-      <td>1</td>
+      <td>2</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>1174</td>
+      <td>1175</td>
     </tr>
   </tbody>
 </table>
