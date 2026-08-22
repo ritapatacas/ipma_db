@@ -107,7 +107,7 @@ window.forecastTable = `<div class="table-wrapper desktop-view">
       <td>(9-1) Tue</td>
       <td><img class="fdw-pictogram" src="https://static.meteoblue.com/assets/images/picto/01_iday.svg" title="Clear, cloudless sky"/></td>
       <td>58.00</td>
-      <td>75.00</td>
+      <td>76.00</td>
       <td>-</td>
       <td>None</td>
       <td>None</td>
@@ -249,7 +249,34 @@ window.observationsTable = `
 </thead>
 <tbody>
 <tr>
-<td rowspan="8">22 Aug</td>
+<td rowspan="11">22 Aug</td>
+<td>11h</td>
+<td>21.4</td>
+<td>-</td>
+<td>-</td>
+<td>NaN</td>
+<td>-</td>
+</tr>
+<tr>
+
+<td>09h</td>
+<td>17.2</td>
+<td>W</td>
+<td>7.9</td>
+<td>0.0</td>
+<td>1263.2</td>
+</tr>
+<tr>
+
+<td>08h</td>
+<td>15.4</td>
+<td>NW</td>
+<td>7.9</td>
+<td>0.0</td>
+<td>473.6</td>
+</tr>
+<tr>
+
 <td>07h</td>
 <td>14.4</td>
 <td>NW</td>
@@ -537,7 +564,7 @@ window.observationsTable = `
 <td>0.0</td>
 </tr>
 <tr>
-<td rowspan="16">20 Aug</td>
+<td rowspan="13">20 Aug</td>
 <td>23h</td>
 <td>15.8</td>
 <td>NW</td>
@@ -652,33 +679,6 @@ window.observationsTable = `
 <td>6.1</td>
 <td>0.0</td>
 <td>411.3</td>
-</tr>
-<tr>
-
-<td>10h</td>
-<td>20.0</td>
-<td>W</td>
-<td>6.8</td>
-<td>0.0</td>
-<td>341.3</td>
-</tr>
-<tr>
-
-<td>09h</td>
-<td>19.7</td>
-<td>SW</td>
-<td>4.0</td>
-<td>0.0</td>
-<td>690.0</td>
-</tr>
-<tr>
-
-<td>08h</td>
-<td>18.4</td>
-<td>SW</td>
-<td>6.1</td>
-<td>0.0</td>
-<td>418.2</td>
 </tr>
 </tbody>
 </table></div>
@@ -1047,11 +1047,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Aug 26</td>
-      <td>3</td>
+      <td>1</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>1176</td>
+      <td>1174</td>
     </tr>
   </tbody>
 </table>
@@ -1115,6 +1115,13 @@ window.dashboardTable = `<div class="table-container">
             <td><a href="#" onclick="openModal('modal-Vento-22-25-08', event)">22-25/08</a></td>
             <td><span data-tooltip="Coimbra (36km NW)">C</span>, <span data-tooltip="Castelo Branco (59km ESE)">CB</span>, <span data-tooltip="Leiria (58km WSW)">L</span></td>
         </tr>
+        
+        <tr class="yellow hover:bg-gray-200 dark:hover:bg-gray-700 transition">
+            <td><i class="fa-solid fa-bolt"></i></td>
+            <td class="level"><i class="fa-solid fa-circle" style="color: #FFD43B;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
+            <td><a href="#" onclick="openModal('modal-Trovoada-23-23-08', event)">23-23/08</a></td>
+            <td><span data-tooltip="Coimbra (36km NW)">C</span>, <span data-tooltip="Leiria (58km WSW)">L</span></td>
+        </tr>
         </tbody></table>
     <dialog id="modal-Nevoeiro-22-25-08" class="modal">
         <article>
@@ -1124,8 +1131,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 22/08 06:39
-        <br><strong>end:</strong> 25/08 06:00
+        <br><strong>start:</strong> 22/08 10:36
+        <br><strong>end:</strong> 25/08 10:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1142,8 +1149,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 22/08 06:39
-        <br><strong>end:</strong> 25/08 06:00
+        <br><strong>start:</strong> 22/08 10:36
+        <br><strong>end:</strong> 25/08 10:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1160,8 +1167,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 22/08 06:39
-        <br><strong>end:</strong> 25/08 06:00
+        <br><strong>start:</strong> 22/08 10:36
+        <br><strong>end:</strong> 25/08 10:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1178,8 +1185,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 22/08 06:39
-        <br><strong>end:</strong> 25/08 06:00
+        <br><strong>start:</strong> 22/08 10:36
+        <br><strong>end:</strong> 25/08 10:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1196,8 +1203,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 22/08 06:39
-        <br><strong>end:</strong> 25/08 06:00
+        <br><strong>start:</strong> 22/08 10:36
+        <br><strong>end:</strong> 25/08 10:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1214,8 +1221,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 22/08 06:39
-        <br><strong>end:</strong> 25/08 06:00
+        <br><strong>start:</strong> 22/08 10:36
+        <br><strong>end:</strong> 25/08 10:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1232,12 +1239,30 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 22/08 06:39
-        <br><strong>end:</strong> 25/08 06:00
+        <br><strong>start:</strong> 22/08 10:36
+        <br><strong>end:</strong> 25/08 10:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
                 <button onclick="closeModal('modal-Vento-22-25-08', event)">Close</button>
+            </footer>
+        </article>
+    </dialog>
+    
+    <dialog id="modal-Trovoada-23-23-08" class="modal">
+        <article>
+            <header>
+                <a href="#" class="close" aria-label="Close" onclick="closeModal('modal-Trovoada-23-23-08', event)"></a>
+                <h3>Trovoada</h3>
+            </header>
+            
+        <strong>alert level:</strong> yellow
+        <br><strong>start:</strong> 23/08 09:00
+        <br><strong>end:</strong> 23/08 18:00
+        <hr>
+    <p><strong>Leiria (58km WSW)</strong><br>Condições favoráveis para ocorrência de fenómenos meteorológicos localizados, como: trovoada; precipitação localmente forte, com acumulação entre 10 a 20 mm em 1 h; rajadas entre 70 e 90 km/h.</p><p><strong>Coimbra (36km NW)</strong><br>Condições favoráveis para ocorrência de fenómenos meteorológicos localizados, como: trovoada; precipitação localmente forte, com acumulação entre 10 a 20 mm em 1 h; rajadas entre 70 e 90 km/h.</p>
+            <footer>
+                <button onclick="closeModal('modal-Trovoada-23-23-08', event)">Close</button>
             </footer>
         </article>
     </dialog>
