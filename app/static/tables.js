@@ -249,13 +249,49 @@ window.observationsTable = `
 </thead>
 <tbody>
 <tr>
-<td rowspan="15">02 Sep</td>
+<td rowspan="19">02 Sep</td>
+<td>18h</td>
+<td>28.3</td>
+<td>NW</td>
+<td>12.2</td>
+<td>NaN</td>
+<td>886.3</td>
+</tr>
+<tr>
+
 <td>17h</td>
 <td>31.0</td>
 <td>N</td>
 <td>11.9</td>
 <td>NaN</td>
 <td>1584.5</td>
+</tr>
+<tr>
+
+<td>16h</td>
+<td>31.0</td>
+<td>NW</td>
+<td>13.0</td>
+<td>NaN</td>
+<td>1959.0</td>
+</tr>
+<tr>
+
+<td>15h</td>
+<td>31.3</td>
+<td>NW</td>
+<td>12.6</td>
+<td>NaN</td>
+<td>2658.9</td>
+</tr>
+<tr>
+
+<td>14h</td>
+<td>31.2</td>
+<td>NW</td>
+<td>14.0</td>
+<td>NaN</td>
+<td>3004.1</td>
 </tr>
 <tr>
 
@@ -600,7 +636,7 @@ window.observationsTable = `
 <td>0.0</td>
 </tr>
 <tr>
-<td rowspan="9">31 Aug</td>
+<td rowspan="5">31 Aug</td>
 <td>23h</td>
 <td>15.7</td>
 <td>N</td>
@@ -643,42 +679,6 @@ window.observationsTable = `
 <td>-</td>
 <td>NaN</td>
 <td>292.5</td>
-</tr>
-<tr>
-
-<td>18h</td>
-<td>22.1</td>
-<td>NW</td>
-<td>18.0</td>
-<td>NaN</td>
-<td>872.4</td>
-</tr>
-<tr>
-
-<td>17h</td>
-<td>23.5</td>
-<td>NW</td>
-<td>17.3</td>
-<td>NaN</td>
-<td>1698.2</td>
-</tr>
-<tr>
-
-<td>16h</td>
-<td>25.1</td>
-<td>NW</td>
-<td>22.3</td>
-<td>NaN</td>
-<td>2066.9</td>
-</tr>
-<tr>
-
-<td>15h</td>
-<td>26.6</td>
-<td>NW</td>
-<td>18.4</td>
-<td>NaN</td>
-<td>2743.9</td>
 </tr>
 </tbody>
 </table></div>
@@ -1055,11 +1055,11 @@ window.dashboardTable = `<div class="table-container">
     </tr>
     <tr>
       <td>Sep 26</td>
-      <td>2</td>
+      <td>3</td>
     </tr>
     <tr>
       <td>Total</td>
-      <td>1186</td>
+      <td>1187</td>
     </tr>
   </tbody>
 </table>
@@ -1127,7 +1127,7 @@ window.dashboardTable = `<div class="table-container">
         <tr class="yellow hover:bg-gray-200 dark:hover:bg-gray-700 transition">
             <td><i class="fa-solid fa-temperature-high"></i></td>
             <td class="level"><i class="fa-solid fa-circle" style="color: #FFD43B;"></i></td>  <!-- 🔥 New: Replaces text with icon -->
-            <td><a href="#" onclick="openModal('modal-Tempo-Quente-03-04-09', event)">03-04/09</a></td>
+            <td><a href="#" onclick="openModal('modal-Tempo-Quente-03-05-09', event)">03-05/09</a></td>
             <td><span data-tooltip="Coimbra (36km NW)">C</span>, <span data-tooltip="Castelo Branco (59km ESE)">CB</span>, <span data-tooltip="Leiria (58km WSW)">L</span></td>
         </tr>
         </tbody></table>
@@ -1139,8 +1139,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 02/09 10:01
-        <br><strong>end:</strong> 05/09 10:00
+        <br><strong>start:</strong> 02/09 18:22
+        <br><strong>end:</strong> 05/09 18:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1157,8 +1157,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 02/09 10:01
-        <br><strong>end:</strong> 05/09 10:00
+        <br><strong>start:</strong> 02/09 18:22
+        <br><strong>end:</strong> 05/09 18:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1175,8 +1175,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 02/09 10:01
-        <br><strong>end:</strong> 05/09 10:00
+        <br><strong>start:</strong> 02/09 18:22
+        <br><strong>end:</strong> 05/09 18:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1193,8 +1193,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 02/09 10:01
-        <br><strong>end:</strong> 05/09 10:00
+        <br><strong>start:</strong> 02/09 18:22
+        <br><strong>end:</strong> 05/09 18:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1211,8 +1211,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 02/09 10:01
-        <br><strong>end:</strong> 05/09 10:00
+        <br><strong>start:</strong> 02/09 18:22
+        <br><strong>end:</strong> 05/09 18:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1229,8 +1229,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 02/09 10:01
-        <br><strong>end:</strong> 05/09 10:00
+        <br><strong>start:</strong> 02/09 18:22
+        <br><strong>end:</strong> 05/09 18:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1247,8 +1247,8 @@ window.dashboardTable = `<div class="table-container">
             </header>
             
         <strong>alert level:</strong> green
-        <br><strong>start:</strong> 02/09 10:01
-        <br><strong>end:</strong> 05/09 10:00
+        <br><strong>start:</strong> 02/09 18:22
+        <br><strong>end:</strong> 05/09 18:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br></p><p><strong>Castelo Branco (59km ESE)</strong><br></p><p><strong>Coimbra (36km NW)</strong><br></p>
             <footer>
@@ -1257,20 +1257,20 @@ window.dashboardTable = `<div class="table-container">
         </article>
     </dialog>
     
-    <dialog id="modal-Tempo-Quente-03-04-09" class="modal">
+    <dialog id="modal-Tempo-Quente-03-05-09" class="modal">
         <article>
             <header>
-                <a href="#" class="close" aria-label="Close" onclick="closeModal('modal-Tempo-Quente-03-04-09', event)"></a>
+                <a href="#" class="close" aria-label="Close" onclick="closeModal('modal-Tempo-Quente-03-05-09', event)"></a>
                 <h3>Tempo Quente</h3>
             </header>
             
         <strong>alert level:</strong> yellow
         <br><strong>start:</strong> 03/09 09:00
-        <br><strong>end:</strong> 04/09 18:00
+        <br><strong>end:</strong> 05/09 18:00
         <hr>
     <p><strong>Leiria (58km WSW)</strong><br>Persistência de valores elevados da temperatura máxima.</p><p><strong>Coimbra (36km NW)</strong><br>Persistência de valores elevados da temperatura máxima.</p><p><strong>Castelo Branco (59km ESE)</strong><br>Valores elevados da temperatura máxima.</p>
             <footer>
-                <button onclick="closeModal('modal-Tempo-Quente-03-04-09', event)">Close</button>
+                <button onclick="closeModal('modal-Tempo-Quente-03-05-09', event)">Close</button>
             </footer>
         </article>
     </dialog>
